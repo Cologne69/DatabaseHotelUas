@@ -24,15 +24,11 @@ namespace DatabaseHotelUas
         public string sqlQuery;
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            //make another form appear if cb_parkir is checked
             if (cb_parkir.Checked)
             {
                 form_parkir fp = new form_parkir();
                 fp.Show();
             }
-            
-            
-            
         }
 
         private void lbl_testTanggal_Click(object sender, EventArgs e)
