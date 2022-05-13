@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace DatabaseHotelUas
 {
-    public partial class form_parkir : Form
+    public partial class form_kamar : Form
     {
-        public form_parkir()
+        public form_kamar()
         {
             InitializeComponent();
         }
@@ -22,6 +22,11 @@ namespace DatabaseHotelUas
         private void btn_exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

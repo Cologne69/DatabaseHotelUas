@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace DatabaseHotelUas
 {
-    public partial class form_fasilitaskamar : Form
+    public partial class form_resto : Form
     {
-        public form_fasilitaskamar()
+        public form_resto()
         {
             InitializeComponent();
         }

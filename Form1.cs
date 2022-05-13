@@ -22,14 +22,8 @@ namespace DatabaseHotelUas
         public MySqlCommand sqlCommand;
         public MySqlDataAdapter mySqlAdapter;
         public string sqlQuery;
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_parkir.Checked)
-            {
-                form_parkir fp = new form_parkir();
-                fp.Show();
-            }
-        }
+        
+        
 
         private void lbl_testTanggal_Click(object sender, EventArgs e)
         {
@@ -38,7 +32,7 @@ namespace DatabaseHotelUas
 
         private void tgl_checkin_ValueChanged(object sender, EventArgs e)
         {
-            lbl_testTanggal.Text = tgl_checkin.Value.ToString("dd MMMM yyyy");
+            
         }
     }
 }
