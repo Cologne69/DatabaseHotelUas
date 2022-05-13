@@ -34,5 +34,17 @@ namespace DatabaseHotelUas
         {
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_lihatkamar_Click(object sender, EventArgs e)
+        {
+            
+            form_kamar fk = new form_kamar();
+            fk.Show();
+        }
     }
 }

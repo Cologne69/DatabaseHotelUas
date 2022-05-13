@@ -72,6 +72,9 @@
             this.button40 = new System.Windows.Forms.Button();
             this.button41 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
+            this.gb_lantai = new System.Windows.Forms.GroupBox();
+            this.btn_lantai1 = new System.Windows.Forms.Button();
+            this.gb_lantai.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -510,11 +513,31 @@
             this.button42.Text = "A106";
             this.button42.UseVisualStyleBackColor = false;
             // 
+            // gb_lantai
+            // 
+            this.gb_lantai.Controls.Add(this.btn_lantai1);
+            this.gb_lantai.Location = new System.Drawing.Point(461, 481);
+            this.gb_lantai.Name = "gb_lantai";
+            this.gb_lantai.Size = new System.Drawing.Size(334, 264);
+            this.gb_lantai.TabIndex = 52;
+            this.gb_lantai.TabStop = false;
+            this.gb_lantai.Text = "LANTAI";
+            // 
+            // btn_lantai1
+            // 
+            this.btn_lantai1.Location = new System.Drawing.Point(15, 41);
+            this.btn_lantai1.Name = "btn_lantai1";
+            this.btn_lantai1.Size = new System.Drawing.Size(304, 43);
+            this.btn_lantai1.TabIndex = 0;
+            this.btn_lantai1.Text = "Lantai 1";
+            this.btn_lantai1.UseVisualStyleBackColor = true;
+            // 
             // form_kamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1269, 817);
+            this.Controls.Add(this.gb_lantai);
             this.Controls.Add(this.button41);
             this.Controls.Add(this.button42);
             this.Controls.Add(this.button22);
@@ -561,6 +584,7 @@
             this.Controls.Add(this.btn_exit);
             this.Name = "form_kamar";
             this.Text = "Kamar";
+            this.gb_lantai.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -612,5 +636,7 @@
         private System.Windows.Forms.Button button40;
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Button button42;
+        private System.Windows.Forms.GroupBox gb_lantai;
+        private System.Windows.Forms.Button btn_lantai1;
     }
 }
