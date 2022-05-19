@@ -7,20 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace DatabaseHotelUas
 {
-    public partial class form_resto : Form
+    public partial class Form_Cek_Transaksi : Form
     {
-        public form_resto()
+        public Form_Cek_Transaksi()
         {
             InitializeComponent();
         }
 
+        
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            form_main.fm.Enabled = true;
+            
             this.Hide();
             
         }

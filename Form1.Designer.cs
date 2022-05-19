@@ -60,10 +60,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 59);
+            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(44, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 25);
+            this.label1.Size = new System.Drawing.Size(187, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nama Pelanggan: ";
             // 
@@ -78,22 +78,23 @@
             // lbl_chkin
             // 
             this.lbl_chkin.AutoSize = true;
-            this.lbl_chkin.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_chkin.Location = new System.Drawing.Point(41, 159);
+            this.lbl_chkin.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_chkin.Location = new System.Drawing.Point(44, 170);
             this.lbl_chkin.Name = "lbl_chkin";
-            this.lbl_chkin.Size = new System.Drawing.Size(200, 25);
+            this.lbl_chkin.Size = new System.Drawing.Size(192, 28);
             this.lbl_chkin.TabIndex = 8;
             this.lbl_chkin.Text = "Tanggal Check-In: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 245);
+            this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(44, 258);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(216, 25);
+            this.label2.Size = new System.Drawing.Size(210, 28);
             this.label2.TabIndex = 10;
             this.label2.Text = "Tanggal Check-Out: ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tgl_checkout
             // 

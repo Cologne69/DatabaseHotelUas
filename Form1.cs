@@ -17,13 +17,22 @@ namespace DatabaseHotelUas
         {
             InitializeComponent();
         }
+        
+        //----------------------------------------------------- BMYSQL SERVER -----------------------------------------------------
         public static string sqlConnection = "server=localhost;uid=root;pwd=;database=premier_league";
-        public MySqlConnection sqlConnect = new MySqlConnection(sqlConnection);
-        public MySqlCommand sqlCommand;
-        public MySqlDataAdapter mySqlAdapter;
+        public static MySqlConnection sqlConnect = new MySqlConnection(sqlConnection);
+        public static MySqlCommand sqlCommand;
+        public static MySqlDataAdapter mySqlAdapter;
         public string sqlQuery;
+        //----------------------------------------------------- MYSQL SERVER -----------------------------------------------------
+
         
-        
+        //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
+        public static Form_Cek_Transaksi fct = new Form_Cek_Transaksi();
+        public static form_kamar fk = new form_kamar();
+        public static form_resto fr = new form_resto();
+        public static form_main fm = new form_main();
+        //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
 
         private void lbl_testTanggal_Click(object sender, EventArgs e)
         {
@@ -37,14 +46,21 @@ namespace DatabaseHotelUas
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            
+            fct.ShowDialog();
+            
         }
-
+        
         private void btn_lihatkamar_Click(object sender, EventArgs e)
         {
             
-            form_kamar fk = new form_kamar();
-            fk.Show();
+            fk.ShowDialog();
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
