@@ -62,5 +62,10 @@ namespace DatabaseHotelUas
         {
 
         }
+
+        private void btn_fasilitasKamar_Click(object sender, EventArgs e)
+        {
+            fr.ShowDialog();
+        }
     }
 }

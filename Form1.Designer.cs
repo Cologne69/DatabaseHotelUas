@@ -38,7 +38,10 @@
             this.btn_checktrans = new System.Windows.Forms.Button();
             this.gb_kamar = new System.Windows.Forms.GroupBox();
             this.btn_lihatkamar = new System.Windows.Forms.Button();
+            this.btn_restoran = new System.Windows.Forms.Button();
+            this.gb_restoran = new System.Windows.Forms.GroupBox();
             this.gb_kamar.SuspendLayout();
+            this.gb_restoran.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_bookKamar
@@ -118,7 +121,7 @@
             this.gb_kamar.Controls.Add(this.btn_lihatkamar);
             this.gb_kamar.Location = new System.Drawing.Point(437, 201);
             this.gb_kamar.Name = "gb_kamar";
-            this.gb_kamar.Size = new System.Drawing.Size(460, 315);
+            this.gb_kamar.Size = new System.Drawing.Size(460, 100);
             this.gb_kamar.TabIndex = 12;
             this.gb_kamar.TabStop = false;
             this.gb_kamar.Text = "Kamar";
@@ -133,11 +136,32 @@
             this.btn_lihatkamar.UseVisualStyleBackColor = true;
             this.btn_lihatkamar.Click += new System.EventHandler(this.btn_lihatkamar_Click);
             // 
+            // btn_restoran
+            // 
+            this.btn_restoran.Location = new System.Drawing.Point(26, 40);
+            this.btn_restoran.Name = "btn_restoran";
+            this.btn_restoran.Size = new System.Drawing.Size(158, 54);
+            this.btn_restoran.TabIndex = 14;
+            this.btn_restoran.Text = "Restoran";
+            this.btn_restoran.UseVisualStyleBackColor = true;
+            this.btn_restoran.Click += new System.EventHandler(this.btn_fasilitasKamar_Click);
+            // 
+            // gb_restoran
+            // 
+            this.gb_restoran.Controls.Add(this.btn_restoran);
+            this.gb_restoran.Location = new System.Drawing.Point(437, 307);
+            this.gb_restoran.Name = "gb_restoran";
+            this.gb_restoran.Size = new System.Drawing.Size(460, 220);
+            this.gb_restoran.TabIndex = 14;
+            this.gb_restoran.TabStop = false;
+            this.gb_restoran.Text = "Restoran";
+            // 
             // form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 539);
+            this.Controls.Add(this.gb_restoran);
             this.Controls.Add(this.gb_kamar);
             this.Controls.Add(this.btn_checktrans);
             this.Controls.Add(this.label2);
@@ -151,6 +175,7 @@
             this.Name = "form_main";
             this.Text = "Form Hotel";
             this.gb_kamar.ResumeLayout(false);
+            this.gb_restoran.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,6 +193,8 @@
         private System.Windows.Forms.Button btn_checktrans;
         private System.Windows.Forms.GroupBox gb_kamar;
         private System.Windows.Forms.Button btn_lihatkamar;
+        private System.Windows.Forms.Button btn_restoran;
+        private System.Windows.Forms.GroupBox gb_restoran;
     }
 }
 

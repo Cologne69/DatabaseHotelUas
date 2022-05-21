@@ -20,9 +20,19 @@ namespace DatabaseHotelUas
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            form_main.fm.Enabled = true;
+            
             this.Hide();
             
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_jumlahMenu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
