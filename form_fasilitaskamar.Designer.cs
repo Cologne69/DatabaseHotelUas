@@ -58,6 +58,7 @@
             this.btn_pesan.TabIndex = 2;
             this.btn_pesan.Text = "Pesan";
             this.btn_pesan.UseVisualStyleBackColor = true;
+            this.btn_pesan.Click += new System.EventHandler(this.btn_pesan_Click);
             // 
             // directorySearcher1
             // 
@@ -92,6 +93,7 @@
             this.cb_pilihMenu.Name = "cb_pilihMenu";
             this.cb_pilihMenu.Size = new System.Drawing.Size(687, 28);
             this.cb_pilihMenu.TabIndex = 5;
+            this.cb_pilihMenu.SelectedIndexChanged += new System.EventHandler(this.cb_pilihMenu_SelectedIndexChanged);
             // 
             // label1
             // 

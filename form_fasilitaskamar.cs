@@ -18,6 +18,7 @@ namespace DatabaseHotelUas
             InitializeComponent();
         }
 
+        
         private void btn_exit_Click(object sender, EventArgs e)
         {
             
@@ -33,6 +34,30 @@ namespace DatabaseHotelUas
         private void cb_jumlahMenu_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        
+        private void btn_pesan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_pilihMenu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //disable btn_pesan if cb_pilihMenu and cb_jumlah is empty
+            
+            
+            if (cb_pilihMenu.Text == "" || cb_jumlahMenu.Text == "")
+            {
+                btn_pesan.Enabled = false;
+            }
+            else
+            {
+                btn_pesan.Enabled = true;
+            }
+
+
+
         }
     }
 }
