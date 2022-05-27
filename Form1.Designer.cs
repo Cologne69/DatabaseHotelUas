@@ -28,107 +28,196 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_bookKamar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cb_parkir = new System.Windows.Forms.CheckBox();
-            this.cb_restoran = new System.Windows.Forms.CheckBox();
-            this.cb_fasilitaskamar = new System.Windows.Forms.CheckBox();
             this.tgl_checkin = new System.Windows.Forms.DateTimePicker();
-            this.lbl_testTanggal = new System.Windows.Forms.Label();
+            this.lbl_chkin = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tgl_checkout = new System.Windows.Forms.DateTimePicker();
+            this.btn_checktrans = new System.Windows.Forms.Button();
+            this.gb_kamar = new System.Windows.Forms.GroupBox();
+            this.btn_lihatkamar = new System.Windows.Forms.Button();
+            this.btn_restoran = new System.Windows.Forms.Button();
+            this.gb_restoran = new System.Windows.Forms.GroupBox();
+            this.gb_pelanggan = new System.Windows.Forms.GroupBox();
+            this.btn_cekidPelanggan = new System.Windows.Forms.Button();
+            this.cb_namaPelanggan = new System.Windows.Forms.ComboBox();
+            this.btn_tmbhPelanggan = new System.Windows.Forms.Button();
+            this.gb_kamar.SuspendLayout();
+            this.gb_restoran.SuspendLayout();
+            this.gb_pelanggan.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_bookKamar
             // 
-            this.button1.Location = new System.Drawing.Point(46, 442);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 54);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Enter";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(235, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(606, 26);
-            this.textBox1.TabIndex = 1;
+            this.btn_bookKamar.Location = new System.Drawing.Point(46, 442);
+            this.btn_bookKamar.Name = "btn_bookKamar";
+            this.btn_bookKamar.Size = new System.Drawing.Size(158, 54);
+            this.btn_bookKamar.TabIndex = 0;
+            this.btn_bookKamar.Text = "Book Kamar";
+            this.btn_bookKamar.UseVisualStyleBackColor = true;
+            this.btn_bookKamar.Click += new System.EventHandler(this.btn_bookKamar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 61);
+            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(44, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 25);
+            this.label1.Size = new System.Drawing.Size(187, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nama Pelanggan: ";
             // 
-            // cb_parkir
-            // 
-            this.cb_parkir.AutoSize = true;
-            this.cb_parkir.Location = new System.Drawing.Point(46, 225);
-            this.cb_parkir.Name = "cb_parkir";
-            this.cb_parkir.Size = new System.Drawing.Size(75, 24);
-            this.cb_parkir.TabIndex = 3;
-            this.cb_parkir.Text = "Parkir";
-            this.cb_parkir.UseVisualStyleBackColor = true;
-            this.cb_parkir.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // cb_restoran
-            // 
-            this.cb_restoran.AutoSize = true;
-            this.cb_restoran.Location = new System.Drawing.Point(46, 365);
-            this.cb_restoran.Name = "cb_restoran";
-            this.cb_restoran.Size = new System.Drawing.Size(101, 24);
-            this.cb_restoran.TabIndex = 4;
-            this.cb_restoran.Text = "Restoran";
-            this.cb_restoran.UseVisualStyleBackColor = true;
-            // 
-            // cb_fasilitaskamar
-            // 
-            this.cb_fasilitaskamar.AutoSize = true;
-            this.cb_fasilitaskamar.Location = new System.Drawing.Point(46, 294);
-            this.cb_fasilitaskamar.Name = "cb_fasilitaskamar";
-            this.cb_fasilitaskamar.Size = new System.Drawing.Size(143, 24);
-            this.cb_fasilitaskamar.TabIndex = 5;
-            this.cb_fasilitaskamar.Text = "Fasilitas Kamar";
-            this.cb_fasilitaskamar.UseVisualStyleBackColor = true;
-            // 
             // tgl_checkin
             // 
-            this.tgl_checkin.Location = new System.Drawing.Point(235, 159);
+            this.tgl_checkin.Location = new System.Drawing.Point(46, 201);
             this.tgl_checkin.Name = "tgl_checkin";
-            this.tgl_checkin.Size = new System.Drawing.Size(304, 26);
+            this.tgl_checkin.Size = new System.Drawing.Size(277, 26);
             this.tgl_checkin.TabIndex = 7;
             this.tgl_checkin.ValueChanged += new System.EventHandler(this.tgl_checkin_ValueChanged);
             // 
-            // lbl_testTanggal
+            // lbl_chkin
             // 
-            this.lbl_testTanggal.AutoSize = true;
-            this.lbl_testTanggal.Location = new System.Drawing.Point(231, 188);
-            this.lbl_testTanggal.Name = "lbl_testTanggal";
-            this.lbl_testTanggal.Size = new System.Drawing.Size(21, 20);
-            this.lbl_testTanggal.TabIndex = 8;
-            this.lbl_testTanggal.Text = "...";
-            this.lbl_testTanggal.Click += new System.EventHandler(this.lbl_testTanggal_Click);
+            this.lbl_chkin.AutoSize = true;
+            this.lbl_chkin.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_chkin.Location = new System.Drawing.Point(44, 170);
+            this.lbl_chkin.Name = "lbl_chkin";
+            this.lbl_chkin.Size = new System.Drawing.Size(192, 28);
+            this.lbl_chkin.TabIndex = 8;
+            this.lbl_chkin.Text = "Tanggal Check-In: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(44, 258);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(210, 28);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Tanggal Check-Out: ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // tgl_checkout
+            // 
+            this.tgl_checkout.Location = new System.Drawing.Point(46, 287);
+            this.tgl_checkout.Name = "tgl_checkout";
+            this.tgl_checkout.Size = new System.Drawing.Size(277, 26);
+            this.tgl_checkout.TabIndex = 9;
+            // 
+            // btn_checktrans
+            // 
+            this.btn_checktrans.Location = new System.Drawing.Point(226, 442);
+            this.btn_checktrans.Name = "btn_checktrans";
+            this.btn_checktrans.Size = new System.Drawing.Size(158, 54);
+            this.btn_checktrans.TabIndex = 11;
+            this.btn_checktrans.Text = "Cek Transaksi";
+            this.btn_checktrans.UseVisualStyleBackColor = true;
+            this.btn_checktrans.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // gb_kamar
+            // 
+            this.gb_kamar.Controls.Add(this.btn_lihatkamar);
+            this.gb_kamar.Location = new System.Drawing.Point(437, 201);
+            this.gb_kamar.Name = "gb_kamar";
+            this.gb_kamar.Size = new System.Drawing.Size(460, 100);
+            this.gb_kamar.TabIndex = 12;
+            this.gb_kamar.TabStop = false;
+            this.gb_kamar.Text = "Kamar";
+            // 
+            // btn_lihatkamar
+            // 
+            this.btn_lihatkamar.Location = new System.Drawing.Point(26, 31);
+            this.btn_lihatkamar.Name = "btn_lihatkamar";
+            this.btn_lihatkamar.Size = new System.Drawing.Size(158, 54);
+            this.btn_lihatkamar.TabIndex = 13;
+            this.btn_lihatkamar.Text = "Lihat Kamar";
+            this.btn_lihatkamar.UseVisualStyleBackColor = true;
+            this.btn_lihatkamar.Click += new System.EventHandler(this.btn_lihatkamar_Click);
+            // 
+            // btn_restoran
+            // 
+            this.btn_restoran.Location = new System.Drawing.Point(26, 40);
+            this.btn_restoran.Name = "btn_restoran";
+            this.btn_restoran.Size = new System.Drawing.Size(158, 54);
+            this.btn_restoran.TabIndex = 14;
+            this.btn_restoran.Text = "Restoran";
+            this.btn_restoran.UseVisualStyleBackColor = true;
+            this.btn_restoran.Click += new System.EventHandler(this.btn_fasilitasKamar_Click);
+            // 
+            // gb_restoran
+            // 
+            this.gb_restoran.Controls.Add(this.btn_restoran);
+            this.gb_restoran.Location = new System.Drawing.Point(437, 307);
+            this.gb_restoran.Name = "gb_restoran";
+            this.gb_restoran.Size = new System.Drawing.Size(460, 107);
+            this.gb_restoran.TabIndex = 14;
+            this.gb_restoran.TabStop = false;
+            this.gb_restoran.Text = "Restoran";
+            // 
+            // gb_pelanggan
+            // 
+            this.gb_pelanggan.Controls.Add(this.btn_tmbhPelanggan);
+            this.gb_pelanggan.Controls.Add(this.btn_cekidPelanggan);
+            this.gb_pelanggan.Location = new System.Drawing.Point(437, 420);
+            this.gb_pelanggan.Name = "gb_pelanggan";
+            this.gb_pelanggan.Size = new System.Drawing.Size(460, 107);
+            this.gb_pelanggan.TabIndex = 15;
+            this.gb_pelanggan.TabStop = false;
+            this.gb_pelanggan.Text = "Pelanggan";
+            this.gb_pelanggan.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btn_cekidPelanggan
+            // 
+            this.btn_cekidPelanggan.Location = new System.Drawing.Point(26, 40);
+            this.btn_cekidPelanggan.Name = "btn_cekidPelanggan";
+            this.btn_cekidPelanggan.Size = new System.Drawing.Size(158, 54);
+            this.btn_cekidPelanggan.TabIndex = 14;
+            this.btn_cekidPelanggan.Text = "Cek ID Pelanggan";
+            this.btn_cekidPelanggan.UseVisualStyleBackColor = true;
+            this.btn_cekidPelanggan.Click += new System.EventHandler(this.btn_cekidPelanggan_Click);
+            // 
+            // cb_namaPelanggan
+            // 
+            this.cb_namaPelanggan.FormattingEnabled = true;
+            this.cb_namaPelanggan.Location = new System.Drawing.Point(49, 100);
+            this.cb_namaPelanggan.Name = "cb_namaPelanggan";
+            this.cb_namaPelanggan.Size = new System.Drawing.Size(766, 28);
+            this.cb_namaPelanggan.TabIndex = 16;
+            this.cb_namaPelanggan.SelectedIndexChanged += new System.EventHandler(this.cb_namaPelanggan_SelectedIndexChanged);
+            // 
+            // btn_tmbhPelanggan
+            // 
+            this.btn_tmbhPelanggan.Location = new System.Drawing.Point(275, 40);
+            this.btn_tmbhPelanggan.Name = "btn_tmbhPelanggan";
+            this.btn_tmbhPelanggan.Size = new System.Drawing.Size(158, 54);
+            this.btn_tmbhPelanggan.TabIndex = 15;
+            this.btn_tmbhPelanggan.Text = "Tambah Pelanggan";
+            this.btn_tmbhPelanggan.UseVisualStyleBackColor = true;
+            this.btn_tmbhPelanggan.Click += new System.EventHandler(this.btn_tmbhPelanggan_Click);
             // 
             // form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1202, 539);
-            this.Controls.Add(this.lbl_testTanggal);
+            this.ClientSize = new System.Drawing.Size(922, 539);
+            this.Controls.Add(this.cb_namaPelanggan);
+            this.Controls.Add(this.gb_pelanggan);
+            this.Controls.Add(this.gb_restoran);
+            this.Controls.Add(this.gb_kamar);
+            this.Controls.Add(this.btn_checktrans);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tgl_checkout);
+            this.Controls.Add(this.lbl_chkin);
             this.Controls.Add(this.tgl_checkin);
-            this.Controls.Add(this.cb_fasilitaskamar);
-            this.Controls.Add(this.cb_restoran);
-            this.Controls.Add(this.cb_parkir);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_bookKamar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "form_main";
-            this.Text = "HOTEL CALIFORNIA";
+            this.Text = "Form Hotel";
+            this.Load += new System.EventHandler(this.form_main_Load);
+            this.gb_kamar.ResumeLayout(false);
+            this.gb_restoran.ResumeLayout(false);
+            this.gb_pelanggan.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,14 +225,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_bookKamar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox cb_parkir;
-        private System.Windows.Forms.CheckBox cb_restoran;
-        private System.Windows.Forms.CheckBox cb_fasilitaskamar;
         private System.Windows.Forms.DateTimePicker tgl_checkin;
-        private System.Windows.Forms.Label lbl_testTanggal;
+        private System.Windows.Forms.Label lbl_chkin;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker tgl_checkout;
+        private System.Windows.Forms.Button btn_checktrans;
+        private System.Windows.Forms.GroupBox gb_kamar;
+        private System.Windows.Forms.Button btn_lihatkamar;
+        private System.Windows.Forms.Button btn_restoran;
+        private System.Windows.Forms.GroupBox gb_restoran;
+        private System.Windows.Forms.GroupBox gb_pelanggan;
+        private System.Windows.Forms.Button btn_cekidPelanggan;
+        private System.Windows.Forms.ComboBox cb_namaPelanggan;
+        private System.Windows.Forms.Button btn_tmbhPelanggan;
     }
 }
 

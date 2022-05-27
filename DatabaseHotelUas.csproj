@@ -47,7 +47,14 @@
     <Reference Include="DevExpress.XtraScheduler.v21.2.Core.Desktop, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form Cek Transaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Cek Transaksi.Designer.cs">
+      <DependentUpon>Form Cek Transaksi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,8 +90,23 @@
     <Compile Include="form_fasilitaskamar.Designer.cs">
       <DependentUpon>form_fasilitaskamar.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_idPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_idPelanggan.Designer.cs">
+      <DependentUpon>form_idPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_tambahPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_tambahPelanggan.Designer.cs">
+      <DependentUpon>form_tambahPelanggan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form Cek Transaksi.resx">
+      <DependentUpon>Form Cek Transaksi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +115,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_fasilitaskamar.resx">
       <DependentUpon>form_fasilitaskamar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_idPelanggan.resx">
+      <DependentUpon>form_idPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_tambahPelanggan.resx">
+      <DependentUpon>form_tambahPelanggan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

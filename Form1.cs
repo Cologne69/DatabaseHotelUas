@@ -17,19 +17,25 @@ namespace DatabaseHotelUas
         {
             InitializeComponent();
         }
+        
+        //----------------------------------------------------- BMYSQL SERVER -----------------------------------------------------
         public static string sqlConnection = "server=localhost;uid=root;pwd=;database=premier_league";
-        public MySqlConnection sqlConnect = new MySqlConnection(sqlConnection);
-        public MySqlCommand sqlCommand;
-        public MySqlDataAdapter mySqlAdapter;
+        public static MySqlConnection sqlConnect = new MySqlConnection(sqlConnection);
+        public static MySqlCommand sqlCommand;
+        public static MySqlDataAdapter mySqlAdapter;
         public string sqlQuery;
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_parkir.Checked)
-            {
-                form_parkir fp = new form_parkir();
-                fp.Show();
-            }
-        }
+        //----------------------------------------------------- MYSQL SERVER -----------------------------------------------------
+
+        
+        //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
+        public static Form_Cek_Transaksi fct = new Form_Cek_Transaksi();
+        public static form_kamar fk = new form_kamar();
+        public static form_resto fr = new form_resto();
+        public static form_main fm = new form_main();
+        public static form_idPelanggan fcidp = new form_idPelanggan();
+        public static form_tambahPelanggan ftp = new form_tambahPelanggan();
+
+        //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
 
         private void lbl_testTanggal_Click(object sender, EventArgs e)
         {
@@ -38,7 +44,65 @@ namespace DatabaseHotelUas
 
         private void tgl_checkin_ValueChanged(object sender, EventArgs e)
         {
-            lbl_testTanggal.Text = tgl_checkin.Value.ToString("dd MMMM yyyy");
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            fct.ShowDialog();
+            
+        }
+        
+        private void btn_lihatkamar_Click(object sender, EventArgs e)
+        {
+            
+            fk.ShowDialog();
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_fasilitasKamar_Click(object sender, EventArgs e)
+        {
+            fr.ShowDialog();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cekidPelanggan_Click(object sender, EventArgs e)
+        {
+            fcidp.ShowDialog();
+        }
+
+        private void cb_namaPelanggan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void form_main_Load(object sender, EventArgs e)
+        {
+            cb_namaPelanggan.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cb_namaPelanggan.AutoCompleteSource = AutoCompleteSource.ListItems;
+        }
+
+        private void btn_tmbhPelanggan_Click(object sender, EventArgs e)
+        {
+            ftp.ShowDialog();
+        }
+
+        private void btn_bookKamar_Click(object sender, EventArgs e)
+        {
+            //Convert.ToDateTime(tgl_checkin);
+            //Convert.ToDateTime(tgl_checkout);
+            
+
         }
     }
 }
