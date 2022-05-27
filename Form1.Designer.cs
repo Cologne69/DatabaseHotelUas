@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btn_bookKamar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tgl_checkin = new System.Windows.Forms.DateTimePicker();
             this.lbl_chkin = new System.Windows.Forms.Label();
@@ -40,8 +39,12 @@
             this.btn_lihatkamar = new System.Windows.Forms.Button();
             this.btn_restoran = new System.Windows.Forms.Button();
             this.gb_restoran = new System.Windows.Forms.GroupBox();
+            this.gb_pelanggan = new System.Windows.Forms.GroupBox();
+            this.btn_cekidPelanggan = new System.Windows.Forms.Button();
+            this.cb_namaPelanggan = new System.Windows.Forms.ComboBox();
             this.gb_kamar.SuspendLayout();
             this.gb_restoran.SuspendLayout();
+            this.gb_pelanggan.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_bookKamar
@@ -53,18 +56,11 @@
             this.btn_bookKamar.Text = "Book Kamar";
             this.btn_bookKamar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(46, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(822, 26);
-            this.textBox1.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 69);
+            this.label1.Location = new System.Drawing.Point(44, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(187, 28);
             this.label1.TabIndex = 2;
@@ -151,16 +147,48 @@
             this.gb_restoran.Controls.Add(this.btn_restoran);
             this.gb_restoran.Location = new System.Drawing.Point(437, 307);
             this.gb_restoran.Name = "gb_restoran";
-            this.gb_restoran.Size = new System.Drawing.Size(460, 220);
+            this.gb_restoran.Size = new System.Drawing.Size(460, 107);
             this.gb_restoran.TabIndex = 14;
             this.gb_restoran.TabStop = false;
             this.gb_restoran.Text = "Restoran";
+            // 
+            // gb_pelanggan
+            // 
+            this.gb_pelanggan.Controls.Add(this.btn_cekidPelanggan);
+            this.gb_pelanggan.Location = new System.Drawing.Point(437, 420);
+            this.gb_pelanggan.Name = "gb_pelanggan";
+            this.gb_pelanggan.Size = new System.Drawing.Size(460, 107);
+            this.gb_pelanggan.TabIndex = 15;
+            this.gb_pelanggan.TabStop = false;
+            this.gb_pelanggan.Text = "Pelanggan";
+            this.gb_pelanggan.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btn_cekidPelanggan
+            // 
+            this.btn_cekidPelanggan.Location = new System.Drawing.Point(26, 40);
+            this.btn_cekidPelanggan.Name = "btn_cekidPelanggan";
+            this.btn_cekidPelanggan.Size = new System.Drawing.Size(158, 54);
+            this.btn_cekidPelanggan.TabIndex = 14;
+            this.btn_cekidPelanggan.Text = "Cek ID Pelanggan";
+            this.btn_cekidPelanggan.UseVisualStyleBackColor = true;
+            this.btn_cekidPelanggan.Click += new System.EventHandler(this.btn_cekidPelanggan_Click);
+            // 
+            // cb_namaPelanggan
+            // 
+            this.cb_namaPelanggan.FormattingEnabled = true;
+            this.cb_namaPelanggan.Location = new System.Drawing.Point(49, 100);
+            this.cb_namaPelanggan.Name = "cb_namaPelanggan";
+            this.cb_namaPelanggan.Size = new System.Drawing.Size(572, 28);
+            this.cb_namaPelanggan.TabIndex = 16;
+            this.cb_namaPelanggan.SelectedIndexChanged += new System.EventHandler(this.cb_namaPelanggan_SelectedIndexChanged);
             // 
             // form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 539);
+            this.Controls.Add(this.cb_namaPelanggan);
+            this.Controls.Add(this.gb_pelanggan);
             this.Controls.Add(this.gb_restoran);
             this.Controls.Add(this.gb_kamar);
             this.Controls.Add(this.btn_checktrans);
@@ -169,13 +197,14 @@
             this.Controls.Add(this.lbl_chkin);
             this.Controls.Add(this.tgl_checkin);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_bookKamar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "form_main";
             this.Text = "Form Hotel";
+            this.Load += new System.EventHandler(this.form_main_Load);
             this.gb_kamar.ResumeLayout(false);
             this.gb_restoran.ResumeLayout(false);
+            this.gb_pelanggan.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,7 +213,6 @@
         #endregion
 
         private System.Windows.Forms.Button btn_bookKamar;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker tgl_checkin;
         private System.Windows.Forms.Label lbl_chkin;
@@ -195,6 +223,9 @@
         private System.Windows.Forms.Button btn_lihatkamar;
         private System.Windows.Forms.Button btn_restoran;
         private System.Windows.Forms.GroupBox gb_restoran;
+        private System.Windows.Forms.GroupBox gb_pelanggan;
+        private System.Windows.Forms.Button btn_cekidPelanggan;
+        private System.Windows.Forms.ComboBox cb_namaPelanggan;
     }
 }
 

@@ -32,6 +32,8 @@ namespace DatabaseHotelUas
         public static form_kamar fk = new form_kamar();
         public static form_resto fr = new form_resto();
         public static form_main fm = new form_main();
+        public static form_idPelanggan fcidp = new form_idPelanggan();
+        
         //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
 
         private void lbl_testTanggal_Click(object sender, EventArgs e)
@@ -66,6 +68,27 @@ namespace DatabaseHotelUas
         private void btn_fasilitasKamar_Click(object sender, EventArgs e)
         {
             fr.ShowDialog();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cekidPelanggan_Click(object sender, EventArgs e)
+        {
+            fcidp.ShowDialog();
+        }
+
+        private void cb_namaPelanggan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void form_main_Load(object sender, EventArgs e)
+        {
+            cb_namaPelanggan.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cb_namaPelanggan.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
     }
 }
