@@ -33,7 +33,8 @@ namespace DatabaseHotelUas
         public static form_resto fr = new form_resto();
         public static form_main fm = new form_main();
         public static form_idPelanggan fcidp = new form_idPelanggan();
-        
+        public static form_tambahPelanggan ftp = new form_tambahPelanggan();
+
         //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
 
         private void lbl_testTanggal_Click(object sender, EventArgs e)
@@ -89,6 +90,11 @@ namespace DatabaseHotelUas
         {
             cb_namaPelanggan.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cb_namaPelanggan.AutoCompleteSource = AutoCompleteSource.ListItems;
+        }
+
+        private void btn_tmbhPelanggan_Click(object sender, EventArgs e)
+        {
+            ftp.ShowDialog();
         }
     }
 }

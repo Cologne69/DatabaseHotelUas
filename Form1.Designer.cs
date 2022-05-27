@@ -42,6 +42,7 @@
             this.gb_pelanggan = new System.Windows.Forms.GroupBox();
             this.btn_cekidPelanggan = new System.Windows.Forms.Button();
             this.cb_namaPelanggan = new System.Windows.Forms.ComboBox();
+            this.btn_tmbhPelanggan = new System.Windows.Forms.Button();
             this.gb_kamar.SuspendLayout();
             this.gb_restoran.SuspendLayout();
             this.gb_pelanggan.SuspendLayout();
@@ -154,6 +155,7 @@
             // 
             // gb_pelanggan
             // 
+            this.gb_pelanggan.Controls.Add(this.btn_tmbhPelanggan);
             this.gb_pelanggan.Controls.Add(this.btn_cekidPelanggan);
             this.gb_pelanggan.Location = new System.Drawing.Point(437, 420);
             this.gb_pelanggan.Name = "gb_pelanggan";
@@ -181,6 +183,16 @@
             this.cb_namaPelanggan.Size = new System.Drawing.Size(572, 28);
             this.cb_namaPelanggan.TabIndex = 16;
             this.cb_namaPelanggan.SelectedIndexChanged += new System.EventHandler(this.cb_namaPelanggan_SelectedIndexChanged);
+            // 
+            // btn_tmbhPelanggan
+            // 
+            this.btn_tmbhPelanggan.Location = new System.Drawing.Point(275, 40);
+            this.btn_tmbhPelanggan.Name = "btn_tmbhPelanggan";
+            this.btn_tmbhPelanggan.Size = new System.Drawing.Size(158, 54);
+            this.btn_tmbhPelanggan.TabIndex = 15;
+            this.btn_tmbhPelanggan.Text = "Tambah Pelanggan";
+            this.btn_tmbhPelanggan.UseVisualStyleBackColor = true;
+            this.btn_tmbhPelanggan.Click += new System.EventHandler(this.btn_tmbhPelanggan_Click);
             // 
             // form_main
             // 
@@ -226,6 +238,7 @@
         private System.Windows.Forms.GroupBox gb_pelanggan;
         private System.Windows.Forms.Button btn_cekidPelanggan;
         private System.Windows.Forms.ComboBox cb_namaPelanggan;
+        private System.Windows.Forms.Button btn_tmbhPelanggan;
     }
 }
 
