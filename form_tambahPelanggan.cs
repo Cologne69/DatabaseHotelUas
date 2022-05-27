@@ -29,7 +29,6 @@ namespace DatabaseHotelUas
         }
 
         private void btn_tambahPelanggan_Click(object sender, EventArgs e)
-
         {
             txt_KotaPelanggan.Text.ToUpper();
             txt_namaPelanggan.Text.ToUpper();
@@ -42,6 +41,15 @@ namespace DatabaseHotelUas
                 MessageBox.Show($"Pelanggan dengan NAMA: {txt_namaPelanggan.Text} dan ID: {txt_idPelanggan.Text} berhasil ditambahkan");
             }
             
+        }
+
+        private void txt_idPelanggan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

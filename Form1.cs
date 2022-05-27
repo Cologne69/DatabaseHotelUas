@@ -96,5 +96,13 @@ namespace DatabaseHotelUas
         {
             ftp.ShowDialog();
         }
+
+        private void btn_bookKamar_Click(object sender, EventArgs e)
+        {
+            //Convert.ToDateTime(tgl_checkin);
+            //Convert.ToDateTime(tgl_checkout);
+            
+
+        }
     }
 }

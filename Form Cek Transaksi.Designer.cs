@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.dgv_cekTrans = new System.Windows.Forms.DataGridView();
-            this.txt_transCariPel = new System.Windows.Forms.TextBox();
-            this.lbl_transCariPel = new System.Windows.Forms.Label();
-            this.lbl_statusTrans = new System.Windows.Forms.Label();
             this.lbl_transCariID = new System.Windows.Forms.Label();
             this.txt_transCariID = new System.Windows.Forms.TextBox();
-            this.txt_statusPembayaran = new System.Windows.Forms.TextBox();
             this.btn_prosesCekTransaksi = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
+            this.lbl_statusTrans = new System.Windows.Forms.Label();
+            this.txt_statusPembayaran = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cekTrans)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,37 +48,10 @@
             this.dgv_cekTrans.Size = new System.Drawing.Size(1222, 426);
             this.dgv_cekTrans.TabIndex = 0;
             // 
-            // txt_transCariPel
-            // 
-            this.txt_transCariPel.Location = new System.Drawing.Point(171, 473);
-            this.txt_transCariPel.Name = "txt_transCariPel";
-            this.txt_transCariPel.Size = new System.Drawing.Size(500, 26);
-            this.txt_transCariPel.TabIndex = 1;
-            // 
-            // lbl_transCariPel
-            // 
-            this.lbl_transCariPel.AutoSize = true;
-            this.lbl_transCariPel.Location = new System.Drawing.Point(12, 476);
-            this.lbl_transCariPel.Name = "lbl_transCariPel";
-            this.lbl_transCariPel.Size = new System.Drawing.Size(125, 20);
-            this.lbl_transCariPel.TabIndex = 2;
-            this.lbl_transCariPel.Text = "Cari Pelanggan: ";
-            this.lbl_transCariPel.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lbl_statusTrans
-            // 
-            this.lbl_statusTrans.AutoSize = true;
-            this.lbl_statusTrans.Location = new System.Drawing.Point(895, 565);
-            this.lbl_statusTrans.Name = "lbl_statusTrans";
-            this.lbl_statusTrans.Size = new System.Drawing.Size(157, 20);
-            this.lbl_statusTrans.TabIndex = 3;
-            this.lbl_statusTrans.Text = "Status Pembayaran: ";
-            this.lbl_statusTrans.Click += new System.EventHandler(this.label2_Click);
-            // 
             // lbl_transCariID
             // 
             this.lbl_transCariID.AutoSize = true;
-            this.lbl_transCariID.Location = new System.Drawing.Point(12, 532);
+            this.lbl_transCariID.Location = new System.Drawing.Point(81, 495);
             this.lbl_transCariID.Name = "lbl_transCariID";
             this.lbl_transCariID.Size = new System.Drawing.Size(138, 20);
             this.lbl_transCariID.TabIndex = 4;
@@ -88,22 +59,14 @@
             // 
             // txt_transCariID
             // 
-            this.txt_transCariID.Location = new System.Drawing.Point(171, 529);
+            this.txt_transCariID.Location = new System.Drawing.Point(234, 492);
             this.txt_transCariID.Name = "txt_transCariID";
             this.txt_transCariID.Size = new System.Drawing.Size(500, 26);
             this.txt_transCariID.TabIndex = 5;
             // 
-            // txt_statusPembayaran
-            // 
-            this.txt_statusPembayaran.Location = new System.Drawing.Point(824, 588);
-            this.txt_statusPembayaran.Name = "txt_statusPembayaran";
-            this.txt_statusPembayaran.ReadOnly = true;
-            this.txt_statusPembayaran.Size = new System.Drawing.Size(303, 26);
-            this.txt_statusPembayaran.TabIndex = 6;
-            // 
             // btn_prosesCekTransaksi
             // 
-            this.btn_prosesCekTransaksi.Location = new System.Drawing.Point(12, 673);
+            this.btn_prosesCekTransaksi.Location = new System.Drawing.Point(12, 611);
             this.btn_prosesCekTransaksi.Name = "btn_prosesCekTransaksi";
             this.btn_prosesCekTransaksi.Size = new System.Drawing.Size(139, 45);
             this.btn_prosesCekTransaksi.TabIndex = 7;
@@ -112,7 +75,7 @@
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(1095, 673);
+            this.btn_exit.Location = new System.Drawing.Point(1095, 611);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(139, 45);
             this.btn_exit.TabIndex = 8;
@@ -120,19 +83,35 @@
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
+            // lbl_statusTrans
+            // 
+            this.lbl_statusTrans.AutoSize = true;
+            this.lbl_statusTrans.Location = new System.Drawing.Point(895, 492);
+            this.lbl_statusTrans.Name = "lbl_statusTrans";
+            this.lbl_statusTrans.Size = new System.Drawing.Size(157, 20);
+            this.lbl_statusTrans.TabIndex = 3;
+            this.lbl_statusTrans.Text = "Status Pembayaran: ";
+            this.lbl_statusTrans.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // txt_statusPembayaran
+            // 
+            this.txt_statusPembayaran.Location = new System.Drawing.Point(823, 538);
+            this.txt_statusPembayaran.Name = "txt_statusPembayaran";
+            this.txt_statusPembayaran.ReadOnly = true;
+            this.txt_statusPembayaran.Size = new System.Drawing.Size(303, 26);
+            this.txt_statusPembayaran.TabIndex = 6;
+            // 
             // Form_Cek_Transaksi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 730);
+            this.ClientSize = new System.Drawing.Size(1246, 663);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_prosesCekTransaksi);
             this.Controls.Add(this.txt_statusPembayaran);
             this.Controls.Add(this.txt_transCariID);
             this.Controls.Add(this.lbl_transCariID);
             this.Controls.Add(this.lbl_statusTrans);
-            this.Controls.Add(this.lbl_transCariPel);
-            this.Controls.Add(this.txt_transCariPel);
             this.Controls.Add(this.dgv_cekTrans);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_Cek_Transaksi";
@@ -146,13 +125,11 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_cekTrans;
-        private System.Windows.Forms.TextBox txt_transCariPel;
-        private System.Windows.Forms.Label lbl_transCariPel;
-        private System.Windows.Forms.Label lbl_statusTrans;
         private System.Windows.Forms.Label lbl_transCariID;
         private System.Windows.Forms.TextBox txt_transCariID;
-        private System.Windows.Forms.TextBox txt_statusPembayaran;
         private System.Windows.Forms.Button btn_prosesCekTransaksi;
         private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.Label lbl_statusTrans;
+        private System.Windows.Forms.TextBox txt_statusPembayaran;
     }
 }

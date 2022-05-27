@@ -56,6 +56,7 @@
             this.btn_bookKamar.TabIndex = 0;
             this.btn_bookKamar.Text = "Book Kamar";
             this.btn_bookKamar.UseVisualStyleBackColor = true;
+            this.btn_bookKamar.Click += new System.EventHandler(this.btn_bookKamar_Click);
             // 
             // label1
             // 
@@ -180,7 +181,7 @@
             this.cb_namaPelanggan.FormattingEnabled = true;
             this.cb_namaPelanggan.Location = new System.Drawing.Point(49, 100);
             this.cb_namaPelanggan.Name = "cb_namaPelanggan";
-            this.cb_namaPelanggan.Size = new System.Drawing.Size(572, 28);
+            this.cb_namaPelanggan.Size = new System.Drawing.Size(766, 28);
             this.cb_namaPelanggan.TabIndex = 16;
             this.cb_namaPelanggan.SelectedIndexChanged += new System.EventHandler(this.cb_namaPelanggan_SelectedIndexChanged);
             // 
