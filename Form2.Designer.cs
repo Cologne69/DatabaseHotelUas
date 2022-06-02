@@ -73,8 +73,8 @@
             this.btn_A139 = new System.Windows.Forms.Button();
             this.btn_A140 = new System.Windows.Forms.Button();
             this.gb_lantai = new System.Windows.Forms.GroupBox();
-            this.btn_lantai1 = new System.Windows.Forms.Button();
             this.btn_lantai2 = new System.Windows.Forms.Button();
+            this.btn_lantai1 = new System.Windows.Forms.Button();
             this.btn_A239 = new System.Windows.Forms.Button();
             this.btn_A240 = new System.Windows.Forms.Button();
             this.btn_A227 = new System.Windows.Forms.Button();
@@ -565,17 +565,6 @@
             this.gb_lantai.TabStop = false;
             this.gb_lantai.Text = "LANTAI";
             // 
-            // btn_lantai1
-            // 
-            this.btn_lantai1.BackColor = System.Drawing.Color.Lime;
-            this.btn_lantai1.Location = new System.Drawing.Point(15, 41);
-            this.btn_lantai1.Name = "btn_lantai1";
-            this.btn_lantai1.Size = new System.Drawing.Size(304, 43);
-            this.btn_lantai1.TabIndex = 0;
-            this.btn_lantai1.Text = "Lantai 1";
-            this.btn_lantai1.UseVisualStyleBackColor = false;
-            this.btn_lantai1.Click += new System.EventHandler(this.btn_lantai1_Click);
-            // 
             // btn_lantai2
             // 
             this.btn_lantai2.BackColor = System.Drawing.Color.Red;
@@ -586,6 +575,17 @@
             this.btn_lantai2.Text = "Lantai 2";
             this.btn_lantai2.UseVisualStyleBackColor = false;
             this.btn_lantai2.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // btn_lantai1
+            // 
+            this.btn_lantai1.BackColor = System.Drawing.Color.Lime;
+            this.btn_lantai1.Location = new System.Drawing.Point(15, 41);
+            this.btn_lantai1.Name = "btn_lantai1";
+            this.btn_lantai1.Size = new System.Drawing.Size(304, 43);
+            this.btn_lantai1.TabIndex = 0;
+            this.btn_lantai1.Text = "Lantai 1";
+            this.btn_lantai1.UseVisualStyleBackColor = false;
+            this.btn_lantai1.Click += new System.EventHandler(this.btn_lantai1_Click);
             // 
             // btn_A239
             // 
@@ -1119,6 +1119,7 @@
             this.Controls.Add(this.btn_exit);
             this.Name = "form_kamar";
             this.Text = "Kamar";
+            this.Load += new System.EventHandler(this.form_kamar_Load);
             this.gb_lantai.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

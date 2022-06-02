@@ -31,13 +31,13 @@
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_pesan = new System.Windows.Forms.Button();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGV_Menu = new System.Windows.Forms.DataGridView();
             this.lbl_daftar = new System.Windows.Forms.Label();
             this.cb_pilihMenu = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_jumlahMenu = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Menu)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -66,15 +66,15 @@
             this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
             this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
             // 
-            // dataGridView1
+            // DGV_Menu
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 57);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 259);
-            this.dataGridView1.TabIndex = 3;
+            this.DGV_Menu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Menu.Location = new System.Drawing.Point(12, 57);
+            this.DGV_Menu.Name = "DGV_Menu";
+            this.DGV_Menu.RowHeadersWidth = 62;
+            this.DGV_Menu.RowTemplate.Height = 28;
+            this.DGV_Menu.Size = new System.Drawing.Size(776, 259);
+            this.DGV_Menu.TabIndex = 3;
             // 
             // lbl_daftar
             // 
@@ -131,13 +131,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_pilihMenu);
             this.Controls.Add(this.lbl_daftar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV_Menu);
             this.Controls.Add(this.btn_pesan);
             this.Controls.Add(this.btn_exit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "form_resto";
             this.Text = "Form Restoran";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.form_resto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Menu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,7 +149,7 @@
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_pesan;
         private System.DirectoryServices.DirectorySearcher directorySearcher1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGV_Menu;
         private System.Windows.Forms.Label lbl_daftar;
         private System.Windows.Forms.ComboBox cb_pilihMenu;
         private System.Windows.Forms.Label label1;

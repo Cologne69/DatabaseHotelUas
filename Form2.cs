@@ -207,6 +207,10 @@ namespace DatabaseHotelUas
             btn_A240.Hide();
             
         }
-        
+
+        private void form_kamar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

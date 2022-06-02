@@ -13,12 +13,17 @@ namespace DatabaseHotelUas
 {
     public partial class form_resto : Form
     {
+
+        public MySqlCommand sqlCommand;
+        public MySqlDataAdapter sqlAdapter;
+        public string sqlQuery;
+        
         public form_resto()
         {
             InitializeComponent();
         }
-
         
+
         private void btn_exit_Click(object sender, EventArgs e)
         {
             
@@ -28,7 +33,7 @@ namespace DatabaseHotelUas
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void cb_jumlahMenu_KeyPress(object sender, KeyPressEventArgs e)
@@ -41,7 +46,9 @@ namespace DatabaseHotelUas
         {
 
         }
-
+        new DataTable Menu = new DataTable();
+        
+        
         private void cb_pilihMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
             //disable btn_pesan if cb_pilihMenu and cb_jumlah is empty
@@ -56,8 +63,24 @@ namespace DatabaseHotelUas
                 btn_pesan.Enabled = true;
             }
 
+           
 
+    }
 
+        private void form_resto_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                sqlQuery = $"SELECT * FROM MENU ORDER BY MENU_NAMA";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(Menu);
+                DGV_Menu.DataSource = Menu;
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());   
+            }
+            
         }
     }
 }

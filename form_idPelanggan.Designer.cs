@@ -37,7 +37,7 @@
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(1284, 639);
+            this.btn_exit.Location = new System.Drawing.Point(759, 639);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(96, 35);
             this.btn_exit.TabIndex = 0;
@@ -52,7 +52,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1368, 500);
+            this.dataGridView1.Size = new System.Drawing.Size(845, 512);
             this.dataGridView1.TabIndex = 1;
             // 
             // txt_cariNamaPelanggan
@@ -75,7 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1392, 686);
+            this.ClientSize = new System.Drawing.Size(867, 686);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_cariNamaPelanggan);
             this.Controls.Add(this.dataGridView1);
@@ -83,6 +83,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "form_idPelanggan";
             this.Text = "Cek ID Pelanggan";
+            this.Load += new System.EventHandler(this.form_idPelanggan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

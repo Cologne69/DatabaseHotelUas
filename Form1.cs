@@ -17,16 +17,28 @@ namespace DatabaseHotelUas
         {
             InitializeComponent();
         }
-        
+
         //----------------------------------------------------- BMYSQL SERVER -----------------------------------------------------
-        public static string sqlConnection = "server=localhost;uid=root;pwd=;database=premier_league";
-        public static MySqlConnection sqlConnect = new MySqlConnection(sqlConnection);
-        public static MySqlCommand sqlCommand;
-        public static MySqlDataAdapter mySqlAdapter;
-        public string sqlQuery;
+
+        public static string sqlConnString = "server=139.255.11.84;uid=student;pwd=isbmantap;database=DBD_03_HOTEL";
+        public static MySqlConnection sqlConnect = new MySqlConnection(sqlConnString);
+
+        public static void TestKoneksi()
+        {
+            try
+            {
+                sqlConnect.Close();
+                sqlConnect.Open();
+                //MessageBox.Show("Koneksi Berhasil");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Koneksi Gagal");
+            }
+        }
         //----------------------------------------------------- MYSQL SERVER -----------------------------------------------------
 
-        
+
         //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
         public static Form_Cek_Transaksi fct = new Form_Cek_Transaksi();
         public static form_kamar fk = new form_kamar();
@@ -88,8 +100,10 @@ namespace DatabaseHotelUas
 
         private void form_main_Load(object sender, EventArgs e)
         {
+            TestKoneksi();
             cb_namaPelanggan.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cb_namaPelanggan.AutoCompleteSource = AutoCompleteSource.ListItems;
+            
         }
 
         private void btn_tmbhPelanggan_Click(object sender, EventArgs e)
