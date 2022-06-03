@@ -31,9 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_kamar));
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_A101 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btn_applyParkir = new System.Windows.Forms.Button();
-            this.lbl_custID = new System.Windows.Forms.Label();
+            this.btn_bookKamar = new System.Windows.Forms.Button();
             this.btn_A104 = new System.Windows.Forms.Button();
             this.btn_A102 = new System.Windows.Forms.Button();
             this.btn_A106 = new System.Windows.Forms.Button();
@@ -116,6 +114,12 @@
             this.btn_A202 = new System.Windows.Forms.Button();
             this.btn_A204 = new System.Windows.Forms.Button();
             this.btn_A201 = new System.Windows.Forms.Button();
+            this.cb_namaPelanggan = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tgl_checkout = new System.Windows.Forms.DateTimePicker();
+            this.lbl_chkin = new System.Windows.Forms.Label();
+            this.tgl_checkin = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.gb_lantai.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,31 +143,15 @@
             this.btn_A101.Text = "A101";
             this.btn_A101.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // btn_bookKamar
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(577, 26);
-            this.textBox1.TabIndex = 2;
-            // 
-            // btn_applyParkir
-            // 
-            this.btn_applyParkir.Location = new System.Drawing.Point(758, 70);
-            this.btn_applyParkir.Name = "btn_applyParkir";
-            this.btn_applyParkir.Size = new System.Drawing.Size(176, 50);
-            this.btn_applyParkir.TabIndex = 3;
-            this.btn_applyParkir.Text = "Apply";
-            this.btn_applyParkir.UseVisualStyleBackColor = true;
-            this.btn_applyParkir.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // lbl_custID
-            // 
-            this.lbl_custID.AutoSize = true;
-            this.lbl_custID.Location = new System.Drawing.Point(34, 85);
-            this.lbl_custID.Name = "lbl_custID";
-            this.lbl_custID.Size = new System.Drawing.Size(107, 20);
-            this.lbl_custID.TabIndex = 4;
-            this.lbl_custID.Text = "Customer ID: ";
+            this.btn_bookKamar.Location = new System.Drawing.Point(773, 60);
+            this.btn_bookKamar.Name = "btn_bookKamar";
+            this.btn_bookKamar.Size = new System.Drawing.Size(146, 28);
+            this.btn_bookKamar.TabIndex = 3;
+            this.btn_bookKamar.Text = "Book Kamar";
+            this.btn_bookKamar.UseVisualStyleBackColor = true;
+            this.btn_bookKamar.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_A104
             // 
@@ -1028,11 +1016,70 @@
             this.btn_A201.UseVisualStyleBackColor = false;
             this.btn_A201.Visible = false;
             // 
+            // cb_namaPelanggan
+            // 
+            this.cb_namaPelanggan.FormattingEnabled = true;
+            this.cb_namaPelanggan.Location = new System.Drawing.Point(172, 60);
+            this.cb_namaPelanggan.Name = "cb_namaPelanggan";
+            this.cb_namaPelanggan.Size = new System.Drawing.Size(572, 28);
+            this.cb_namaPelanggan.TabIndex = 98;
+            this.cb_namaPelanggan.SelectedIndexChanged += new System.EventHandler(this.cb_namaPelanggan_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(210, 28);
+            this.label2.TabIndex = 97;
+            this.label2.Text = "Tanggal Check-Out: ";
+            // 
+            // tgl_checkout
+            // 
+            this.tgl_checkout.Location = new System.Drawing.Point(228, 126);
+            this.tgl_checkout.Name = "tgl_checkout";
+            this.tgl_checkout.Size = new System.Drawing.Size(277, 26);
+            this.tgl_checkout.TabIndex = 96;
+            // 
+            // lbl_chkin
+            // 
+            this.lbl_chkin.AutoSize = true;
+            this.lbl_chkin.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_chkin.Location = new System.Drawing.Point(11, 91);
+            this.lbl_chkin.Name = "lbl_chkin";
+            this.lbl_chkin.Size = new System.Drawing.Size(192, 28);
+            this.lbl_chkin.TabIndex = 95;
+            this.lbl_chkin.Text = "Tanggal Check-In: ";
+            // 
+            // tgl_checkin
+            // 
+            this.tgl_checkin.Location = new System.Drawing.Point(228, 94);
+            this.tgl_checkin.Name = "tgl_checkin";
+            this.tgl_checkin.Size = new System.Drawing.Size(277, 26);
+            this.tgl_checkin.TabIndex = 94;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(154, 23);
+            this.label1.TabIndex = 93;
+            this.label1.Text = "Nama Pelanggan: ";
+            // 
             // form_kamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 844);
+            this.Controls.Add(this.cb_namaPelanggan);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tgl_checkout);
+            this.Controls.Add(this.lbl_chkin);
+            this.Controls.Add(this.tgl_checkin);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_A239);
             this.Controls.Add(this.btn_A240);
             this.Controls.Add(this.btn_A227);
@@ -1113,9 +1160,7 @@
             this.Controls.Add(this.btn_A106);
             this.Controls.Add(this.btn_A102);
             this.Controls.Add(this.btn_A104);
-            this.Controls.Add(this.lbl_custID);
-            this.Controls.Add(this.btn_applyParkir);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_bookKamar);
             this.Controls.Add(this.btn_A101);
             this.Controls.Add(this.btn_exit);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1132,9 +1177,7 @@
 
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_A101;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btn_applyParkir;
-        private System.Windows.Forms.Label lbl_custID;
+        private System.Windows.Forms.Button btn_bookKamar;
         private System.Windows.Forms.Button btn_A104;
         private System.Windows.Forms.Button btn_A102;
         private System.Windows.Forms.Button btn_A106;
@@ -1217,5 +1260,11 @@
         private System.Windows.Forms.Button btn_A202;
         private System.Windows.Forms.Button btn_A204;
         private System.Windows.Forms.Button btn_A201;
+        private System.Windows.Forms.ComboBox cb_namaPelanggan;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker tgl_checkout;
+        private System.Windows.Forms.Label lbl_chkin;
+        private System.Windows.Forms.DateTimePicker tgl_checkin;
+        private System.Windows.Forms.Label label1;
     }
 }

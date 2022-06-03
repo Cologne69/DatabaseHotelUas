@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_main));
             this.btn_bookKamar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_checktrans = new System.Windows.Forms.Button();
             this.gb_kamar = new System.Windows.Forms.GroupBox();
             this.btn_lihatkamar = new System.Windows.Forms.Button();
@@ -39,11 +38,6 @@
             this.gb_pelanggan = new System.Windows.Forms.GroupBox();
             this.btn_tmbhPelanggan = new System.Windows.Forms.Button();
             this.btn_cekidPelanggan = new System.Windows.Forms.Button();
-            this.cb_namaPelanggan = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tgl_checkout = new System.Windows.Forms.DateTimePicker();
-            this.tgl_checkin = new System.Windows.Forms.DateTimePicker();
-            this.lbl_chkin = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gb_kamar.SuspendLayout();
             this.gb_restoran.SuspendLayout();
@@ -60,16 +54,6 @@
             this.btn_bookKamar.Text = "Book Kamar";
             this.btn_bookKamar.UseVisualStyleBackColor = true;
             this.btn_bookKamar.Click += new System.EventHandler(this.btn_bookKamar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 28);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nama Pelanggan: ";
             // 
             // btn_checktrans
             // 
@@ -153,51 +137,6 @@
             this.btn_cekidPelanggan.UseVisualStyleBackColor = true;
             this.btn_cekidPelanggan.Click += new System.EventHandler(this.btn_cekidPelanggan_Click);
             // 
-            // cb_namaPelanggan
-            // 
-            this.cb_namaPelanggan.FormattingEnabled = true;
-            this.cb_namaPelanggan.Location = new System.Drawing.Point(49, 100);
-            this.cb_namaPelanggan.Name = "cb_namaPelanggan";
-            this.cb_namaPelanggan.Size = new System.Drawing.Size(572, 28);
-            this.cb_namaPelanggan.TabIndex = 16;
-            this.cb_namaPelanggan.SelectedIndexChanged += new System.EventHandler(this.cb_namaPelanggan_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 258);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 28);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Tanggal Check-Out: ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // tgl_checkout
-            // 
-            this.tgl_checkout.Location = new System.Drawing.Point(46, 287);
-            this.tgl_checkout.Name = "tgl_checkout";
-            this.tgl_checkout.Size = new System.Drawing.Size(277, 26);
-            this.tgl_checkout.TabIndex = 9;
-            // 
-            // tgl_checkin
-            // 
-            this.tgl_checkin.Location = new System.Drawing.Point(46, 201);
-            this.tgl_checkin.Name = "tgl_checkin";
-            this.tgl_checkin.Size = new System.Drawing.Size(277, 26);
-            this.tgl_checkin.TabIndex = 7;
-            this.tgl_checkin.ValueChanged += new System.EventHandler(this.tgl_checkin_ValueChanged);
-            // 
-            // lbl_chkin
-            // 
-            this.lbl_chkin.AutoSize = true;
-            this.lbl_chkin.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_chkin.Location = new System.Drawing.Point(44, 170);
-            this.lbl_chkin.Name = "lbl_chkin";
-            this.lbl_chkin.Size = new System.Drawing.Size(192, 28);
-            this.lbl_chkin.TabIndex = 8;
-            this.lbl_chkin.Text = "Tanggal Check-In: ";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
@@ -214,16 +153,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 539);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cb_namaPelanggan);
             this.Controls.Add(this.gb_pelanggan);
             this.Controls.Add(this.gb_restoran);
             this.Controls.Add(this.gb_kamar);
             this.Controls.Add(this.btn_checktrans);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tgl_checkout);
-            this.Controls.Add(this.lbl_chkin);
-            this.Controls.Add(this.tgl_checkin);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_bookKamar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -235,14 +168,12 @@
             this.gb_pelanggan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btn_bookKamar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_checktrans;
         private System.Windows.Forms.GroupBox gb_kamar;
         private System.Windows.Forms.Button btn_lihatkamar;
@@ -250,12 +181,7 @@
         private System.Windows.Forms.GroupBox gb_restoran;
         private System.Windows.Forms.GroupBox gb_pelanggan;
         private System.Windows.Forms.Button btn_cekidPelanggan;
-        private System.Windows.Forms.ComboBox cb_namaPelanggan;
         private System.Windows.Forms.Button btn_tmbhPelanggan;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker tgl_checkout;
-        private System.Windows.Forms.DateTimePicker tgl_checkin;
-        private System.Windows.Forms.Label lbl_chkin;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

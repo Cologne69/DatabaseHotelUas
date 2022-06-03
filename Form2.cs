@@ -212,5 +212,10 @@ namespace DatabaseHotelUas
         {
 
         }
+
+        private void cb_namaPelanggan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
