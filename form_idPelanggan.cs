@@ -42,6 +42,21 @@ namespace DatabaseHotelUas
             {
                 MessageBox.Show(ex.Message);
             }
+
+            //try
+            //{
+            //    sqlQuery = $"SELECT CONCAT(TK.TIPE_KAMAR_ID,' - ',TK.TIPE_KAMAR_NAMA, ' ',' | ','Rp.', TK.TIPE_KAMAR_HARGA) as '1' FROM TIPE_KAMAR TK;";
+            //    sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+            //    sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            //    sqlAdapter.Fill(pelanggan);
+            //    listBox1.DataSource = pelanggan;
+            //    listBox1.DisplayMember = "1";
+            //    listBox1.ValueMember = "1";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void txt_cariNamaPelanggan_TextChanged(object sender, EventArgs e)
@@ -58,6 +73,11 @@ namespace DatabaseHotelUas
             dataGridView1.DataSource = pelanggan;
             dataGridView1.Update();
             dataGridView1.Refresh();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

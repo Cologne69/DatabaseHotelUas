@@ -85,7 +85,6 @@ namespace DatabaseHotelUas
 
         private void cb_jumlahMenu_TextChanged(object sender, EventArgs e)
         {
-
         }
     }
 }
