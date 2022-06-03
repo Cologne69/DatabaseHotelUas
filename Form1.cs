@@ -17,6 +17,11 @@ namespace DatabaseHotelUas
         {
             InitializeComponent();
         }
+        
+        public MySqlCommand sqlCommand;
+        public MySqlDataAdapter sqlAdapter;
+        string sqlQuery;
+        new DataTable HargaKamar = new DataTable();
 
         //----------------------------------------------------- BMYSQL SERVER -----------------------------------------------------
 
@@ -101,8 +106,23 @@ namespace DatabaseHotelUas
         private void form_main_Load(object sender, EventArgs e)
         {
             TestKoneksi();
-            cb_namaPelanggan.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            cb_namaPelanggan.AutoCompleteSource = AutoCompleteSource.ListItems;
+            //cb_namaPelanggan.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //cb_namaPelanggan.AutoCompleteSource = AutoCompleteSource.ListItems;
+            try
+            {
+                sqlQuery = $"SELECT CONCAT(TK.TIPE_KAMAR_ID,' - ',TK.TIPE_KAMAR_NAMA, ' ',' | ','Rp.', TK.TIPE_KAMAR_HARGA) FROM TIPE_KAMAR TK;";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(HargaKamar);
+                lb_hargaKamar.DataSource = HargaKamar;
+                lb_hargaKamar.DisplayMember = sqlQuery;
+                
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -116,6 +136,36 @@ namespace DatabaseHotelUas
             //Convert.ToDateTime(tgl_checkin);
             //Convert.ToDateTime(tgl_checkout);
             
+
+        }
+
+        private void tambahPelangganToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ftp.ShowDialog();
+        }
+
+        private void daftarPelangganToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fcidp.ShowDialog();
+        }
+
+        private void pelangganToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cekRiwayatTransaksiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hargaTipeKamarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_hargaKamar_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -39,10 +39,19 @@
             this.btn_tmbhPelanggan = new System.Windows.Forms.Button();
             this.btn_cekidPelanggan = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.pelangganToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.daftarPelangganToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tambahPelangganToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cekRiwayatTransaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.riwayatPemesananKamarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.riwayatTransaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lb_hargaKamar = new System.Windows.Forms.ListBox();
             this.gb_kamar.SuspendLayout();
             this.gb_restoran.SuspendLayout();
             this.gb_pelanggan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_bookKamar
@@ -147,19 +156,91 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pelangganToolStripMenuItem,
+            this.cekRiwayatTransaksiToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(922, 33);
+            this.menuStrip1.TabIndex = 18;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // pelangganToolStripMenuItem
+            // 
+            this.pelangganToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.daftarPelangganToolStripMenuItem,
+            this.tambahPelangganToolStripMenuItem});
+            this.pelangganToolStripMenuItem.Name = "pelangganToolStripMenuItem";
+            this.pelangganToolStripMenuItem.Size = new System.Drawing.Size(110, 29);
+            this.pelangganToolStripMenuItem.Text = "Pelanggan";
+            this.pelangganToolStripMenuItem.Click += new System.EventHandler(this.pelangganToolStripMenuItem_Click);
+            // 
+            // daftarPelangganToolStripMenuItem
+            // 
+            this.daftarPelangganToolStripMenuItem.Name = "daftarPelangganToolStripMenuItem";
+            this.daftarPelangganToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.daftarPelangganToolStripMenuItem.Text = "Cek Pelanggan";
+            this.daftarPelangganToolStripMenuItem.Click += new System.EventHandler(this.daftarPelangganToolStripMenuItem_Click);
+            // 
+            // tambahPelangganToolStripMenuItem
+            // 
+            this.tambahPelangganToolStripMenuItem.Name = "tambahPelangganToolStripMenuItem";
+            this.tambahPelangganToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.tambahPelangganToolStripMenuItem.Text = "Tambah Pelanggan";
+            this.tambahPelangganToolStripMenuItem.Click += new System.EventHandler(this.tambahPelangganToolStripMenuItem_Click);
+            // 
+            // cekRiwayatTransaksiToolStripMenuItem
+            // 
+            this.cekRiwayatTransaksiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.riwayatPemesananKamarToolStripMenuItem,
+            this.riwayatTransaksiToolStripMenuItem});
+            this.cekRiwayatTransaksiToolStripMenuItem.Name = "cekRiwayatTransaksiToolStripMenuItem";
+            this.cekRiwayatTransaksiToolStripMenuItem.Size = new System.Drawing.Size(128, 29);
+            this.cekRiwayatTransaksiToolStripMenuItem.Text = "Cek Riwayat ";
+            this.cekRiwayatTransaksiToolStripMenuItem.Click += new System.EventHandler(this.cekRiwayatTransaksiToolStripMenuItem_Click);
+            // 
+            // riwayatPemesananKamarToolStripMenuItem
+            // 
+            this.riwayatPemesananKamarToolStripMenuItem.Name = "riwayatPemesananKamarToolStripMenuItem";
+            this.riwayatPemesananKamarToolStripMenuItem.Size = new System.Drawing.Size(324, 34);
+            this.riwayatPemesananKamarToolStripMenuItem.Text = "Riwayat Pemesanan Kamar";
+            // 
+            // riwayatTransaksiToolStripMenuItem
+            // 
+            this.riwayatTransaksiToolStripMenuItem.Name = "riwayatTransaksiToolStripMenuItem";
+            this.riwayatTransaksiToolStripMenuItem.Size = new System.Drawing.Size(324, 34);
+            this.riwayatTransaksiToolStripMenuItem.Text = "Riwayat Transaksi";
+            // 
+            // lb_hargaKamar
+            // 
+            this.lb_hargaKamar.FormattingEnabled = true;
+            this.lb_hargaKamar.ItemHeight = 20;
+            this.lb_hargaKamar.Location = new System.Drawing.Point(12, 88);
+            this.lb_hargaKamar.Name = "lb_hargaKamar";
+            this.lb_hargaKamar.Size = new System.Drawing.Size(409, 324);
+            this.lb_hargaKamar.TabIndex = 19;
+            this.lb_hargaKamar.SelectedIndexChanged += new System.EventHandler(this.lb_hargaKamar_SelectedIndexChanged);
+            // 
             // form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 539);
+            this.Controls.Add(this.lb_hargaKamar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gb_pelanggan);
             this.Controls.Add(this.gb_restoran);
             this.Controls.Add(this.gb_kamar);
             this.Controls.Add(this.btn_checktrans);
             this.Controls.Add(this.btn_bookKamar);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "form_main";
             this.Text = "D\'Mario Hotel ";
             this.Load += new System.EventHandler(this.form_main_Load);
@@ -167,7 +248,10 @@
             this.gb_restoran.ResumeLayout(false);
             this.gb_pelanggan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -183,6 +267,14 @@
         private System.Windows.Forms.Button btn_cekidPelanggan;
         private System.Windows.Forms.Button btn_tmbhPelanggan;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem pelangganToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem daftarPelangganToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tambahPelangganToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cekRiwayatTransaksiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem riwayatPemesananKamarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem riwayatTransaksiToolStripMenuItem;
+        private System.Windows.Forms.ListBox lb_hargaKamar;
     }
 }
 
