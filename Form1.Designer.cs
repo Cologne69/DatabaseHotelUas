@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_main));
             this.btn_bookKamar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_checktrans = new System.Windows.Forms.Button();
@@ -43,9 +44,11 @@
             this.tgl_checkout = new System.Windows.Forms.DateTimePicker();
             this.tgl_checkin = new System.Windows.Forms.DateTimePicker();
             this.lbl_chkin = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gb_kamar.SuspendLayout();
             this.gb_restoran.SuspendLayout();
             this.gb_pelanggan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_bookKamar
@@ -155,7 +158,7 @@
             this.cb_namaPelanggan.FormattingEnabled = true;
             this.cb_namaPelanggan.Location = new System.Drawing.Point(49, 100);
             this.cb_namaPelanggan.Name = "cb_namaPelanggan";
-            this.cb_namaPelanggan.Size = new System.Drawing.Size(766, 28);
+            this.cb_namaPelanggan.Size = new System.Drawing.Size(572, 28);
             this.cb_namaPelanggan.TabIndex = 16;
             this.cb_namaPelanggan.SelectedIndexChanged += new System.EventHandler(this.cb_namaPelanggan_SelectedIndexChanged);
             // 
@@ -195,11 +198,22 @@
             this.lbl_chkin.TabIndex = 8;
             this.lbl_chkin.Text = "Tanggal Check-In: ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
+            this.pictureBox1.Location = new System.Drawing.Point(671, -12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(226, 239);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 539);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cb_namaPelanggan);
             this.Controls.Add(this.gb_pelanggan);
             this.Controls.Add(this.gb_restoran);
@@ -212,12 +226,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_bookKamar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "form_main";
-            this.Text = "5";
+            this.Text = "D\'Mario Hotel ";
             this.Load += new System.EventHandler(this.form_main_Load);
             this.gb_kamar.ResumeLayout(false);
             this.gb_restoran.ResumeLayout(false);
             this.gb_pelanggan.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,6 +256,7 @@
         private System.Windows.Forms.DateTimePicker tgl_checkout;
         private System.Windows.Forms.DateTimePicker tgl_checkin;
         private System.Windows.Forms.Label lbl_chkin;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_tambahPelanggan));
             this.btn_exit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_namaPelanggan = new System.Windows.Forms.TextBox();
@@ -160,6 +161,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_exit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "form_tambahPelanggan";
             this.Text = "Tambah Pelanggan";
             this.Load += new System.EventHandler(this.form_tambahPelanggan_Load);

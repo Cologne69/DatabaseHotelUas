@@ -103,7 +103,7 @@ namespace DatabaseHotelUas
             TestKoneksi();
             cb_namaPelanggan.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cb_namaPelanggan.AutoCompleteSource = AutoCompleteSource.ListItems;
-            
+
         }
 
         private void btn_tmbhPelanggan_Click(object sender, EventArgs e)

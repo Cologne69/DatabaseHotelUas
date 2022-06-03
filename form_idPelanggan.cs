@@ -43,5 +43,21 @@ namespace DatabaseHotelUas
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void txt_cariNamaPelanggan_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_cariNama_Click(object sender, EventArgs e)
+        {
+            sqlQuery = $"SELECT * FROM `CUSTOMER` WHERE `CUST_NAMA` LIKE '%{txt_cariNamaPelanggan.Text.ToString()}%'";
+            sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(pelanggan);
+            dataGridView1.DataSource = pelanggan;
+            dataGridView1.Update();
+            dataGridView1.Refresh();
+        }
     }
 }
