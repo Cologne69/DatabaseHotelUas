@@ -119,6 +119,7 @@
             this.cb_jumlahMenu.Name = "cb_jumlahMenu";
             this.cb_jumlahMenu.Size = new System.Drawing.Size(124, 26);
             this.cb_jumlahMenu.TabIndex = 8;
+            this.cb_jumlahMenu.TextChanged += new System.EventHandler(this.cb_jumlahMenu_TextChanged);
             this.cb_jumlahMenu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_jumlahMenu_KeyPress);
             // 
             // form_resto

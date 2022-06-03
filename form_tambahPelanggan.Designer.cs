@@ -64,6 +64,7 @@
             // txt_namaPelanggan
             // 
             this.txt_namaPelanggan.Location = new System.Drawing.Point(197, 93);
+            this.txt_namaPelanggan.MaxLength = 100;
             this.txt_namaPelanggan.Name = "txt_namaPelanggan";
             this.txt_namaPelanggan.Size = new System.Drawing.Size(634, 26);
             this.txt_namaPelanggan.TabIndex = 3;
@@ -112,6 +113,7 @@
             // txt_KotaPelanggan
             // 
             this.txt_KotaPelanggan.Location = new System.Drawing.Point(197, 208);
+            this.txt_KotaPelanggan.MaxLength = 200;
             this.txt_KotaPelanggan.Name = "txt_KotaPelanggan";
             this.txt_KotaPelanggan.Size = new System.Drawing.Size(634, 26);
             this.txt_KotaPelanggan.TabIndex = 8;
@@ -128,6 +130,7 @@
             // txt_idPelanggan
             // 
             this.txt_idPelanggan.Location = new System.Drawing.Point(197, 264);
+            this.txt_idPelanggan.MaxLength = 16;
             this.txt_idPelanggan.Name = "txt_idPelanggan";
             this.txt_idPelanggan.Size = new System.Drawing.Size(341, 26);
             this.txt_idPelanggan.TabIndex = 10;
@@ -164,6 +167,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "form_tambahPelanggan";
             this.Text = "Tambah Pelanggan";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.form_tambahPelanggan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
