@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_main));
             this.btn_bookKamar = new System.Windows.Forms.Button();
             this.btn_checktrans = new System.Windows.Forms.Button();
@@ -47,6 +48,9 @@
             this.riwayatPemesananKamarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.riwayatTransaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lb_hargaKamar = new System.Windows.Forms.ListBox();
+            this.lbl_hargaHotel = new System.Windows.Forms.Label();
+            this.lbl_waktu = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gb_kamar.SuspendLayout();
             this.gb_restoran.SuspendLayout();
             this.gb_pelanggan.SuspendLayout();
@@ -113,6 +117,7 @@
             this.gb_restoran.TabIndex = 14;
             this.gb_restoran.TabStop = false;
             this.gb_restoran.Text = "Restoran";
+            this.gb_restoran.Enter += new System.EventHandler(this.gb_restoran_Enter);
             // 
             // gb_pelanggan
             // 
@@ -148,8 +153,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
-            this.pictureBox1.Location = new System.Drawing.Point(671, -12);
+            this.pictureBox1.Location = new System.Drawing.Point(696, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(226, 239);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -219,17 +225,44 @@
             // 
             this.lb_hargaKamar.FormattingEnabled = true;
             this.lb_hargaKamar.ItemHeight = 20;
-            this.lb_hargaKamar.Location = new System.Drawing.Point(12, 88);
+            this.lb_hargaKamar.Location = new System.Drawing.Point(12, 201);
             this.lb_hargaKamar.Name = "lb_hargaKamar";
             this.lb_hargaKamar.Size = new System.Drawing.Size(409, 184);
             this.lb_hargaKamar.TabIndex = 19;
             this.lb_hargaKamar.SelectedIndexChanged += new System.EventHandler(this.lb_hargaKamar_SelectedIndexChanged);
+            // 
+            // lbl_hargaHotel
+            // 
+            this.lbl_hargaHotel.AutoSize = true;
+            this.lbl_hargaHotel.Location = new System.Drawing.Point(12, 165);
+            this.lbl_hargaHotel.Name = "lbl_hargaHotel";
+            this.lbl_hargaHotel.Size = new System.Drawing.Size(95, 20);
+            this.lbl_hargaHotel.TabIndex = 20;
+            this.lbl_hargaHotel.Text = "Harga Hotel";
+            // 
+            // lbl_waktu
+            // 
+            this.lbl_waktu.AutoSize = true;
+            this.lbl_waktu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_waktu.Location = new System.Drawing.Point(153, 146);
+            this.lbl_waktu.Name = "lbl_waktu";
+            this.lbl_waktu.Size = new System.Drawing.Size(64, 25);
+            this.lbl_waktu.TabIndex = 21;
+            this.lbl_waktu.Text = "label1";
+            this.lbl_waktu.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 539);
+            this.Controls.Add(this.lbl_waktu);
+            this.Controls.Add(this.lbl_hargaHotel);
             this.Controls.Add(this.lb_hargaKamar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gb_pelanggan);
@@ -275,6 +308,9 @@
         private System.Windows.Forms.ToolStripMenuItem riwayatPemesananKamarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem riwayatTransaksiToolStripMenuItem;
         private System.Windows.Forms.ListBox lb_hargaKamar;
+        private System.Windows.Forms.Label lbl_hargaHotel;
+        private System.Windows.Forms.Label lbl_waktu;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

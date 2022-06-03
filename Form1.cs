@@ -167,5 +167,20 @@ namespace DatabaseHotelUas
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbl_waktu.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy \nHH:mm:ss");
+        }
+
+        private void gb_restoran_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
