@@ -1163,6 +1163,7 @@
             this.Controls.Add(this.btn_bookKamar);
             this.Controls.Add(this.btn_A101);
             this.Controls.Add(this.btn_exit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "form_kamar";
             this.Text = "Kamar";

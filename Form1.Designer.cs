@@ -155,7 +155,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
-            this.pictureBox1.Location = new System.Drawing.Point(696, 36);
+            this.pictureBox1.Location = new System.Drawing.Point(671, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(226, 239);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -244,7 +244,7 @@
             // 
             this.lbl_waktu.AutoSize = true;
             this.lbl_waktu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_waktu.Location = new System.Drawing.Point(153, 146);
+            this.lbl_waktu.Location = new System.Drawing.Point(12, 48);
             this.lbl_waktu.Name = "lbl_waktu";
             this.lbl_waktu.Size = new System.Drawing.Size(64, 25);
             this.lbl_waktu.TabIndex = 21;
