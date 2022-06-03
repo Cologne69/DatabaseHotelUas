@@ -110,14 +110,13 @@ namespace DatabaseHotelUas
             //cb_namaPelanggan.AutoCompleteSource = AutoCompleteSource.ListItems;
             try
             {
-                sqlQuery = $"SELECT CONCAT(TK.TIPE_KAMAR_ID,' - ',TK.TIPE_KAMAR_NAMA, ' ',' | ','Rp.', TK.TIPE_KAMAR_HARGA) FROM TIPE_KAMAR TK;";
+                sqlQuery = $"SELECT CONCAT(TK.TIPE_KAMAR_ID,' - ',TK.TIPE_KAMAR_NAMA, ' ',' | ','Rp.', TK.TIPE_KAMAR_HARGA) as '1' FROM TIPE_KAMAR TK;";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(HargaKamar);
                 lb_hargaKamar.DataSource = HargaKamar;
-                lb_hargaKamar.DisplayMember = sqlQuery;
-                
-
+                lb_hargaKamar.DisplayMember = "1";
+                lb_hargaKamar.ValueMember = "1";
             }
             catch (Exception ex)
             {

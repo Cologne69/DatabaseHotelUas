@@ -221,7 +221,7 @@
             this.lb_hargaKamar.ItemHeight = 20;
             this.lb_hargaKamar.Location = new System.Drawing.Point(12, 88);
             this.lb_hargaKamar.Name = "lb_hargaKamar";
-            this.lb_hargaKamar.Size = new System.Drawing.Size(409, 324);
+            this.lb_hargaKamar.Size = new System.Drawing.Size(409, 184);
             this.lb_hargaKamar.TabIndex = 19;
             this.lb_hargaKamar.SelectedIndexChanged += new System.EventHandler(this.lb_hargaKamar_SelectedIndexChanged);
             // 
