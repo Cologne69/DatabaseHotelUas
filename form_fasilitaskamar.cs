@@ -16,8 +16,10 @@ namespace DatabaseHotelUas
 
         public MySqlCommand sqlCommand;
         public MySqlDataAdapter sqlAdapter;
-        public string sqlQuery;
         
+        public string sqlQuery;
+        int orderID = 3;
+        int totalCart = 0;
         public form_resto()
         {
             InitializeComponent();
@@ -35,48 +37,54 @@ namespace DatabaseHotelUas
         {
             
         }
-
-        private void cb_jumlahMenu_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
-        
         private void btn_pesan_Click(object sender, EventArgs e)
         {
-
+            try 
+            {
+                sqlQuery = $"INSERT INTO DETAIL_ORDER_MENU VALUES ('{orderID}','{cb_pilihMenu.SelectedValue}','{num_jumlahMakanan.Value}',(SELECT SUM({num_jumlahMakanan.Value} * MENU.MENU_HARGA) FROM MENU WHERE MENU.MENU_ID = '{cb_pilihMenu.SelectedValue.ToString()}'))";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(OrderID);
+                totalCart++;
+                lbl_isiiteminCart.Text = totalCart.ToString(); 
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
         new DataTable Menu = new DataTable();
-        
-        
+        new DataTable OrderID = new DataTable();
+
+
         private void cb_pilihMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //disable btn_pesan if cb_pilihMenu and cb_jumlah is empty
-            
-            
-            if (cb_pilihMenu.Text == "" || cb_jumlahMenu.Text == "")
-            {
-                btn_pesan.Enabled = false;
-            }
-            else
-            {
-                btn_pesan.Enabled = true;
-            }
-
            
-
-    }
-
+            
+        }
+        
+        
+        
         private void form_resto_Load(object sender, EventArgs e)
         {
+            num_jumlahMakanan.Value = 1;
+            Menu.Clear();
+            OrderID.Clear();
+            lbl_isiOrderID.Text = orderID.ToString();
+
             try
             {
-                sqlQuery = $"SELECT * FROM MENU ORDER BY MENU_NAMA";
+                sqlQuery = $"SELECT MENU_ID as `ID MENU`, MENU_NAMA as `NAMA MENU`, MENU_HARGA as `HARGA MENU` FROM MENU ORDER BY MENU_NAMA";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(Menu);
                 DGV_Menu.DataSource = Menu;
-            } catch (Exception ex)
+                cb_pilihMenu.DataSource = Menu;
+                cb_pilihMenu.DisplayMember = "NAMA MENU";
+                cb_pilihMenu.ValueMember = "ID MENU";
+            } 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());   
             }
@@ -85,6 +93,11 @@ namespace DatabaseHotelUas
 
         private void cb_jumlahMenu_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

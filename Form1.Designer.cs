@@ -155,16 +155,15 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
-            this.pictureBox1.Location = new System.Drawing.Point(671, 36);
+            this.pictureBox1.Location = new System.Drawing.Point(734, 36);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(226, 239);
+            this.pictureBox1.Size = new System.Drawing.Size(163, 170);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pelangganToolStripMenuItem,
@@ -188,14 +187,14 @@
             // daftarPelangganToolStripMenuItem
             // 
             this.daftarPelangganToolStripMenuItem.Name = "daftarPelangganToolStripMenuItem";
-            this.daftarPelangganToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.daftarPelangganToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
             this.daftarPelangganToolStripMenuItem.Text = "Cek Pelanggan";
             this.daftarPelangganToolStripMenuItem.Click += new System.EventHandler(this.daftarPelangganToolStripMenuItem_Click);
             // 
             // tambahPelangganToolStripMenuItem
             // 
             this.tambahPelangganToolStripMenuItem.Name = "tambahPelangganToolStripMenuItem";
-            this.tambahPelangganToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.tambahPelangganToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
             this.tambahPelangganToolStripMenuItem.Text = "Tambah Pelanggan";
             this.tambahPelangganToolStripMenuItem.Click += new System.EventHandler(this.tambahPelangganToolStripMenuItem_Click);
             // 
@@ -227,7 +226,7 @@
             this.lb_hargaKamar.ItemHeight = 20;
             this.lb_hargaKamar.Location = new System.Drawing.Point(12, 201);
             this.lb_hargaKamar.Name = "lb_hargaKamar";
-            this.lb_hargaKamar.Size = new System.Drawing.Size(409, 184);
+            this.lb_hargaKamar.Size = new System.Drawing.Size(409, 144);
             this.lb_hargaKamar.TabIndex = 19;
             this.lb_hargaKamar.SelectedIndexChanged += new System.EventHandler(this.lb_hargaKamar_SelectedIndexChanged);
             // 
