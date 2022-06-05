@@ -52,7 +52,6 @@ namespace DatabaseHotelUas
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
         new DataTable Menu = new DataTable();
         new DataTable OrderID = new DataTable();
@@ -60,12 +59,7 @@ namespace DatabaseHotelUas
 
         private void cb_pilihMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-            
         }
-        
-        
-        
         private void form_resto_Load(object sender, EventArgs e)
         {
             num_jumlahMakanan.Value = 1;
