@@ -39,7 +39,6 @@
             this.gb_pelanggan = new System.Windows.Forms.GroupBox();
             this.btn_tmbhPelanggan = new System.Windows.Forms.Button();
             this.btn_cekidPelanggan = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pelangganToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.daftarPelangganToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,11 +50,13 @@
             this.lbl_hargaHotel = new System.Windows.Forms.Label();
             this.lbl_waktu = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_historiRestoran = new System.Windows.Forms.Button();
             this.gb_kamar.SuspendLayout();
             this.gb_restoran.SuspendLayout();
             this.gb_pelanggan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_bookKamar
@@ -110,6 +111,7 @@
             // 
             // gb_restoran
             // 
+            this.gb_restoran.Controls.Add(this.btn_historiRestoran);
             this.gb_restoran.Controls.Add(this.btn_restoran);
             this.gb_restoran.Location = new System.Drawing.Point(437, 307);
             this.gb_restoran.Name = "gb_restoran";
@@ -151,19 +153,9 @@
             this.btn_cekidPelanggan.UseVisualStyleBackColor = true;
             this.btn_cekidPelanggan.Click += new System.EventHandler(this.btn_cekidPelanggan_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
-            this.pictureBox1.Location = new System.Drawing.Point(734, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(163, 170);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pelangganToolStripMenuItem,
@@ -255,6 +247,27 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
+            this.pictureBox1.Location = new System.Drawing.Point(734, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(163, 170);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btn_historiRestoran
+            // 
+            this.btn_historiRestoran.Location = new System.Drawing.Point(275, 40);
+            this.btn_historiRestoran.Name = "btn_historiRestoran";
+            this.btn_historiRestoran.Size = new System.Drawing.Size(158, 54);
+            this.btn_historiRestoran.TabIndex = 15;
+            this.btn_historiRestoran.Text = "Histori Restoran";
+            this.btn_historiRestoran.UseVisualStyleBackColor = true;
+            this.btn_historiRestoran.Click += new System.EventHandler(this.btn_historiRestoran_Click);
+            // 
             // form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -279,9 +292,9 @@
             this.gb_kamar.ResumeLayout(false);
             this.gb_restoran.ResumeLayout(false);
             this.gb_pelanggan.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,6 +323,7 @@
         private System.Windows.Forms.Label lbl_hargaHotel;
         private System.Windows.Forms.Label lbl_waktu;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btn_historiRestoran;
     }
 }
 

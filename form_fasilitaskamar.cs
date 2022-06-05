@@ -16,7 +16,6 @@ namespace DatabaseHotelUas
 
         public MySqlCommand sqlCommand;
         public MySqlDataAdapter sqlAdapter;
-        
         public string sqlQuery;
         int orderID = 3;
         int totalCart = 0;
@@ -90,6 +89,11 @@ namespace DatabaseHotelUas
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_checkout_Click(object sender, EventArgs e)
         {
             
         }

@@ -51,7 +51,7 @@ namespace DatabaseHotelUas
         public static form_main fm = new form_main();
         public static form_idPelanggan fcidp = new form_idPelanggan();
         public static form_tambahPelanggan ftp = new form_tambahPelanggan();
-
+        public static form_historiRestoran fhr = new form_historiRestoran();
         //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
 
         private void lbl_testTanggal_Click(object sender, EventArgs e)
@@ -181,6 +181,11 @@ namespace DatabaseHotelUas
         private void gb_restoran_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_historiRestoran_Click(object sender, EventArgs e)
+        {
+            fhr.ShowDialog();
         }
     }
 }

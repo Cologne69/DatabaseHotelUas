@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_exit = new System.Windows.Forms.Button();
             this.btn_addtoCart = new System.Windows.Forms.Button();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.DGV_Menu = new System.Windows.Forms.DataGridView();
@@ -41,19 +40,10 @@
             this.lbl_isiiteminCart = new System.Windows.Forms.Label();
             this.lbl_orderID = new System.Windows.Forms.Label();
             this.lbl_isiOrderID = new System.Windows.Forms.Label();
+            this.btn_checkout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_jumlahMakanan)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_exit
-            // 
-            this.btn_exit.Location = new System.Drawing.Point(697, 586);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(91, 33);
-            this.btn_exit.TabIndex = 1;
-            this.btn_exit.Text = "Exit";
-            this.btn_exit.UseVisualStyleBackColor = true;
-            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // btn_addtoCart
             // 
@@ -173,11 +163,22 @@
             this.lbl_isiOrderID.TabIndex = 12;
             this.lbl_isiOrderID.Text = "0";
             // 
+            // btn_checkout
+            // 
+            this.btn_checkout.Location = new System.Drawing.Point(691, 586);
+            this.btn_checkout.Name = "btn_checkout";
+            this.btn_checkout.Size = new System.Drawing.Size(97, 32);
+            this.btn_checkout.TabIndex = 13;
+            this.btn_checkout.Text = "Checkout";
+            this.btn_checkout.UseVisualStyleBackColor = true;
+            this.btn_checkout.Click += new System.EventHandler(this.btn_checkout_Click);
+            // 
             // form_resto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 631);
+            this.Controls.Add(this.btn_checkout);
             this.Controls.Add(this.lbl_isiOrderID);
             this.Controls.Add(this.lbl_orderID);
             this.Controls.Add(this.lbl_isiiteminCart);
@@ -189,7 +190,6 @@
             this.Controls.Add(this.lbl_daftar);
             this.Controls.Add(this.DGV_Menu);
             this.Controls.Add(this.btn_addtoCart);
-            this.Controls.Add(this.btn_exit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "form_resto";
             this.Text = "Form Restoran";
@@ -202,8 +202,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_addtoCart;
         private System.DirectoryServices.DirectorySearcher directorySearcher1;
         private System.Windows.Forms.DataGridView DGV_Menu;
@@ -216,5 +214,6 @@
         private System.Windows.Forms.Label lbl_isiiteminCart;
         private System.Windows.Forms.Label lbl_orderID;
         private System.Windows.Forms.Label lbl_isiOrderID;
+        private System.Windows.Forms.Button btn_checkout;
     }
 }
