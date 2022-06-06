@@ -22,9 +22,7 @@ namespace DatabaseHotelUas
         public MySqlDataAdapter sqlAdapter;
         string sqlQuery;
         new DataTable HargaKamar = new DataTable();
-        DateTime WIB = DateTime.Now;
-        DateTime WITA = DateTime.Now.AddHours(1);
-        DateTime WIT = DateTime.Now.AddHours(2);
+        
 
 
         //----------------------------------------------------- BMYSQL SERVER -----------------------------------------------------
@@ -179,8 +177,13 @@ namespace DatabaseHotelUas
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            DateTime WIB = DateTime.Now;
+            DateTime WITA = DateTime.Now.AddHours(1);
+            DateTime WIT = DateTime.Now.AddHours(2);
             lbl_waktu.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy \nHH:mm:ss");
-            lbl_jam.Text = WIB.ToString("HH:mm:ss");
+            lbl_jamWIB.Text = "WIB: " + WIB.ToString("HH:mm:ss");
+            lbl_jamWITA.Text = "WITA: " + WITA.ToString("HH:mm:ss");
+            lbl_jamWIT.Text = "WIT: " + WIT.ToString("HH:mm:ss");
         }
 
         private void gb_restoran_Enter(object sender, EventArgs e)

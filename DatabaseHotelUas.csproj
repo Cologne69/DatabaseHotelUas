@@ -145,5 +145,8 @@
   <ItemGroup>
     <None Include="Resources\D%27Mario hotel.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foto 1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -51,8 +51,10 @@
             this.lbl_hargaHotel = new System.Windows.Forms.Label();
             this.lbl_waktu = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbl_jamWIB = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbl_jam = new System.Windows.Forms.Label();
+            this.lbl_jamWIT = new System.Windows.Forms.Label();
+            this.lbl_jamWITA = new System.Windows.Forms.Label();
             this.gb_kamar.SuspendLayout();
             this.gb_restoran.SuspendLayout();
             this.gb_pelanggan.SuspendLayout();
@@ -258,6 +260,16 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lbl_jamWIB
+            // 
+            this.lbl_jamWIB.AutoSize = true;
+            this.lbl_jamWIB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_jamWIB.Location = new System.Drawing.Point(12, 73);
+            this.lbl_jamWIB.Name = "lbl_jamWIB";
+            this.lbl_jamWIB.Size = new System.Drawing.Size(64, 25);
+            this.lbl_jamWIB.TabIndex = 22;
+            this.lbl_jamWIB.Text = "label1";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -269,22 +281,34 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // lbl_jam
+            // lbl_jamWIT
             // 
-            this.lbl_jam.AutoSize = true;
-            this.lbl_jam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_jam.Location = new System.Drawing.Point(12, 73);
-            this.lbl_jam.Name = "lbl_jam";
-            this.lbl_jam.Size = new System.Drawing.Size(64, 25);
-            this.lbl_jam.TabIndex = 22;
-            this.lbl_jam.Text = "label1";
+            this.lbl_jamWIT.AutoSize = true;
+            this.lbl_jamWIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_jamWIT.Location = new System.Drawing.Point(12, 123);
+            this.lbl_jamWIT.Name = "lbl_jamWIT";
+            this.lbl_jamWIT.Size = new System.Drawing.Size(64, 25);
+            this.lbl_jamWIT.TabIndex = 23;
+            this.lbl_jamWIT.Text = "label1";
+            // 
+            // lbl_jamWITA
+            // 
+            this.lbl_jamWITA.AutoSize = true;
+            this.lbl_jamWITA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_jamWITA.Location = new System.Drawing.Point(12, 98);
+            this.lbl_jamWITA.Name = "lbl_jamWITA";
+            this.lbl_jamWITA.Size = new System.Drawing.Size(64, 25);
+            this.lbl_jamWITA.TabIndex = 24;
+            this.lbl_jamWITA.Text = "label1";
             // 
             // form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 539);
-            this.Controls.Add(this.lbl_jam);
+            this.Controls.Add(this.lbl_jamWITA);
+            this.Controls.Add(this.lbl_jamWIT);
+            this.Controls.Add(this.lbl_jamWIB);
             this.Controls.Add(this.lbl_waktu);
             this.Controls.Add(this.lbl_hargaHotel);
             this.Controls.Add(this.lb_hargaKamar);
@@ -336,7 +360,9 @@
         private System.Windows.Forms.Label lbl_waktu;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btn_historiRestoran;
-        private System.Windows.Forms.Label lbl_jam;
+        private System.Windows.Forms.Label lbl_jamWIB;
+        private System.Windows.Forms.Label lbl_jamWIT;
+        private System.Windows.Forms.Label lbl_jamWITA;
     }
 }
 
