@@ -17,6 +17,13 @@ namespace DatabaseHotelUas
         {
             InitializeComponent();
         }
+        
+        public MySqlCommand sqlCommand;
+        public MySqlDataAdapter sqlAdapter;
+        string sqlQuery;
+        new DataTable HargaKamar = new DataTable();
+        
+
 
         //----------------------------------------------------- BMYSQL SERVER -----------------------------------------------------
 
@@ -46,7 +53,7 @@ namespace DatabaseHotelUas
         public static form_main fm = new form_main();
         public static form_idPelanggan fcidp = new form_idPelanggan();
         public static form_tambahPelanggan ftp = new form_tambahPelanggan();
-
+        public static form_historiRestoran fhr = new form_historiRestoran();
         //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
 
         private void lbl_testTanggal_Click(object sender, EventArgs e)
@@ -101,8 +108,22 @@ namespace DatabaseHotelUas
         private void form_main_Load(object sender, EventArgs e)
         {
             TestKoneksi();
-            cb_namaPelanggan.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            cb_namaPelanggan.AutoCompleteSource = AutoCompleteSource.ListItems;
+            //cb_namaPelanggan.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //cb_namaPelanggan.AutoCompleteSource = AutoCompleteSource.ListItems;
+            try
+            {
+                sqlQuery = $"SELECT CONCAT(TK.TIPE_KAMAR_ID,' - ',TK.TIPE_KAMAR_NAMA, ' ',' | ','Rp.', TK.TIPE_KAMAR_HARGA) as '1' FROM TIPE_KAMAR TK;";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(HargaKamar);
+                lb_hargaKamar.DataSource = HargaKamar;
+                lb_hargaKamar.DisplayMember = "1";
+                lb_hargaKamar.ValueMember = "1";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -117,6 +138,62 @@ namespace DatabaseHotelUas
             //Convert.ToDateTime(tgl_checkout);
             
 
+        }
+
+        private void tambahPelangganToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ftp.ShowDialog();
+        }
+
+        private void daftarPelangganToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fcidp.ShowDialog();
+        }
+
+        private void pelangganToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cekRiwayatTransaksiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hargaTipeKamarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_hargaKamar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime WIB = DateTime.Now;
+            DateTime WITA = DateTime.Now.AddHours(1);
+            DateTime WIT = DateTime.Now.AddHours(2);
+            lbl_waktu.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy \nHH:mm:ss");
+            lbl_jamWIB.Text = "WIB: " + WIB.ToString("HH:mm:ss");
+            lbl_jamWITA.Text = "WITA: " + WITA.ToString("HH:mm:ss");
+            lbl_jamWIT.Text = "WIT: " + WIT.ToString("HH:mm:ss");
+        }
+
+        private void gb_restoran_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_historiRestoran_Click(object sender, EventArgs e)
+        {
+            fhr.ShowDialog();
         }
     }
 }

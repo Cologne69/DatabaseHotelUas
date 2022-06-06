@@ -78,6 +78,12 @@
     <Compile Include="form_fasilitaskamar.Designer.cs">
       <DependentUpon>form_fasilitaskamar.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_historiRestoran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_historiRestoran.Designer.cs">
+      <DependentUpon>form_historiRestoran.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_idPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_fasilitaskamar.resx">
       <DependentUpon>form_fasilitaskamar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_historiRestoran.resx">
+      <DependentUpon>form_historiRestoran.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_idPelanggan.resx">
       <DependentUpon>form_idPelanggan.cs</DependentUpon>
@@ -135,6 +144,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\D%27Mario hotel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foto 1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

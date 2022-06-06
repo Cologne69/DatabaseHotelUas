@@ -22,14 +22,13 @@ namespace DatabaseHotelUas
         {
             InitializeComponent();
         }
-
         private void btn_exit_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
-        
         private void form_idPelanggan_Load(object sender, EventArgs e)
         {
+            pelanggan.Clear();
             try
             {
                 sqlQuery = $"SELECT * FROM CUSTOMER";
@@ -42,22 +41,19 @@ namespace DatabaseHotelUas
             {
                 MessageBox.Show(ex.Message);
             }
-        }
 
+        }
         private void txt_cariNamaPelanggan_TextChanged(object sender, EventArgs e)
         {
-            
+            pelanggan.DefaultView.RowFilter = string.Format("CUST_NAMA LIKE '%{0}%'", txt_cariNamaPelanggan.Text);
         }
-
         private void btn_cariNama_Click(object sender, EventArgs e)
         {
-            sqlQuery = $"SELECT * FROM `CUSTOMER` WHERE `CUST_NAMA` LIKE '%{txt_cariNamaPelanggan.Text.ToString()}%'";
-            sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
-            sqlAdapter = new MySqlDataAdapter(sqlCommand);
-            sqlAdapter.Fill(pelanggan);
-            dataGridView1.DataSource = pelanggan;
-            dataGridView1.Update();
-            dataGridView1.Refresh();
+
+        }
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
