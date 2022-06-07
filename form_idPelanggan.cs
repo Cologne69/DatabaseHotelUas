@@ -80,8 +80,11 @@ namespace DatabaseHotelUas
                     sqlQuery = $"DELETE FROM CUSTOMER WHERE CUST_ID = '{dataGridView1.CurrentRow.Cells[0].Value.ToString()}';";
                     sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                     sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                    sqlAdapter.Fill(pelanggan);
                     MessageBox.Show($"Pelanggan dengan ID: {dataGridView1.CurrentRow.Cells[0].Value.ToString()} berhasil dihapus");
-                    
+                    dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
+
+
                 }
                 catch (Exception ex)
                 {
