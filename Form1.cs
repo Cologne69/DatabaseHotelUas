@@ -54,6 +54,7 @@ namespace DatabaseHotelUas
         public static form_idPelanggan fcidp = new form_idPelanggan();
         public static form_tambahPelanggan ftp = new form_tambahPelanggan();
         public static form_historiRestoran fhr = new form_historiRestoran();
+ 
         //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
 
         private void lbl_testTanggal_Click(object sender, EventArgs e)

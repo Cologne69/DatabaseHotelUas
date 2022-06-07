@@ -83,7 +83,22 @@ namespace DatabaseHotelUas
             {
                 MessageBox.Show(ex.Message.ToString());   
             }
-            
+
+            DGV_Menu.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            DGV_Menu.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            DGV_Menu.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            for (int i = 0; i <= DGV_Menu.Columns.Count - 1; i++)
+            {
+                // Store Auto Sized Widths:
+                int colw = DGV_Menu.Columns[i].Width;
+
+                // Remove AutoSizing:
+                DGV_Menu.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                // Set Width to calculated AutoSize value:
+                DGV_Menu.Columns[i].Width = colw;
+            }
+
         }
 
         private void cb_jumlahMenu_TextChanged(object sender, EventArgs e)
@@ -98,6 +113,11 @@ namespace DatabaseHotelUas
         private void btn_checkout_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void DGV_Menu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

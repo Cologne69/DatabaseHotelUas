@@ -84,7 +84,7 @@ namespace DatabaseHotelUas
 
         private void form_tambahPelanggan_Load(object sender, EventArgs e)
         {
-
+           
         }
     }
 }

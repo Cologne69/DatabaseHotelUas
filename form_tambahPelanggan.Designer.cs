@@ -165,9 +165,10 @@
             this.Controls.Add(this.btn_exit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "form_tambahPelanggan";
             this.Text = "Tambah Pelanggan";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.form_tambahPelanggan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -64,12 +64,13 @@
             // DGV_Menu
             // 
             this.DGV_Menu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Menu.Location = new System.Drawing.Point(113, 60);
+            this.DGV_Menu.Location = new System.Drawing.Point(12, 59);
             this.DGV_Menu.Name = "DGV_Menu";
             this.DGV_Menu.RowHeadersWidth = 62;
             this.DGV_Menu.RowTemplate.Height = 28;
-            this.DGV_Menu.Size = new System.Drawing.Size(576, 319);
+            this.DGV_Menu.Size = new System.Drawing.Size(776, 319);
             this.DGV_Menu.TabIndex = 3;
+            this.DGV_Menu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Menu_CellContentClick);
             // 
             // lbl_daftar
             // 
