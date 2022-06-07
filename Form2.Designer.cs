@@ -647,7 +647,7 @@
             this.btn_lantai2.TabIndex = 1;
             this.btn_lantai2.Text = "Lantai 2";
             this.btn_lantai2.UseVisualStyleBackColor = false;
-            this.btn_lantai2.Click += new System.EventHandler(this.button21_Click);
+            this.btn_lantai2.Click += new System.EventHandler(this.btn_lantai2_Click);
             // 
             // btn_lantai1
             // 
