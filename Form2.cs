@@ -20,6 +20,9 @@ namespace DatabaseHotelUas
         }
         private void form_kamar_Load(object sender, EventArgs e)
         {
+            
+            
+            
             /*
              * query check for KAMAR_STATUS = 1
              * append(btn_A{KAMAR_NO})
@@ -38,6 +41,9 @@ namespace DatabaseHotelUas
                 Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
                 btn.BackColor = Color.Red;
             }
+
+            LblKeterangan.Text = "1. Presidential Suite (PS)\n2. Suite(S)\n3. Junior Suite(JS)\n4. Deluxe(D)";
+
         }
         private void btn_exit_Click(object sender, EventArgs e)
         {
@@ -92,6 +98,11 @@ namespace DatabaseHotelUas
         }
 
         private void cb_namaPelanggan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

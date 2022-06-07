@@ -120,6 +120,7 @@
             this.lbl_chkin = new System.Windows.Forms.Label();
             this.tgl_checkin = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.LblKeterangan = new System.Windows.Forms.Label();
             this.gb_lantai.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,7 +143,7 @@
             this.btn_A101.Name = "btn_A101";
             this.btn_A101.Size = new System.Drawing.Size(70, 86);
             this.btn_A101.TabIndex = 1;
-            this.btn_A101.Text = "A101";
+            this.btn_A101.Text = "A101\r\nD";
             this.btn_A101.UseVisualStyleBackColor = false;
             this.btn_A101.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -164,7 +165,7 @@
             this.btn_A104.Name = "btn_A104";
             this.btn_A104.Size = new System.Drawing.Size(70, 86);
             this.btn_A104.TabIndex = 5;
-            this.btn_A104.Text = "A104";
+            this.btn_A104.Text = "A104\r\nD";
             this.btn_A104.UseVisualStyleBackColor = false;
             this.btn_A104.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -176,7 +177,7 @@
             this.btn_A102.Name = "btn_A102";
             this.btn_A102.Size = new System.Drawing.Size(70, 86);
             this.btn_A102.TabIndex = 6;
-            this.btn_A102.Text = "A102";
+            this.btn_A102.Text = "A102\r\nD";
             this.btn_A102.UseVisualStyleBackColor = false;
             this.btn_A102.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -188,7 +189,7 @@
             this.btn_A106.Name = "btn_A106";
             this.btn_A106.Size = new System.Drawing.Size(70, 86);
             this.btn_A106.TabIndex = 7;
-            this.btn_A106.Text = "A106";
+            this.btn_A106.Text = "A106\r\nD";
             this.btn_A106.UseVisualStyleBackColor = false;
             this.btn_A106.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -200,7 +201,7 @@
             this.btn_A103.Name = "btn_A103";
             this.btn_A103.Size = new System.Drawing.Size(70, 86);
             this.btn_A103.TabIndex = 8;
-            this.btn_A103.Text = "A103";
+            this.btn_A103.Text = "A103\r\nD";
             this.btn_A103.UseVisualStyleBackColor = false;
             this.btn_A103.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -212,7 +213,7 @@
             this.btn_A105.Name = "btn_A105";
             this.btn_A105.Size = new System.Drawing.Size(70, 86);
             this.btn_A105.TabIndex = 9;
-            this.btn_A105.Text = "A105";
+            this.btn_A105.Text = "A105\r\nD";
             this.btn_A105.UseVisualStyleBackColor = false;
             this.btn_A105.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -224,7 +225,7 @@
             this.btn_A110.Name = "btn_A110";
             this.btn_A110.Size = new System.Drawing.Size(70, 86);
             this.btn_A110.TabIndex = 10;
-            this.btn_A110.Text = "A110";
+            this.btn_A110.Text = "A110\r\nD";
             this.btn_A110.UseVisualStyleBackColor = false;
             this.btn_A110.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -236,7 +237,7 @@
             this.btn_A113.Name = "btn_A113";
             this.btn_A113.Size = new System.Drawing.Size(70, 86);
             this.btn_A113.TabIndex = 11;
-            this.btn_A113.Text = "A113";
+            this.btn_A113.Text = "A113\r\nD";
             this.btn_A113.UseVisualStyleBackColor = false;
             this.btn_A113.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -248,7 +249,7 @@
             this.btn_A109.Name = "btn_A109";
             this.btn_A109.Size = new System.Drawing.Size(70, 86);
             this.btn_A109.TabIndex = 12;
-            this.btn_A109.Text = "A109";
+            this.btn_A109.Text = "A109\r\nD";
             this.btn_A109.UseVisualStyleBackColor = false;
             this.btn_A109.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -260,7 +261,7 @@
             this.btn_A114.Name = "btn_A114";
             this.btn_A114.Size = new System.Drawing.Size(70, 86);
             this.btn_A114.TabIndex = 13;
-            this.btn_A114.Text = "A114";
+            this.btn_A114.Text = "A114\r\nD";
             this.btn_A114.UseVisualStyleBackColor = false;
             this.btn_A114.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -272,7 +273,7 @@
             this.btn_A122.Name = "btn_A122";
             this.btn_A122.Size = new System.Drawing.Size(70, 86);
             this.btn_A122.TabIndex = 14;
-            this.btn_A122.Text = "A122";
+            this.btn_A122.Text = "A122\r\nJS";
             this.btn_A122.UseVisualStyleBackColor = false;
             this.btn_A122.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -284,7 +285,7 @@
             this.btn_A118.Name = "btn_A118";
             this.btn_A118.Size = new System.Drawing.Size(70, 86);
             this.btn_A118.TabIndex = 15;
-            this.btn_A118.Text = "A118";
+            this.btn_A118.Text = "A118\r\nD";
             this.btn_A118.UseVisualStyleBackColor = false;
             this.btn_A118.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -296,7 +297,7 @@
             this.btn_A121.Name = "btn_A121";
             this.btn_A121.Size = new System.Drawing.Size(70, 86);
             this.btn_A121.TabIndex = 16;
-            this.btn_A121.Text = "A121";
+            this.btn_A121.Text = "A121\r\nD";
             this.btn_A121.UseVisualStyleBackColor = false;
             this.btn_A121.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -308,7 +309,7 @@
             this.btn_A120.Name = "btn_A120";
             this.btn_A120.Size = new System.Drawing.Size(70, 86);
             this.btn_A120.TabIndex = 17;
-            this.btn_A120.Text = "A120";
+            this.btn_A120.Text = "A120\r\nD";
             this.btn_A120.UseVisualStyleBackColor = false;
             this.btn_A120.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -320,7 +321,7 @@
             this.btn_A119.Name = "btn_A119";
             this.btn_A119.Size = new System.Drawing.Size(70, 86);
             this.btn_A119.TabIndex = 18;
-            this.btn_A119.Text = "A119";
+            this.btn_A119.Text = "A119\r\nD";
             this.btn_A119.UseVisualStyleBackColor = false;
             this.btn_A119.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -332,7 +333,7 @@
             this.btn_A117.Name = "btn_A117";
             this.btn_A117.Size = new System.Drawing.Size(70, 86);
             this.btn_A117.TabIndex = 19;
-            this.btn_A117.Text = "A117";
+            this.btn_A117.Text = "A117\r\nD";
             this.btn_A117.UseVisualStyleBackColor = false;
             this.btn_A117.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -344,7 +345,7 @@
             this.btn_A124.Name = "btn_A124";
             this.btn_A124.Size = new System.Drawing.Size(70, 86);
             this.btn_A124.TabIndex = 20;
-            this.btn_A124.Text = "A124";
+            this.btn_A124.Text = "A124\r\nJS";
             this.btn_A124.UseVisualStyleBackColor = false;
             this.btn_A124.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -356,7 +357,7 @@
             this.btn_A125.Name = "btn_A125";
             this.btn_A125.Size = new System.Drawing.Size(70, 86);
             this.btn_A125.TabIndex = 21;
-            this.btn_A125.Text = "A125";
+            this.btn_A125.Text = "A125\r\nD";
             this.btn_A125.UseVisualStyleBackColor = false;
             this.btn_A125.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -368,7 +369,7 @@
             this.btn_A123.Name = "btn_A123";
             this.btn_A123.Size = new System.Drawing.Size(70, 86);
             this.btn_A123.TabIndex = 22;
-            this.btn_A123.Text = "A123";
+            this.btn_A123.Text = "A123\r\nD";
             this.btn_A123.UseVisualStyleBackColor = false;
             this.btn_A123.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -380,7 +381,7 @@
             this.btn_A138.Name = "btn_A138";
             this.btn_A138.Size = new System.Drawing.Size(70, 86);
             this.btn_A138.TabIndex = 23;
-            this.btn_A138.Text = "A138";
+            this.btn_A138.Text = "A138\r\nJS";
             this.btn_A138.UseVisualStyleBackColor = false;
             this.btn_A138.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -392,7 +393,7 @@
             this.btn_A137.Name = "btn_A137";
             this.btn_A137.Size = new System.Drawing.Size(70, 86);
             this.btn_A137.TabIndex = 24;
-            this.btn_A137.Text = "A137";
+            this.btn_A137.Text = "A137\r\nD";
             this.btn_A137.UseVisualStyleBackColor = false;
             this.btn_A137.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -404,7 +405,7 @@
             this.btn_A133.Name = "btn_A133";
             this.btn_A133.Size = new System.Drawing.Size(70, 86);
             this.btn_A133.TabIndex = 25;
-            this.btn_A133.Text = "A133";
+            this.btn_A133.Text = "A133\r\nD";
             this.btn_A133.UseVisualStyleBackColor = false;
             this.btn_A133.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -416,7 +417,7 @@
             this.btn_A134.Name = "btn_A134";
             this.btn_A134.Size = new System.Drawing.Size(70, 86);
             this.btn_A134.TabIndex = 26;
-            this.btn_A134.Text = "A134";
+            this.btn_A134.Text = "A134\r\nJS";
             this.btn_A134.UseVisualStyleBackColor = false;
             this.btn_A134.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -428,7 +429,7 @@
             this.btn_A130.Name = "btn_A130";
             this.btn_A130.Size = new System.Drawing.Size(70, 86);
             this.btn_A130.TabIndex = 27;
-            this.btn_A130.Text = "A130";
+            this.btn_A130.Text = "A130\r\nJS";
             this.btn_A130.UseVisualStyleBackColor = false;
             this.btn_A130.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -440,7 +441,7 @@
             this.btn_A129.Name = "btn_A129";
             this.btn_A129.Size = new System.Drawing.Size(70, 86);
             this.btn_A129.TabIndex = 28;
-            this.btn_A129.Text = "A129";
+            this.btn_A129.Text = "A129\r\nD";
             this.btn_A129.UseVisualStyleBackColor = false;
             this.btn_A129.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -452,7 +453,7 @@
             this.btn_A126.Name = "btn_A126";
             this.btn_A126.Size = new System.Drawing.Size(70, 86);
             this.btn_A126.TabIndex = 29;
-            this.btn_A126.Text = "A126";
+            this.btn_A126.Text = "A126\r\nJS";
             this.btn_A126.UseVisualStyleBackColor = false;
             this.btn_A126.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -464,7 +465,7 @@
             this.btn_A127.Name = "btn_A127";
             this.btn_A127.Size = new System.Drawing.Size(70, 86);
             this.btn_A127.TabIndex = 48;
-            this.btn_A127.Text = "A127";
+            this.btn_A127.Text = "A127\r\nD";
             this.btn_A127.UseVisualStyleBackColor = false;
             this.btn_A127.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -476,7 +477,7 @@
             this.btn_A128.Name = "btn_A128";
             this.btn_A128.Size = new System.Drawing.Size(70, 86);
             this.btn_A128.TabIndex = 47;
-            this.btn_A128.Text = "A128";
+            this.btn_A128.Text = "A128\r\nJS";
             this.btn_A128.UseVisualStyleBackColor = false;
             this.btn_A128.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -488,7 +489,7 @@
             this.btn_A132.Name = "btn_A132";
             this.btn_A132.Size = new System.Drawing.Size(70, 86);
             this.btn_A132.TabIndex = 46;
-            this.btn_A132.Text = "A132";
+            this.btn_A132.Text = "A132\r\nJS";
             this.btn_A132.UseVisualStyleBackColor = false;
             this.btn_A132.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -500,7 +501,7 @@
             this.btn_A131.Name = "btn_A131";
             this.btn_A131.Size = new System.Drawing.Size(70, 86);
             this.btn_A131.TabIndex = 45;
-            this.btn_A131.Text = "A131";
+            this.btn_A131.Text = "A131\r\nD";
             this.btn_A131.UseVisualStyleBackColor = false;
             this.btn_A131.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -512,7 +513,7 @@
             this.btn_A135.Name = "btn_A135";
             this.btn_A135.Size = new System.Drawing.Size(70, 86);
             this.btn_A135.TabIndex = 44;
-            this.btn_A135.Text = "A135";
+            this.btn_A135.Text = "A135\r\nD";
             this.btn_A135.UseVisualStyleBackColor = false;
             this.btn_A135.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -524,7 +525,7 @@
             this.btn_A136.Name = "btn_A136";
             this.btn_A136.Size = new System.Drawing.Size(70, 86);
             this.btn_A136.TabIndex = 43;
-            this.btn_A136.Text = "A136";
+            this.btn_A136.Text = "A136\r\nJS";
             this.btn_A136.UseVisualStyleBackColor = false;
             this.btn_A136.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -536,7 +537,7 @@
             this.btn_A115.Name = "btn_A115";
             this.btn_A115.Size = new System.Drawing.Size(70, 86);
             this.btn_A115.TabIndex = 39;
-            this.btn_A115.Text = "A115";
+            this.btn_A115.Text = "A115\r\nD";
             this.btn_A115.UseVisualStyleBackColor = false;
             this.btn_A115.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -548,7 +549,7 @@
             this.btn_A116.Name = "btn_A116";
             this.btn_A116.Size = new System.Drawing.Size(70, 86);
             this.btn_A116.TabIndex = 35;
-            this.btn_A116.Text = "A116";
+            this.btn_A116.Text = "A116\r\nD";
             this.btn_A116.UseVisualStyleBackColor = false;
             this.btn_A116.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -560,7 +561,7 @@
             this.btn_A112.Name = "btn_A112";
             this.btn_A112.Size = new System.Drawing.Size(70, 86);
             this.btn_A112.TabIndex = 33;
-            this.btn_A112.Text = "A112";
+            this.btn_A112.Text = "A112\r\nD";
             this.btn_A112.UseVisualStyleBackColor = false;
             this.btn_A112.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -572,7 +573,7 @@
             this.btn_A107.Name = "btn_A107";
             this.btn_A107.Size = new System.Drawing.Size(70, 86);
             this.btn_A107.TabIndex = 32;
-            this.btn_A107.Text = "A107";
+            this.btn_A107.Text = "A107\r\nD";
             this.btn_A107.UseVisualStyleBackColor = false;
             this.btn_A107.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -584,7 +585,7 @@
             this.btn_A111.Name = "btn_A111";
             this.btn_A111.Size = new System.Drawing.Size(70, 86);
             this.btn_A111.TabIndex = 31;
-            this.btn_A111.Text = "A111";
+            this.btn_A111.Text = "A111\r\nD";
             this.btn_A111.UseVisualStyleBackColor = false;
             this.btn_A111.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -596,7 +597,7 @@
             this.btn_A108.Name = "btn_A108";
             this.btn_A108.Size = new System.Drawing.Size(70, 86);
             this.btn_A108.TabIndex = 30;
-            this.btn_A108.Text = "A108";
+            this.btn_A108.Text = "A108\r\nD";
             this.btn_A108.UseVisualStyleBackColor = false;
             this.btn_A108.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -608,7 +609,7 @@
             this.btn_A139.Name = "btn_A139";
             this.btn_A139.Size = new System.Drawing.Size(70, 86);
             this.btn_A139.TabIndex = 51;
-            this.btn_A139.Text = "A139";
+            this.btn_A139.Text = "A139\r\nD";
             this.btn_A139.UseVisualStyleBackColor = false;
             this.btn_A139.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -620,7 +621,7 @@
             this.btn_A140.Name = "btn_A140";
             this.btn_A140.Size = new System.Drawing.Size(70, 86);
             this.btn_A140.TabIndex = 50;
-            this.btn_A140.Text = "A140";
+            this.btn_A140.Text = "A140\r\nJS";
             this.btn_A140.UseVisualStyleBackColor = false;
             this.btn_A140.Click += new System.EventHandler(this.btn_child_onClick);
             // 
@@ -664,12 +665,12 @@
             // btn_A239
             // 
             this.btn_A239.BackColor = System.Drawing.Color.Lime;
-            this.btn_A239.Location = new System.Drawing.Point(941, 392);
+            this.btn_A239.Location = new System.Drawing.Point(939, 392);
             this.btn_A239.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A239.Name = "btn_A239";
             this.btn_A239.Size = new System.Drawing.Size(70, 86);
             this.btn_A239.TabIndex = 92;
-            this.btn_A239.Text = "A239";
+            this.btn_A239.Text = "A239\r\nPS";
             this.btn_A239.UseVisualStyleBackColor = false;
             this.btn_A239.Visible = false;
             this.btn_A239.Click += new System.EventHandler(this.btn_child_onClick);
@@ -677,12 +678,12 @@
             // btn_A240
             // 
             this.btn_A240.BackColor = System.Drawing.Color.Lime;
-            this.btn_A240.Location = new System.Drawing.Point(941, 510);
+            this.btn_A240.Location = new System.Drawing.Point(939, 510);
             this.btn_A240.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A240.Name = "btn_A240";
             this.btn_A240.Size = new System.Drawing.Size(70, 86);
             this.btn_A240.TabIndex = 91;
-            this.btn_A240.Text = "A240";
+            this.btn_A240.Text = "A240\r\nPS";
             this.btn_A240.UseVisualStyleBackColor = false;
             this.btn_A240.Visible = false;
             this.btn_A240.Click += new System.EventHandler(this.btn_child_onClick);
@@ -690,12 +691,12 @@
             // btn_A227
             // 
             this.btn_A227.BackColor = System.Drawing.Color.Lime;
-            this.btn_A227.Location = new System.Drawing.Point(713, 392);
+            this.btn_A227.Location = new System.Drawing.Point(712, 392);
             this.btn_A227.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A227.Name = "btn_A227";
             this.btn_A227.Size = new System.Drawing.Size(70, 86);
             this.btn_A227.TabIndex = 90;
-            this.btn_A227.Text = "A227";
+            this.btn_A227.Text = "A227\r\nJS";
             this.btn_A227.UseVisualStyleBackColor = false;
             this.btn_A227.Visible = false;
             this.btn_A227.Click += new System.EventHandler(this.btn_child_onClick);
@@ -703,12 +704,12 @@
             // btn_A228
             // 
             this.btn_A228.BackColor = System.Drawing.Color.Lime;
-            this.btn_A228.Location = new System.Drawing.Point(713, 510);
+            this.btn_A228.Location = new System.Drawing.Point(712, 510);
             this.btn_A228.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A228.Name = "btn_A228";
             this.btn_A228.Size = new System.Drawing.Size(70, 86);
             this.btn_A228.TabIndex = 89;
-            this.btn_A228.Text = "A228";
+            this.btn_A228.Text = "A228\r\nS";
             this.btn_A228.UseVisualStyleBackColor = false;
             this.btn_A228.Visible = false;
             this.btn_A228.Click += new System.EventHandler(this.btn_child_onClick);
@@ -716,12 +717,12 @@
             // btn_A232
             // 
             this.btn_A232.BackColor = System.Drawing.Color.Lime;
-            this.btn_A232.Location = new System.Drawing.Point(789, 510);
+            this.btn_A232.Location = new System.Drawing.Point(787, 510);
             this.btn_A232.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A232.Name = "btn_A232";
             this.btn_A232.Size = new System.Drawing.Size(70, 86);
             this.btn_A232.TabIndex = 88;
-            this.btn_A232.Text = "A232";
+            this.btn_A232.Text = "A232\r\nS\r\n";
             this.btn_A232.UseVisualStyleBackColor = false;
             this.btn_A232.Visible = false;
             this.btn_A232.Click += new System.EventHandler(this.btn_child_onClick);
@@ -734,7 +735,7 @@
             this.btn_A231.Name = "btn_A231";
             this.btn_A231.Size = new System.Drawing.Size(70, 86);
             this.btn_A231.TabIndex = 87;
-            this.btn_A231.Text = "A231";
+            this.btn_A231.Text = "A231\r\nJS";
             this.btn_A231.UseVisualStyleBackColor = false;
             this.btn_A231.Visible = false;
             this.btn_A231.Click += new System.EventHandler(this.btn_child_onClick);
@@ -742,12 +743,12 @@
             // btn_A235
             // 
             this.btn_A235.BackColor = System.Drawing.Color.Lime;
-            this.btn_A235.Location = new System.Drawing.Point(865, 392);
+            this.btn_A235.Location = new System.Drawing.Point(863, 392);
             this.btn_A235.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A235.Name = "btn_A235";
             this.btn_A235.Size = new System.Drawing.Size(70, 86);
             this.btn_A235.TabIndex = 86;
-            this.btn_A235.Text = "A235";
+            this.btn_A235.Text = "A235\r\nJS";
             this.btn_A235.UseVisualStyleBackColor = false;
             this.btn_A235.Visible = false;
             this.btn_A235.Click += new System.EventHandler(this.btn_child_onClick);
@@ -755,12 +756,12 @@
             // btn_A236
             // 
             this.btn_A236.BackColor = System.Drawing.Color.Lime;
-            this.btn_A236.Location = new System.Drawing.Point(865, 510);
+            this.btn_A236.Location = new System.Drawing.Point(863, 510);
             this.btn_A236.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A236.Name = "btn_A236";
             this.btn_A236.Size = new System.Drawing.Size(70, 86);
             this.btn_A236.TabIndex = 85;
-            this.btn_A236.Text = "A236";
+            this.btn_A236.Text = "A236\r\nPS\r\n";
             this.btn_A236.UseVisualStyleBackColor = false;
             this.btn_A236.Visible = false;
             this.btn_A236.Click += new System.EventHandler(this.btn_child_onClick);
@@ -768,12 +769,12 @@
             // btn_A215
             // 
             this.btn_A215.BackColor = System.Drawing.Color.Lime;
-            this.btn_A215.Location = new System.Drawing.Point(336, 392);
+            this.btn_A215.Location = new System.Drawing.Point(334, 392);
             this.btn_A215.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A215.Name = "btn_A215";
             this.btn_A215.Size = new System.Drawing.Size(70, 86);
             this.btn_A215.TabIndex = 84;
-            this.btn_A215.Text = "A215";
+            this.btn_A215.Text = "A215\r\nJS";
             this.btn_A215.UseVisualStyleBackColor = false;
             this.btn_A215.Visible = false;
             this.btn_A215.Click += new System.EventHandler(this.btn_child_onClick);
@@ -781,12 +782,12 @@
             // btn_A216
             // 
             this.btn_A216.BackColor = System.Drawing.Color.Lime;
-            this.btn_A216.Location = new System.Drawing.Point(334, 510);
+            this.btn_A216.Location = new System.Drawing.Point(335, 510);
             this.btn_A216.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A216.Name = "btn_A216";
             this.btn_A216.Size = new System.Drawing.Size(70, 86);
             this.btn_A216.TabIndex = 83;
-            this.btn_A216.Text = "A216";
+            this.btn_A216.Text = "A216\r\nS";
             this.btn_A216.UseVisualStyleBackColor = false;
             this.btn_A216.Visible = false;
             this.btn_A216.Click += new System.EventHandler(this.btn_child_onClick);
@@ -794,12 +795,12 @@
             // btn_A212
             // 
             this.btn_A212.BackColor = System.Drawing.Color.Lime;
-            this.btn_A212.Location = new System.Drawing.Point(260, 510);
+            this.btn_A212.Location = new System.Drawing.Point(258, 510);
             this.btn_A212.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A212.Name = "btn_A212";
             this.btn_A212.Size = new System.Drawing.Size(70, 86);
             this.btn_A212.TabIndex = 82;
-            this.btn_A212.Text = "A212";
+            this.btn_A212.Text = "A212\r\nS\r\n";
             this.btn_A212.UseVisualStyleBackColor = false;
             this.btn_A212.Visible = false;
             this.btn_A212.Click += new System.EventHandler(this.btn_child_onClick);
@@ -807,12 +808,12 @@
             // btn_A207
             // 
             this.btn_A207.BackColor = System.Drawing.Color.Lime;
-            this.btn_A207.Location = new System.Drawing.Point(184, 392);
+            this.btn_A207.Location = new System.Drawing.Point(183, 392);
             this.btn_A207.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A207.Name = "btn_A207";
             this.btn_A207.Size = new System.Drawing.Size(70, 86);
             this.btn_A207.TabIndex = 81;
-            this.btn_A207.Text = "A207";
+            this.btn_A207.Text = "A207\r\nJS";
             this.btn_A207.UseVisualStyleBackColor = false;
             this.btn_A207.Visible = false;
             this.btn_A207.Click += new System.EventHandler(this.btn_child_onClick);
@@ -820,12 +821,12 @@
             // btn_A211
             // 
             this.btn_A211.BackColor = System.Drawing.Color.Lime;
-            this.btn_A211.Location = new System.Drawing.Point(259, 392);
+            this.btn_A211.Location = new System.Drawing.Point(260, 392);
             this.btn_A211.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A211.Name = "btn_A211";
             this.btn_A211.Size = new System.Drawing.Size(70, 86);
             this.btn_A211.TabIndex = 80;
-            this.btn_A211.Text = "A211";
+            this.btn_A211.Text = "A211\r\nJS";
             this.btn_A211.UseVisualStyleBackColor = false;
             this.btn_A211.Visible = false;
             this.btn_A211.Click += new System.EventHandler(this.btn_child_onClick);
@@ -838,7 +839,7 @@
             this.btn_A208.Name = "btn_A208";
             this.btn_A208.Size = new System.Drawing.Size(70, 86);
             this.btn_A208.TabIndex = 79;
-            this.btn_A208.Text = "A208";
+            this.btn_A208.Text = "A208\r\nJS";
             this.btn_A208.UseVisualStyleBackColor = false;
             this.btn_A208.Visible = false;
             this.btn_A208.Click += new System.EventHandler(this.btn_child_onClick);
@@ -851,7 +852,7 @@
             this.btn_A226.Name = "btn_A226";
             this.btn_A226.Size = new System.Drawing.Size(70, 86);
             this.btn_A226.TabIndex = 78;
-            this.btn_A226.Text = "A226";
+            this.btn_A226.Text = "A226\r\nS\r\n";
             this.btn_A226.UseVisualStyleBackColor = false;
             this.btn_A226.Visible = false;
             this.btn_A226.Click += new System.EventHandler(this.btn_child_onClick);
@@ -864,7 +865,7 @@
             this.btn_A229.Name = "btn_A229";
             this.btn_A229.Size = new System.Drawing.Size(70, 86);
             this.btn_A229.TabIndex = 77;
-            this.btn_A229.Text = "A229";
+            this.btn_A229.Text = "A229\r\nJS";
             this.btn_A229.UseVisualStyleBackColor = false;
             this.btn_A229.Visible = false;
             this.btn_A229.Click += new System.EventHandler(this.btn_child_onClick);
@@ -877,7 +878,7 @@
             this.btn_A230.Name = "btn_A230";
             this.btn_A230.Size = new System.Drawing.Size(70, 86);
             this.btn_A230.TabIndex = 76;
-            this.btn_A230.Text = "A230";
+            this.btn_A230.Text = "A230\r\nS";
             this.btn_A230.UseVisualStyleBackColor = false;
             this.btn_A230.Visible = false;
             this.btn_A230.Click += new System.EventHandler(this.btn_child_onClick);
@@ -885,12 +886,12 @@
             // btn_A234
             // 
             this.btn_A234.BackColor = System.Drawing.Color.Lime;
-            this.btn_A234.Location = new System.Drawing.Point(865, 260);
+            this.btn_A234.Location = new System.Drawing.Point(863, 260);
             this.btn_A234.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A234.Name = "btn_A234";
             this.btn_A234.Size = new System.Drawing.Size(70, 86);
             this.btn_A234.TabIndex = 75;
-            this.btn_A234.Text = "A234";
+            this.btn_A234.Text = "A234\r\nS";
             this.btn_A234.UseVisualStyleBackColor = false;
             this.btn_A234.Visible = false;
             this.btn_A234.Click += new System.EventHandler(this.btn_child_onClick);
@@ -898,12 +899,12 @@
             // btn_A233
             // 
             this.btn_A233.BackColor = System.Drawing.Color.Lime;
-            this.btn_A233.Location = new System.Drawing.Point(865, 142);
+            this.btn_A233.Location = new System.Drawing.Point(863, 142);
             this.btn_A233.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A233.Name = "btn_A233";
             this.btn_A233.Size = new System.Drawing.Size(70, 86);
             this.btn_A233.TabIndex = 74;
-            this.btn_A233.Text = "A233";
+            this.btn_A233.Text = "A233\r\nJS";
             this.btn_A233.UseVisualStyleBackColor = false;
             this.btn_A233.Visible = false;
             this.btn_A233.Click += new System.EventHandler(this.btn_child_onClick);
@@ -911,12 +912,12 @@
             // btn_A237
             // 
             this.btn_A237.BackColor = System.Drawing.Color.Lime;
-            this.btn_A237.Location = new System.Drawing.Point(941, 142);
+            this.btn_A237.Location = new System.Drawing.Point(939, 142);
             this.btn_A237.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A237.Name = "btn_A237";
             this.btn_A237.Size = new System.Drawing.Size(70, 86);
             this.btn_A237.TabIndex = 73;
-            this.btn_A237.Text = "A237";
+            this.btn_A237.Text = "A237\r\nPS";
             this.btn_A237.UseVisualStyleBackColor = false;
             this.btn_A237.Visible = false;
             this.btn_A237.Click += new System.EventHandler(this.btn_child_onClick);
@@ -924,12 +925,12 @@
             // btn_A238
             // 
             this.btn_A238.BackColor = System.Drawing.Color.Lime;
-            this.btn_A238.Location = new System.Drawing.Point(941, 260);
+            this.btn_A238.Location = new System.Drawing.Point(939, 260);
             this.btn_A238.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A238.Name = "btn_A238";
             this.btn_A238.Size = new System.Drawing.Size(70, 86);
             this.btn_A238.TabIndex = 72;
-            this.btn_A238.Text = "A238";
+            this.btn_A238.Text = "A238\r\nPS";
             this.btn_A238.UseVisualStyleBackColor = false;
             this.btn_A238.Visible = false;
             this.btn_A238.Click += new System.EventHandler(this.btn_child_onClick);
@@ -942,7 +943,7 @@
             this.btn_A223.Name = "btn_A223";
             this.btn_A223.Size = new System.Drawing.Size(70, 86);
             this.btn_A223.TabIndex = 71;
-            this.btn_A223.Text = "A223";
+            this.btn_A223.Text = "A223\r\nJS";
             this.btn_A223.UseVisualStyleBackColor = false;
             this.btn_A223.Visible = false;
             this.btn_A223.Click += new System.EventHandler(this.btn_child_onClick);
@@ -955,7 +956,7 @@
             this.btn_A225.Name = "btn_A225";
             this.btn_A225.Size = new System.Drawing.Size(70, 86);
             this.btn_A225.TabIndex = 70;
-            this.btn_A225.Text = "A225";
+            this.btn_A225.Text = "A225\r\nJS";
             this.btn_A225.UseVisualStyleBackColor = false;
             this.btn_A225.Visible = false;
             this.btn_A225.Click += new System.EventHandler(this.btn_child_onClick);
@@ -968,7 +969,7 @@
             this.btn_A224.Name = "btn_A224";
             this.btn_A224.Size = new System.Drawing.Size(70, 86);
             this.btn_A224.TabIndex = 69;
-            this.btn_A224.Text = "A224";
+            this.btn_A224.Text = "A224\r\nS";
             this.btn_A224.UseVisualStyleBackColor = false;
             this.btn_A224.Visible = false;
             this.btn_A224.Click += new System.EventHandler(this.btn_child_onClick);
@@ -976,12 +977,12 @@
             // btn_A217
             // 
             this.btn_A217.BackColor = System.Drawing.Color.Lime;
-            this.btn_A217.Location = new System.Drawing.Point(409, 142);
+            this.btn_A217.Location = new System.Drawing.Point(410, 142);
             this.btn_A217.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A217.Name = "btn_A217";
             this.btn_A217.Size = new System.Drawing.Size(70, 86);
             this.btn_A217.TabIndex = 68;
-            this.btn_A217.Text = "A217";
+            this.btn_A217.Text = "A217\r\nJS";
             this.btn_A217.UseVisualStyleBackColor = false;
             this.btn_A217.Visible = false;
             this.btn_A217.Click += new System.EventHandler(this.btn_child_onClick);
@@ -989,12 +990,12 @@
             // btn_A219
             // 
             this.btn_A219.BackColor = System.Drawing.Color.Lime;
-            this.btn_A219.Location = new System.Drawing.Point(485, 142);
+            this.btn_A219.Location = new System.Drawing.Point(486, 142);
             this.btn_A219.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A219.Name = "btn_A219";
             this.btn_A219.Size = new System.Drawing.Size(70, 86);
             this.btn_A219.TabIndex = 67;
-            this.btn_A219.Text = "A219";
+            this.btn_A219.Text = "A219\r\nJS";
             this.btn_A219.UseVisualStyleBackColor = false;
             this.btn_A219.Visible = false;
             this.btn_A219.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1002,12 +1003,12 @@
             // btn_A220
             // 
             this.btn_A220.BackColor = System.Drawing.Color.Lime;
-            this.btn_A220.Location = new System.Drawing.Point(485, 260);
+            this.btn_A220.Location = new System.Drawing.Point(486, 260);
             this.btn_A220.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A220.Name = "btn_A220";
             this.btn_A220.Size = new System.Drawing.Size(70, 86);
             this.btn_A220.TabIndex = 66;
-            this.btn_A220.Text = "A220";
+            this.btn_A220.Text = "A220\r\nS\r\n";
             this.btn_A220.UseVisualStyleBackColor = false;
             this.btn_A220.Visible = false;
             this.btn_A220.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1015,12 +1016,12 @@
             // btn_A221
             // 
             this.btn_A221.BackColor = System.Drawing.Color.Lime;
-            this.btn_A221.Location = new System.Drawing.Point(561, 142);
+            this.btn_A221.Location = new System.Drawing.Point(560, 142);
             this.btn_A221.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A221.Name = "btn_A221";
             this.btn_A221.Size = new System.Drawing.Size(70, 86);
             this.btn_A221.TabIndex = 65;
-            this.btn_A221.Text = "A221";
+            this.btn_A221.Text = "A221\r\nJS";
             this.btn_A221.UseVisualStyleBackColor = false;
             this.btn_A221.Visible = false;
             this.btn_A221.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1028,12 +1029,12 @@
             // btn_A218
             // 
             this.btn_A218.BackColor = System.Drawing.Color.Lime;
-            this.btn_A218.Location = new System.Drawing.Point(410, 260);
+            this.btn_A218.Location = new System.Drawing.Point(409, 260);
             this.btn_A218.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A218.Name = "btn_A218";
             this.btn_A218.Size = new System.Drawing.Size(70, 86);
             this.btn_A218.TabIndex = 64;
-            this.btn_A218.Text = "A218";
+            this.btn_A218.Text = "A218\r\nS";
             this.btn_A218.UseVisualStyleBackColor = false;
             this.btn_A218.Visible = false;
             this.btn_A218.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1041,12 +1042,12 @@
             // btn_A222
             // 
             this.btn_A222.BackColor = System.Drawing.Color.Lime;
-            this.btn_A222.Location = new System.Drawing.Point(561, 260);
+            this.btn_A222.Location = new System.Drawing.Point(560, 260);
             this.btn_A222.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A222.Name = "btn_A222";
             this.btn_A222.Size = new System.Drawing.Size(70, 86);
             this.btn_A222.TabIndex = 63;
-            this.btn_A222.Text = "A222";
+            this.btn_A222.Text = "A222\r\nS";
             this.btn_A222.UseVisualStyleBackColor = false;
             this.btn_A222.Visible = false;
             this.btn_A222.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1054,12 +1055,12 @@
             // btn_A214
             // 
             this.btn_A214.BackColor = System.Drawing.Color.Lime;
-            this.btn_A214.Location = new System.Drawing.Point(336, 260);
+            this.btn_A214.Location = new System.Drawing.Point(333, 260);
             this.btn_A214.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A214.Name = "btn_A214";
             this.btn_A214.Size = new System.Drawing.Size(70, 86);
             this.btn_A214.TabIndex = 62;
-            this.btn_A214.Text = "A214";
+            this.btn_A214.Text = "A214\r\nS";
             this.btn_A214.UseVisualStyleBackColor = false;
             this.btn_A214.Visible = false;
             this.btn_A214.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1067,12 +1068,12 @@
             // btn_A209
             // 
             this.btn_A209.BackColor = System.Drawing.Color.Lime;
-            this.btn_A209.Location = new System.Drawing.Point(259, 142);
+            this.btn_A209.Location = new System.Drawing.Point(260, 142);
             this.btn_A209.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A209.Name = "btn_A209";
             this.btn_A209.Size = new System.Drawing.Size(70, 86);
             this.btn_A209.TabIndex = 61;
-            this.btn_A209.Text = "A209";
+            this.btn_A209.Text = "A209\r\nJS";
             this.btn_A209.UseVisualStyleBackColor = false;
             this.btn_A209.Visible = false;
             this.btn_A209.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1080,12 +1081,12 @@
             // btn_A213
             // 
             this.btn_A213.BackColor = System.Drawing.Color.Lime;
-            this.btn_A213.Location = new System.Drawing.Point(334, 142);
+            this.btn_A213.Location = new System.Drawing.Point(333, 142);
             this.btn_A213.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A213.Name = "btn_A213";
             this.btn_A213.Size = new System.Drawing.Size(70, 86);
             this.btn_A213.TabIndex = 60;
-            this.btn_A213.Text = "A213";
+            this.btn_A213.Text = "A213\r\nJS";
             this.btn_A213.UseVisualStyleBackColor = false;
             this.btn_A213.Visible = false;
             this.btn_A213.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1098,7 +1099,7 @@
             this.btn_A210.Name = "btn_A210";
             this.btn_A210.Size = new System.Drawing.Size(70, 86);
             this.btn_A210.TabIndex = 59;
-            this.btn_A210.Text = "A210";
+            this.btn_A210.Text = "A210\r\nJS";
             this.btn_A210.UseVisualStyleBackColor = false;
             this.btn_A210.Visible = false;
             this.btn_A210.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1111,7 +1112,7 @@
             this.btn_A205.Name = "btn_A205";
             this.btn_A205.Size = new System.Drawing.Size(70, 86);
             this.btn_A205.TabIndex = 58;
-            this.btn_A205.Text = "A205";
+            this.btn_A205.Text = "A205\r\nJS";
             this.btn_A205.UseVisualStyleBackColor = false;
             this.btn_A205.Visible = false;
             this.btn_A205.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1124,7 +1125,7 @@
             this.btn_A203.Name = "btn_A203";
             this.btn_A203.Size = new System.Drawing.Size(70, 86);
             this.btn_A203.TabIndex = 57;
-            this.btn_A203.Text = "A203";
+            this.btn_A203.Text = "A203\r\nJS";
             this.btn_A203.UseVisualStyleBackColor = false;
             this.btn_A203.Visible = false;
             this.btn_A203.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1137,7 +1138,7 @@
             this.btn_A206.Name = "btn_A206";
             this.btn_A206.Size = new System.Drawing.Size(70, 86);
             this.btn_A206.TabIndex = 56;
-            this.btn_A206.Text = "A206";
+            this.btn_A206.Text = "A206\r\nJS";
             this.btn_A206.UseVisualStyleBackColor = false;
             this.btn_A206.Visible = false;
             this.btn_A206.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1150,7 +1151,7 @@
             this.btn_A202.Name = "btn_A202";
             this.btn_A202.Size = new System.Drawing.Size(70, 86);
             this.btn_A202.TabIndex = 55;
-            this.btn_A202.Text = "A202";
+            this.btn_A202.Text = "A202\r\nJS\r\n";
             this.btn_A202.UseVisualStyleBackColor = false;
             this.btn_A202.Visible = false;
             this.btn_A202.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1163,7 +1164,7 @@
             this.btn_A204.Name = "btn_A204";
             this.btn_A204.Size = new System.Drawing.Size(70, 86);
             this.btn_A204.TabIndex = 54;
-            this.btn_A204.Text = "A204";
+            this.btn_A204.Text = "A204\r\nJS\r\n";
             this.btn_A204.UseVisualStyleBackColor = false;
             this.btn_A204.Visible = false;
             this.btn_A204.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1176,7 +1177,7 @@
             this.btn_A201.Name = "btn_A201";
             this.btn_A201.Size = new System.Drawing.Size(70, 86);
             this.btn_A201.TabIndex = 53;
-            this.btn_A201.Text = "A201";
+            this.btn_A201.Text = "A201\r\nJS\r\n";
             this.btn_A201.UseVisualStyleBackColor = false;
             this.btn_A201.Visible = false;
             this.btn_A201.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1237,27 +1238,38 @@
             this.label1.TabIndex = 93;
             this.label1.Text = "Nama Pelanggan: ";
             // 
+            // LblKeterangan
+            // 
+            this.LblKeterangan.AutoSize = true;
+            this.LblKeterangan.Location = new System.Drawing.Point(863, 39);
+            this.LblKeterangan.Name = "LblKeterangan";
+            this.LblKeterangan.Size = new System.Drawing.Size(138, 64);
+            this.LblKeterangan.TabIndex = 99;
+            this.LblKeterangan.Text = "PS : Presidential Suite\r\nS   : Suite \r\nJS  : Junior Suite\r\nD  : Deluxe ";
+            this.LblKeterangan.Click += new System.EventHandler(this.label3_Click);
+            // 
             // form_kamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 675);
+            this.Controls.Add(this.LblKeterangan);
             this.Controls.Add(this.cb_namaPelanggan);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_A228);
+            this.Controls.Add(this.btn_A227);
+            this.Controls.Add(this.btn_A216);
             this.Controls.Add(this.tgl_checkout);
             this.Controls.Add(this.lbl_chkin);
             this.Controls.Add(this.tgl_checkin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_A239);
             this.Controls.Add(this.btn_A240);
-            this.Controls.Add(this.btn_A227);
-            this.Controls.Add(this.btn_A228);
             this.Controls.Add(this.btn_A232);
             this.Controls.Add(this.btn_A231);
             this.Controls.Add(this.btn_A235);
             this.Controls.Add(this.btn_A236);
             this.Controls.Add(this.btn_A215);
-            this.Controls.Add(this.btn_A216);
             this.Controls.Add(this.btn_A212);
             this.Controls.Add(this.btn_A207);
             this.Controls.Add(this.btn_A211);
@@ -1436,5 +1448,6 @@
         private System.Windows.Forms.Label lbl_chkin;
         private System.Windows.Forms.DateTimePicker tgl_checkin;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblKeterangan;
     }
 }
