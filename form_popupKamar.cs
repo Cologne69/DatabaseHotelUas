@@ -18,6 +18,7 @@ namespace DatabaseHotelUas
         }
         private void form_popupKamar_Load(object sender, EventArgs e)
         {
+            lbl_no_kamar.Text = form_kamar.pressed_button;
         }
 
         private void sync()
