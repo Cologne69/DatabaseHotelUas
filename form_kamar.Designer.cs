@@ -740,6 +740,7 @@
             this.btn_A229.Text = "A229";
             this.btn_A229.UseVisualStyleBackColor = false;
             this.btn_A229.Visible = false;
+            this.btn_A229.Click += new System.EventHandler(this.btn_A229_Click);
             // 
             // btn_A230
             // 
@@ -817,6 +818,7 @@
             this.btn_A225.Text = "A225";
             this.btn_A225.UseVisualStyleBackColor = false;
             this.btn_A225.Visible = false;
+            this.btn_A225.Click += new System.EventHandler(this.btn_A225_Click);
             // 
             // btn_A224
             // 

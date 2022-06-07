@@ -216,5 +216,18 @@ namespace DatabaseHotelUas
         {
 
         }
+
+        private void btn_A225_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        
+        
+
+        private void btn_A229_Click(object sender, EventArgs e)
+        {
+        
+        }
     }
 }

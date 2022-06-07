@@ -22,6 +22,8 @@ namespace DatabaseHotelUas
         public MySqlDataAdapter sqlAdapter;
         string sqlQuery;
         new DataTable HargaKamar = new DataTable();
+        public int transID = 0;
+       
         
 
 

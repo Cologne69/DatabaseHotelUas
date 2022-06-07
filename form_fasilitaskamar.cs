@@ -112,7 +112,17 @@ namespace DatabaseHotelUas
 
         private void btn_checkout_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                sqlQuery = $"INSERT INTO ORDER_MENU VALUES ()";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(OrderID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void DGV_Menu_CellContentClick(object sender, DataGridViewCellEventArgs e)
