@@ -18,9 +18,9 @@ namespace DatabaseHotelUas
         public MySqlDataAdapter sqlAdapter;
         public string sqlQuery;
         DataTable tempData = new DataTable();
-        int orderID = 5;
+        int orderID = 1;
         int totalCart = 0;
-        
+        DataTable Pelanggan = new DataTable();
         public form_resto()
         {
             InitializeComponent();
@@ -40,16 +40,18 @@ namespace DatabaseHotelUas
         }
         private void btn_pesan_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
-                sqlQuery = $"INSERT INTO DETAIL_ORDER_MENU VALUES ('{orderID}','{cb_pilihMenu.SelectedValue}','{num_jumlahMakanan.Value}',(SELECT SUM({num_jumlahMakanan.Value} * MENU.MENU_HARGA) FROM MENU WHERE MENU.MENU_ID = '{cb_pilihMenu.SelectedValue.ToString()}'))";
-                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(OrderID);
                 totalCart++;
-                lbl_isiiteminCart.Text = totalCart.ToString(); 
+                lbl_isiiteminCart.Text = totalCart.ToString();
+
+                sqlQuery = $"SELECT SUM(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{orderID}'";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                lbl_totalHarga.Text = sqlQuery;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -70,14 +72,19 @@ namespace DatabaseHotelUas
 
             try
             {
-                sqlQuery = $"SELECT MENU_ID as `ID MENU`, MENU_NAMA as `NAMA MENU`, MENU_HARGA as `HARGA MENU` FROM MENU ORDER BY MENU_NAMA";
+                sqlQuery = $"SELECT * FROM MENU";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(Menu);
                 DGV_Menu.DataSource = Menu;
-                cb_pilihMenu.DataSource = Menu;
-                cb_pilihMenu.DisplayMember = "NAMA MENU";
-                cb_pilihMenu.ValueMember = "ID MENU";
+                
+                sqlQuery = $"SELECT CONCAT(CUST_ID,' - ', CUST_NAMA) as 'id dan nama', CUST_ID as 'nama' FROM CUSTOMER";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(Pelanggan);
+                cb_pelanggan.DataSource = Pelanggan;
+                cb_pelanggan.DisplayMember = "id dan nama";
+                cb_pelanggan.ValueMember = "nama";
             } 
             catch (Exception ex)
             {
@@ -109,20 +116,31 @@ namespace DatabaseHotelUas
         {
             
         }
-
+        
         private void btn_checkout_Click(object sender, EventArgs e)
         {
-            try
+
+            if (MessageBox.Show("Apakah anda yakin untuk melakukan Checkout pesanan?", "Checkout Restoran", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                sqlQuery = $"INSERT INTO ORDER_MENU VALUES ()";
-                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(OrderID);
+                try
+                {
+                    sqlQuery = $"INSERT INTO DETAIL_ORDER_MENU VALUES ('{orderID}','{DGV_Menu.CurrentRow.Cells[0].Value.ToString()}','{num_jumlahMakanan.Value}',(SELECT SUM({num_jumlahMakanan.Value} * MENU.MENU_HARGA) FROM MENU WHERE MENU.MENU_ID = '{DGV_Menu.CurrentRow.Cells[0].Value.ToString()}'))";
+                    sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                    sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                    
+                    sqlQuery = $"INSERT INTO ORDER_FOOD VALUES ('O{orderID.ToString()}','{form_main.transID.ToString()}','{cb_pelanggan.SelectedValue}','{DateTime.Now.ToString("yyyy-MM-dd")}',null,'{totalCart}',(select sum(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{orderID}'),'0');";
+                    sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                    sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                    sqlAdapter.Fill(OrderID);
+                    orderID++;
+                    MessageBox.Show($"Pesanan dengan ID: {orderID.ToString()} berhasil di Checkout");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
 
         private void DGV_Menu_CellContentClick(object sender, DataGridViewCellEventArgs e)
