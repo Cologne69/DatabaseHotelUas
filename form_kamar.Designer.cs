@@ -992,7 +992,7 @@
             this.btn_A204.Name = "btn_A204";
             this.btn_A204.Size = new System.Drawing.Size(79, 107);
             this.btn_A204.TabIndex = 54;
-            this.btn_A204.Text = "A204";
+            this.btn_A204.Text = "A204\r\n";
             this.btn_A204.UseVisualStyleBackColor = false;
             this.btn_A204.Visible = false;
             // 

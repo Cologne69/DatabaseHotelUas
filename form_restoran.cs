@@ -21,6 +21,12 @@ namespace DatabaseHotelUas
         int orderID = 1;
         int totalCart = 0;
         DataTable Pelanggan = new DataTable();
+ 
+        DataTable Menu = new DataTable();
+        DataTable OrderID = new DataTable();
+
+        form_invoiceResto fir = new form_invoiceResto();
+
         public form_resto()
         {
             InitializeComponent();
@@ -42,6 +48,8 @@ namespace DatabaseHotelUas
         {
             try
             {
+                fir.Show();
+                
                 sqlAdapter.Fill(OrderID);
                 totalCart++;
                 lbl_isiiteminCart.Text = totalCart.ToString();
@@ -49,16 +57,14 @@ namespace DatabaseHotelUas
                 sqlQuery = $"SELECT SUM(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{orderID}'";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                lbl_totalHarga.Text = sqlQuery;
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        new DataTable Menu = new DataTable();
-        new DataTable OrderID = new DataTable();
-
+        
 
         private void cb_pilihMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -105,7 +111,6 @@ namespace DatabaseHotelUas
                 // Set Width to calculated AutoSize value:
                 DGV_Menu.Columns[i].Width = colw;
             }
-
         }
 
         private void cb_jumlahMenu_TextChanged(object sender, EventArgs e)
@@ -114,7 +119,7 @@ namespace DatabaseHotelUas
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            
+       
         }
         
         private void btn_checkout_Click(object sender, EventArgs e)
