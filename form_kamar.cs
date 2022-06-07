@@ -18,6 +18,9 @@ namespace DatabaseHotelUas
             InitializeComponent();
 
         }
+        public MySqlCommand sqlCommand;
+        public MySqlDataAdapter sqlAdapter;
+        string sqlQuery;
         
 
         private void btn_exit_Click(object sender, EventArgs e)
@@ -36,7 +39,6 @@ namespace DatabaseHotelUas
         {
             btn_lantai2.BackColor = Color.Lime;
             btn_lantai1.BackColor = Color.Red;
-
             btn_A201.Show();
             btn_A202.Show();
             btn_A203.Show();
@@ -117,14 +119,12 @@ namespace DatabaseHotelUas
             btn_A138.Hide();
             btn_A139.Hide();
             btn_A140.Hide();
-
         }
 
         private void btn_lantai1_Click(object sender, EventArgs e)
         {
             btn_lantai1.BackColor = Color.Lime;
             btn_lantai2.BackColor = Color.Red;
-
             btn_A101.Show();
             btn_A102.Show();
             btn_A103.Show();
@@ -205,7 +205,6 @@ namespace DatabaseHotelUas
             btn_A238.Hide();
             btn_A239.Hide();
             btn_A240.Hide();
-            
         }
 
         private void form_kamar_Load(object sender, EventArgs e)

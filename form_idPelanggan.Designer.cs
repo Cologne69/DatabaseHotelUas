@@ -34,7 +34,6 @@
             this.lbl_cariNama = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_deletePelanggan = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,21 +87,11 @@
             this.btn_deletePelanggan.UseVisualStyleBackColor = true;
             this.btn_deletePelanggan.Click += new System.EventHandler(this.btn_deletePelanggan_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(410, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "label2";
-            // 
             // form_idPelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(867, 686);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_deletePelanggan);
             this.Controls.Add(this.lbl_cariNama);
             this.Controls.Add(this.txt_cariNamaPelanggan);
@@ -126,6 +115,5 @@
         private System.Windows.Forms.Label lbl_cariNama;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_deletePelanggan;
-        private System.Windows.Forms.Label label2;
     }
 }

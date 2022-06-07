@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_kamar));
-            this.btn_exit = new System.Windows.Forms.Button();
             this.btn_A101 = new System.Windows.Forms.Button();
             this.btn_bookKamar = new System.Windows.Forms.Button();
             this.btn_A104 = new System.Windows.Forms.Button();
@@ -123,16 +122,6 @@
             this.gb_lantai.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_exit
-            // 
-            this.btn_exit.Location = new System.Drawing.Point(12, 12);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(91, 33);
-            this.btn_exit.TabIndex = 0;
-            this.btn_exit.Text = "Exit";
-            this.btn_exit.UseVisualStyleBackColor = true;
-            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
-            // 
             // btn_A101
             // 
             this.btn_A101.BackColor = System.Drawing.Color.Lime;
@@ -145,9 +134,9 @@
             // 
             // btn_bookKamar
             // 
-            this.btn_bookKamar.Location = new System.Drawing.Point(773, 60);
+            this.btn_bookKamar.Location = new System.Drawing.Point(771, 54);
             this.btn_bookKamar.Name = "btn_bookKamar";
-            this.btn_bookKamar.Size = new System.Drawing.Size(146, 28);
+            this.btn_bookKamar.Size = new System.Drawing.Size(146, 38);
             this.btn_bookKamar.TabIndex = 3;
             this.btn_bookKamar.Text = "Book Kamar";
             this.btn_bookKamar.UseVisualStyleBackColor = true;
@@ -1162,7 +1151,6 @@
             this.Controls.Add(this.btn_A104);
             this.Controls.Add(this.btn_bookKamar);
             this.Controls.Add(this.btn_A101);
-            this.Controls.Add(this.btn_exit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "form_kamar";
@@ -1175,8 +1163,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_A101;
         private System.Windows.Forms.Button btn_bookKamar;
         private System.Windows.Forms.Button btn_A104;
