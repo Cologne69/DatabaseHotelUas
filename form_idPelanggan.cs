@@ -83,8 +83,6 @@ namespace DatabaseHotelUas
                     sqlAdapter.Fill(pelanggan);
                     MessageBox.Show($"Pelanggan dengan ID: {dataGridView1.CurrentRow.Cells[0].Value.ToString()} berhasil dihapus");
                     dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
-
-
                 }
                 catch (Exception ex)
                 {
