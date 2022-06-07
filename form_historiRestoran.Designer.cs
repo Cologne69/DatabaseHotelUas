@@ -40,7 +40,7 @@
             this.DGV_historiRestoran.Name = "DGV_historiRestoran";
             this.DGV_historiRestoran.RowHeadersWidth = 62;
             this.DGV_historiRestoran.RowTemplate.Height = 28;
-            this.DGV_historiRestoran.Size = new System.Drawing.Size(1227, 526);
+            this.DGV_historiRestoran.Size = new System.Drawing.Size(837, 526);
             this.DGV_historiRestoran.TabIndex = 0;
             this.DGV_historiRestoran.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_historiRestoran_CellContentClick);
             // 
@@ -48,14 +48,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 519);
+            this.ClientSize = new System.Drawing.Size(836, 519);
             this.Controls.Add(this.DGV_historiRestoran);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "form_historiRestoran";
             this.Text = "Histori Pemesanan Restoran";
             this.Load += new System.EventHandler(this.form_historiRestoran_Load);
+            this.Resize += new System.EventHandler(this.form_historiRestoran_Resize);
+            this.StyleChanged += new System.EventHandler(this.form_historiRestoran_StyleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_historiRestoran)).EndInit();
             this.ResumeLayout(false);
 

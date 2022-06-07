@@ -42,6 +42,20 @@ namespace DatabaseHotelUas
                 MessageBox.Show(ex.Message);
             }
 
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //for (int i = 0; i <= dataGridView1.Columns.Count - 1; i++)
+            //{
+            //    // Store Auto Sized Widths:
+            //    int colw = dataGridView1.Columns[i].Width;
+
+            //    // Remove AutoSizing:
+            //    dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+            //    // Set Width to calculated AutoSize value:
+            //    dataGridView1.Columns[i].Width = colw;
+            //}
         }
         private void txt_cariNamaPelanggan_TextChanged(object sender, EventArgs e)
         {
@@ -54,6 +68,32 @@ namespace DatabaseHotelUas
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_deletePelanggan_Click(object sender, EventArgs e)
+        {
+            //form_main.fdp.ShowDialog(); 
+            if(MessageBox.Show("Apakah anda yakin mau menghapus pelanggan tersebut?", "Hapus pelanggan", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    sqlQuery = $"DELETE FROM CUSTOMER WHERE CUST_ID = '{dataGridView1.CurrentRow.Cells[0].Value.ToString()}';";
+                    sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                    sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                    MessageBox.Show($"Pelanggan dengan ID: {dataGridView1.CurrentRow.Cells[0].Value.ToString()} berhasil dihapus");
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+  
         }
     }
 }

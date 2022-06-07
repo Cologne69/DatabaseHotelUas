@@ -38,11 +38,35 @@ namespace DatabaseHotelUas
             {
                 MessageBox.Show(ex.Message);
             }
+
+            DGV_historiRestoran.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            DGV_historiRestoran.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            DGV_historiRestoran.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            for (int i = 0; i <= DGV_historiRestoran.Columns.Count - 1; i++)
+            {
+                // Store Auto Sized Widths:
+                int colw = DGV_historiRestoran.Columns[i].Width;
+
+                // Remove AutoSizing:
+                DGV_historiRestoran.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                // Set Width to calculated AutoSize value:
+                DGV_historiRestoran.Columns[i].Width = colw;
+            }
         }
 
         private void DGV_historiRestoran_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        private void form_historiRestoran_Resize(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void form_historiRestoran_StyleChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
