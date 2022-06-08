@@ -16,13 +16,10 @@ namespace DatabaseHotelUas
         public form_kamar()
         {
             InitializeComponent();
-
         }
+
         private void form_kamar_Load(object sender, EventArgs e)
         {
-            
-            
-            
             /*
              * query check for KAMAR_STATUS = 1
              * append(btn_A{KAMAR_NO})
@@ -31,9 +28,16 @@ namespace DatabaseHotelUas
             DataTable filled_kamar_dt = new DataTable();
             List<String> filled_kamar = new List<string>();
 
-            string sqlQuery = "SELECT KAMAR_NO FROM KAMAR WHERE KAMAR_STATUS = 1";
-            new MySqlDataAdapter(sqlQuery, form_main.sqlConnect).Fill(filled_kamar_dt);
-            filled_kamar = filled_kamar_dt.AsEnumerable().Select(x => x.Field<String>("KAMAR_NO")).ToList();
+            try
+            {
+                string sqlQuery = "SELECT KAMAR_NO FROM KAMAR WHERE KAMAR_STATUS = 1";
+                new MySqlDataAdapter(sqlQuery, form_main.sqlConnect).Fill(filled_kamar_dt);
+                filled_kamar = filled_kamar_dt.AsEnumerable().Select(x => x.Field<String>("KAMAR_NO")).ToList();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("error occurred: " + ex.Message);
+            }
 
             // append "btn_A" to every child in filled_kamar and change it as button backColor to red
             foreach (string kamar_no in filled_kamar)
@@ -41,19 +45,12 @@ namespace DatabaseHotelUas
                 Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
                 btn.BackColor = Color.Red;
             }
-
-            LblKeterangan.Text = "1. Presidential Suite (PS)\n2. Suite(S)\n3. Junior Suite(JS)\n4. Deluxe(D)";
-
         }
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-                
+
         private void btn_lantai2_Click(object sender, EventArgs e)
         {
-            btn_lantai2.BackColor = Color.Lime;
-            btn_lantai1.BackColor = Color.Red;
+            btn_lantai2.BackColor = Color.BlueViolet;
+            btn_lantai1.BackColor = Color.White;
             for (int i = 101; i <= 140; i++)
             {
                 Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
@@ -68,8 +65,8 @@ namespace DatabaseHotelUas
 
         private void btn_lantai1_Click(object sender, EventArgs e)
         {
-            btn_lantai2.BackColor = Color.Red;
-            btn_lantai1.BackColor = Color.Lime;
+            btn_lantai2.BackColor = Color.White;
+            btn_lantai1.BackColor = Color.BlueViolet;
             for (int i = 101; i <= 140; i++)
             {
                 Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
@@ -87,20 +84,17 @@ namespace DatabaseHotelUas
             @btn_child_onClick = dynamic func that return value to pressed_button & do query whether the button is available or not (red / green)
         */
 
-        public string pressed_button;
+        public static string pressed_button;
         private void btn_child_onClick(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             btn.BackColor = Color.Red;
 
-            // cast system.windows.forms.button btn to string
-            pressed_button = btn.Name;
+            // cast system.windows.forms.button btn to string and remove "btn_a"
+            pressed_button = btn.Name.Substring(5);
+
+            form_popupKamar popup = new form_popupKamar();
+            popup.ShowDialog();
         }
-
-        private void cb_namaPelanggan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
