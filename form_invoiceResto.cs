@@ -29,7 +29,6 @@ namespace DatabaseHotelUas
 
         private void form_invoiceResto_Load(object sender, EventArgs e)
         {
-            this.DGV_InvoiceResto.Rows.Add();
         }
     }
 }

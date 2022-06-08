@@ -173,12 +173,6 @@ namespace DatabaseHotelUas
 
         }
 
-        private void lb_hargaKamar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            
-        }
-
         private void label1_Click(object sender, EventArgs e)
         { 
         }
@@ -204,6 +198,29 @@ namespace DatabaseHotelUas
         private void btn_historiRestoran_Click(object sender, EventArgs e)
         {
             fhr.ShowDialog();
+        }
+
+        private void lb_hargaKamar_Click(object sender, EventArgs e)
+        {
+            if (lb_hargaKamar.SelectedIndex == 0)
+            {
+                MessageBox.Show("Presidential Suite\n\n1. 3 Kamar king bed\n2. Ukuran kamar 92 -100 meter persegi (m2)\n3. Ruang olahraga pribadi dan kolam renang pribadi\n4. Fasilitas mewah");
+            }
+            else if (lb_hargaKamar.SelectedIndex == 1)
+            {
+                MessageBox.Show("Suite\n\n1. 2 kamar king bed\n2. Ukuran kamar 80 meter persegi (m2)");
+            }
+            else if (lb_hargaKamar.SelectedIndex == 2)
+            {
+                MessageBox.Show("Junior Suite\n\n1. 2 kamar (1 king bed, 1 single bed)\n2. Ukuran kamar 50 meter persegi (m2)");
+            }
+            else if (lb_hargaKamar.SelectedIndex == 3)
+            {
+                MessageBox.Show("Deluxe\n\n1. 1 kamar king bed\n2. Ukuran kamar 50 meter persegi (m2)");
+            }
+
+
+
         }
     }
 }
