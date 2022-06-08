@@ -852,6 +852,7 @@
             this.btn_A229.Text = "A229\r\nJS";
             this.btn_A229.UseVisualStyleBackColor = false;
             this.btn_A229.Visible = false;
+            this.btn_A229.Click += new System.EventHandler(this.btn_child_onClick);
             // 
             // btn_A230
             // 
@@ -942,6 +943,7 @@
             this.btn_A225.Text = "A225\r\nJS";
             this.btn_A225.UseVisualStyleBackColor = false;
             this.btn_A225.Visible = false;
+            this.btn_A225.Click += new System.EventHandler(this.btn_child_onClick);
             // 
             // btn_A224
             // 
@@ -1146,6 +1148,7 @@
             this.btn_A204.Name = "btn_A204";
             this.btn_A204.Size = new System.Drawing.Size(70, 86);
             this.btn_A204.TabIndex = 54;
+            this.btn_A204.Text = "A204\r\nJS";
             this.btn_A204.UseVisualStyleBackColor = false;
             this.btn_A204.Visible = false;
             this.btn_A204.Click += new System.EventHandler(this.btn_child_onClick);

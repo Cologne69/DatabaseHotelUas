@@ -17,6 +17,9 @@ namespace DatabaseHotelUas
         {
             InitializeComponent();
         }
+        
+        // filled_kamar is list of kamar WHERE kamar_status is 1
+        public static List<String> filled_kamar = new List<string>();
 
         private void form_kamar_Load(object sender, EventArgs e)
         {
@@ -26,7 +29,6 @@ namespace DatabaseHotelUas
              * change it to red
              */
             DataTable filled_kamar_dt = new DataTable();
-            List<String> filled_kamar = new List<string>();
 
             try
             {
@@ -82,16 +84,21 @@ namespace DatabaseHotelUas
         /*
             @pressed_button = reference to the button that was pressed for form_popupKamar
             @btn_child_onClick = dynamic func that return value to pressed_button & do query whether the button is available or not (red / green)
+            @tipe_kamar = tipe_kamar of the button that was pressed PS, S, JS, D
         */
 
         public static string pressed_button;
+        public static string tipe_kamar;
+        
         private void btn_child_onClick(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            btn.BackColor = Color.Red;
+            btn.BackColor = Color.Red; // only temporary :)
 
             // cast system.windows.forms.button btn to string and remove "btn_a"
             pressed_button = btn.Name.Substring(5);
+            // remove "A" and whitespace and 0-9 from btn.Text
+            tipe_kamar = new string(btn.Text.Where(c => !char.IsDigit(c) && !char.IsWhiteSpace(c) && c != 'A').ToArray());
 
             form_popupKamar popup = new form_popupKamar();
             popup.ShowDialog();
