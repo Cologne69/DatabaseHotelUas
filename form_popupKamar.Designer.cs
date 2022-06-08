@@ -32,12 +32,10 @@
             this.lbl_tipe_kamar = new System.Windows.Forms.Label();
             this.lbl_fasilitas = new System.Windows.Forms.Label();
             this.lbl_list_fasilitas = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_nama = new System.Windows.Forms.TextBox();
             this.lbl_nama = new System.Windows.Forms.Label();
             this.lbl_check_in = new System.Windows.Forms.Label();
-            this.lbl_check_out = new System.Windows.Forms.Label();
-            this.datetime_check_in = new System.Windows.Forms.DateTimePicker();
-            this.datetime_check_out = new System.Windows.Forms.DateTimePicker();
+            this.txt_check_in = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbl_no_kamar
@@ -46,7 +44,7 @@
             this.lbl_no_kamar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_no_kamar.Location = new System.Drawing.Point(21, 23);
             this.lbl_no_kamar.Name = "lbl_no_kamar";
-            this.lbl_no_kamar.Size = new System.Drawing.Size(127, 52);
+            this.lbl_no_kamar.Size = new System.Drawing.Size(127, 51);
             this.lbl_no_kamar.TabIndex = 0;
             this.lbl_no_kamar.Text = "A101";
             // 
@@ -79,12 +77,13 @@
             this.lbl_list_fasilitas.TabIndex = 3;
             this.lbl_list_fasilitas.Text = "1. Makan enak\r\n2. Minum air\r\n3. Hirup udara";
             // 
-            // textBox1
+            // txt_nama
             // 
-            this.textBox1.Location = new System.Drawing.Point(454, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(271, 22);
-            this.textBox1.TabIndex = 4;
+            this.txt_nama.Enabled = false;
+            this.txt_nama.Location = new System.Drawing.Point(454, 20);
+            this.txt_nama.Name = "txt_nama";
+            this.txt_nama.Size = new System.Drawing.Size(271, 22);
+            this.txt_nama.TabIndex = 4;
             // 
             // lbl_nama
             // 
@@ -104,46 +103,29 @@
             this.lbl_check_in.TabIndex = 6;
             this.lbl_check_in.Text = "Check in:";
             // 
-            // lbl_check_out
+            // txt_check_in
             // 
-            this.lbl_check_out.AutoSize = true;
-            this.lbl_check_out.Location = new System.Drawing.Point(372, 109);
-            this.lbl_check_out.Name = "lbl_check_out";
-            this.lbl_check_out.Size = new System.Drawing.Size(69, 16);
-            this.lbl_check_out.TabIndex = 7;
-            this.lbl_check_out.Text = "Check out:";
-            // 
-            // datetime_check_in
-            // 
-            this.datetime_check_in.Location = new System.Drawing.Point(453, 107);
-            this.datetime_check_in.Name = "datetime_check_in";
-            this.datetime_check_in.Size = new System.Drawing.Size(164, 22);
-            this.datetime_check_in.TabIndex = 8;
-            // 
-            // datetime_check_out
-            // 
-            this.datetime_check_out.Location = new System.Drawing.Point(454, 109);
-            this.datetime_check_out.Name = "datetime_check_out";
-            this.datetime_check_out.Size = new System.Drawing.Size(167, 22);
-            this.datetime_check_out.TabIndex = 9;
+            this.txt_check_in.Enabled = false;
+            this.txt_check_in.Location = new System.Drawing.Point(454, 104);
+            this.txt_check_in.Name = "txt_check_in";
+            this.txt_check_in.Size = new System.Drawing.Size(271, 22);
+            this.txt_check_in.TabIndex = 9;
             // 
             // form_popupKamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.datetime_check_out);
-            this.Controls.Add(this.datetime_check_in);
-            this.Controls.Add(this.lbl_check_out);
+            this.Controls.Add(this.txt_check_in);
             this.Controls.Add(this.lbl_check_in);
             this.Controls.Add(this.lbl_nama);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_nama);
             this.Controls.Add(this.lbl_list_fasilitas);
             this.Controls.Add(this.lbl_fasilitas);
             this.Controls.Add(this.lbl_tipe_kamar);
             this.Controls.Add(this.lbl_no_kamar);
             this.Name = "form_popupKamar";
-            this.Text = "form_popupKamar";
+            this.Text = "j";
             this.Load += new System.EventHandler(this.form_popupKamar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,11 +138,9 @@
         private System.Windows.Forms.Label lbl_tipe_kamar;
         private System.Windows.Forms.Label lbl_fasilitas;
         private System.Windows.Forms.Label lbl_list_fasilitas;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_nama;
         private System.Windows.Forms.Label lbl_nama;
         private System.Windows.Forms.Label lbl_check_in;
-        private System.Windows.Forms.Label lbl_check_out;
-        private System.Windows.Forms.DateTimePicker datetime_check_in;
-        private System.Windows.Forms.DateTimePicker datetime_check_out;
+        private System.Windows.Forms.TextBox txt_check_in;
     }
 }

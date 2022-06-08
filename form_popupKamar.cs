@@ -19,7 +19,10 @@ namespace DatabaseHotelUas
         private void form_popupKamar_Load(object sender, EventArgs e)
         {
             sync();
+            // to keep integrity of form_kamar.pressed_button
             lbl_no_kamar.Text = "A"+form_kamar.pressed_button;
+            
+            // @switch show list of fasilitas based on form_main messagebox
             switch (form_kamar.tipe_kamar)
             {
                 case "PS":
@@ -43,21 +46,15 @@ namespace DatabaseHotelUas
                     break;
             }
         }
-
+        
+        // @sync = delivering status to form boilerplate especially txt_nama and txt_check_in with sqlquery
         private void sync()
         {
             // check if form_kamar.pressed_button is in form_kamar.filled_kamar list
-            if (form_kamar.filled_kamar.Contains(form_kamar.pressed_button))
+            if (!form_kamar.filled_kamar.Contains(form_kamar.pressed_button))
             {
-                // if true, hide datetime_check_in and lbl_check_in
-                lbl_check_in.Hide();
-                datetime_check_in.Hide();
-            }
-            else
-            {
-                // vice versa
-                lbl_check_out.Hide();
-                datetime_check_out.Hide();
+                txt_nama.Text = "belum ada pengunjung";
+                txt_check_in.Text = "belum ada pengunjung";
             }
         }
     }

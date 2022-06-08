@@ -23,6 +23,11 @@ namespace DatabaseHotelUas
 
         private void form_kamar_Load(object sender, EventArgs e)
         {
+            list_box_suggestion.Hide();
+            lbl_check_in.Hide();
+            lbl_check_out.Hide();
+            datetime_check_in.Hide();
+            datetime_check_out.Hide();
             /*
              * query check for KAMAR_STATUS = 1
              * append(btn_A{KAMAR_NO})

@@ -116,6 +116,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.LblKeterangan = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.list_box_suggestion = new System.Windows.Forms.ListBox();
+            this.lbl_check_in = new System.Windows.Forms.Label();
+            this.lbl_check_out = new System.Windows.Forms.Label();
+            this.datetime_check_in = new System.Windows.Forms.DateTimePicker();
+            this.datetime_check_out = new System.Windows.Forms.DateTimePicker();
             this.gb_lantai.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,7 +143,7 @@
             this.btn_cari.Name = "btn_cari";
             this.btn_cari.Size = new System.Drawing.Size(102, 24);
             this.btn_cari.TabIndex = 3;
-            this.btn_cari.Text = "Cari";
+            this.btn_cari.Text = "Proses";
             this.btn_cari.UseVisualStyleBackColor = true;
             // 
             // btn_A104
@@ -1179,7 +1184,7 @@
             // LblKeterangan
             // 
             this.LblKeterangan.AutoSize = true;
-            this.LblKeterangan.Location = new System.Drawing.Point(894, 24);
+            this.LblKeterangan.Location = new System.Drawing.Point(883, 37);
             this.LblKeterangan.Name = "LblKeterangan";
             this.LblKeterangan.Size = new System.Drawing.Size(153, 64);
             this.LblKeterangan.TabIndex = 99;
@@ -1192,11 +1197,59 @@
             this.textBox1.Size = new System.Drawing.Size(472, 22);
             this.textBox1.TabIndex = 100;
             // 
+            // list_box_suggestion
+            // 
+            this.list_box_suggestion.FormattingEnabled = true;
+            this.list_box_suggestion.ItemHeight = 16;
+            this.list_box_suggestion.Location = new System.Drawing.Point(221, 60);
+            this.list_box_suggestion.Name = "list_box_suggestion";
+            this.list_box_suggestion.Size = new System.Drawing.Size(472, 20);
+            this.list_box_suggestion.TabIndex = 101;
+            // 
+            // lbl_check_in
+            // 
+            this.lbl_check_in.AutoSize = true;
+            this.lbl_check_in.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_check_in.Location = new System.Drawing.Point(70, 83);
+            this.lbl_check_in.Name = "lbl_check_in";
+            this.lbl_check_in.Size = new System.Drawing.Size(156, 25);
+            this.lbl_check_in.TabIndex = 102;
+            this.lbl_check_in.Text = "Tanggal Check In:";
+            // 
+            // lbl_check_out
+            // 
+            this.lbl_check_out.AutoSize = true;
+            this.lbl_check_out.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_check_out.Location = new System.Drawing.Point(70, 83);
+            this.lbl_check_out.Name = "lbl_check_out";
+            this.lbl_check_out.Size = new System.Drawing.Size(137, 20);
+            this.lbl_check_out.TabIndex = 103;
+            this.lbl_check_out.Text = "Tanggal Check Out:";
+            // 
+            // datetime_check_in
+            // 
+            this.datetime_check_in.Location = new System.Drawing.Point(221, 83);
+            this.datetime_check_in.Name = "datetime_check_in";
+            this.datetime_check_in.Size = new System.Drawing.Size(200, 22);
+            this.datetime_check_in.TabIndex = 104;
+            // 
+            // datetime_check_out
+            // 
+            this.datetime_check_out.Location = new System.Drawing.Point(221, 83);
+            this.datetime_check_out.Name = "datetime_check_out";
+            this.datetime_check_out.Size = new System.Drawing.Size(200, 22);
+            this.datetime_check_out.TabIndex = 105;
+            // 
             // form_kamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 661);
+            this.Controls.Add(this.datetime_check_out);
+            this.Controls.Add(this.datetime_check_in);
+            this.Controls.Add(this.lbl_check_out);
+            this.Controls.Add(this.lbl_check_in);
+            this.Controls.Add(this.list_box_suggestion);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.LblKeterangan);
             this.Controls.Add(this.btn_A228);
@@ -1382,5 +1435,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblKeterangan;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListBox list_box_suggestion;
+        private System.Windows.Forms.Label lbl_check_in;
+        private System.Windows.Forms.Label lbl_check_out;
+        private System.Windows.Forms.DateTimePicker datetime_check_in;
+        private System.Windows.Forms.DateTimePicker datetime_check_out;
     }
 }
