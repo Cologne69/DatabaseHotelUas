@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_kamar));
-            this.btn_exit = new System.Windows.Forms.Button();
             this.btn_A101 = new System.Windows.Forms.Button();
             this.btn_bookKamar = new System.Windows.Forms.Button();
             this.btn_A104 = new System.Windows.Forms.Button();
@@ -124,17 +123,6 @@
             this.gb_lantai.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_exit
-            // 
-            this.btn_exit.Location = new System.Drawing.Point(11, 10);
-            this.btn_exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(81, 26);
-            this.btn_exit.TabIndex = 0;
-            this.btn_exit.Text = "Exit";
-            this.btn_exit.UseVisualStyleBackColor = true;
-            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
-            // 
             // btn_A101
             // 
             this.btn_A101.BackColor = System.Drawing.Color.Lime;
@@ -149,10 +137,6 @@
             // 
             // btn_bookKamar
             // 
-            this.btn_bookKamar.Location = new System.Drawing.Point(687, 48);
-            this.btn_bookKamar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_bookKamar.Name = "btn_bookKamar";
-            this.btn_bookKamar.Size = new System.Drawing.Size(130, 22);
             this.btn_bookKamar.TabIndex = 3;
             this.btn_bookKamar.Text = "Book Kamar";
             this.btn_bookKamar.UseVisualStyleBackColor = true;
@@ -868,7 +852,6 @@
             this.btn_A229.Text = "A229\r\nJS";
             this.btn_A229.UseVisualStyleBackColor = false;
             this.btn_A229.Visible = false;
-            this.btn_A229.Click += new System.EventHandler(this.btn_child_onClick);
             // 
             // btn_A230
             // 
@@ -959,7 +942,6 @@
             this.btn_A225.Text = "A225\r\nJS";
             this.btn_A225.UseVisualStyleBackColor = false;
             this.btn_A225.Visible = false;
-            this.btn_A225.Click += new System.EventHandler(this.btn_child_onClick);
             // 
             // btn_A224
             // 
@@ -1164,7 +1146,6 @@
             this.btn_A204.Name = "btn_A204";
             this.btn_A204.Size = new System.Drawing.Size(70, 86);
             this.btn_A204.TabIndex = 54;
-            this.btn_A204.Text = "A204\r\nJS\r\n";
             this.btn_A204.UseVisualStyleBackColor = false;
             this.btn_A204.Visible = false;
             this.btn_A204.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1246,7 +1227,6 @@
             this.LblKeterangan.Size = new System.Drawing.Size(138, 64);
             this.LblKeterangan.TabIndex = 99;
             this.LblKeterangan.Text = "PS : Presidential Suite\r\nS   : Suite \r\nJS  : Junior Suite\r\nD  : Deluxe ";
-            this.LblKeterangan.Click += new System.EventHandler(this.label3_Click);
             // 
             // form_kamar
             // 
@@ -1342,7 +1322,6 @@
             this.Controls.Add(this.btn_A104);
             this.Controls.Add(this.btn_bookKamar);
             this.Controls.Add(this.btn_A101);
-            this.Controls.Add(this.btn_exit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1356,8 +1335,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_A101;
         private System.Windows.Forms.Button btn_bookKamar;
         private System.Windows.Forms.Button btn_A104;

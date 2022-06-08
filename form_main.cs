@@ -22,6 +22,8 @@ namespace DatabaseHotelUas
         public MySqlDataAdapter sqlAdapter;
         string sqlQuery;
         new DataTable HargaKamar = new DataTable();
+        public static int transID = 0;
+       
         
 
 
@@ -120,6 +122,11 @@ namespace DatabaseHotelUas
                 lb_hargaKamar.DataSource = HargaKamar;
                 lb_hargaKamar.DisplayMember = "1";
                 lb_hargaKamar.ValueMember = "1";
+                lb_hargaKamar.ClearSelected();
+
+
+
+
             }
             catch (Exception ex)
             {
@@ -166,11 +173,11 @@ namespace DatabaseHotelUas
 
         }
 
-  
         private void label1_Click(object sender, EventArgs e)
-        {
-
+        { 
         }
+
+         
 
         private void timer1_Tick(object sender, EventArgs e)
         {
