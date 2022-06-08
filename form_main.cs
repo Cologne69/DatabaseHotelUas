@@ -23,7 +23,7 @@ namespace DatabaseHotelUas
         string sqlQuery;
         new DataTable HargaKamar = new DataTable();
         public static int transID = 0;
-       
+        MySqlDataReader myReader;
         
 
 
