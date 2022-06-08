@@ -41,21 +41,9 @@ namespace DatabaseHotelUas
             {
                 MessageBox.Show(ex.Message);
             }
-
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //for (int i = 0; i <= dataGridView1.Columns.Count - 1; i++)
-            //{
-            //    // Store Auto Sized Widths:
-            //    int colw = dataGridView1.Columns[i].Width;
-
-            //    // Remove AutoSizing:
-            //    dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-
-            //    // Set Width to calculated AutoSize value:
-            //    dataGridView1.Columns[i].Width = colw;
-            //}
         }
         private void txt_cariNamaPelanggan_TextChanged(object sender, EventArgs e)
         {
@@ -80,8 +68,9 @@ namespace DatabaseHotelUas
                     sqlQuery = $"DELETE FROM CUSTOMER WHERE CUST_ID = '{dataGridView1.CurrentRow.Cells[0].Value.ToString()}';";
                     sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                     sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                    sqlAdapter.Fill(pelanggan);
                     MessageBox.Show($"Pelanggan dengan ID: {dataGridView1.CurrentRow.Cells[0].Value.ToString()} berhasil dihapus");
-                    
+                    dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
                 }
                 catch (Exception ex)
                 {
@@ -89,7 +78,6 @@ namespace DatabaseHotelUas
                 }
             }
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
