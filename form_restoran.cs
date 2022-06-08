@@ -21,11 +21,11 @@ namespace DatabaseHotelUas
         int orderID = 1;
         int totalCart = 0;
         DataTable Pelanggan = new DataTable();
- 
+        DataTable Pesanan = new DataTable();
         DataTable Menu = new DataTable();
         DataTable OrderID = new DataTable();
 
-        form_invoiceResto fir = new form_invoiceResto();
+        
 
         public form_resto()
         {
@@ -44,19 +44,29 @@ namespace DatabaseHotelUas
         {
             
         }
+
+        
         private void btn_pesan_Click(object sender, EventArgs e)
         {
             try
-            {
-                fir.Show();
-                
+            { 
+                this.Height = 900;
                 sqlAdapter.Fill(OrderID);
                 totalCart++;
                 lbl_isiiteminCart.Text = totalCart.ToString();
 
+                sqlQuery = $"INSERT INTO ORDER_ID VALUES('{orderID}', '{DGV_Menu.CurrentRow.Cells[0].Value.ToString()}', '(SELECT SUM({num_jumlahMakanan.Value} * MENU.MENU_HARGA) FROM MENU WHERE MENU.MENU_ID = '{DGV_Menu.CurrentRow.Cells[0].Value.ToString()})'";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(Pesanan);
+                DGV_invoice.DataSource = Pesanan;   
+
+                
+
                 sqlQuery = $"SELECT SUM(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{orderID}'";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                
                 
             }
             catch (Exception ex)
@@ -68,14 +78,17 @@ namespace DatabaseHotelUas
 
         private void cb_pilihMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
         }
+        
         private void form_resto_Load(object sender, EventArgs e)
         {
             num_jumlahMakanan.Value = 1;
             Menu.Clear();
             OrderID.Clear();
             lbl_isiOrderID.Text = orderID.ToString();
-
+            this.Height = 500;
+            Pesanan.Clear();
             try
             {
                 sqlQuery = $"SELECT * FROM MENU";
@@ -84,14 +97,27 @@ namespace DatabaseHotelUas
                 sqlAdapter.Fill(Menu);
                 DGV_Menu.DataSource = Menu;
                 
-                sqlQuery = $"SELECT CONCAT(CUST_ID,' - ', CUST_NAMA) as 'id dan nama', CUST_ID as 'nama' FROM CUSTOMER";
+                sqlQuery = $"SELECT CONCAT(CUST_NAMA,' - ',CUST_ID) as 'id dan nama', CUST_ID as 'nama' FROM CUSTOMER";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(Pelanggan);
                 cb_pelanggan.DataSource = Pelanggan;
                 cb_pelanggan.DisplayMember = "id dan nama";
                 cb_pelanggan.ValueMember = "nama";
-            } 
+
+               
+                
+                //DataColumn col = new DataColumn("Jumlah", typeof(int));
+                //Pesanan.Columns.Add("Nama Menu", typeof(string));
+                //Pesanan.Columns.Add("Harga Menu");
+                //Pesanan.Columns.Add("Sub-Total");
+                //Pesanan.Columns.Add("Total");
+
+
+
+               
+
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());   
@@ -129,6 +155,8 @@ namespace DatabaseHotelUas
             {
                 try
                 {
+                    this.Height = 500;
+                    Pesanan.Clear();
                     sqlQuery = $"INSERT INTO DETAIL_ORDER_MENU VALUES ('{orderID}','{DGV_Menu.CurrentRow.Cells[0].Value.ToString()}','{num_jumlahMakanan.Value}',(SELECT SUM({num_jumlahMakanan.Value} * MENU.MENU_HARGA) FROM MENU WHERE MENU.MENU_ID = '{DGV_Menu.CurrentRow.Cells[0].Value.ToString()}'))";
                     sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                     sqlAdapter = new MySqlDataAdapter(sqlCommand);

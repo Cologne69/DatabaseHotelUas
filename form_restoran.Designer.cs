@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_resto));
             this.btn_addtoCart = new System.Windows.Forms.Button();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.DGV_Menu = new System.Windows.Forms.DataGridView();
@@ -43,15 +44,17 @@
             this.lbl_nama = new System.Windows.Forms.Label();
             this.lbl_totalHarga = new System.Windows.Forms.Label();
             this.lbl_total = new System.Windows.Forms.Label();
+            this.DGV_invoice = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_jumlahMakanan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_invoice)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_addtoCart
             // 
-            this.btn_addtoCart.Location = new System.Drawing.Point(12, 667);
+            this.btn_addtoCart.Location = new System.Drawing.Point(349, 524);
             this.btn_addtoCart.Name = "btn_addtoCart";
-            this.btn_addtoCart.Size = new System.Drawing.Size(165, 33);
+            this.btn_addtoCart.Size = new System.Drawing.Size(165, 45);
             this.btn_addtoCart.TabIndex = 2;
             this.btn_addtoCart.Text = "Masukkan Ke Cart";
             this.btn_addtoCart.UseVisualStyleBackColor = true;
@@ -149,9 +152,9 @@
             // 
             // btn_checkout
             // 
-            this.btn_checkout.Location = new System.Drawing.Point(691, 667);
+            this.btn_checkout.Location = new System.Drawing.Point(574, 525);
             this.btn_checkout.Name = "btn_checkout";
-            this.btn_checkout.Size = new System.Drawing.Size(97, 32);
+            this.btn_checkout.Size = new System.Drawing.Size(170, 44);
             this.btn_checkout.TabIndex = 13;
             this.btn_checkout.Text = "Checkout";
             this.btn_checkout.UseVisualStyleBackColor = true;
@@ -159,7 +162,8 @@
             // 
             // cb_pelanggan
             // 
-            this.cb_pelanggan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_pelanggan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_pelanggan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_pelanggan.FormattingEnabled = true;
             this.cb_pelanggan.Location = new System.Drawing.Point(57, 437);
             this.cb_pelanggan.Name = "cb_pelanggan";
@@ -193,11 +197,24 @@
             this.lbl_total.TabIndex = 16;
             this.lbl_total.Text = "Total Harga: ";
             // 
+            // DGV_invoice
+            // 
+            this.DGV_invoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_invoice.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DGV_invoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_invoice.Location = new System.Drawing.Point(12, 731);
+            this.DGV_invoice.Name = "DGV_invoice";
+            this.DGV_invoice.RowHeadersWidth = 62;
+            this.DGV_invoice.RowTemplate.Height = 28;
+            this.DGV_invoice.Size = new System.Drawing.Size(776, 579);
+            this.DGV_invoice.TabIndex = 18;
+            // 
             // form_resto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 711);
+            this.ClientSize = new System.Drawing.Size(800, 731);
+            this.Controls.Add(this.DGV_invoice);
             this.Controls.Add(this.lbl_totalHarga);
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.lbl_nama);
@@ -213,11 +230,13 @@
             this.Controls.Add(this.DGV_Menu);
             this.Controls.Add(this.btn_addtoCart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "form_resto";
             this.Text = "Form Restoran";
             this.Load += new System.EventHandler(this.form_resto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_jumlahMakanan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_invoice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,5 +258,6 @@
         private System.Windows.Forms.Label lbl_nama;
         private System.Windows.Forms.Label lbl_totalHarga;
         private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.DataGridView DGV_invoice;
     }
 }
