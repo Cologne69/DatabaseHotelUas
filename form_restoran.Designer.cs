@@ -68,8 +68,12 @@
             // 
             // DGV_Menu
             // 
+            this.DGV_Menu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_Menu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DGV_Menu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV_Menu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Menu.Location = new System.Drawing.Point(12, 59);
+            this.DGV_Menu.MultiSelect = false;
             this.DGV_Menu.Name = "DGV_Menu";
             this.DGV_Menu.ReadOnly = true;
             this.DGV_Menu.RowHeadersWidth = 62;
@@ -176,6 +180,7 @@
             this.cb_pelanggan.Name = "cb_pelanggan";
             this.cb_pelanggan.Size = new System.Drawing.Size(687, 28);
             this.cb_pelanggan.TabIndex = 14;
+            this.cb_pelanggan.SelectedIndexChanged += new System.EventHandler(this.cb_pelanggan_SelectedIndexChanged);
             // 
             // lbl_nama
             // 
@@ -215,7 +220,7 @@
             this.DGV_invoice.ShowCellToolTips = false;
             this.DGV_invoice.ShowEditingIcon = false;
             this.DGV_invoice.ShowRowErrors = false;
-            this.DGV_invoice.Size = new System.Drawing.Size(776, 579);
+            this.DGV_invoice.Size = new System.Drawing.Size(776, 304);
             this.DGV_invoice.TabIndex = 18;
             // 
             // lbl_totalHarga
