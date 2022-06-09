@@ -18,21 +18,53 @@ namespace DatabaseHotelUas
             InitializeComponent();
         }
 
+        private MySqlCommand sqlCommand;
+        private MySqlDataAdapter sqlAdapter;
+        /* 
+         * @filled_kamar is list of kamar WHERE kamar_status is 1
+         * @cart = temporary cart source for 
+         * @pelanggan = feed some suggestion to list_box_suggestion
+         * @temp_pelanggan = for pic_status
+         */
+
+        public static List<String> filled_kamar = new List<string>();
+        public DataTable cart = new DataTable();
+        private DataTable pelanggan = new DataTable();
+        private List<string> temp_pelanggan = new List<string>();
         private void form_kamar_Load(object sender, EventArgs e)
         {
+            lbl_check_in.Hide();
+            lbl_check_out.Hide();
+            datetime_check_in.Hide();
+            datetime_check_out.Hide();
+
             /*
              * query check for KAMAR_STATUS = 1
              * append(btn_A{KAMAR_NO})
              * change it to red
              */
+
             DataTable filled_kamar_dt = new DataTable();
-            List<String> filled_kamar = new List<string>();
 
             try
             {
                 string sqlQuery = "SELECT KAMAR_NO FROM KAMAR WHERE KAMAR_STATUS = 1";
                 new MySqlDataAdapter(sqlQuery, form_main.sqlConnect).Fill(filled_kamar_dt);
                 filled_kamar = filled_kamar_dt.AsEnumerable().Select(x => x.Field<String>("KAMAR_NO")).ToList();
+
+                sqlQuery = $"SELECT CONCAT(CUST_NAMA,' - ',CUST_ID) as 'id dan nama', CUST_ID as 'nama' FROM CUSTOMER ORDER BY 2 DESC";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(pelanggan);
+
+                cb_pelanggan.DataSource = pelanggan;
+                cb_pelanggan.ValueMember = "nama";
+                cb_pelanggan.DisplayMember = "id dan nama";
+
+                // fill first column of pelanggan to temp_pelanggan
+                temp_pelanggan = pelanggan.AsEnumerable().Select(x => x.Field<String>("id dan nama")).ToList();
+                btn_tambah_pelanggan.Hide();
+                btn_cancel.Hide();
             }
             catch(Exception ex)
             {
@@ -82,19 +114,70 @@ namespace DatabaseHotelUas
         /*
             @pressed_button = reference to the button that was pressed for form_popupKamar
             @btn_child_onClick = dynamic func that return value to pressed_button & do query whether the button is available or not (red / green)
+            @tipe_kamar = tipe_kamar of the button that was pressed PS, S, JS, D
         */
 
         public static string pressed_button;
+        public static string tipe_kamar;
+        
         private void btn_child_onClick(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            btn.BackColor = Color.Red;
+            btn.BackColor = Color.Red; // only temporary :)
 
             // cast system.windows.forms.button btn to string and remove "btn_a"
             pressed_button = btn.Name.Substring(5);
+            // remove "A" and whitespace and 0-9 from btn.Text
+            tipe_kamar = new string(btn.Text.Where(c => !char.IsDigit(c) && !char.IsWhiteSpace(c) && c != 'A').ToArray());
 
             form_popupKamar popup = new form_popupKamar();
+            popup.StartPosition = FormStartPosition.CenterParent;
             popup.ShowDialog();
+        }
+
+        private void cb_pelanggan_KeyDown(object sender, KeyEventArgs e) // change status to red if user pressed any key in cb_pelanggan
+        {
+            pic_status.BackColor = Color.Red;
+            btn_proses.Hide();
+            btn_tambah_pelanggan.Show();
+            if (temp_pelanggan.Contains(cb_pelanggan.Text))
+            {
+                pic_status.BackColor = Color.Green;
+                btn_proses.Show();
+                btn_tambah_pelanggan.Hide();
+            }
+        }
+
+        private void cb_pelanggan_SelectedValueChanged(object sender, EventArgs e)
+        {
+            pic_status.BackColor = Color.Green;
+            btn_proses.Show();
+            btn_tambah_pelanggan.Hide();
+        }
+
+        private void btn_proses_Click(object sender, EventArgs e)
+        {
+            cb_pelanggan.Enabled = false;
+            btn_proses.Hide();
+            btn_cancel.Show();
+        }
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            cb_pelanggan.Enabled = true;
+            btn_proses.Show();
+            btn_cancel.Hide();
+        }
+
+        private void btn_tambah_pelanggan_Click(object sender, EventArgs e)
+        {
+            /*
+             * cb_pelanggan.Text linked to form_tambahPelanggan.txt_namaPelanggan.Text
+             * to make it works, form_tambahPelanggan.txt_nama_Pelanggan modifiers is set to public
+             */
+            form_tambahPelanggan tambahPelanggan = new form_tambahPelanggan();
+            tambahPelanggan.StartPosition = FormStartPosition.CenterParent;
+            tambahPelanggan.txt_namaPelanggan.Text = cb_pelanggan.Text;
+            tambahPelanggan.ShowDialog();
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_kamar));
             this.btn_A101 = new System.Windows.Forms.Button();
-            this.btn_cari = new System.Windows.Forms.Button();
+            this.btn_proses = new System.Windows.Forms.Button();
             this.btn_A104 = new System.Windows.Forms.Button();
             this.btn_A102 = new System.Windows.Forms.Button();
             this.btn_A106 = new System.Windows.Forms.Button();
@@ -115,8 +115,16 @@
             this.btn_A201 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.LblKeterangan = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbl_check_in = new System.Windows.Forms.Label();
+            this.lbl_check_out = new System.Windows.Forms.Label();
+            this.datetime_check_in = new System.Windows.Forms.DateTimePicker();
+            this.datetime_check_out = new System.Windows.Forms.DateTimePicker();
+            this.cb_pelanggan = new System.Windows.Forms.ComboBox();
+            this.pic_status = new System.Windows.Forms.PictureBox();
+            this.btn_tambah_pelanggan = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.gb_lantai.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_A101
@@ -131,15 +139,16 @@
             this.btn_A101.UseVisualStyleBackColor = false;
             this.btn_A101.Click += new System.EventHandler(this.btn_child_onClick);
             // 
-            // btn_cari
+            // btn_proses
             // 
-            this.btn_cari.Location = new System.Drawing.Point(713, 37);
-            this.btn_cari.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_cari.Name = "btn_cari";
-            this.btn_cari.Size = new System.Drawing.Size(102, 24);
-            this.btn_cari.TabIndex = 3;
-            this.btn_cari.Text = "Cari";
-            this.btn_cari.UseVisualStyleBackColor = true;
+            this.btn_proses.Location = new System.Drawing.Point(659, 15);
+            this.btn_proses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_proses.Name = "btn_proses";
+            this.btn_proses.Size = new System.Drawing.Size(102, 30);
+            this.btn_proses.TabIndex = 3;
+            this.btn_proses.Text = "Proses";
+            this.btn_proses.UseVisualStyleBackColor = true;
+            this.btn_proses.Click += new System.EventHandler(this.btn_proses_Click);
             // 
             // btn_A104
             // 
@@ -852,6 +861,7 @@
             this.btn_A229.Text = "A229\r\nJS";
             this.btn_A229.UseVisualStyleBackColor = false;
             this.btn_A229.Visible = false;
+            this.btn_A229.Click += new System.EventHandler(this.btn_child_onClick);
             // 
             // btn_A230
             // 
@@ -942,6 +952,7 @@
             this.btn_A225.Text = "A225\r\nJS";
             this.btn_A225.UseVisualStyleBackColor = false;
             this.btn_A225.Visible = false;
+            this.btn_A225.Click += new System.EventHandler(this.btn_child_onClick);
             // 
             // btn_A224
             // 
@@ -1146,6 +1157,7 @@
             this.btn_A204.Name = "btn_A204";
             this.btn_A204.Size = new System.Drawing.Size(70, 86);
             this.btn_A204.TabIndex = 54;
+            this.btn_A204.Text = "A204\r\nJS";
             this.btn_A204.UseVisualStyleBackColor = false;
             this.btn_A204.Visible = false;
             this.btn_A204.Click += new System.EventHandler(this.btn_child_onClick);
@@ -1167,7 +1179,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(70, 39);
+            this.label1.Location = new System.Drawing.Point(70, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 20);
             this.label1.TabIndex = 93;
@@ -1176,25 +1188,102 @@
             // LblKeterangan
             // 
             this.LblKeterangan.AutoSize = true;
-            this.LblKeterangan.Location = new System.Drawing.Point(894, 24);
+            this.LblKeterangan.Location = new System.Drawing.Point(882, 15);
             this.LblKeterangan.Name = "LblKeterangan";
             this.LblKeterangan.Size = new System.Drawing.Size(153, 64);
             this.LblKeterangan.TabIndex = 99;
             this.LblKeterangan.Text = "1. Presidential Suite (PS)\r\n2. Suite (S)\r\n3. Junior Suite (JS)\r\n4. Deluxe (D)";
             // 
-            // textBox1
+            // lbl_check_in
             // 
-            this.textBox1.Location = new System.Drawing.Point(221, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(472, 22);
-            this.textBox1.TabIndex = 100;
+            this.lbl_check_in.AutoSize = true;
+            this.lbl_check_in.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_check_in.Location = new System.Drawing.Point(70, 64);
+            this.lbl_check_in.Name = "lbl_check_in";
+            this.lbl_check_in.Size = new System.Drawing.Size(125, 20);
+            this.lbl_check_in.TabIndex = 102;
+            this.lbl_check_in.Text = "Tanggal Check In:";
+            // 
+            // lbl_check_out
+            // 
+            this.lbl_check_out.AutoSize = true;
+            this.lbl_check_out.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_check_out.Location = new System.Drawing.Point(70, 64);
+            this.lbl_check_out.Name = "lbl_check_out";
+            this.lbl_check_out.Size = new System.Drawing.Size(137, 20);
+            this.lbl_check_out.TabIndex = 103;
+            this.lbl_check_out.Text = "Tanggal Check Out:";
+            // 
+            // datetime_check_in
+            // 
+            this.datetime_check_in.Location = new System.Drawing.Point(221, 64);
+            this.datetime_check_in.Name = "datetime_check_in";
+            this.datetime_check_in.Size = new System.Drawing.Size(200, 22);
+            this.datetime_check_in.TabIndex = 104;
+            // 
+            // datetime_check_out
+            // 
+            this.datetime_check_out.Location = new System.Drawing.Point(221, 64);
+            this.datetime_check_out.Name = "datetime_check_out";
+            this.datetime_check_out.Size = new System.Drawing.Size(200, 22);
+            this.datetime_check_out.TabIndex = 105;
+            // 
+            // cb_pelanggan
+            // 
+            this.cb_pelanggan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_pelanggan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_pelanggan.FormattingEnabled = true;
+            this.cb_pelanggan.Location = new System.Drawing.Point(221, 17);
+            this.cb_pelanggan.Name = "cb_pelanggan";
+            this.cb_pelanggan.Size = new System.Drawing.Size(409, 24);
+            this.cb_pelanggan.TabIndex = 107;
+            this.cb_pelanggan.SelectedValueChanged += new System.EventHandler(this.cb_pelanggan_SelectedValueChanged);
+            this.cb_pelanggan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_pelanggan_KeyDown);
+            // 
+            // pic_status
+            // 
+            this.pic_status.BackColor = System.Drawing.Color.Red;
+            this.pic_status.Location = new System.Drawing.Point(637, 21);
+            this.pic_status.Name = "pic_status";
+            this.pic_status.Size = new System.Drawing.Size(16, 16);
+            this.pic_status.TabIndex = 108;
+            this.pic_status.TabStop = false;
+            // 
+            // btn_tambah_pelanggan
+            // 
+            this.btn_tambah_pelanggan.Location = new System.Drawing.Point(659, 15);
+            this.btn_tambah_pelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_tambah_pelanggan.Name = "btn_tambah_pelanggan";
+            this.btn_tambah_pelanggan.Size = new System.Drawing.Size(102, 30);
+            this.btn_tambah_pelanggan.TabIndex = 109;
+            this.btn_tambah_pelanggan.Text = "Tambah";
+            this.btn_tambah_pelanggan.UseVisualStyleBackColor = true;
+            this.btn_tambah_pelanggan.Click += new System.EventHandler(this.btn_tambah_pelanggan_Click);
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.Location = new System.Drawing.Point(659, 15);
+            this.btn_cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(102, 30);
+            this.btn_cancel.TabIndex = 110;
+            this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // form_kamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 661);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_tambah_pelanggan);
+            this.Controls.Add(this.pic_status);
+            this.Controls.Add(this.cb_pelanggan);
+            this.Controls.Add(this.datetime_check_out);
+            this.Controls.Add(this.datetime_check_in);
+            this.Controls.Add(this.lbl_check_out);
+            this.Controls.Add(this.lbl_check_in);
             this.Controls.Add(this.LblKeterangan);
             this.Controls.Add(this.btn_A228);
             this.Controls.Add(this.btn_A227);
@@ -1277,7 +1366,7 @@
             this.Controls.Add(this.btn_A106);
             this.Controls.Add(this.btn_A102);
             this.Controls.Add(this.btn_A104);
-            this.Controls.Add(this.btn_cari);
+            this.Controls.Add(this.btn_proses);
             this.Controls.Add(this.btn_A101);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1286,6 +1375,7 @@
             this.Text = "Kamar";
             this.Load += new System.EventHandler(this.form_kamar_Load);
             this.gb_lantai.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_status)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1293,7 +1383,7 @@
 
         #endregion
         private System.Windows.Forms.Button btn_A101;
-        private System.Windows.Forms.Button btn_cari;
+        private System.Windows.Forms.Button btn_proses;
         private System.Windows.Forms.Button btn_A104;
         private System.Windows.Forms.Button btn_A102;
         private System.Windows.Forms.Button btn_A106;
@@ -1378,6 +1468,13 @@
         private System.Windows.Forms.Button btn_A201;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblKeterangan;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbl_check_in;
+        private System.Windows.Forms.Label lbl_check_out;
+        private System.Windows.Forms.DateTimePicker datetime_check_in;
+        private System.Windows.Forms.DateTimePicker datetime_check_out;
+        private System.Windows.Forms.ComboBox cb_pelanggan;
+        private System.Windows.Forms.PictureBox pic_status;
+        private System.Windows.Forms.Button btn_tambah_pelanggan;
+        private System.Windows.Forms.Button btn_cancel;
     }
 }
