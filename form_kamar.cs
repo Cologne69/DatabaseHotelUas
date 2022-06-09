@@ -63,6 +63,8 @@ namespace DatabaseHotelUas
 
                 // fill first column of pelanggan to temp_pelanggan
                 temp_pelanggan = pelanggan.AsEnumerable().Select(x => x.Field<String>("id dan nama")).ToList();
+                btn_tambah_pelanggan.Hide();
+                btn_cancel.Hide();
             }
             catch(Exception ex)
             {
@@ -133,18 +135,49 @@ namespace DatabaseHotelUas
             popup.ShowDialog();
         }
 
-        private void cb_pelanggan_KeyDown(object sender, KeyEventArgs e) // change status to red if user pressed some key
+        private void cb_pelanggan_KeyDown(object sender, KeyEventArgs e) // change status to red if user pressed any key in cb_pelanggan
         {
             pic_status.BackColor = Color.Red;
+            btn_proses.Hide();
+            btn_tambah_pelanggan.Show();
             if (temp_pelanggan.Contains(cb_pelanggan.Text))
             {
                 pic_status.BackColor = Color.Green;
+                btn_proses.Show();
+                btn_tambah_pelanggan.Hide();
             }
         }
 
         private void cb_pelanggan_SelectedValueChanged(object sender, EventArgs e)
         {
             pic_status.BackColor = Color.Green;
+            btn_proses.Show();
+            btn_tambah_pelanggan.Hide();
+        }
+
+        private void btn_proses_Click(object sender, EventArgs e)
+        {
+            cb_pelanggan.Enabled = false;
+            btn_proses.Hide();
+            btn_cancel.Show();
+        }
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            cb_pelanggan.Enabled = true;
+            btn_proses.Show();
+            btn_cancel.Hide();
+        }
+
+        private void btn_tambah_pelanggan_Click(object sender, EventArgs e)
+        {
+            /*
+             * cb_pelanggan.Text linked to form_tambahPelanggan.txt_namaPelanggan.Text
+             * to make it works, form_tambahPelanggan.txt_nama_Pelanggan modifiers is set to public
+             */
+            form_tambahPelanggan tambahPelanggan = new form_tambahPelanggan();
+            tambahPelanggan.StartPosition = FormStartPosition.CenterParent;
+            tambahPelanggan.txt_namaPelanggan.Text = cb_pelanggan.Text;
+            tambahPelanggan.ShowDialog();
         }
     }
 }
