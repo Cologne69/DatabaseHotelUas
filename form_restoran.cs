@@ -213,12 +213,14 @@ namespace DatabaseHotelUas
                     Pesanan.Clear();
                     Invoice.Clear();
                     DGV_invoice.DataSource = Invoice;
-                    sqlQuery = $"INSERT INTO ORDER_FOOD VALUES ('{maxorderID}','{form_main.transID.ToString()}','{cb_pelanggan.SelectedValue.ToString()}', date_format(now(), '%Y-%m-%d') , null , (SELECT COUNT(ORDER_ID) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = {maxorderID}) , (select sum(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxorderID}'),0);";
+                    sqlQuery = $"INSERT INTO ORDER_FOOD VALUES ('{maxorderID.ToString()}','{form_main.transID.ToString()}','{cb_pelanggan.SelectedValue.ToString()}', date_format(now(), '%Y-%m-%d') , null , (SELECT COUNT(ORDER_ID) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = {maxorderID}) , (select sum(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxorderID}'),0);";
                     sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                     sqlAdapter = new MySqlDataAdapter(sqlCommand);
                     maxorderID++;
                     MessageBox.Show($"Pesanan dengan ID: {maxorderID-1} berhasil di Checkout");
                     lbl_isiOrderID.Text = maxorderID.ToString();
+                    lbl_isiiteminCart.Text = "0";
+                    lbl_totalHarga.Text = "0";
                 }
                 catch (Exception ex)
                 {
@@ -240,7 +242,12 @@ namespace DatabaseHotelUas
 
         private void form_resto_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("Apakah anda yakin untuk menutup sebelum Checkout pesanan?", "Tutup Pemesanan", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(MessageBox.Show("Apakah anda yakin untuk menutup sebelum Checkout pesanan?", "Tutup Pemesanan", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = false;
+                return;
+            }
+            else if (MessageBox.Show("Apakah anda yakin untuk menutup sebelum Checkout pesanan?", "Tutup Pemesanan", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 sqlQuery = $"DELETE FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxorderID}'";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);

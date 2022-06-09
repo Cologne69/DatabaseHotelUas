@@ -68,8 +68,12 @@
             // 
             // DGV_Menu
             // 
+            this.DGV_Menu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_Menu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DGV_Menu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV_Menu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Menu.Location = new System.Drawing.Point(12, 59);
+            this.DGV_Menu.MultiSelect = false;
             this.DGV_Menu.Name = "DGV_Menu";
             this.DGV_Menu.ReadOnly = true;
             this.DGV_Menu.RowHeadersWidth = 62;
