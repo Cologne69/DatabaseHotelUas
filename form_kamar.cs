@@ -174,10 +174,10 @@ namespace DatabaseHotelUas
              * cb_pelanggan.Text linked to form_tambahPelanggan.txt_namaPelanggan.Text
              * to make it works, form_tambahPelanggan.txt_nama_Pelanggan modifiers is set to public
              */
-            form_tambahPelanggan tambahPelanggan = new form_tambahPelanggan();
-            tambahPelanggan.StartPosition = FormStartPosition.CenterParent;
-            tambahPelanggan.txt_namaPelanggan.Text = cb_pelanggan.Text;
-            tambahPelanggan.ShowDialog();
+
+            form_main.ftp.StartPosition = FormStartPosition.CenterParent;
+            form_main.ftp.txt_namaPelanggan.Text = cb_pelanggan.Text;
+            form_main.ftp.ShowDialog();
         }
     }
 }

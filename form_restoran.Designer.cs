@@ -45,9 +45,11 @@
             this.lbl_total = new System.Windows.Forms.Label();
             this.DGV_invoice = new System.Windows.Forms.DataGridView();
             this.lbl_totalHarga = new System.Windows.Forms.TextBox();
+            this.pic_status = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_jumlahMakanan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_invoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_addtoCart
@@ -178,9 +180,10 @@
             this.cb_pelanggan.FormattingEnabled = true;
             this.cb_pelanggan.Location = new System.Drawing.Point(57, 437);
             this.cb_pelanggan.Name = "cb_pelanggan";
-            this.cb_pelanggan.Size = new System.Drawing.Size(687, 28);
+            this.cb_pelanggan.Size = new System.Drawing.Size(655, 28);
             this.cb_pelanggan.TabIndex = 14;
             this.cb_pelanggan.SelectedIndexChanged += new System.EventHandler(this.cb_pelanggan_SelectedIndexChanged);
+            this.cb_pelanggan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_pelanggan_KeyDown);
             // 
             // lbl_nama
             // 
@@ -234,11 +237,22 @@
             this.lbl_totalHarga.TabIndex = 19;
             this.lbl_totalHarga.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // pic_status
+            // 
+            this.pic_status.BackColor = System.Drawing.Color.Red;
+            this.pic_status.Location = new System.Drawing.Point(726, 437);
+            this.pic_status.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pic_status.Name = "pic_status";
+            this.pic_status.Size = new System.Drawing.Size(28, 28);
+            this.pic_status.TabIndex = 109;
+            this.pic_status.TabStop = false;
+            // 
             // form_resto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 1322);
+            this.Controls.Add(this.pic_status);
             this.Controls.Add(this.lbl_totalHarga);
             this.Controls.Add(this.DGV_invoice);
             this.Controls.Add(this.lbl_total);
@@ -263,6 +277,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_jumlahMakanan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_invoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_status)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +300,6 @@
         private System.Windows.Forms.Label lbl_total;
         private System.Windows.Forms.DataGridView DGV_invoice;
         private System.Windows.Forms.TextBox lbl_totalHarga;
+        private System.Windows.Forms.PictureBox pic_status;
     }
 }
