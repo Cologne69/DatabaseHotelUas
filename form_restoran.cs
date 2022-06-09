@@ -255,5 +255,10 @@ namespace DatabaseHotelUas
                 sqlAdapter.Fill(Pesanan);
             }
         }
+
+        private void cb_pelanggan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

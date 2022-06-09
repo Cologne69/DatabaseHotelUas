@@ -180,6 +180,7 @@
             this.cb_pelanggan.Name = "cb_pelanggan";
             this.cb_pelanggan.Size = new System.Drawing.Size(687, 28);
             this.cb_pelanggan.TabIndex = 14;
+            this.cb_pelanggan.SelectedIndexChanged += new System.EventHandler(this.cb_pelanggan_SelectedIndexChanged);
             // 
             // lbl_nama
             // 
