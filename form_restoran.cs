@@ -42,7 +42,7 @@ namespace DatabaseHotelUas
             { 
                 this.Height = 750;
  
-                lbl_isiiteminCart.Text = jumlahDataMenu().ToString();
+                lbl_isiiteminCart.Text = jumlahOrderID().ToString();
                 sqlQuery = $"INSERT INTO DETAIL_ORDER_MENU VALUES('{maxorderID}', '{DGV_Menu.CurrentRow.Cells[0].Value.ToString()}','{num_jumlahMakanan.Value}' , (SELECT SUM({num_jumlahMakanan.Value} * MENU.MENU_HARGA) FROM MENU WHERE MENU.MENU_ID = '{DGV_Menu.CurrentRow.Cells[0].Value.ToString()}'))";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
@@ -52,9 +52,9 @@ namespace DatabaseHotelUas
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(Invoice);
-                DGV_invoice.DataSource = Invoice;
+                
                 lbl_totalHarga.Text = totalHargaOrder().ToString();
-                Invoice.Clear();
+               
 
                 if(totalHargaOrder() > 0)
                 {
@@ -108,21 +108,7 @@ namespace DatabaseHotelUas
                 return 0;
             }
         } 
-        public int jumlahDataMenu()
-        {
-            try
-            {
-                sqlQuery = $"SELECT COUNT(ORDER_ID) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = {maxorderID}";
-                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                return Convert.ToInt32(sqlCommand.ExecuteScalar());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return 0;
-            }
-        }
+      
         
         public int maxORDER_ID()
         {
@@ -143,7 +129,7 @@ namespace DatabaseHotelUas
         
         private void form_resto_Load(object sender, EventArgs e)
         {
-            
+            DGV_invoice.DataSource = Invoice;
             maxorderID = maxORDER_ID() + 1;
             num_jumlahMakanan.Value = 1;
             lbl_isiiteminCart.Text = "0";
@@ -247,7 +233,7 @@ namespace DatabaseHotelUas
                 e.Cancel = false;
                 return;
             }
-            else if (MessageBox.Show("Apakah anda yakin untuk menutup sebelum Checkout pesanan?", "Tutup Pemesanan", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            else
             {
                 sqlQuery = $"DELETE FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxorderID}'";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
@@ -259,6 +245,19 @@ namespace DatabaseHotelUas
         private void cb_pelanggan_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cb_pelanggan_KeyDown(object sender, KeyEventArgs e)
+        {
+            //pic_status.BackColor = Color.Red;
+            //btn_proses.Hide();
+            //btn_tambah_pelanggan.Show();
+            //if (temp_pelanggan.Contains(cb_pelanggan.Text))
+            //{
+            //    pic_status.BackColor = Color.Green;
+            //    btn_proses.Show();
+            //    btn_tambah_pelanggan.Hide();
+            //}
         }
     }
 }
