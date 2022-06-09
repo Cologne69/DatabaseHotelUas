@@ -215,7 +215,7 @@
             this.DGV_invoice.ShowCellToolTips = false;
             this.DGV_invoice.ShowEditingIcon = false;
             this.DGV_invoice.ShowRowErrors = false;
-            this.DGV_invoice.Size = new System.Drawing.Size(776, 579);
+            this.DGV_invoice.Size = new System.Drawing.Size(776, 304);
             this.DGV_invoice.TabIndex = 18;
             // 
             // lbl_totalHarga
