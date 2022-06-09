@@ -19,6 +19,9 @@ namespace DatabaseHotelUas
         private void form_popupKamar_Load(object sender, EventArgs e)
         {
             sync();
+            // set form name to form_kamar.pressed_button
+            this.Text = "Kamar A" + form_kamar.pressed_button;
+
             // to keep integrity of form_kamar.pressed_button
             lbl_no_kamar.Text = "A"+form_kamar.pressed_button;
             
