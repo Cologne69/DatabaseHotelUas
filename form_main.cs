@@ -23,7 +23,7 @@ namespace DatabaseHotelUas
         string sqlQuery;
         new DataTable HargaKamar = new DataTable();
         public static int transID = 0;
-       
+        MySqlDataReader myReader;
         
 
 
@@ -182,12 +182,8 @@ namespace DatabaseHotelUas
         private void timer1_Tick(object sender, EventArgs e)
         {
             DateTime WIB = DateTime.Now;
-            DateTime WITA = DateTime.Now.AddHours(1);
-            DateTime WIT = DateTime.Now.AddHours(2);
-            lbl_waktu.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy \nHH:mm:ss");
-            lbl_jamWIB.Text = "WIB: " + WIB.ToString("HH:mm:ss");
-            lbl_jamWITA.Text = "WITA: " + WITA.ToString("HH:mm:ss");
-            lbl_jamWIT.Text = "WIT: " + WIT.ToString("HH:mm:ss");
+            lbl_waktu.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+            lbl_jamWIB.Text = WIB.ToString("HH:mm:ss");
         }
 
         private void gb_restoran_Enter(object sender, EventArgs e)
@@ -220,6 +216,11 @@ namespace DatabaseHotelUas
             }
 
 
+
+        }
+
+        private void lbl_jamWIB_Click(object sender, EventArgs e)
+        {
 
         }
     }
