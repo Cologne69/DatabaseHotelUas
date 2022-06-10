@@ -66,8 +66,6 @@ namespace DatabaseHotelUas
             }
         }
 
-        
-
         private void txt_idPelanggan_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -75,16 +73,6 @@ namespace DatabaseHotelUas
             {
                 e.Handled = true;
             }
-        }
-
-        private void txt_namaPelanggan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void form_tambahPelanggan_Load(object sender, EventArgs e)
-        {
-           
         }
     }
 }

@@ -70,7 +70,6 @@
             this.txt_namaPelanggan.Name = "txt_namaPelanggan";
             this.txt_namaPelanggan.Size = new System.Drawing.Size(564, 22);
             this.txt_namaPelanggan.TabIndex = 3;
-            this.txt_namaPelanggan.TextChanged += new System.EventHandler(this.txt_namaPelanggan_TextChanged);
             // 
             // rdb_Laki
             // 
@@ -177,7 +176,6 @@
             this.MinimizeBox = false;
             this.Name = "form_tambahPelanggan";
             this.Text = "Tambah Pelanggan";
-            this.Load += new System.EventHandler(this.form_tambahPelanggan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,14 +185,14 @@
 
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton rdb_Laki;
-        private System.Windows.Forms.RadioButton rdb_Perempuan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_KotaPelanggan;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_idPelanggan;
         private System.Windows.Forms.Button btn_tambahPelanggan;
         public System.Windows.Forms.TextBox txt_namaPelanggan;
+        public System.Windows.Forms.TextBox txt_KotaPelanggan;
+        public System.Windows.Forms.TextBox txt_idPelanggan;
+        public System.Windows.Forms.RadioButton rdb_Laki;
+        public System.Windows.Forms.RadioButton rdb_Perempuan;
     }
 }

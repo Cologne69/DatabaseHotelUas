@@ -56,8 +56,8 @@ namespace DatabaseHotelUas
             // check if form_kamar.pressed_button is in form_kamar.filled_kamar list
             if (!form_kamar.filled_kamar.Contains(form_kamar.pressed_button))
             {
-                txt_nama.Text = "belum ada pengunjung";
-                txt_check_in.Text = "belum ada pengunjung";
+                txt_nama.Text = "Belum ada pengunjung";
+                txt_check_in.Text = "Belum ada pengunjung";
             }
         }
     }

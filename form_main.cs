@@ -59,33 +59,14 @@ namespace DatabaseHotelUas
  
         //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
 
-        private void lbl_testTanggal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tgl_checkin_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            
             fct.ShowDialog();
-            
         }
         
         private void btn_lihatkamar_Click(object sender, EventArgs e)
         {
-            
             fk.ShowDialog();
-            
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_fasilitasKamar_Click(object sender, EventArgs e)
@@ -93,26 +74,14 @@ namespace DatabaseHotelUas
             fr.ShowDialog();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_cekidPelanggan_Click(object sender, EventArgs e)
         {
             fcidp.ShowDialog();
         }
 
-        private void cb_namaPelanggan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void form_main_Load(object sender, EventArgs e)
         {
             TestKoneksi();
-            //cb_namaPelanggan.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            //cb_namaPelanggan.AutoCompleteSource = AutoCompleteSource.ListItems;
             try
             {
                 sqlQuery = $"SELECT CONCAT(TK.TIPE_KAMAR_ID,' - ',TK.TIPE_KAMAR_NAMA, ' ',' | ','Rp.', TK.TIPE_KAMAR_HARGA) as '1' FROM TIPE_KAMAR TK;";
@@ -123,29 +92,16 @@ namespace DatabaseHotelUas
                 lb_hargaKamar.DisplayMember = "1";
                 lb_hargaKamar.ValueMember = "1";
                 lb_hargaKamar.ClearSelected();
-
-
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void btn_tmbhPelanggan_Click(object sender, EventArgs e)
         {
             ftp.ShowDialog();
-        }
-
-        private void btn_bookKamar_Click(object sender, EventArgs e)
-        {
-            //Convert.ToDateTime(tgl_checkin);
-            //Convert.ToDateTime(tgl_checkout);
-            
-
         }
 
         private void tambahPelangganToolStripMenuItem_Click(object sender, EventArgs e)
@@ -168,27 +124,11 @@ namespace DatabaseHotelUas
 
         }
 
-        private void hargaTipeKamarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        { 
-        }
-
-         
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             DateTime WIB = DateTime.Now;
             lbl_waktu.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
             lbl_jamWIB.Text = WIB.ToString("HH:mm:ss");
-        }
-
-        private void gb_restoran_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_historiRestoran_Click(object sender, EventArgs e)
@@ -214,14 +154,6 @@ namespace DatabaseHotelUas
             {
                 MessageBox.Show("Deluxe\n\n1. 1 kamar king bed\n2. Ukuran kamar 50 meter persegi (m2)");
             }
-
-
-
-        }
-
-        private void lbl_jamWIB_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
