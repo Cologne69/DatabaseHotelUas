@@ -36,10 +36,10 @@
             this.lbl_nama = new System.Windows.Forms.Label();
             this.lbl_check_in = new System.Windows.Forms.Label();
             this.txt_check_in = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_cart = new System.Windows.Forms.DataGridView();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cart)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_no_kamar
@@ -115,15 +115,15 @@
             this.txt_check_in.Size = new System.Drawing.Size(271, 22);
             this.txt_check_in.TabIndex = 9;
             // 
-            // dataGridView1
+            // dgv_cart
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(429, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(323, 355);
-            this.dataGridView1.TabIndex = 10;
+            this.dgv_cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_cart.Location = new System.Drawing.Point(429, 23);
+            this.dgv_cart.Name = "dgv_cart";
+            this.dgv_cart.RowHeadersWidth = 51;
+            this.dgv_cart.RowTemplate.Height = 24;
+            this.dgv_cart.Size = new System.Drawing.Size(323, 355);
+            this.dgv_cart.TabIndex = 10;
             // 
             // btn_add
             // 
@@ -150,7 +150,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_add);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_cart);
             this.Controls.Add(this.txt_check_in);
             this.Controls.Add(this.lbl_check_in);
             this.Controls.Add(this.lbl_nama);
@@ -162,7 +162,7 @@
             this.Name = "form_popupKamar";
             this.Text = "j";
             this.Load += new System.EventHandler(this.form_popupKamar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,7 +178,7 @@
         private System.Windows.Forms.Label lbl_nama;
         private System.Windows.Forms.Label lbl_check_in;
         private System.Windows.Forms.TextBox txt_check_in;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_cart;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_cancel;
     }

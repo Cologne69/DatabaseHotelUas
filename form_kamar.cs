@@ -20,9 +20,10 @@ namespace DatabaseHotelUas
 
         private static MySqlCommand sqlCommand;
         private static MySqlDataAdapter sqlAdapter;
+
         /* 
          * @filled_kamar is list of kamar WHERE kamar_status is 1
-         * @cart = temporary cart source for 
+         * @cart = temporary cart source for popup_kamar.dgv
          * @pelanggan = feed some suggestion to list_box_suggestion
          * @temp_pelanggan = for pic_status
          */
@@ -193,6 +194,10 @@ namespace DatabaseHotelUas
             form_main.ftp.StartPosition = FormStartPosition.CenterParent;
             form_main.ftp.txt_namaPelanggan.Text = cb_pelanggan.Text;
             form_main.ftp.ShowDialog();
+            form_main.ftp.txt_KotaPelanggan.Clear();
+            form_main.ftp.txt_idPelanggan.Clear();
+            form_main.ftp.rdb_Laki.Checked = false;
+            form_main.ftp.rdb_Perempuan.Checked = false;
             syncPelanggan();
         }
     }

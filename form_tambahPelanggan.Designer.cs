@@ -185,14 +185,14 @@
 
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton rdb_Laki;
-        private System.Windows.Forms.RadioButton rdb_Perempuan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_KotaPelanggan;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_idPelanggan;
         private System.Windows.Forms.Button btn_tambahPelanggan;
         public System.Windows.Forms.TextBox txt_namaPelanggan;
+        public System.Windows.Forms.TextBox txt_KotaPelanggan;
+        public System.Windows.Forms.TextBox txt_idPelanggan;
+        public System.Windows.Forms.RadioButton rdb_Laki;
+        public System.Windows.Forms.RadioButton rdb_Perempuan;
     }
 }
