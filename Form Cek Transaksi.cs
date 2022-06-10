@@ -43,11 +43,15 @@ namespace DatabaseHotelUas
             {
                 if (cBoxBookKamar.Checked == true && cBoxOrderResto.Checked == false)
                 {
+                    dgv_cekTransBlmLunas2.Hide();
+                    dgv_SemuaTransaksi2.Hide();
                     TransaksiBookingKamarBelumLunas();
                     TransaksiBookingKamar();
                 }
                 else if (cBoxOrderResto.Checked == true && cBoxBookKamar.Checked == false)
                 {
+                    dgv_cekTransBlmLunas2.Hide();
+                    dgv_SemuaTransaksi2.Hide();
                     TransaksiOrderFoodBelumLunas();
                     TransaksiOrderFood();
                 }
