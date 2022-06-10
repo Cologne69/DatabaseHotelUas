@@ -93,7 +93,6 @@
             this.lbl_daftar.Size = new System.Drawing.Size(98, 20);
             this.lbl_daftar.TabIndex = 4;
             this.lbl_daftar.Text = "Daftar Menu";
-            this.lbl_daftar.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -223,6 +222,7 @@
             this.pic_status.Size = new System.Drawing.Size(28, 28);
             this.pic_status.TabIndex = 109;
             this.pic_status.TabStop = false;
+            this.pic_status.Visible = false;
             // 
             // DGV_invoice
             // 
