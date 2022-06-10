@@ -18,8 +18,8 @@ namespace DatabaseHotelUas
             InitializeComponent();
         }
 
-        private MySqlCommand sqlCommand;
-        private MySqlDataAdapter sqlAdapter;
+        private static MySqlCommand sqlCommand;
+        private static MySqlDataAdapter sqlAdapter;
         /* 
          * @filled_kamar is list of kamar WHERE kamar_status is 1
          * @cart = temporary cart source for 
@@ -29,8 +29,8 @@ namespace DatabaseHotelUas
 
         public static List<String> filled_kamar = new List<string>();
         public DataTable cart = new DataTable();
-        private DataTable pelanggan = new DataTable();
-        private List<string> temp_pelanggan = new List<string>();
+        private static DataTable pelanggan = new DataTable();
+        private static List<string> temp_pelanggan = new List<string>();
         private void form_kamar_Load(object sender, EventArgs e)
         {
             lbl_check_in.Hide();
@@ -43,20 +43,43 @@ namespace DatabaseHotelUas
              * append(btn_A{KAMAR_NO})
              * change it to red
              */
+            syncKamarStatus();
+            syncPelanggan();
+        }
 
-            DataTable filled_kamar_dt = new DataTable();
-
+        private void syncKamarStatus()
+        {
             try
             {
+                DataTable filled_kamar_dt = new DataTable();
                 string sqlQuery = "SELECT KAMAR_NO FROM KAMAR WHERE KAMAR_STATUS = 1";
                 new MySqlDataAdapter(sqlQuery, form_main.sqlConnect).Fill(filled_kamar_dt);
                 filled_kamar = filled_kamar_dt.AsEnumerable().Select(x => x.Field<String>("KAMAR_NO")).ToList();
 
-                sqlQuery = $"SELECT CONCAT(CUST_NAMA,' - ',CUST_ID) as 'id dan nama', CUST_ID as 'nama' FROM CUSTOMER ORDER BY 2 DESC";
+                // append "btn_A" to every child in filled_kamar and change it as button backColor to red
+                foreach (string kamar_no in filled_kamar)
+                {
+                    Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
+                    btn.BackColor = Color.Red;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("error occurred: " + ex.Message);
+            }
+        }
+
+
+        // if we change it to static in become problematic!
+        public void syncPelanggan()
+        {
+            try
+            {
+                pelanggan = new DataTable();
+                string sqlQuery = $"SELECT CONCAT(CUST_NAMA,' - ',CUST_ID) as 'id dan nama', CUST_ID as 'nama' FROM CUSTOMER ORDER BY 2 DESC";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(pelanggan);
-
                 cb_pelanggan.DataSource = pelanggan;
                 cb_pelanggan.ValueMember = "nama";
                 cb_pelanggan.DisplayMember = "id dan nama";
@@ -66,16 +89,9 @@ namespace DatabaseHotelUas
                 btn_tambah_pelanggan.Hide();
                 btn_cancel.Hide();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("error occurred: " + ex.Message);
-            }
-
-            // append "btn_A" to every child in filled_kamar and change it as button backColor to red
-            foreach (string kamar_no in filled_kamar)
-            {
-                Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
-                btn.BackColor = Color.Red;
             }
         }
 
@@ -174,10 +190,10 @@ namespace DatabaseHotelUas
              * cb_pelanggan.Text linked to form_tambahPelanggan.txt_namaPelanggan.Text
              * to make it works, form_tambahPelanggan.txt_nama_Pelanggan modifiers is set to public
              */
-
             form_main.ftp.StartPosition = FormStartPosition.CenterParent;
             form_main.ftp.txt_namaPelanggan.Text = cb_pelanggan.Text;
             form_main.ftp.ShowDialog();
+            syncPelanggan();
         }
     }
 }

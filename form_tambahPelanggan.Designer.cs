@@ -70,7 +70,6 @@
             this.txt_namaPelanggan.Name = "txt_namaPelanggan";
             this.txt_namaPelanggan.Size = new System.Drawing.Size(564, 22);
             this.txt_namaPelanggan.TabIndex = 3;
-            this.txt_namaPelanggan.TextChanged += new System.EventHandler(this.txt_namaPelanggan_TextChanged);
             // 
             // rdb_Laki
             // 
@@ -177,7 +176,6 @@
             this.MinimizeBox = false;
             this.Name = "form_tambahPelanggan";
             this.Text = "Tambah Pelanggan";
-            this.Load += new System.EventHandler(this.form_tambahPelanggan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
