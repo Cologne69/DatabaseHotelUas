@@ -67,6 +67,7 @@ namespace DatabaseHotelUas
         private void btn_lihatkamar_Click(object sender, EventArgs e)
         {
             fk.ShowDialog();
+            fk.cb_pelanggan.Enabled = true;
         }
 
         private void btn_fasilitasKamar_Click(object sender, EventArgs e)

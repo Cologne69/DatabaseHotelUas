@@ -655,7 +655,7 @@
             // 
             // btn_lantai1
             // 
-            this.btn_lantai1.BackColor = System.Drawing.Color.BlueViolet;
+            this.btn_lantai1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btn_lantai1.Location = new System.Drawing.Point(13, 33);
             this.btn_lantai1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_lantai1.Name = "btn_lantai1";
@@ -1577,7 +1577,6 @@
         private System.Windows.Forms.Label lbl_check_out;
         private System.Windows.Forms.DateTimePicker datetime_check_in;
         private System.Windows.Forms.DateTimePicker datetime_check_out;
-        private System.Windows.Forms.ComboBox cb_pelanggan;
         private System.Windows.Forms.PictureBox pic_status;
         private System.Windows.Forms.Button btn_tambah_pelanggan;
         private System.Windows.Forms.Button btn_cancel;
@@ -1590,5 +1589,6 @@
         private System.Windows.Forms.Label lbl_output_book_id;
         private System.Windows.Forms.Label lbl_output_total_item;
         private System.Windows.Forms.Label lbl_output_total;
+        public System.Windows.Forms.ComboBox cb_pelanggan;
     }
 }
