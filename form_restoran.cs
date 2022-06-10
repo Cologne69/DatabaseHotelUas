@@ -183,6 +183,7 @@ namespace DatabaseHotelUas
                     sqlAdapter = new MySqlDataAdapter(sqlCommand);
                     sqlAdapter.Fill(Checkout);
                     maxorderID++;
+                    form_main.transID++;
                     MessageBox.Show($"Pesanan dengan ID: {maxorderID - 1} berhasil di Checkout");
                     lbl_isiOrderID.Text = maxorderID.ToString();
                     lbl_isiiteminCart.Text = "0";
