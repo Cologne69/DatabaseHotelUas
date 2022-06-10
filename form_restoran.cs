@@ -34,6 +34,7 @@ namespace DatabaseHotelUas
                 this.Height = 750;
 
                 lbl_isiiteminCart.Text = (jumlahOrderID() + 1).ToString();
+
                 sqlQuery = $"INSERT INTO DETAIL_ORDER_MENU VALUES('{maxorderID}', '{DGV_Menu.CurrentRow.Cells[0].Value.ToString()}','{num_jumlahMakanan.Value}' , (SELECT SUM({num_jumlahMakanan.Value} * MENU.MENU_HARGA) FROM MENU WHERE MENU.MENU_ID = '{DGV_Menu.CurrentRow.Cells[0].Value.ToString()}'))";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
@@ -46,6 +47,7 @@ namespace DatabaseHotelUas
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
  
                 sqlAdapter.Fill(Invoice);
+
                 DGV_invoice.DataSource = Invoice;
 
                 if (totalHargaOrder() > 0)
@@ -91,7 +93,9 @@ namespace DatabaseHotelUas
                 MessageBox.Show(ex.Message);
                 return 0;
             }
+
         }
+
         public int maxORDER_ID()
         {
             try
@@ -218,6 +222,19 @@ namespace DatabaseHotelUas
         private void cb_pelanggan_KeyDown(object sender, KeyEventArgs e)
         {
             
+        }
+
+        private void cb_pelanggan_KeyDown(object sender, KeyEventArgs e)
+        {
+            //pic_status.BackColor = Color.Red;
+            //btn_proses.Hide();
+            //btn_tambah_pelanggan.Show();
+            //if (temp_pelanggan.Contains(cb_pelanggan.Text))
+            //{
+            //    pic_status.BackColor = Color.Green;
+            //    btn_proses.Show();
+            //    btn_tambah_pelanggan.Hide();
+            //}
         }
     }
 }

@@ -46,10 +46,12 @@
             this.lbl_totalHarga = new System.Windows.Forms.TextBox();
             this.pic_status = new System.Windows.Forms.PictureBox();
             this.DGV_invoice = new System.Windows.Forms.DataGridView();
+
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_jumlahMakanan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_invoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_addtoCart
@@ -278,6 +280,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_jumlahMakanan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_invoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_status)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,5 +304,6 @@
         private System.Windows.Forms.TextBox lbl_totalHarga;
         private System.Windows.Forms.PictureBox pic_status;
         private System.Windows.Forms.DataGridView DGV_invoice;
+
     }
 }
