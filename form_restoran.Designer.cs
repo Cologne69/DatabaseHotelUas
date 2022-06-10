@@ -184,7 +184,6 @@
             this.cb_pelanggan.Size = new System.Drawing.Size(655, 28);
             this.cb_pelanggan.TabIndex = 14;
             this.cb_pelanggan.SelectedIndexChanged += new System.EventHandler(this.cb_pelanggan_SelectedIndexChanged);
-            this.cb_pelanggan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_pelanggan_KeyDown);
             // 
             // lbl_nama
             // 
