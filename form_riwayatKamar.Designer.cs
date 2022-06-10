@@ -30,10 +30,10 @@ namespace DatabaseHotelUas
         private void InitializeComponent()
         {
             this.lblCariTransID = new System.Windows.Forms.Label();
-            this.tBoxTransID = new System.Windows.Forms.TextBox();
             this.dgv_riwayatKamar = new System.Windows.Forms.DataGridView();
             this.btnProses = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
+            this.cBoxTransID = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_riwayatKamar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,13 +45,6 @@ namespace DatabaseHotelUas
             this.lblCariTransID.Size = new System.Drawing.Size(120, 17);
             this.lblCariTransID.TabIndex = 0;
             this.lblCariTransID.Text = "Cari ID Transaksi:";
-            // 
-            // tBoxTransID
-            // 
-            this.tBoxTransID.Location = new System.Drawing.Point(163, 22);
-            this.tBoxTransID.Name = "tBoxTransID";
-            this.tBoxTransID.Size = new System.Drawing.Size(286, 22);
-            this.tBoxTransID.TabIndex = 1;
             // 
             // dgv_riwayatKamar
             // 
@@ -84,18 +77,29 @@ namespace DatabaseHotelUas
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
+            // cBoxTransID
+            // 
+            this.cBoxTransID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cBoxTransID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cBoxTransID.FormattingEnabled = true;
+            this.cBoxTransID.Location = new System.Drawing.Point(172, 22);
+            this.cBoxTransID.Name = "cBoxTransID";
+            this.cBoxTransID.Size = new System.Drawing.Size(256, 24);
+            this.cBoxTransID.TabIndex = 5;
+            // 
             // form_riwayatKamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 485);
+            this.Controls.Add(this.cBoxTransID);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btnProses);
             this.Controls.Add(this.dgv_riwayatKamar);
-            this.Controls.Add(this.tBoxTransID);
             this.Controls.Add(this.lblCariTransID);
             this.Name = "form_riwayatKamar";
             this.Text = "form_riwayatKamar";
+            this.Load += new System.EventHandler(this.form_riwayatKamar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_riwayatKamar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,9 +109,9 @@ namespace DatabaseHotelUas
         #endregion
 
         private System.Windows.Forms.Label lblCariTransID;
-        private System.Windows.Forms.TextBox tBoxTransID;
         private System.Windows.Forms.DataGridView dgv_riwayatKamar;
         private System.Windows.Forms.Button btnProses;
         private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.ComboBox cBoxTransID;
     }
 }
