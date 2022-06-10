@@ -23,15 +23,17 @@ namespace DatabaseHotelUas
 
         /* 
          * @filled_kamar is list of kamar WHERE kamar_status is 1
-         * @cart = temporary cart source for popup_kamar.dgv
+         * @cart = temporary cart source for popup_kamar.dgv_cart & dgv_cart in the current file
          * @pelanggan = feed some suggestion to list_box_suggestion
          * @temp_pelanggan = for pic_status
+         * @temp_used_kamar_by_pelanggan = for blue color in kamar status where id_pelanggan is cb_pelanggan.ValueMember
          */
 
         public static List<String> filled_kamar = new List<string>();
-        public DataTable cart = new DataTable();
+        public static DataTable cart = new DataTable();
         private static DataTable pelanggan = new DataTable();
         private static List<string> temp_pelanggan = new List<string>();
+        private List<string> temp_used_kamar_by_pelanggan = new List<string>();
         private void form_kamar_Load(object sender, EventArgs e)
         {
             lbl_check_in.Hide();
@@ -39,17 +41,17 @@ namespace DatabaseHotelUas
             datetime_check_in.Hide();
             datetime_check_out.Hide();
 
-            /*
-             * query check for KAMAR_STATUS = 1
-             * append(btn_A{KAMAR_NO})
-             * change it to red
-             */
             syncKamarStatus();
             syncPelanggan();
         }
 
         private void syncKamarStatus()
         {
+            /*
+             * query check for KAMAR_STATUS = 1
+             * append(btn_A{KAMAR_NO})
+             * change it to red
+             */
             try
             {
                 DataTable filled_kamar_dt = new DataTable();
@@ -70,9 +72,7 @@ namespace DatabaseHotelUas
             }
         }
 
-
-        // if we change it to static in become problematic!
-        public void syncPelanggan()
+        private void syncPelanggan()
         {
             try
             {
@@ -96,9 +96,41 @@ namespace DatabaseHotelUas
             }
         }
 
+        /*
+         * @syncPelangganKamar = change button to blue if kamar is filled with selected pelanggan
+         * don't forget to clean up after btn_cancel is pressed!
+         * perhaps show lbl_check_out & datetime_check_out if datatable filled with row ?
+         */
+
+        private void syncPelangganKamar()
+        {
+            try
+            {
+                DataTable pelanggan_kamar = new DataTable();
+                string sqlQuery = $"select c.CUST_NAMA as 'nama', bk.BOOK_TGL_CIN 'check_in', d.kamar_no 'kamar_no' " +
+                    $"from CUSTOMER c, BOOKING_KAMAR bk, KAMAR k, DETAIL_BOOK_KAMAR d " +
+                    $"where c.CUST_ID = bk.CUST_ID and d.BOOK_ID = bk.BOOK_ID and d.KAMAR_NO = k.KAMAR_NO  " +
+                    $"and c.CUST_ID = '{cb_pelanggan.SelectedValue.ToString()}'";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(pelanggan_kamar);
+
+                temp_used_kamar_by_pelanggan = pelanggan_kamar.AsEnumerable().Select(x => x.Field<String>("kamar_no")).ToList();
+                foreach (string kamar_no in temp_used_kamar_by_pelanggan)
+                {
+                    Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
+                    btn.BackColor = Color.LightSkyBlue;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error occurred: " + ex.Message);
+            }
+        }
+
         private void btn_lantai2_Click(object sender, EventArgs e)
         {
-            btn_lantai2.BackColor = Color.BlueViolet;
+            btn_lantai2.BackColor = Color.LightSkyBlue;
             btn_lantai1.BackColor = Color.White;
             for (int i = 101; i <= 140; i++)
             {
@@ -115,7 +147,7 @@ namespace DatabaseHotelUas
         private void btn_lantai1_Click(object sender, EventArgs e)
         {
             btn_lantai2.BackColor = Color.White;
-            btn_lantai1.BackColor = Color.BlueViolet;
+            btn_lantai1.BackColor = Color.LightSkyBlue;
             for (int i = 101; i <= 140; i++)
             {
                 Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
@@ -140,7 +172,6 @@ namespace DatabaseHotelUas
         private void btn_child_onClick(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            btn.BackColor = Color.Red; // only temporary :)
 
             // cast system.windows.forms.button btn to string and remove "btn_a"
             pressed_button = btn.Name.Substring(5);
@@ -177,12 +208,64 @@ namespace DatabaseHotelUas
             cb_pelanggan.Enabled = false;
             btn_proses.Hide();
             btn_cancel.Show();
+            syncPelangganKamar();
+            // check if used_kamar_by_pelanggan is empty or not
+            if (temp_used_kamar_by_pelanggan.Count == 0)
+            {
+                lbl_check_in.Show();
+                datetime_check_in.Show();
+                // disable btn_A101 - btn_A140 and btn_A201 - btn_A240 if backcolor is red
+                for (int i = 101; i <= 140; i++)
+                {
+                    Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                    if (btn.BackColor == Color.Red)
+                    {
+                        btn.Enabled = false;
+                    }
+                }
+                for (int i = 201; i <= 240; i++)
+                {
+                    Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                    if (btn.BackColor == Color.Red)
+                    {
+                        btn.Enabled = false;
+                    }
+                }
+            }
+            else
+            {
+                lbl_check_out.Show();
+                datetime_check_out.Show();
+            }
         }
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             cb_pelanggan.Enabled = true;
             btn_proses.Show();
             btn_cancel.Hide();
+            lbl_check_in.Hide();
+            lbl_check_out.Hide();
+            datetime_check_in.Hide();
+            datetime_check_out.Hide();
+
+            // enable all button
+            for (int i = 101; i <= 140; i++)
+            {
+                Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                if (btn.BackColor == Color.Red)
+                {
+                    btn.Enabled = true;
+                }
+            }
+            for (int i = 201; i <= 240; i++)
+            {
+                Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                if (btn.BackColor == Color.Red)
+                {
+                    btn.Enabled = true;
+                }
+            }
+            syncKamarStatus();
         }
 
         private void btn_tambah_pelanggan_Click(object sender, EventArgs e)
