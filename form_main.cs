@@ -156,5 +156,11 @@ namespace DatabaseHotelUas
                 MessageBox.Show("Deluxe\n\n1. 1 kamar king bed\n2. Ukuran kamar 50 meter persegi (m2)");
             }
         }
+
+        private void riwayatPemesananKamarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            form_riwayatKamar form2 = new form_riwayatKamar();
+            form2.Show();
+        }
     }
 }
