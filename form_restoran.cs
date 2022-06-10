@@ -223,18 +223,5 @@ namespace DatabaseHotelUas
         {
             
         }
-
-        private void cb_pelanggan_KeyDown(object sender, KeyEventArgs e)
-        {
-            //pic_status.BackColor = Color.Red;
-            //btn_proses.Hide();
-            //btn_tambah_pelanggan.Show();
-            //if (temp_pelanggan.Contains(cb_pelanggan.Text))
-            //{
-            //    pic_status.BackColor = Color.Green;
-            //    btn_proses.Show();
-            //    btn_tambah_pelanggan.Hide();
-            //}
-        }
     }
 }
