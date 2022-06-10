@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -96,6 +96,12 @@
     <Compile Include="form_popupKamar.Designer.cs">
       <DependentUpon>form_popupKamar.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_riwayatKamar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_riwayatKamar.Designer.cs">
+      <DependentUpon>form_riwayatKamar.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_tambahPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_popupKamar.resx">
       <DependentUpon>form_popupKamar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_riwayatKamar.resx">
+      <DependentUpon>form_riwayatKamar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_tambahPelanggan.resx">
       <DependentUpon>form_tambahPelanggan.cs</DependentUpon>
