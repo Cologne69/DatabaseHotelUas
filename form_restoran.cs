@@ -178,7 +178,7 @@ namespace DatabaseHotelUas
                     Pesanan.Clear();
                     Invoice.Clear();
 
-                    sqlQuery = $"INSERT INTO ORDER_FOOD VALUES ('{maxORDER_ID()}','R + {form_main.transID}','{cb_pelanggan.SelectedValue.ToString()}', date_format(now(), '%Y-%m-%d') , null , (SELECT COUNT(ORDER_ID) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxORDER_ID()}') , (select sum(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxORDER_ID()}'),0);";
+                    sqlQuery = $"INSERT INTO ORDER_FOOD VALUES ('{maxORDER_ID()}','R + {form_main.transID}','{cb_pelanggan.SelectedValue.ToString()}', date_format(now(),'%Y-%m-%d') , null , (SELECT COUNT(ORDER_ID) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxORDER_ID()}') , (select sum(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxORDER_ID()}'),0);";
                     sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                     sqlAdapter = new MySqlDataAdapter(sqlCommand);
                     sqlAdapter.Fill(Checkout);
