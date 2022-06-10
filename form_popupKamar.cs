@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace DatabaseHotelUas
 {
@@ -16,6 +17,8 @@ namespace DatabaseHotelUas
         {
             InitializeComponent();
         }
+        private MySqlCommand sqlCommand;
+        private MySqlDataAdapter sqlAdapter;
         private void form_popupKamar_Load(object sender, EventArgs e)
         {
             sync();
@@ -58,6 +61,18 @@ namespace DatabaseHotelUas
             {
                 txt_nama.Text = "Belum ada pengunjung";
                 txt_check_in.Text = "Belum ada pengunjung";
+            }
+            else
+            {
+                DataTable temp_txt_dt = new DataTable();
+                string sqlQuery = $"select c.CUST_NAMA as 'nama', date_format(bk.BOOK_TGL_CIN, '%d-%m-%Y') as 'tanggal' from BOOKING_KAMAR bk, CUSTOMER c, DETAIL_BOOK_KAMAR dbk " +
+                    $"where c.CUST_ID = bk.CUST_ID and dbk.BOOK_ID = bk.BOOK_ID and dbk.KAMAR_NO = {form_kamar.pressed_button}";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(temp_txt_dt);
+
+                txt_nama.Text = temp_txt_dt.Rows[0]["nama"].ToString();
+                txt_check_in.Text = temp_txt_dt.Rows[0]["tanggal"].ToString();
             }
         }
     }

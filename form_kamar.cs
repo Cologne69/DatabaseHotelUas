@@ -30,7 +30,7 @@ namespace DatabaseHotelUas
          */
 
         public static List<String> filled_kamar = new List<string>();
-        public DataTable cart = new DataTable();
+        public static DataTable cart = new DataTable();
         private static DataTable pelanggan = new DataTable();
         private static List<string> temp_pelanggan = new List<string>();
         private List<string> temp_used_kamar_by_pelanggan = new List<string>();
@@ -107,7 +107,10 @@ namespace DatabaseHotelUas
             try
             {
                 DataTable pelanggan_kamar = new DataTable();
-                string sqlQuery = $"select c.CUST_NAMA as 'nama', bk.BOOK_TGL_CIN 'check_in', d.kamar_no 'kamar_no' from CUSTOMER c, BOOKING_KAMAR bk, KAMAR k, DETAIL_BOOK_KAMAR d where c.CUST_ID = bk.CUST_ID and d.BOOK_ID = bk.BOOK_ID and d.KAMAR_NO = k.KAMAR_NO  and c.CUST_ID = '{cb_pelanggan.SelectedValue.ToString()}'";
+                string sqlQuery = $"select c.CUST_NAMA as 'nama', bk.BOOK_TGL_CIN 'check_in', d.kamar_no 'kamar_no' " +
+                    $"from CUSTOMER c, BOOKING_KAMAR bk, KAMAR k, DETAIL_BOOK_KAMAR d " +
+                    $"where c.CUST_ID = bk.CUST_ID and d.BOOK_ID = bk.BOOK_ID and d.KAMAR_NO = k.KAMAR_NO  " +
+                    $"and c.CUST_ID = '{cb_pelanggan.SelectedValue.ToString()}'";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(pelanggan_kamar);
@@ -169,7 +172,6 @@ namespace DatabaseHotelUas
         private void btn_child_onClick(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            btn.BackColor = Color.Red; // only temporary :)
 
             // cast system.windows.forms.button btn to string and remove "btn_a"
             pressed_button = btn.Name.Substring(5);
@@ -207,12 +209,62 @@ namespace DatabaseHotelUas
             btn_proses.Hide();
             btn_cancel.Show();
             syncPelangganKamar();
+            // check if used_kamar_by_pelanggan is empty or not
+            if (temp_used_kamar_by_pelanggan.Count == 0)
+            {
+                lbl_check_in.Show();
+                datetime_check_in.Show();
+                // disable btn_A101 - btn_A140 and btn_A201 - btn_A240 if backcolor is red
+                for (int i = 101; i <= 140; i++)
+                {
+                    Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                    if (btn.BackColor == Color.Red)
+                    {
+                        btn.Enabled = false;
+                    }
+                }
+                for (int i = 201; i <= 240; i++)
+                {
+                    Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                    if (btn.BackColor == Color.Red)
+                    {
+                        btn.Enabled = false;
+                    }
+                }
+            }
+            else
+            {
+                lbl_check_out.Show();
+                datetime_check_out.Show();
+            }
         }
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             cb_pelanggan.Enabled = true;
             btn_proses.Show();
             btn_cancel.Hide();
+            lbl_check_in.Hide();
+            lbl_check_out.Hide();
+            datetime_check_in.Hide();
+            datetime_check_out.Hide();
+
+            // enable all button
+            for (int i = 101; i <= 140; i++)
+            {
+                Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                if (btn.BackColor == Color.Red)
+                {
+                    btn.Enabled = true;
+                }
+            }
+            for (int i = 201; i <= 240; i++)
+            {
+                Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                if (btn.BackColor == Color.Red)
+                {
+                    btn.Enabled = true;
+                }
+            }
             syncKamarStatus();
         }
 
