@@ -126,6 +126,12 @@
             this.dgv_cart = new System.Windows.Forms.DataGridView();
             this.btn_checkout = new System.Windows.Forms.Button();
             this.btn_remove = new System.Windows.Forms.Button();
+            this.lbl_book_id = new System.Windows.Forms.Label();
+            this.lbl_total_item = new System.Windows.Forms.Label();
+            this.lbl_total = new System.Windows.Forms.Label();
+            this.lbl_output_book_id = new System.Windows.Forms.Label();
+            this.lbl_output_total_item = new System.Windows.Forms.Label();
+            this.lbl_output_total = new System.Windows.Forms.Label();
             this.gb_lantai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cart)).BeginInit();
@@ -1278,7 +1284,7 @@
             // dgv_cart
             // 
             this.dgv_cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cart.Location = new System.Drawing.Point(1005, 145);
+            this.dgv_cart.Location = new System.Drawing.Point(1011, 145);
             this.dgv_cart.Name = "dgv_cart";
             this.dgv_cart.RowHeadersWidth = 51;
             this.dgv_cart.RowTemplate.Height = 24;
@@ -1287,7 +1293,7 @@
             // 
             // btn_checkout
             // 
-            this.btn_checkout.Location = new System.Drawing.Point(1005, 566);
+            this.btn_checkout.Location = new System.Drawing.Point(1018, 566);
             this.btn_checkout.Name = "btn_checkout";
             this.btn_checkout.Size = new System.Drawing.Size(89, 33);
             this.btn_checkout.TabIndex = 112;
@@ -1296,18 +1302,81 @@
             // 
             // btn_remove
             // 
-            this.btn_remove.Location = new System.Drawing.Point(1114, 566);
+            this.btn_remove.Location = new System.Drawing.Point(1127, 566);
             this.btn_remove.Name = "btn_remove";
             this.btn_remove.Size = new System.Drawing.Size(89, 33);
             this.btn_remove.TabIndex = 113;
             this.btn_remove.Text = "Remove";
             this.btn_remove.UseVisualStyleBackColor = true;
             // 
+            // lbl_book_id
+            // 
+            this.lbl_book_id.AutoSize = true;
+            this.lbl_book_id.Location = new System.Drawing.Point(1036, 52);
+            this.lbl_book_id.Name = "lbl_book_id";
+            this.lbl_book_id.Size = new System.Drawing.Size(55, 16);
+            this.lbl_book_id.TabIndex = 114;
+            this.lbl_book_id.Text = "Book ID";
+            // 
+            // lbl_total_item
+            // 
+            this.lbl_total_item.AutoSize = true;
+            this.lbl_total_item.Location = new System.Drawing.Point(1107, 52);
+            this.lbl_total_item.Name = "lbl_total_item";
+            this.lbl_total_item.Size = new System.Drawing.Size(89, 16);
+            this.lbl_total_item.TabIndex = 115;
+            this.lbl_total_item.Text = "Kamar Di Cart";
+            // 
+            // lbl_total
+            // 
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Location = new System.Drawing.Point(1279, 52);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(83, 16);
+            this.lbl_total.TabIndex = 116;
+            this.lbl_total.Text = "Total/Malam";
+            // 
+            // lbl_output_book_id
+            // 
+            this.lbl_output_book_id.AutoSize = true;
+            this.lbl_output_book_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_output_book_id.Location = new System.Drawing.Point(1040, 77);
+            this.lbl_output_book_id.Name = "lbl_output_book_id";
+            this.lbl_output_book_id.Size = new System.Drawing.Size(41, 29);
+            this.lbl_output_book_id.TabIndex = 117;
+            this.lbl_output_book_id.Text = "88";
+            // 
+            // lbl_output_total_item
+            // 
+            this.lbl_output_total_item.AutoSize = true;
+            this.lbl_output_total_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_output_total_item.Location = new System.Drawing.Point(1138, 77);
+            this.lbl_output_total_item.Name = "lbl_output_total_item";
+            this.lbl_output_total_item.Size = new System.Drawing.Size(27, 29);
+            this.lbl_output_total_item.TabIndex = 118;
+            this.lbl_output_total_item.Text = "5";
+            // 
+            // lbl_output_total
+            // 
+            this.lbl_output_total.AutoSize = true;
+            this.lbl_output_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_output_total.Location = new System.Drawing.Point(1262, 77);
+            this.lbl_output_total.Name = "lbl_output_total";
+            this.lbl_output_total.Size = new System.Drawing.Size(125, 29);
+            this.lbl_output_total.TabIndex = 119;
+            this.lbl_output_total.Text = "1.500.000";
+            // 
             // form_kamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1471, 644);
+            this.Controls.Add(this.lbl_output_total);
+            this.Controls.Add(this.lbl_output_total_item);
+            this.Controls.Add(this.lbl_output_book_id);
+            this.Controls.Add(this.lbl_total);
+            this.Controls.Add(this.lbl_total_item);
+            this.Controls.Add(this.lbl_book_id);
             this.Controls.Add(this.btn_remove);
             this.Controls.Add(this.btn_checkout);
             this.Controls.Add(this.dgv_cart);
@@ -1515,5 +1584,11 @@
         private System.Windows.Forms.DataGridView dgv_cart;
         private System.Windows.Forms.Button btn_checkout;
         private System.Windows.Forms.Button btn_remove;
+        private System.Windows.Forms.Label lbl_book_id;
+        private System.Windows.Forms.Label lbl_total_item;
+        private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.Label lbl_output_book_id;
+        private System.Windows.Forms.Label lbl_output_total_item;
+        private System.Windows.Forms.Label lbl_output_total;
     }
 }
