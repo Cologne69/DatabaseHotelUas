@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Cek_Transaksi));
             this.dgv_cekTransBlmLunas = new System.Windows.Forms.DataGridView();
             this.btn_prosesCekTransaksi = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
@@ -187,6 +188,7 @@
             this.Controls.Add(this.btn_prosesCekTransaksi);
             this.Controls.Add(this.dgv_cekTransBlmLunas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_Cek_Transaksi";
             this.Text = "Cek Transaksi";
