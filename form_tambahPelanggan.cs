@@ -27,6 +27,11 @@ namespace DatabaseHotelUas
         private void btn_exit_Click(object sender, EventArgs e)
         {
             this.Hide();
+            txt_idPelanggan.Text = "";
+            txt_KotaPelanggan.Text = "";
+            txt_namaPelanggan.Text = "";
+            rdb_Laki.Checked = false;
+            rdb_Perempuan.Checked = false;
         }
 
         private void txt_idPelanggan_TextChanged(object sender, EventArgs e)
@@ -63,6 +68,11 @@ namespace DatabaseHotelUas
                 {
                     MessageBox.Show(ex.Message);
                 }
+                txt_idPelanggan.Text = "";
+                txt_KotaPelanggan.Text = "";
+                txt_namaPelanggan.Text = "";
+                rdb_Laki.Checked = false;
+                rdb_Perempuan.Checked = false;
             }
         }
 
@@ -73,6 +83,11 @@ namespace DatabaseHotelUas
             {
                 e.Handled = true;
             }
+        }
+
+        private void form_tambahPelanggan_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
