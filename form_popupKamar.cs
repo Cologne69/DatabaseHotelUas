@@ -81,7 +81,7 @@ namespace DatabaseHotelUas
                     break;
                 case "D":
                     lbl_tipe_kamar.Text = "Deluxe";
-                    lbl_list_fasilitas.Text = "1. 1 kamar king bed\n2. Ukuran kamar 50 meter persegi (m2)";
+                    lbl_list_fasilitas.Text = "1. 1 kamar king bed\n2. Ukuran kamar 40 meter persegi (m2)";
                     break; 
                 default:
                     lbl_tipe_kamar.Text = "Error occured";
