@@ -99,6 +99,7 @@ namespace DatabaseHotelUas
             TestKoneksi();
             try
             {
+                
                 transID = maxtransID();
                 sqlQuery = $"SELECT CONCAT(TK.TIPE_KAMAR_ID,' - ',TK.TIPE_KAMAR_NAMA, ' ',' | ','Rp.', TK.TIPE_KAMAR_HARGA) as '1' FROM TIPE_KAMAR TK;";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
