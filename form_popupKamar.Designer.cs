@@ -179,7 +179,7 @@
         private System.Windows.Forms.Label lbl_check_in;
         private System.Windows.Forms.TextBox txt_check_in;
         private System.Windows.Forms.DataGridView dgv_cart;
-        private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_cancel;
+        public System.Windows.Forms.Button btn_add;
     }
 }

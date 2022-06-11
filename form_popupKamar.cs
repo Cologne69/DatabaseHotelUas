@@ -22,6 +22,35 @@ namespace DatabaseHotelUas
         private void form_popupKamar_Load(object sender, EventArgs e)
         {
             sync();
+            ui_sync();
+        }
+        
+        // @sync = delivering status to form boilerplate especially txt_nama and txt_check_in with sqlquery
+        private void sync()
+        {
+            // check if form_kamar.pressed_button is in form_kamar.filled_kamar list
+            if (!form_kamar.filled_kamar.Contains(form_kamar.pressed_button))
+            {
+                txt_nama.Text = "Belum ada pengunjung";
+                txt_check_in.Text = "Belum ada pengunjung";
+            }
+            else
+            {
+                DataTable temp_txt_dt = new DataTable();
+                string sqlQuery = $"select c.CUST_NAMA as 'nama', date_format(bk.BOOK_TGL_CIN, '%d-%m-%Y') as 'tanggal' from BOOKING_KAMAR bk, CUSTOMER c, DETAIL_BOOK_KAMAR dbk " +
+                    $"where c.CUST_ID = bk.CUST_ID and dbk.BOOK_ID = bk.BOOK_ID and dbk.KAMAR_NO = {form_kamar.pressed_button}";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(temp_txt_dt);
+
+                txt_nama.Text = temp_txt_dt.Rows[0]["nama"].ToString();
+                txt_check_in.Text = temp_txt_dt.Rows[0]["tanggal"].ToString();
+                btn_add.Enabled = false;
+            }
+        }
+        // @ui_sync = sync ui from form_kamar 
+        private void ui_sync()
+        {
             // set form name to form_kamar.pressed_button
             this.Text = "Kamar A" + form_kamar.pressed_button;
 
@@ -50,29 +79,6 @@ namespace DatabaseHotelUas
                 default:
                     lbl_tipe_kamar.Text = "Error occured";
                     break;
-            }
-        }
-        
-        // @sync = delivering status to form boilerplate especially txt_nama and txt_check_in with sqlquery
-        private void sync()
-        {
-            // check if form_kamar.pressed_button is in form_kamar.filled_kamar list
-            if (!form_kamar.filled_kamar.Contains(form_kamar.pressed_button))
-            {
-                txt_nama.Text = "Belum ada pengunjung";
-                txt_check_in.Text = "Belum ada pengunjung";
-            }
-            else
-            {
-                DataTable temp_txt_dt = new DataTable();
-                string sqlQuery = $"select c.CUST_NAMA as 'nama', date_format(bk.BOOK_TGL_CIN, '%d-%m-%Y') as 'tanggal' from BOOKING_KAMAR bk, CUSTOMER c, DETAIL_BOOK_KAMAR dbk " +
-                    $"where c.CUST_ID = bk.CUST_ID and dbk.BOOK_ID = bk.BOOK_ID and dbk.KAMAR_NO = {form_kamar.pressed_button}";
-                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(temp_txt_dt);
-
-                txt_nama.Text = temp_txt_dt.Rows[0]["nama"].ToString();
-                txt_check_in.Text = temp_txt_dt.Rows[0]["tanggal"].ToString();
             }
         }
     }

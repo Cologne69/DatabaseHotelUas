@@ -181,6 +181,7 @@ namespace DatabaseHotelUas
             form_popupKamar popup = new form_popupKamar();
             popup.StartPosition = FormStartPosition.CenterParent;
             popup.ShowDialog();
+            popup.btn_add.Enabled = true;
         }
 
         private void cb_pelanggan_KeyDown(object sender, KeyEventArgs e) // change status to red if user pressed any key in cb_pelanggan
