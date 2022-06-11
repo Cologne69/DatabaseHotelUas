@@ -271,7 +271,6 @@ namespace DatabaseHotelUas
             // check if used_kamar_by_pelanggan is empty or not
             if (temp_used_kamar_by_pelanggan.Count == 0)
             {
-                syncKamarCart();
                 lbl_check_in.Show();
                 datetime_check_in.Show();
                 // disable btn_A101 - btn_A140 and btn_A201 - btn_A240 if backcolor is red
@@ -301,6 +300,7 @@ namespace DatabaseHotelUas
                 cart.Clear();
                 cart_dt.Clear();
 
+                syncKamarStatus();
                 for (int i = 101; i <= 140; i++)
                 {
                     Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
