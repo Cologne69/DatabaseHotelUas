@@ -19,6 +19,13 @@ namespace DatabaseHotelUas
         }
         private MySqlCommand sqlCommand;
         private MySqlDataAdapter sqlAdapter;
+
+        /*
+         *  @kamar = current kamar 
+         */
+
+        private string kamar = form_kamar.pressed_button;
+
         private void form_popupKamar_Load(object sender, EventArgs e)
         {
             sync();
@@ -80,6 +87,20 @@ namespace DatabaseHotelUas
                     lbl_tipe_kamar.Text = "Error occured";
                     break;
             }
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            // add kamar to form_kamar.cart
+            form_kamar.cart.Add(kamar);
+            this.Close();
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            // remove kamar from form_kamar.cart
+            form_kamar.cart.Remove(kamar);
+            this.Close();
         }
     }
 }

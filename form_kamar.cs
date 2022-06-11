@@ -23,17 +23,20 @@ namespace DatabaseHotelUas
 
         /* 
          * @filled_kamar is list of kamar WHERE kamar_status is 1
-         * @cart = temporary cart source for popup_kamar.dgv_cart & dgv_cart in the current file
+         * @cart_dt = temporary cart UI source for popup_kamar.dgv_cart & dgv_cart in the current file
          * @pelanggan = feed some suggestion to list_box_suggestion
          * @temp_pelanggan = for pic_status
          * @temp_used_kamar_by_pelanggan = for blue color in kamar status where id_pelanggan is cb_pelanggan.ValueMember
          */
 
         public static List<String> filled_kamar = new List<string>();
-        public static DataTable cart = new DataTable();
+        public static DataTable cart_dt = new DataTable();
+        public static List<String> cart = new List<string>();
+
         private static DataTable pelanggan = new DataTable();
         private static List<string> temp_pelanggan = new List<string>();
         private List<string> temp_used_kamar_by_pelanggan = new List<string>();
+
         private void form_kamar_Load(object sender, EventArgs e)
         {
             lbl_check_in.Hide();
@@ -116,16 +119,35 @@ namespace DatabaseHotelUas
                 sqlAdapter.Fill(pelanggan_kamar);
 
                 temp_used_kamar_by_pelanggan = pelanggan_kamar.AsEnumerable().Select(x => x.Field<String>("kamar_no")).ToList();
-                foreach (string kamar_no in temp_used_kamar_by_pelanggan)
-                {
-                    Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
-                    btn.BackColor = Color.LightSkyBlue;
-                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("error occurred: " + ex.Message);
             }
+        }
+
+        /*
+         * @convertKamarToDgv = query no_kamar, tipe_kamar_nama, tipe_kamar_harga
+         * based on List<String> cart and push it to DataTable cart_dt 
+         * perhaps create new function that will change selected kamar to blue as an indicator?
+         * 
+         * @syncDgv = sync dgv_cart with cart_dt
+         */
+
+        private void convertKamarToDgv()
+        {
+            string sqlQuery = $"SELECT k.KAMAR_NO, tk.TIPE_KAMAR_NAMA, tk.TIPE_KAMAR_HARGA FROM KAMAR k, TIPE_KAMAR tk " +
+                $"WHERE tk.TIPE_KAMAR_ID = k.TIPE_KAMAR_ID AND k.KAMAR_NO IN ('{String.Join("','", cart)}')";
+            sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(cart_dt);
+        }
+
+        private void syncDgv()
+        {
+            cart_dt = new DataTable();
+            convertKamarToDgv();
+            dgv_cart.DataSource = cart_dt;
         }
 
         private void btn_lantai2_Click(object sender, EventArgs e)
@@ -182,6 +204,11 @@ namespace DatabaseHotelUas
             popup.StartPosition = FormStartPosition.CenterParent;
             popup.ShowDialog();
             popup.btn_add.Enabled = true;
+
+            // combine all value in List<String> cart to a string
+            string str = string.Join(",", cart);
+            MessageBox.Show(str);
+            syncDgv();
         }
 
         private void cb_pelanggan_KeyDown(object sender, KeyEventArgs e) // change status to red if user pressed any key in cb_pelanggan
@@ -237,6 +264,13 @@ namespace DatabaseHotelUas
             {
                 lbl_check_out.Show();
                 datetime_check_out.Show();
+
+                // so if pelanggan has order kamar, kamar that has been ordered change to blue
+                foreach (string kamar_no in temp_used_kamar_by_pelanggan)
+                {
+                    Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
+                    btn.BackColor = Color.LightSkyBlue;
+                }
             }
         }
         private void btn_cancel_Click(object sender, EventArgs e)

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_kamar));
             this.btn_A101 = new System.Windows.Forms.Button();
             this.btn_proses = new System.Windows.Forms.Button();
@@ -1283,10 +1285,36 @@
             // 
             // dgv_cart
             // 
+            this.dgv_cart.AllowUserToAddRows = false;
+            this.dgv_cart.AllowUserToDeleteRows = false;
+            this.dgv_cart.AllowUserToOrderColumns = true;
+            this.dgv_cart.AllowUserToResizeColumns = false;
+            this.dgv_cart.AllowUserToResizeRows = false;
+            this.dgv_cart.BackgroundColor = System.Drawing.Color.White;
             this.dgv_cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_cart.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_cart.Enabled = false;
+            this.dgv_cart.GridColor = System.Drawing.SystemColors.Control;
             this.dgv_cart.Location = new System.Drawing.Point(1011, 145);
             this.dgv_cart.Name = "dgv_cart";
-            this.dgv_cart.RowHeadersWidth = 51;
+            this.dgv_cart.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_cart.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_cart.RowHeadersVisible = false;
+            this.dgv_cart.RowHeadersWidth = 20;
             this.dgv_cart.RowTemplate.Height = 24;
             this.dgv_cart.Size = new System.Drawing.Size(406, 401);
             this.dgv_cart.TabIndex = 111;
