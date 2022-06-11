@@ -25,11 +25,15 @@ namespace DatabaseHotelUas
             InitializeComponent();
         }
 
-
         private void btn_exit_Click(object sender, EventArgs e)
         {
             
             this.Hide();
+            dgv_cekTransBlmLunas.DataSource = null;
+            dgv_cekTransBlmLunas2.DataSource = null;
+            dgv_SemuaTransaksi.DataSource = null;
+            dgv_SemuaTransaksi2.DataSource = null;
+            
             
         }
 
