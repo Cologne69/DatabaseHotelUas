@@ -169,7 +169,7 @@ namespace DatabaseHotelUas
             }
             else if (lb_hargaKamar.SelectedIndex == 3)
             {
-                MessageBox.Show("Deluxe\n\n1. 1 kamar king bed\n2. Ukuran kamar 50 meter persegi (m2)");
+                MessageBox.Show("Deluxe\n\n1. 1 kamar king bed\n2. Ukuran kamar 40 meter persegi (m2)");
             }
         }
 
