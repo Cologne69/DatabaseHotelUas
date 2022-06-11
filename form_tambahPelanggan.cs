@@ -87,7 +87,11 @@ namespace DatabaseHotelUas
 
         private void form_tambahPelanggan_Load(object sender, EventArgs e)
         {
-
+            txt_idPelanggan.Text = "";
+            txt_KotaPelanggan.Text = "";
+            txt_namaPelanggan.Text = "";
+            rdb_Laki.Checked = false;
+            rdb_Perempuan.Checked = false;
         }
     }
 }
