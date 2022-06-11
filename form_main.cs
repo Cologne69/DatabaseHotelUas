@@ -22,7 +22,7 @@ namespace DatabaseHotelUas
         public MySqlDataAdapter sqlAdapter;
         string sqlQuery;
         new DataTable HargaKamar = new DataTable();
-        public static int transID = 0;
+        public static int transID;
         MySqlDataReader myReader;
         
 
@@ -79,12 +79,27 @@ namespace DatabaseHotelUas
         {
             fcidp.ShowDialog();
         }
-
+        public int maxtransID()
+        {
+            try
+            {
+                sqlQuery = $"SELECT MAX(TRANS_ID) FROM TRANS_SETTLEMENT";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                return Convert.ToInt32(sqlCommand.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
+        }
         private void form_main_Load(object sender, EventArgs e)
         {
             TestKoneksi();
             try
             {
+                transID = maxtransID();
                 sqlQuery = $"SELECT CONCAT(TK.TIPE_KAMAR_ID,' - ',TK.TIPE_KAMAR_NAMA, ' ',' | ','Rp.', TK.TIPE_KAMAR_HARGA) as '1' FROM TIPE_KAMAR TK;";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
@@ -155,6 +170,12 @@ namespace DatabaseHotelUas
             {
                 MessageBox.Show("Deluxe\n\n1. 1 kamar king bed\n2. Ukuran kamar 50 meter persegi (m2)");
             }
+        }
+
+        private void riwayatPemesananKamarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            form_riwayatKamar form2 = new form_riwayatKamar();
+            form2.Show();
         }
     }
 }
