@@ -16,6 +16,7 @@ namespace DatabaseHotelUas
         public MySqlCommand sqlCommand;
         public MySqlDataAdapter sqlAdapter;
         string sqlQuery;
+        DataTable transID = new DataTable();
         DataTable riwayatKamar = new DataTable();
         public form_riwayatKamar()
         {
@@ -27,7 +28,7 @@ namespace DatabaseHotelUas
             try
             {
                 riwayatKamar = new DataTable();
-                sqlQuery = $"SELECT BOOK_ID, CUST_ID, BOOK_TGL_CIN, BOOK_TGL_COUT, BOOK_KAMAR_COUNT, BOOK_TOTAL FROM BOOKING_KAMAR WHERE TRANS_ID='"+tBoxTransID.Text+"'; ";
+                sqlQuery = $"SELECT BOOK_ID, CUST_ID, BOOK_TGL_CIN, BOOK_TGL_COUT, BOOK_KAMAR_COUNT, BOOK_TOTAL FROM BOOKING_KAMAR WHERE TRANS_ID='"+cBoxTransID.Text+"'; ";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(riwayatKamar);
@@ -43,6 +44,17 @@ namespace DatabaseHotelUas
         private void btn_exit_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void form_riwayatKamar_Load(object sender, EventArgs e)
+        {
+            transID = new DataTable();
+            string sqlQuery = $"SELECT TRANS_ID as 'trans' FROM BOOKING_KAMAR WHERE TRANS_ID is not null";
+            sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(transID);
+            cBoxTransID.DataSource = transID;
+            cBoxTransID.DisplayMember = "trans";
         }
     }
 }
