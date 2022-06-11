@@ -47,7 +47,7 @@ namespace DatabaseHotelUas
         }
         private void txt_cariNamaPelanggan_TextChanged(object sender, EventArgs e)
         {
-            pelanggan.DefaultView.RowFilter = string.Format("CUST_NAMA LIKE '%{0}%'", txt_cariNamaPelanggan.Text);
+            pelanggan.DefaultView.RowFilter = string.Format("`CUSTOMER NAMA` LIKE '%{0}%'", txt_cariNamaPelanggan.Text);
         }
         private void btn_cariNama_Click(object sender, EventArgs e)
         {
