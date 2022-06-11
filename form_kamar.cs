@@ -62,6 +62,18 @@ namespace DatabaseHotelUas
                 new MySqlDataAdapter(sqlQuery, form_main.sqlConnect).Fill(filled_kamar_dt);
                 filled_kamar = filled_kamar_dt.AsEnumerable().Select(x => x.Field<String>("KAMAR_NO")).ToList();
 
+                // hard reset color to green
+                for (int i = 101; i <= 140; i++)
+                {
+                    Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                    btn.BackColor = Color.LimeGreen;
+                }
+                for (int i = 201; i <= 240; i++)
+                {
+                    Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                    btn.BackColor = Color.LimeGreen;
+                }
+                
                 // append "btn_A" to every child in filled_kamar and change it as button backColor to red
                 foreach (string kamar_no in filled_kamar)
                 {
@@ -136,7 +148,7 @@ namespace DatabaseHotelUas
 
         private void convertKamarToDgv()
         {
-            string sqlQuery = $"SELECT k.KAMAR_NO, tk.TIPE_KAMAR_NAMA, tk.TIPE_KAMAR_HARGA FROM KAMAR k, TIPE_KAMAR tk " +
+            string sqlQuery = $"SELECT k.KAMAR_NO as 'No Kamar', tk.TIPE_KAMAR_NAMA as 'Tipe', tk.TIPE_KAMAR_HARGA as 'Harga' FROM KAMAR k, TIPE_KAMAR tk " +
                 $"WHERE tk.TIPE_KAMAR_ID = k.TIPE_KAMAR_ID AND k.KAMAR_NO IN ('{String.Join("','", cart)}')";
             sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
@@ -148,6 +160,21 @@ namespace DatabaseHotelUas
             cart_dt = new DataTable();
             convertKamarToDgv();
             dgv_cart.DataSource = cart_dt;
+        }
+
+        /*
+         * @syncKamarCart = change btn_Axx to blue if that number is in List<String> cart
+         * probably, do it after check whether temp_used_kamar_by_pelanggan has any value in it
+         */
+        
+        private void syncKamarCart()
+        {
+            syncKamarStatus();
+            foreach (string kamar_no in cart)
+            {
+                Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
+                btn.BackColor = Color.LightSkyBlue;
+            }
         }
 
         private void btn_lantai2_Click(object sender, EventArgs e)
@@ -202,12 +229,16 @@ namespace DatabaseHotelUas
 
             form_popupKamar popup = new form_popupKamar();
             popup.StartPosition = FormStartPosition.CenterParent;
+
+            // if user has already use kamar then disable btn_add button
+            if (temp_used_kamar_by_pelanggan.Count > 0)
+            {
+                popup.btn_add.Enabled = false;
+            }
+
             popup.ShowDialog();
             popup.btn_add.Enabled = true;
-
-            // combine all value in List<String> cart to a string
-            string str = string.Join(",", cart);
-            MessageBox.Show(str);
+            syncKamarCart();
             syncDgv();
         }
 
@@ -240,6 +271,7 @@ namespace DatabaseHotelUas
             // check if used_kamar_by_pelanggan is empty or not
             if (temp_used_kamar_by_pelanggan.Count == 0)
             {
+                syncKamarCart();
                 lbl_check_in.Show();
                 datetime_check_in.Show();
                 // disable btn_A101 - btn_A140 and btn_A201 - btn_A240 if backcolor is red
@@ -265,6 +297,21 @@ namespace DatabaseHotelUas
                 lbl_check_out.Show();
                 datetime_check_out.Show();
 
+                // delete all value in cart dan cart_dt
+                cart.Clear();
+                cart_dt.Clear();
+
+                for (int i = 101; i <= 140; i++)
+                {
+                    Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                    btn.Enabled = false;
+                }
+                for (int i = 201; i <= 240; i++)
+                {
+                    Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                    btn.Enabled = false;
+                }
+
                 // so if pelanggan has order kamar, kamar that has been ordered change to blue
                 foreach (string kamar_no in temp_used_kamar_by_pelanggan)
                 {
@@ -273,6 +320,7 @@ namespace DatabaseHotelUas
                 }
             }
         }
+
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             cb_pelanggan.Enabled = true;
@@ -282,23 +330,21 @@ namespace DatabaseHotelUas
             lbl_check_out.Hide();
             datetime_check_in.Hide();
             datetime_check_out.Hide();
+            // delete all value in cart dan cart_dt
+            cart.Clear();
+            cart_dt.Clear();
+            dgv_cart.Refresh();
 
             // enable all button
             for (int i = 101; i <= 140; i++)
             {
                 Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
-                if (btn.BackColor == Color.Red)
-                {
-                    btn.Enabled = true;
-                }
+                btn.Enabled = true;
             }
             for (int i = 201; i <= 240; i++)
             {
                 Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
-                if (btn.BackColor == Color.Red)
-                {
-                    btn.Enabled = true;
-                }
+                btn.Enabled = true;
             }
             syncKamarStatus();
         }
