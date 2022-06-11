@@ -113,5 +113,6 @@ namespace DatabaseHotelUas
         private System.Windows.Forms.Button btnProses;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.ComboBox cBoxTransID;
+
     }
 }
