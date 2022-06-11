@@ -46,13 +46,13 @@
             this.cekRiwayatTransaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.riwayatPemesananKamarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.riwayatTransaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.riwayatTransaksiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lb_hargaKamar = new System.Windows.Forms.ListBox();
             this.lbl_hargaHotel = new System.Windows.Forms.Label();
             this.lbl_waktu = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_jamWIB = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.riwayatTransaksiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gb_kamar.SuspendLayout();
             this.gb_restoran.SuspendLayout();
             this.gb_pelanggan.SuspendLayout();
@@ -62,10 +62,10 @@
             // 
             // btn_checktrans
             // 
-            this.btn_checktrans.Location = new System.Drawing.Point(201, 354);
+            this.btn_checktrans.Location = new System.Drawing.Point(226, 442);
             this.btn_checktrans.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_checktrans.Name = "btn_checktrans";
-            this.btn_checktrans.Size = new System.Drawing.Size(140, 43);
+            this.btn_checktrans.Size = new System.Drawing.Size(158, 54);
             this.btn_checktrans.TabIndex = 11;
             this.btn_checktrans.Text = "Cek Transaksi";
             this.btn_checktrans.UseVisualStyleBackColor = true;
@@ -74,21 +74,21 @@
             // gb_kamar
             // 
             this.gb_kamar.Controls.Add(this.btn_lihatkamar);
-            this.gb_kamar.Location = new System.Drawing.Point(388, 161);
+            this.gb_kamar.Location = new System.Drawing.Point(436, 201);
             this.gb_kamar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gb_kamar.Name = "gb_kamar";
             this.gb_kamar.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gb_kamar.Size = new System.Drawing.Size(409, 80);
+            this.gb_kamar.Size = new System.Drawing.Size(460, 100);
             this.gb_kamar.TabIndex = 12;
             this.gb_kamar.TabStop = false;
             this.gb_kamar.Text = "Kamar";
             // 
             // btn_lihatkamar
             // 
-            this.btn_lihatkamar.Location = new System.Drawing.Point(23, 25);
+            this.btn_lihatkamar.Location = new System.Drawing.Point(26, 31);
             this.btn_lihatkamar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_lihatkamar.Name = "btn_lihatkamar";
-            this.btn_lihatkamar.Size = new System.Drawing.Size(140, 43);
+            this.btn_lihatkamar.Size = new System.Drawing.Size(158, 54);
             this.btn_lihatkamar.TabIndex = 13;
             this.btn_lihatkamar.Text = "Lihat Kamar";
             this.btn_lihatkamar.UseVisualStyleBackColor = true;
@@ -96,10 +96,10 @@
             // 
             // btn_restoran
             // 
-            this.btn_restoran.Location = new System.Drawing.Point(23, 32);
+            this.btn_restoran.Location = new System.Drawing.Point(26, 40);
             this.btn_restoran.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_restoran.Name = "btn_restoran";
-            this.btn_restoran.Size = new System.Drawing.Size(140, 43);
+            this.btn_restoran.Size = new System.Drawing.Size(158, 54);
             this.btn_restoran.TabIndex = 14;
             this.btn_restoran.Text = "Restoran";
             this.btn_restoran.UseVisualStyleBackColor = true;
@@ -109,21 +109,21 @@
             // 
             this.gb_restoran.Controls.Add(this.btn_historiRestoran);
             this.gb_restoran.Controls.Add(this.btn_restoran);
-            this.gb_restoran.Location = new System.Drawing.Point(388, 246);
+            this.gb_restoran.Location = new System.Drawing.Point(436, 308);
             this.gb_restoran.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gb_restoran.Name = "gb_restoran";
             this.gb_restoran.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gb_restoran.Size = new System.Drawing.Size(409, 86);
+            this.gb_restoran.Size = new System.Drawing.Size(460, 108);
             this.gb_restoran.TabIndex = 14;
             this.gb_restoran.TabStop = false;
             this.gb_restoran.Text = "Restoran";
             // 
             // btn_historiRestoran
             // 
-            this.btn_historiRestoran.Location = new System.Drawing.Point(244, 32);
+            this.btn_historiRestoran.Location = new System.Drawing.Point(274, 40);
             this.btn_historiRestoran.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_historiRestoran.Name = "btn_historiRestoran";
-            this.btn_historiRestoran.Size = new System.Drawing.Size(140, 43);
+            this.btn_historiRestoran.Size = new System.Drawing.Size(158, 54);
             this.btn_historiRestoran.TabIndex = 15;
             this.btn_historiRestoran.Text = "Histori Restoran";
             this.btn_historiRestoran.UseVisualStyleBackColor = true;
@@ -133,21 +133,21 @@
             // 
             this.gb_pelanggan.Controls.Add(this.btn_tmbhPelanggan);
             this.gb_pelanggan.Controls.Add(this.btn_cekidPelanggan);
-            this.gb_pelanggan.Location = new System.Drawing.Point(388, 336);
+            this.gb_pelanggan.Location = new System.Drawing.Point(436, 420);
             this.gb_pelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gb_pelanggan.Name = "gb_pelanggan";
             this.gb_pelanggan.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gb_pelanggan.Size = new System.Drawing.Size(409, 86);
+            this.gb_pelanggan.Size = new System.Drawing.Size(460, 108);
             this.gb_pelanggan.TabIndex = 15;
             this.gb_pelanggan.TabStop = false;
             this.gb_pelanggan.Text = "Pelanggan";
             // 
             // btn_tmbhPelanggan
             // 
-            this.btn_tmbhPelanggan.Location = new System.Drawing.Point(244, 32);
+            this.btn_tmbhPelanggan.Location = new System.Drawing.Point(274, 40);
             this.btn_tmbhPelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_tmbhPelanggan.Name = "btn_tmbhPelanggan";
-            this.btn_tmbhPelanggan.Size = new System.Drawing.Size(140, 43);
+            this.btn_tmbhPelanggan.Size = new System.Drawing.Size(158, 54);
             this.btn_tmbhPelanggan.TabIndex = 15;
             this.btn_tmbhPelanggan.Text = "Tambah Pelanggan";
             this.btn_tmbhPelanggan.UseVisualStyleBackColor = true;
@@ -155,10 +155,10 @@
             // 
             // btn_cekidPelanggan
             // 
-            this.btn_cekidPelanggan.Location = new System.Drawing.Point(23, 32);
+            this.btn_cekidPelanggan.Location = new System.Drawing.Point(26, 40);
             this.btn_cekidPelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_cekidPelanggan.Name = "btn_cekidPelanggan";
-            this.btn_cekidPelanggan.Size = new System.Drawing.Size(140, 43);
+            this.btn_cekidPelanggan.Size = new System.Drawing.Size(158, 54);
             this.btn_cekidPelanggan.TabIndex = 14;
             this.btn_cekidPelanggan.Text = "Cek ID Pelanggan";
             this.btn_cekidPelanggan.UseVisualStyleBackColor = true;
@@ -166,14 +166,15 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pelangganToolStripMenuItem,
             this.cekRiwayatTransaksiToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(820, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(922, 33);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -183,21 +184,21 @@
             this.daftarPelangganToolStripMenuItem,
             this.tambahPelangganToolStripMenuItem});
             this.pelangganToolStripMenuItem.Name = "pelangganToolStripMenuItem";
-            this.pelangganToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
+            this.pelangganToolStripMenuItem.Size = new System.Drawing.Size(110, 29);
             this.pelangganToolStripMenuItem.Text = "Pelanggan";
             this.pelangganToolStripMenuItem.Click += new System.EventHandler(this.pelangganToolStripMenuItem_Click);
             // 
             // daftarPelangganToolStripMenuItem
             // 
             this.daftarPelangganToolStripMenuItem.Name = "daftarPelangganToolStripMenuItem";
-            this.daftarPelangganToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.daftarPelangganToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
             this.daftarPelangganToolStripMenuItem.Text = "Cek Pelanggan";
             this.daftarPelangganToolStripMenuItem.Click += new System.EventHandler(this.daftarPelangganToolStripMenuItem_Click);
             // 
             // tambahPelangganToolStripMenuItem
             // 
             this.tambahPelangganToolStripMenuItem.Name = "tambahPelangganToolStripMenuItem";
-            this.tambahPelangganToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tambahPelangganToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
             this.tambahPelangganToolStripMenuItem.Text = "Tambah Pelanggan";
             this.tambahPelangganToolStripMenuItem.Click += new System.EventHandler(this.tambahPelangganToolStripMenuItem_Click);
             // 
@@ -208,40 +209,46 @@
             this.riwayatTransaksiToolStripMenuItem,
             this.riwayatTransaksiToolStripMenuItem1});
             this.cekRiwayatTransaksiToolStripMenuItem.Name = "cekRiwayatTransaksiToolStripMenuItem";
-            this.cekRiwayatTransaksiToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
+            this.cekRiwayatTransaksiToolStripMenuItem.Size = new System.Drawing.Size(128, 29);
             this.cekRiwayatTransaksiToolStripMenuItem.Text = "Cek Riwayat ";
             this.cekRiwayatTransaksiToolStripMenuItem.Click += new System.EventHandler(this.cekRiwayatTransaksiToolStripMenuItem_Click);
             // 
             // riwayatPemesananKamarToolStripMenuItem
             // 
             this.riwayatPemesananKamarToolStripMenuItem.Name = "riwayatPemesananKamarToolStripMenuItem";
-            this.riwayatPemesananKamarToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.riwayatPemesananKamarToolStripMenuItem.Size = new System.Drawing.Size(393, 34);
             this.riwayatPemesananKamarToolStripMenuItem.Text = "Riwayat Pemesanan Kamar";
             this.riwayatPemesananKamarToolStripMenuItem.Click += new System.EventHandler(this.riwayatPemesananKamarToolStripMenuItem_Click);
             // 
             // riwayatTransaksiToolStripMenuItem
             // 
             this.riwayatTransaksiToolStripMenuItem.Name = "riwayatTransaksiToolStripMenuItem";
-            this.riwayatTransaksiToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.riwayatTransaksiToolStripMenuItem.Size = new System.Drawing.Size(393, 34);
             this.riwayatTransaksiToolStripMenuItem.Text = "Riwayat Pemesanan Menu Restoran";
+            // 
+            // riwayatTransaksiToolStripMenuItem1
+            // 
+            this.riwayatTransaksiToolStripMenuItem1.Name = "riwayatTransaksiToolStripMenuItem1";
+            this.riwayatTransaksiToolStripMenuItem1.Size = new System.Drawing.Size(393, 34);
+            this.riwayatTransaksiToolStripMenuItem1.Text = "Riwayat Transaksi";
             // 
             // lb_hargaKamar
             // 
             this.lb_hargaKamar.FormattingEnabled = true;
-            this.lb_hargaKamar.ItemHeight = 16;
-            this.lb_hargaKamar.Location = new System.Drawing.Point(11, 161);
+            this.lb_hargaKamar.ItemHeight = 20;
+            this.lb_hargaKamar.Location = new System.Drawing.Point(12, 201);
             this.lb_hargaKamar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lb_hargaKamar.Name = "lb_hargaKamar";
-            this.lb_hargaKamar.Size = new System.Drawing.Size(364, 116);
+            this.lb_hargaKamar.Size = new System.Drawing.Size(409, 144);
             this.lb_hargaKamar.TabIndex = 19;
             this.lb_hargaKamar.Click += new System.EventHandler(this.lb_hargaKamar_Click);
             // 
             // lbl_hargaHotel
             // 
             this.lbl_hargaHotel.AutoSize = true;
-            this.lbl_hargaHotel.Location = new System.Drawing.Point(11, 132);
+            this.lbl_hargaHotel.Location = new System.Drawing.Point(12, 165);
             this.lbl_hargaHotel.Name = "lbl_hargaHotel";
-            this.lbl_hargaHotel.Size = new System.Drawing.Size(84, 17);
+            this.lbl_hargaHotel.Size = new System.Drawing.Size(95, 20);
             this.lbl_hargaHotel.TabIndex = 20;
             this.lbl_hargaHotel.Text = "Harga Hotel";
             // 
@@ -249,9 +256,9 @@
             // 
             this.lbl_waktu.AutoSize = true;
             this.lbl_waktu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_waktu.Location = new System.Drawing.Point(298, 29);
+            this.lbl_waktu.Location = new System.Drawing.Point(335, 36);
             this.lbl_waktu.Name = "lbl_waktu";
-            this.lbl_waktu.Size = new System.Drawing.Size(53, 20);
+            this.lbl_waktu.Size = new System.Drawing.Size(64, 25);
             this.lbl_waktu.TabIndex = 21;
             this.lbl_waktu.Text = "label1";
             // 
@@ -264,9 +271,9 @@
             // 
             this.lbl_jamWIB.AutoSize = true;
             this.lbl_jamWIB.Font = new System.Drawing.Font("Myanmar Text", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_jamWIB.Location = new System.Drawing.Point(322, 56);
+            this.lbl_jamWIB.Location = new System.Drawing.Point(362, 70);
             this.lbl_jamWIB.Name = "lbl_jamWIB";
-            this.lbl_jamWIB.Size = new System.Drawing.Size(144, 71);
+            this.lbl_jamWIB.Size = new System.Drawing.Size(175, 85);
             this.lbl_jamWIB.TabIndex = 22;
             this.lbl_jamWIB.Text = "label1";
             // 
@@ -274,25 +281,19 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
-            this.pictureBox1.Location = new System.Drawing.Point(652, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(734, 36);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(145, 136);
+            this.pictureBox1.Size = new System.Drawing.Size(163, 170);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // riwayatTransaksiToolStripMenuItem1
-            // 
-            this.riwayatTransaksiToolStripMenuItem1.Name = "riwayatTransaksiToolStripMenuItem1";
-            this.riwayatTransaksiToolStripMenuItem1.Size = new System.Drawing.Size(325, 26);
-            this.riwayatTransaksiToolStripMenuItem1.Text = "Riwayat Transaksi";
-            // 
             // form_main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 431);
+            this.ClientSize = new System.Drawing.Size(922, 539);
             this.Controls.Add(this.lbl_jamWIB);
             this.Controls.Add(this.lbl_waktu);
             this.Controls.Add(this.lbl_hargaHotel);
