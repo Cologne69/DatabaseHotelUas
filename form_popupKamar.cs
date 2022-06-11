@@ -54,6 +54,12 @@ namespace DatabaseHotelUas
                 txt_check_in.Text = temp_txt_dt.Rows[0]["tanggal"].ToString();
                 btn_add.Enabled = false;
             }
+
+            // disable btn_add if current kamar is already on cart
+            if (form_kamar.cart.Contains(form_kamar.pressed_button))
+            {
+                btn_add.Enabled = false;
+            }
         }
         // @ui_sync = sync ui from form_kamar 
         private void ui_sync()
