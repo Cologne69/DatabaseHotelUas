@@ -47,21 +47,23 @@
             // 
             // dgv_cekTransBlmLunas
             // 
+            this.dgv_cekTransBlmLunas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_cekTransBlmLunas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_cekTransBlmLunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cekTransBlmLunas.Location = new System.Drawing.Point(11, 26);
+            this.dgv_cekTransBlmLunas.Location = new System.Drawing.Point(12, 32);
             this.dgv_cekTransBlmLunas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_cekTransBlmLunas.Name = "dgv_cekTransBlmLunas";
             this.dgv_cekTransBlmLunas.RowHeadersWidth = 62;
             this.dgv_cekTransBlmLunas.RowTemplate.Height = 28;
-            this.dgv_cekTransBlmLunas.Size = new System.Drawing.Size(1086, 108);
+            this.dgv_cekTransBlmLunas.Size = new System.Drawing.Size(1222, 135);
             this.dgv_cekTransBlmLunas.TabIndex = 0;
             // 
             // btn_prosesCekTransaksi
             // 
-            this.btn_prosesCekTransaksi.Location = new System.Drawing.Point(73, 628);
+            this.btn_prosesCekTransaksi.Location = new System.Drawing.Point(82, 785);
             this.btn_prosesCekTransaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_prosesCekTransaksi.Name = "btn_prosesCekTransaksi";
-            this.btn_prosesCekTransaksi.Size = new System.Drawing.Size(124, 36);
+            this.btn_prosesCekTransaksi.Size = new System.Drawing.Size(140, 45);
             this.btn_prosesCekTransaksi.TabIndex = 7;
             this.btn_prosesCekTransaksi.Text = "Proses";
             this.btn_prosesCekTransaksi.UseVisualStyleBackColor = true;
@@ -69,10 +71,10 @@
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(972, 628);
+            this.btn_exit.Location = new System.Drawing.Point(1094, 785);
             this.btn_exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(124, 36);
+            this.btn_exit.Size = new System.Drawing.Size(140, 45);
             this.btn_exit.TabIndex = 8;
             this.btn_exit.Text = "Keluar";
             this.btn_exit.UseVisualStyleBackColor = true;
@@ -81,18 +83,19 @@
             // lblJenisTransaksi
             // 
             this.lblJenisTransaksi.AutoSize = true;
-            this.lblJenisTransaksi.Location = new System.Drawing.Point(70, 593);
+            this.lblJenisTransaksi.Location = new System.Drawing.Point(79, 741);
             this.lblJenisTransaksi.Name = "lblJenisTransaksi";
-            this.lblJenisTransaksi.Size = new System.Drawing.Size(111, 17);
+            this.lblJenisTransaksi.Size = new System.Drawing.Size(122, 20);
             this.lblJenisTransaksi.TabIndex = 9;
             this.lblJenisTransaksi.Text = "Jenis Transaksi:";
             // 
             // cBoxBookKamar
             // 
             this.cBoxBookKamar.AutoSize = true;
-            this.cBoxBookKamar.Location = new System.Drawing.Point(198, 592);
+            this.cBoxBookKamar.Location = new System.Drawing.Point(223, 740);
+            this.cBoxBookKamar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cBoxBookKamar.Name = "cBoxBookKamar";
-            this.cBoxBookKamar.Size = new System.Drawing.Size(126, 21);
+            this.cBoxBookKamar.Size = new System.Drawing.Size(143, 24);
             this.cBoxBookKamar.TabIndex = 10;
             this.cBoxBookKamar.Text = "Booking Kamar";
             this.cBoxBookKamar.UseVisualStyleBackColor = true;
@@ -100,69 +103,78 @@
             // cBoxOrderResto
             // 
             this.cBoxOrderResto.AutoSize = true;
-            this.cBoxOrderResto.Location = new System.Drawing.Point(330, 592);
+            this.cBoxOrderResto.Location = new System.Drawing.Point(371, 740);
+            this.cBoxOrderResto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cBoxOrderResto.Name = "cBoxOrderResto";
-            this.cBoxOrderResto.Size = new System.Drawing.Size(108, 21);
+            this.cBoxOrderResto.Size = new System.Drawing.Size(122, 24);
             this.cBoxOrderResto.TabIndex = 11;
             this.cBoxOrderResto.Text = "Order Resto";
             this.cBoxOrderResto.UseVisualStyleBackColor = true;
             // 
             // dgv_SemuaTransaksi
             // 
+            this.dgv_SemuaTransaksi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_SemuaTransaksi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_SemuaTransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_SemuaTransaksi.Location = new System.Drawing.Point(10, 254);
+            this.dgv_SemuaTransaksi.Location = new System.Drawing.Point(11, 318);
             this.dgv_SemuaTransaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_SemuaTransaksi.Name = "dgv_SemuaTransaksi";
             this.dgv_SemuaTransaksi.RowHeadersWidth = 62;
+            this.dgv_SemuaTransaksi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_SemuaTransaksi.RowTemplate.Height = 28;
-            this.dgv_SemuaTransaksi.Size = new System.Drawing.Size(1086, 157);
+            this.dgv_SemuaTransaksi.Size = new System.Drawing.Size(1222, 196);
             this.dgv_SemuaTransaksi.TabIndex = 12;
+            this.dgv_SemuaTransaksi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SemuaTransaksi_CellContentClick);
             // 
             // lblTransBelumLunas
             // 
             this.lblTransBelumLunas.AutoSize = true;
-            this.lblTransBelumLunas.Location = new System.Drawing.Point(12, 7);
+            this.lblTransBelumLunas.Location = new System.Drawing.Point(14, 9);
             this.lblTransBelumLunas.Name = "lblTransBelumLunas";
-            this.lblTransBelumLunas.Size = new System.Drawing.Size(90, 17);
+            this.lblTransBelumLunas.Size = new System.Drawing.Size(102, 20);
             this.lblTransBelumLunas.TabIndex = 13;
             this.lblTransBelumLunas.Text = "Belum Lunas";
             // 
             // lblSemuaTransaksi
             // 
             this.lblSemuaTransaksi.AutoSize = true;
-            this.lblSemuaTransaksi.Location = new System.Drawing.Point(11, 235);
+            this.lblSemuaTransaksi.Location = new System.Drawing.Point(12, 294);
             this.lblSemuaTransaksi.Name = "lblSemuaTransaksi";
-            this.lblSemuaTransaksi.Size = new System.Drawing.Size(118, 17);
+            this.lblSemuaTransaksi.Size = new System.Drawing.Size(132, 20);
             this.lblSemuaTransaksi.TabIndex = 14;
             this.lblSemuaTransaksi.Text = "Semua Transaksi";
             // 
             // dgv_SemuaTransaksi2
             // 
+            this.dgv_SemuaTransaksi2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_SemuaTransaksi2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_SemuaTransaksi2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_SemuaTransaksi2.Location = new System.Drawing.Point(10, 408);
+            this.dgv_SemuaTransaksi2.Location = new System.Drawing.Point(11, 510);
             this.dgv_SemuaTransaksi2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_SemuaTransaksi2.Name = "dgv_SemuaTransaksi2";
             this.dgv_SemuaTransaksi2.RowHeadersWidth = 62;
             this.dgv_SemuaTransaksi2.RowTemplate.Height = 28;
-            this.dgv_SemuaTransaksi2.Size = new System.Drawing.Size(1086, 167);
+            this.dgv_SemuaTransaksi2.Size = new System.Drawing.Size(1222, 209);
             this.dgv_SemuaTransaksi2.TabIndex = 15;
             // 
             // dgv_cekTransBlmLunas2
             // 
+            this.dgv_cekTransBlmLunas2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_cekTransBlmLunas2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_cekTransBlmLunas2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cekTransBlmLunas2.Location = new System.Drawing.Point(11, 125);
+            this.dgv_cekTransBlmLunas2.Location = new System.Drawing.Point(12, 156);
             this.dgv_cekTransBlmLunas2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_cekTransBlmLunas2.Name = "dgv_cekTransBlmLunas2";
             this.dgv_cekTransBlmLunas2.RowHeadersWidth = 62;
             this.dgv_cekTransBlmLunas2.RowTemplate.Height = 28;
-            this.dgv_cekTransBlmLunas2.Size = new System.Drawing.Size(1086, 108);
+            this.dgv_cekTransBlmLunas2.Size = new System.Drawing.Size(1222, 135);
             this.dgv_cekTransBlmLunas2.TabIndex = 16;
             // 
             // Form_Cek_Transaksi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 675);
+            this.ClientSize = new System.Drawing.Size(1246, 844);
             this.Controls.Add(this.dgv_cekTransBlmLunas2);
             this.Controls.Add(this.dgv_SemuaTransaksi2);
             this.Controls.Add(this.lblSemuaTransaksi);
