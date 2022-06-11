@@ -88,7 +88,7 @@ namespace DatabaseHotelUas
             try
             {
                 restoBelumLunas = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID, CUST_ID, ORDER_TGL, ORDER_KAMAR_NO, ORDER_MENU_COUNT, ORDER_TOTAL FROM ORDER_FOOD WHERE TRANS_ID is null; ";
+                sqlQuery = $"SELECT ORDER_ID as 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE TRANS_ID is null AND NOT ORDER_ID = '0'; ";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(restoBelumLunas);
@@ -122,7 +122,7 @@ namespace DatabaseHotelUas
             try
             {
                 semuaTransaksiResto = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID, CUST_ID, ORDER_TGL, ORDER_KAMAR_NO, ORDER_MENU_COUNT, ORDER_TOTAL FROM ORDER_FOOD; ";
+                sqlQuery = $"SELECT ORDER_ID as 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE NOT ORDER_ID = '0';";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(semuaTransaksiResto);
@@ -139,7 +139,7 @@ namespace DatabaseHotelUas
             try
             {
                 restoBelumLunas = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID, CUST_ID, ORDER_TGL, ORDER_KAMAR_NO, ORDER_MENU_COUNT, ORDER_TOTAL FROM ORDER_FOOD WHERE TRANS_ID is null; ";
+                sqlQuery = $"SELECT ORDER_ID as 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE TRANS_ID is null AND NOT ORDER_ID = '0'; ";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(restoBelumLunas);
@@ -156,7 +156,7 @@ namespace DatabaseHotelUas
             try
             {
                 semuaTransaksiResto = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID, CUST_ID, ORDER_TGL, ORDER_KAMAR_NO, ORDER_MENU_COUNT, ORDER_TOTAL FROM ORDER_FOOD; ";
+                sqlQuery = $"SELECT ORDER_ID as 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE NOT ORDER_ID = '0'; ";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(semuaTransaksiResto);
