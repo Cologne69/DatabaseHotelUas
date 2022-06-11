@@ -176,6 +176,7 @@
             this.MinimizeBox = false;
             this.Name = "form_tambahPelanggan";
             this.Text = "Tambah Pelanggan";
+            this.Load += new System.EventHandler(this.form_tambahPelanggan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

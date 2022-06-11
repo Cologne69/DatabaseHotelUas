@@ -25,6 +25,7 @@ namespace DatabaseHotelUas
         private void btn_exit_Click(object sender, EventArgs e)
         {
             this.Hide();
+            txt_cariNamaPelanggan.Text = "";
         }
         private void form_idPelanggan_Load(object sender, EventArgs e)
         {
