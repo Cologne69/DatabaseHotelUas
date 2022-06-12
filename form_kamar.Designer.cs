@@ -127,7 +127,7 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.dgv_cart = new System.Windows.Forms.DataGridView();
             this.btn_checkout = new System.Windows.Forms.Button();
-            this.btn_remove = new System.Windows.Forms.Button();
+            this.btn_remove_all = new System.Windows.Forms.Button();
             this.lbl_book_id = new System.Windows.Forms.Label();
             this.lbl_total_item = new System.Windows.Forms.Label();
             this.lbl_total = new System.Windows.Forms.Label();
@@ -1328,14 +1328,15 @@
             this.btn_checkout.Text = "Checkout";
             this.btn_checkout.UseVisualStyleBackColor = true;
             // 
-            // btn_remove
+            // btn_remove_all
             // 
-            this.btn_remove.Location = new System.Drawing.Point(1127, 566);
-            this.btn_remove.Name = "btn_remove";
-            this.btn_remove.Size = new System.Drawing.Size(89, 33);
-            this.btn_remove.TabIndex = 113;
-            this.btn_remove.Text = "Remove";
-            this.btn_remove.UseVisualStyleBackColor = true;
+            this.btn_remove_all.Location = new System.Drawing.Point(1127, 566);
+            this.btn_remove_all.Name = "btn_remove_all";
+            this.btn_remove_all.Size = new System.Drawing.Size(102, 33);
+            this.btn_remove_all.TabIndex = 113;
+            this.btn_remove_all.Text = "Remove All";
+            this.btn_remove_all.UseVisualStyleBackColor = true;
+            this.btn_remove_all.Click += new System.EventHandler(this.btn_remove_all_Click);
             // 
             // lbl_book_id
             // 
@@ -1405,7 +1406,7 @@
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.lbl_total_item);
             this.Controls.Add(this.lbl_book_id);
-            this.Controls.Add(this.btn_remove);
+            this.Controls.Add(this.btn_remove_all);
             this.Controls.Add(this.btn_checkout);
             this.Controls.Add(this.dgv_cart);
             this.Controls.Add(this.btn_cancel);
@@ -1610,7 +1611,7 @@
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.DataGridView dgv_cart;
         private System.Windows.Forms.Button btn_checkout;
-        private System.Windows.Forms.Button btn_remove;
+        private System.Windows.Forms.Button btn_remove_all;
         private System.Windows.Forms.Label lbl_book_id;
         private System.Windows.Forms.Label lbl_total_item;
         private System.Windows.Forms.Label lbl_total;
