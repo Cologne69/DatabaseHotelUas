@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace DatabaseHotelUas
 {
@@ -17,14 +11,14 @@ namespace DatabaseHotelUas
         {
             InitializeComponent();
         }
-        
+
         public MySqlCommand sqlCommand;
         public MySqlDataAdapter sqlAdapter;
         string sqlQuery;
         new DataTable HargaKamar = new DataTable();
         public static int transID;
         MySqlDataReader myReader;
-        
+
 
 
         //----------------------------------------------------- BMYSQL SERVER -----------------------------------------------------
@@ -56,14 +50,14 @@ namespace DatabaseHotelUas
         public static form_idPelanggan fcidp = new form_idPelanggan();
         public static form_tambahPelanggan ftp = new form_tambahPelanggan();
         public static form_historiRestoran fhr = new form_historiRestoran();
- 
+
         //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
 
         private void button2_Click(object sender, EventArgs e)
         {
             fct.ShowDialog();
         }
-        
+
         private void btn_lihatkamar_Click(object sender, EventArgs e)
         {
             fk.ShowDialog();
@@ -114,7 +108,7 @@ namespace DatabaseHotelUas
             TestKoneksi();
             try
             {
-                
+
                 transID = maxtransID();
                 sqlQuery = $"SELECT CONCAT(TK.TIPE_KAMAR_ID,' - ',TK.TIPE_KAMAR_NAMA, ' ',' | ','Rp.', TK.TIPE_KAMAR_HARGA) as '1' FROM TIPE_KAMAR TK;";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
@@ -145,21 +139,21 @@ namespace DatabaseHotelUas
         {
             fcidp.ShowDialog();
         }
-        bool statusKlik {get; set;}
+        bool statusKlik { get; set; }
         private void pelangganToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             if (statusKlik == false)
             {
                 menuStrip2.Show();
                 statusKlik = true;
             }
-            else 
+            else
             {
                 menuStrip2.Hide();
                 statusKlik = false;
             }
-            
+
 
 
         }
