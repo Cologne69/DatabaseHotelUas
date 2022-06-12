@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -39,16 +36,57 @@ namespace DatabaseHotelUas
 
         private void form_kamar_Load(object sender, EventArgs e)
         {
-            lbl_check_in.Hide();
-            lbl_check_out.Hide();
-            datetime_check_in.Hide();
-            datetime_check_out.Hide();
+            lbl_output_book_id.Text = getCurrentBookId().ToString();
 
+            hideCheckAndDatetime();
             syncKamarStatus();
             syncPelanggan();
         }
 
-        private void syncKamarStatus()
+        private void hideCheckAndDatetime() // @hideCheckAndDatetime = hide check in and check out datetime (for view only mode)
+        {
+            lbl_check_in.Hide();
+            lbl_check_out.Hide();
+            datetime_check_in.Hide();
+            datetime_check_out.Hide();
+        }
+
+        private int getCurrentBookId() // @maxBookId = get max book_id from BOOKING_KAMAR
+        {
+            try
+            {
+                string sqlQuery = "select max(BOOK_ID) as 'max_book_id' from BOOKING_KAMAR";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                DataTable temp_dt = new DataTable();
+                sqlAdapter.Fill(temp_dt);
+                return Convert.ToInt32(temp_dt.Rows[0]["max_book_id"].ToString()) + 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error occurred: " + ex.Message);
+                return 0;
+            }
+        }
+
+        private void countCart() // @countCart = count how many kamar in cart and update that value to lbl_output_total_item
+        {
+            lbl_output_total_item.Text = cart.Count.ToString();
+        }
+
+        private void countTotalPrice() // @countTotalPrice = count total price of cart and update that value to lbl_output_total_price
+        {
+            int total_price = 0;
+            // sum third column of cart_dt (price)
+            foreach (DataRow row in cart_dt.Rows)
+            {
+                total_price += Convert.ToInt32(row[2].ToString());
+            }
+            // add thousand separator
+            lbl_output_total_price.Text = total_price.ToString("#,##0");
+        }
+
+        private void syncKamarStatus() // @syncKamarStatus = sync color of occupied kamar
         {
             /*
              * query check for KAMAR_STATUS = 1
@@ -73,7 +111,7 @@ namespace DatabaseHotelUas
                     Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
                     btn.BackColor = Color.LimeGreen;
                 }
-                
+
                 // append "btn_A" to every child in filled_kamar and change it as button backColor to red
                 foreach (string kamar_no in filled_kamar)
                 {
@@ -81,13 +119,13 @@ namespace DatabaseHotelUas
                     btn.BackColor = Color.Red;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("error occurred: " + ex.Message);
             }
         }
 
-        private void syncPelanggan()
+        private void syncPelanggan() // @syncPelanggan fill cb_pelanggan with data
         {
             try
             {
@@ -125,7 +163,7 @@ namespace DatabaseHotelUas
                 string sqlQuery = $"select c.CUST_NAMA as 'nama', bk.BOOK_TGL_CIN 'check_in', d.kamar_no 'kamar_no' " +
                     $"from CUSTOMER c, BOOKING_KAMAR bk, KAMAR k, DETAIL_BOOK_KAMAR d " +
                     $"where c.CUST_ID = bk.CUST_ID and d.BOOK_ID = bk.BOOK_ID and d.KAMAR_NO = k.KAMAR_NO  " +
-                    $"and c.CUST_ID = '{cb_pelanggan.SelectedValue.ToString()}'";
+                    $"and bk.BOOK_TGL_COUT IS NULL and c.CUST_ID = '{cb_pelanggan.SelectedValue.ToString()}'";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(pelanggan_kamar);
@@ -146,7 +184,7 @@ namespace DatabaseHotelUas
          * @syncDgv = sync dgv_cart with cart_dt
          */
 
-        private void convertKamarToDgv()
+        private void convertKamarToDgv() // fill cart_dt with selected kamar in List<string> cart
         {
             string sqlQuery = $"SELECT k.KAMAR_NO as 'No Kamar', tk.TIPE_KAMAR_NAMA as 'Tipe', tk.TIPE_KAMAR_HARGA as 'Harga' FROM KAMAR k, TIPE_KAMAR tk " +
                 $"WHERE tk.TIPE_KAMAR_ID = k.TIPE_KAMAR_ID AND k.KAMAR_NO IN ('{String.Join("','", cart)}')";
@@ -155,7 +193,7 @@ namespace DatabaseHotelUas
             sqlAdapter.Fill(cart_dt);
         }
 
-        private void syncDgv()
+        private void syncDgv() // always refresh dt and sync dgv_cart with cart_dt
         {
             cart_dt = new DataTable();
             convertKamarToDgv();
@@ -166,10 +204,12 @@ namespace DatabaseHotelUas
          * @syncKamarCart = change btn_Axx to blue if that number is in List<String> cart
          * probably, do it after check whether temp_used_kamar_by_pelanggan has any value in it
          */
-        
+
         private void syncKamarCart()
         {
-            syncKamarStatus();
+            syncKamarStatus(); // we need to sync kamar status first so red color still persist
+            countCart();
+            countTotalPrice();
             foreach (string kamar_no in cart)
             {
                 Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
@@ -217,21 +257,19 @@ namespace DatabaseHotelUas
 
         public static string pressed_button;
         public static string tipe_kamar;
-        
+
         private void btn_child_onClick(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+            pressed_button = btn.Name.Substring(5); // cast system.windows.forms.button btn to string and remove "btn_a"
 
-            // cast system.windows.forms.button btn to string and remove "btn_a"
-            pressed_button = btn.Name.Substring(5);
             // remove "A" and whitespace and 0-9 from btn.Text
             tipe_kamar = new string(btn.Text.Where(c => !char.IsDigit(c) && !char.IsWhiteSpace(c) && c != 'A').ToArray());
 
             form_popupKamar popup = new form_popupKamar();
             popup.StartPosition = FormStartPosition.CenterParent;
 
-            // if user has already use kamar then disable btn_add button
-            if (temp_used_kamar_by_pelanggan.Count > 0)
+            if (temp_used_kamar_by_pelanggan.Count > 0) // if user has already use kamar then disable btn_add button
             {
                 popup.btn_add.Enabled = false;
             }
@@ -240,6 +278,7 @@ namespace DatabaseHotelUas
             popup.btn_add.Enabled = true;
             syncKamarCart();
             syncDgv();
+            countTotalPrice();
         }
 
         private void cb_pelanggan_KeyDown(object sender, KeyEventArgs e) // change status to red if user pressed any key in cb_pelanggan
@@ -255,7 +294,7 @@ namespace DatabaseHotelUas
             }
         }
 
-        private void cb_pelanggan_SelectedValueChanged(object sender, EventArgs e)
+        private void cb_pelanggan_SelectedValueChanged(object sender, EventArgs e) // if user select from cb then it must be correct
         {
             pic_status.BackColor = Color.Green;
             btn_proses.Show();
@@ -268,8 +307,8 @@ namespace DatabaseHotelUas
             btn_proses.Hide();
             btn_cancel.Show();
             syncPelangganKamar();
-            // check if used_kamar_by_pelanggan is empty or not
-            if (temp_used_kamar_by_pelanggan.Count == 0)
+
+            if (temp_used_kamar_by_pelanggan.Count == 0) // pelanggan hasn't order kamar
             {
                 lbl_check_in.Show();
                 datetime_check_in.Show();
@@ -291,14 +330,17 @@ namespace DatabaseHotelUas
                     }
                 }
             }
-            else
+            else // pelanggan already order kamar, show where they live
             {
                 lbl_check_out.Show();
                 datetime_check_out.Show();
+                btn_remove_all.Enabled = false;
 
                 // delete all value in cart dan cart_dt
                 cart.Clear();
                 cart_dt.Clear();
+                countCart();
+                countTotalPrice();
 
                 syncKamarStatus();
                 for (int i = 101; i <= 140; i++)
@@ -324,16 +366,15 @@ namespace DatabaseHotelUas
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             cb_pelanggan.Enabled = true;
+            btn_remove_all.Enabled = true;
             btn_proses.Show();
             btn_cancel.Hide();
-            lbl_check_in.Hide();
-            lbl_check_out.Hide();
-            datetime_check_in.Hide();
-            datetime_check_out.Hide();
+            hideCheckAndDatetime();
             // delete all value in cart dan cart_dt
             cart.Clear();
             cart_dt.Clear();
-            dgv_cart.Refresh();
+            countCart();
+            countTotalPrice();
 
             // enable all button
             for (int i = 101; i <= 140; i++)
@@ -363,6 +404,15 @@ namespace DatabaseHotelUas
             form_main.ftp.rdb_Laki.Checked = false;
             form_main.ftp.rdb_Perempuan.Checked = false;
             syncPelanggan();
+        }
+
+        private void btn_remove_all_Click(object sender, EventArgs e)
+        {
+            cart.Clear();
+            cart_dt.Clear();
+            countCart();
+            countTotalPrice();
+            syncKamarStatus();
         }
     }
 }
