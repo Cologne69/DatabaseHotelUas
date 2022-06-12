@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -22,11 +16,9 @@ namespace DatabaseHotelUas
         {
             InitializeComponent();
         }
-        
 
-        private void btn_exit_Click(object sender, EventArgs e)
+        private void clearAll()
         {
-            this.Hide();
             txt_idPelanggan.Text = "";
             txt_KotaPelanggan.Text = "";
             txt_namaPelanggan.Text = "";
@@ -34,10 +26,12 @@ namespace DatabaseHotelUas
             rdb_Perempuan.Checked = false;
         }
 
-        private void txt_idPelanggan_TextChanged(object sender, EventArgs e)
+        private void btn_exit_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            clearAll();
         }
+
 
         private void btn_tambahPelanggan_Click(object sender, EventArgs e)
         {
@@ -68,11 +62,7 @@ namespace DatabaseHotelUas
                 {
                     MessageBox.Show(ex.Message);
                 }
-                txt_idPelanggan.Text = "";
-                txt_KotaPelanggan.Text = "";
-                txt_namaPelanggan.Text = "";
-                rdb_Laki.Checked = false;
-                rdb_Perempuan.Checked = false;
+                clearAll();
             }
         }
 
@@ -85,13 +75,9 @@ namespace DatabaseHotelUas
             }
         }
 
-        private void form_tambahPelanggan_Load(object sender, EventArgs e)
+        private void form_tambahPelanggan_FormClosing(object sender, FormClosingEventArgs e)
         {
-            txt_idPelanggan.Text = "";
-            txt_KotaPelanggan.Text = "";
-            txt_namaPelanggan.Text = "";
-            rdb_Laki.Checked = false;
-            rdb_Perempuan.Checked = false;
+            clearAll();
         }
     }
 }
