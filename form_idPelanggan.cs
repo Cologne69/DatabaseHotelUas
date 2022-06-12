@@ -39,6 +39,7 @@ namespace DatabaseHotelUas
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            txt_cariNamaPelanggan.Text = "";
         }
         private void txt_cariNamaPelanggan_TextChanged(object sender, EventArgs e)
         {

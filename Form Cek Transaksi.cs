@@ -171,6 +171,10 @@ namespace DatabaseHotelUas
         {
             dgv_cekTransBlmLunas2.Hide();
             dgv_SemuaTransaksi2.Hide();
+            dgv_cekTransBlmLunas.DataSource = null;
+            dgv_cekTransBlmLunas2.DataSource = null;
+            dgv_SemuaTransaksi.DataSource = null;
+            dgv_SemuaTransaksi2.DataSource = null;
         }
 
         private void dgv_SemuaTransaksi_CellContentClick(object sender, DataGridViewCellEventArgs e)
