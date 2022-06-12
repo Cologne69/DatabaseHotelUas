@@ -130,10 +130,10 @@
             this.btn_remove_all = new System.Windows.Forms.Button();
             this.lbl_book_id = new System.Windows.Forms.Label();
             this.lbl_total_item = new System.Windows.Forms.Label();
-            this.lbl_total = new System.Windows.Forms.Label();
+            this.lbl_total_price = new System.Windows.Forms.Label();
             this.lbl_output_book_id = new System.Windows.Forms.Label();
             this.lbl_output_total_item = new System.Windows.Forms.Label();
-            this.lbl_output_total = new System.Windows.Forms.Label();
+            this.lbl_output_total_price = new System.Windows.Forms.Label();
             this.gb_lantai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cart)).BeginInit();
@@ -1356,14 +1356,14 @@
             this.lbl_total_item.TabIndex = 115;
             this.lbl_total_item.Text = "Kamar Di Cart";
             // 
-            // lbl_total
+            // lbl_total_price
             // 
-            this.lbl_total.AutoSize = true;
-            this.lbl_total.Location = new System.Drawing.Point(1279, 52);
-            this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(83, 16);
-            this.lbl_total.TabIndex = 116;
-            this.lbl_total.Text = "Total/Malam";
+            this.lbl_total_price.AutoSize = true;
+            this.lbl_total_price.Location = new System.Drawing.Point(1279, 52);
+            this.lbl_total_price.Name = "lbl_total_price";
+            this.lbl_total_price.Size = new System.Drawing.Size(83, 16);
+            this.lbl_total_price.TabIndex = 116;
+            this.lbl_total_price.Text = "Total/Malam";
             // 
             // lbl_output_book_id
             // 
@@ -1385,25 +1385,25 @@
             this.lbl_output_total_item.TabIndex = 118;
             this.lbl_output_total_item.Text = "0";
             // 
-            // lbl_output_total
+            // lbl_output_total_price
             // 
-            this.lbl_output_total.AutoSize = true;
-            this.lbl_output_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_output_total.Location = new System.Drawing.Point(1262, 77);
-            this.lbl_output_total.Name = "lbl_output_total";
-            this.lbl_output_total.Size = new System.Drawing.Size(125, 29);
-            this.lbl_output_total.TabIndex = 119;
-            this.lbl_output_total.Text = "1.500.000";
+            this.lbl_output_total_price.AutoSize = true;
+            this.lbl_output_total_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_output_total_price.Location = new System.Drawing.Point(1262, 77);
+            this.lbl_output_total_price.Name = "lbl_output_total_price";
+            this.lbl_output_total_price.Size = new System.Drawing.Size(125, 29);
+            this.lbl_output_total_price.TabIndex = 119;
+            this.lbl_output_total_price.Text = "1.500.000";
             // 
             // form_kamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1471, 644);
-            this.Controls.Add(this.lbl_output_total);
+            this.Controls.Add(this.lbl_output_total_price);
             this.Controls.Add(this.lbl_output_total_item);
             this.Controls.Add(this.lbl_output_book_id);
-            this.Controls.Add(this.lbl_total);
+            this.Controls.Add(this.lbl_total_price);
             this.Controls.Add(this.lbl_total_item);
             this.Controls.Add(this.lbl_book_id);
             this.Controls.Add(this.btn_remove_all);
@@ -1614,10 +1614,10 @@
         private System.Windows.Forms.Button btn_remove_all;
         private System.Windows.Forms.Label lbl_book_id;
         private System.Windows.Forms.Label lbl_total_item;
-        private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.Label lbl_total_price;
         private System.Windows.Forms.Label lbl_output_book_id;
         private System.Windows.Forms.Label lbl_output_total_item;
-        private System.Windows.Forms.Label lbl_output_total;
+        private System.Windows.Forms.Label lbl_output_total_price;
         public System.Windows.Forms.ComboBox cb_pelanggan;
     }
 }

@@ -71,8 +71,19 @@ namespace DatabaseHotelUas
 
         private void countCart() // @countCart = count how many kamar in cart and update that value to lbl_output_total_item
         {
-            // count cart 
             lbl_output_total_item.Text = cart.Count.ToString();
+        }
+
+        private void countTotalPrice() // @countTotalPrice = count total price of cart and update that value to lbl_output_total_price
+        {
+            int total_price = 0;
+            // sum third column of cart_dt (price)
+            foreach (DataRow row in cart_dt.Rows)
+            {
+                total_price += Convert.ToInt32(row[2].ToString());
+            }
+            // add thousand separator
+            lbl_output_total_price.Text = total_price.ToString("#,##0");
         }
 
         private void syncKamarStatus() // @syncKamarStatus = sync color of occupied kamar
@@ -198,6 +209,7 @@ namespace DatabaseHotelUas
         {
             syncKamarStatus(); // we need to sync kamar status first so red color still persist
             countCart();
+            countTotalPrice();
             foreach (string kamar_no in cart)
             {
                 Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
@@ -266,6 +278,7 @@ namespace DatabaseHotelUas
             popup.btn_add.Enabled = true;
             syncKamarCart();
             syncDgv();
+            countTotalPrice();
         }
 
         private void cb_pelanggan_KeyDown(object sender, KeyEventArgs e) // change status to red if user pressed any key in cb_pelanggan
@@ -327,6 +340,7 @@ namespace DatabaseHotelUas
                 cart.Clear();
                 cart_dt.Clear();
                 countCart();
+                countTotalPrice();
 
                 syncKamarStatus();
                 for (int i = 101; i <= 140; i++)
@@ -360,6 +374,7 @@ namespace DatabaseHotelUas
             cart.Clear();
             cart_dt.Clear();
             countCart();
+            countTotalPrice();
 
             // enable all button
             for (int i = 101; i <= 140; i++)
@@ -396,6 +411,7 @@ namespace DatabaseHotelUas
             cart.Clear();
             cart_dt.Clear();
             countCart();
+            countTotalPrice();
             syncKamarStatus();
         }
     }
