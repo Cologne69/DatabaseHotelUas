@@ -1383,7 +1383,7 @@
             this.lbl_output_total_item.Name = "lbl_output_total_item";
             this.lbl_output_total_item.Size = new System.Drawing.Size(27, 29);
             this.lbl_output_total_item.TabIndex = 118;
-            this.lbl_output_total_item.Text = "5";
+            this.lbl_output_total_item.Text = "0";
             // 
             // lbl_output_total
             // 

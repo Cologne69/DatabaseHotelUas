@@ -36,16 +36,46 @@ namespace DatabaseHotelUas
 
         private void form_kamar_Load(object sender, EventArgs e)
         {
-            lbl_check_in.Hide();
-            lbl_check_out.Hide();
-            datetime_check_in.Hide();
-            datetime_check_out.Hide();
+            lbl_output_book_id.Text = getCurrentBookId().ToString();
 
+            hideCheckAndDatetime();
             syncKamarStatus();
             syncPelanggan();
         }
 
-        private void syncKamarStatus()
+        private void hideCheckAndDatetime() // @hideCheckAndDatetime = hide check in and check out datetime (for view only mode)
+        {
+            lbl_check_in.Hide();
+            lbl_check_out.Hide();
+            datetime_check_in.Hide();
+            datetime_check_out.Hide();
+        }
+
+        private int getCurrentBookId() // @maxBookId = get max book_id from BOOKING_KAMAR
+        {
+            try
+            {
+                string sqlQuery = "select max(BOOK_ID) as 'max_book_id' from BOOKING_KAMAR";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                DataTable temp_dt = new DataTable();
+                sqlAdapter.Fill(temp_dt);
+                return Convert.ToInt32(temp_dt.Rows[0]["max_book_id"].ToString()) + 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error occurred: " + ex.Message);
+                return 0;
+            }
+        }
+
+        private void countCart() // @countCart = count how many kamar in cart and update that value to lbl_output_total_item
+        {
+            // count cart 
+            lbl_output_total_item.Text = cart.Count.ToString();
+        }
+
+        private void syncKamarStatus() // @syncKamarStatus = sync color of occupied kamar
         {
             /*
              * query check for KAMAR_STATUS = 1
@@ -84,7 +114,7 @@ namespace DatabaseHotelUas
             }
         }
 
-        private void syncPelanggan()
+        private void syncPelanggan() // @syncPelanggan fill cb_pelanggan with data
         {
             try
             {
@@ -122,7 +152,7 @@ namespace DatabaseHotelUas
                 string sqlQuery = $"select c.CUST_NAMA as 'nama', bk.BOOK_TGL_CIN 'check_in', d.kamar_no 'kamar_no' " +
                     $"from CUSTOMER c, BOOKING_KAMAR bk, KAMAR k, DETAIL_BOOK_KAMAR d " +
                     $"where c.CUST_ID = bk.CUST_ID and d.BOOK_ID = bk.BOOK_ID and d.KAMAR_NO = k.KAMAR_NO  " +
-                    $"and c.CUST_ID = '{cb_pelanggan.SelectedValue.ToString()}'";
+                    $"and bk.BOOK_TGL_COUT IS NULL and c.CUST_ID = '{cb_pelanggan.SelectedValue.ToString()}'";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(pelanggan_kamar);
@@ -167,6 +197,7 @@ namespace DatabaseHotelUas
         private void syncKamarCart()
         {
             syncKamarStatus(); // we need to sync kamar status first so red color still persist
+            countCart();
             foreach (string kamar_no in cart)
             {
                 Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
@@ -295,6 +326,7 @@ namespace DatabaseHotelUas
                 // delete all value in cart dan cart_dt
                 cart.Clear();
                 cart_dt.Clear();
+                countCart();
 
                 syncKamarStatus();
                 for (int i = 101; i <= 140; i++)
@@ -323,14 +355,11 @@ namespace DatabaseHotelUas
             btn_remove_all.Enabled = true;
             btn_proses.Show();
             btn_cancel.Hide();
-            lbl_check_in.Hide();
-            lbl_check_out.Hide();
-            datetime_check_in.Hide();
-            datetime_check_out.Hide();
+            hideCheckAndDatetime();
             // delete all value in cart dan cart_dt
             cart.Clear();
             cart_dt.Clear();
-            dgv_cart.Refresh();
+            countCart();
 
             // enable all button
             for (int i = 101; i <= 140; i++)
@@ -366,7 +395,7 @@ namespace DatabaseHotelUas
         {
             cart.Clear();
             cart_dt.Clear();
-            dgv_cart.Refresh();
+            countCart();
             syncKamarStatus();
         }
     }
