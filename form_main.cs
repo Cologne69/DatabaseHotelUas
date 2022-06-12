@@ -145,10 +145,23 @@ namespace DatabaseHotelUas
         {
             fcidp.ShowDialog();
         }
-
+        bool statusKlik {get; set;}
         private void pelangganToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            menuStrip2.Show();
+            
+            if (statusKlik == false)
+            {
+                menuStrip2.Show();
+                statusKlik = true;
+            }
+            else 
+            {
+                menuStrip2.Hide();
+                statusKlik = false;
+            }
+            
+
+
         }
 
         private void cekRiwayatTransaksiToolStripMenuItem_Click(object sender, EventArgs e)
