@@ -433,22 +433,65 @@ namespace DatabaseHotelUas
             }
         }
 
-        private void checkIn() // @checkIn = query from current state of book_id, total_item, total_price
+        private void checkIn() // @checkIn = query from current state of book_id, total_item
         {
             string book_id = getCurrentBookId().ToString();
             string pelanggan_id = cb_pelanggan.SelectedValue.ToString();
             string total_cart = countCart().ToString();
             string total_price = countTotalPrice().ToString();
+
+            void query(string sqlQuery, string errorMsg)
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                    cmd.ExecuteNonQuery();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(errorMsg + ": " + ex.Message);
+                }
+            }
+
             
             if(validateCheckIn(total_cart))
             {
-                MessageBox.Show("OK");
+                if (MessageBox.Show("Are you sure want to proceed?", "Order Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    string sqlQuery;
+                    // step 1 booking_kamar
+                    sqlQuery = $"INSERT into BOOKING_KAMAR (BOOK_ID, CUST_ID, BOOK_TGL_CIN, BOOK_KAMAR_COUNT, DELETE_BOOKING_KAMAR) " +
+                        $"values({book_id}, {pelanggan_id}, curdate(), {total_cart}, false)";
+                    query(sqlQuery, "step 1");
+
+                    // step 2 foreach kamar in cart insert into detail_book_kamar
+                    foreach (string kamar_no in cart)
+                    {
+                        sqlQuery = $"INSERT into DETAIL_BOOK_KAMAR (BOOK_ID, KAMAR_NO) " +
+                            $"values({book_id}, {kamar_no})";
+                        query(sqlQuery, "step 2");
+                    }
+
+                    // step 3 update kamar status to 1
+                    sqlQuery = "update KAMAR AS k " +
+                            "left join DETAIL_BOOK_KAMAR dbk on k.KAMAR_NO = dbk.KAMAR_NO " +
+                            "left join BOOKING_KAMAR bk on dbk.BOOK_ID = bk.BOOK_ID " +
+                            "set k.KAMAR_STATUS = 1 " +
+                            $"where dbk.BOOK_ID = {book_id}";
+                    query(sqlQuery, "step 3");
+                }
             }
         }
 
         private void btn_checkout_Click(object sender, EventArgs e)
         {
             checkIn();
+            cart.Clear();
+            cart_dt.Clear();
+            syncKamarStatus();
+            countCart();
+            countTotalPrice();
+            lbl_output_book_id.Text = getCurrentBookId().ToString();
         }
 
         private void form_kamar_FormClosing(object sender, FormClosingEventArgs e)
