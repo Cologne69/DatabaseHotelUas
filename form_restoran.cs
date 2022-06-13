@@ -101,6 +101,7 @@ namespace DatabaseHotelUas
         }
         private void form_resto_Load(object sender, EventArgs e)
         {
+            pic_crossmark.Hide();
             DGV_Menu.RowTemplate.MinimumHeight = 35;
             cb_pelanggan.Enabled = true;
             DGV_invoice.DataSource = Invoice;
@@ -148,7 +149,6 @@ namespace DatabaseHotelUas
             {
                 try
                 {
-
                     sqlQuery = $"INSERT INTO ORDER_FOOD VALUES ('{maxorderID}','{form_main.transID + 1}','{cb_pelanggan.SelectedValue.ToString()}', date_format(now(),'%Y-%m-%d') , null , (SELECT COUNT(ORDER_ID) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxorderID}') , (select sum(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxorderID}'),0);";
                     commandAndadapter();
                     sqlCommand.ExecuteNonQuery();
@@ -203,6 +203,32 @@ namespace DatabaseHotelUas
             {
 
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if(tb_cariMenu.Text.Length > 0)
+            {
+                pic_crossmark.Show();
+            }
+            else if (tb_cariMenu.Text.Length == 0)
+            {
+                pic_crossmark.Hide();
+            }
+            try
+            {
+                Menu.DefaultView.RowFilter = string.Format("`NAMA MENU` LIKE '%{0}%'", tb_cariMenu.Text);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void pic_crossmark_Click(object sender, EventArgs e)
+        {
+            tb_cariMenu.Text = "";
         }
     }
 }
