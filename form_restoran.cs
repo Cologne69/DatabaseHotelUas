@@ -7,13 +7,11 @@ namespace DatabaseHotelUas
 {
     public partial class form_resto : Form
     {
-
         public MySqlCommand sqlCommand;
         public MySqlDataAdapter sqlAdapter;
         public string sqlQuery;
         int maxorderID = 0;
         DataTable Pelanggan = new DataTable();
-        DataTable Pesanan = new DataTable();
         DataTable Menu = new DataTable();
         DataTable Invoice = new DataTable();
         DataTable Checkout = new DataTable();
@@ -25,21 +23,22 @@ namespace DatabaseHotelUas
         {
             try
             {
-                this.Height = 750;
-
+                cb_pelanggan.Enabled = false;
                 lbl_isiiteminCart.Text = (jumlahOrderID() + 1).ToString();
-
+                
                 sqlQuery = $"INSERT INTO DETAIL_ORDER_MENU VALUES('{maxorderID}', '{DGV_Menu.CurrentRow.Cells[0].Value.ToString()}','{num_jumlahMakanan.Value}' , (SELECT SUM({num_jumlahMakanan.Value} * MENU.MENU_HARGA) FROM MENU WHERE MENU.MENU_ID = '{DGV_Menu.CurrentRow.Cells[0].Value.ToString()}'))";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(Pesanan);
+                sqlCommand.ExecuteNonQuery();
+                
+                
 
                 lbl_totalHarga.Text = "Rp. " + (totalHargaOrder().ToString());
+                
                 Invoice = new DataTable();
                 sqlQuery = $"SELECT M.MENU_NAMA as`Nama Menu` , D.ORDER_QTY as `Jumlah Menu`, M.MENU_HARGA as `Harga Menu`, D.ORDER_PRICE AS `Sub-Total` FROM DETAIL_ORDER_MENU D, MENU M WHERE M.MENU_ID = D.MENU_ID AND ORDER_ID= '{maxORDER_ID()}';";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
-
                 sqlAdapter.Fill(Invoice);
 
                 DGV_invoice.DataSource = Invoice;
@@ -94,7 +93,7 @@ namespace DatabaseHotelUas
         {
             try
             {
-                sqlQuery = $"SELECT MAX(ORDER_ID) FROM DETAIL_ORDER_MENU";
+                sqlQuery = $"select MAX(CAST(ORDER_ID as SIGNED)) as a from ORDER_FOOD";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 return Convert.ToInt32(sqlCommand.ExecuteScalar());
@@ -107,6 +106,8 @@ namespace DatabaseHotelUas
         }
         private void form_resto_Load(object sender, EventArgs e)
         {
+            DGV_Menu.RowTemplate.MinimumHeight = 35;
+            cb_pelanggan.Enabled = true;
             DGV_invoice.DataSource = Invoice;
             maxorderID = maxORDER_ID() + 1;
             num_jumlahMakanan.Value = 1;
@@ -114,8 +115,7 @@ namespace DatabaseHotelUas
             lbl_totalHarga.Text = "0";
             Menu.Clear();
             lbl_isiOrderID.Text = maxorderID.ToString();
-            this.Height = 500;
-            Pesanan.Clear();
+
             Invoice.Clear();
             Pelanggan.Clear();
             try
@@ -126,6 +126,7 @@ namespace DatabaseHotelUas
                 sqlAdapter.Fill(Menu);
                 DGV_Menu.DataSource = Menu;
 
+                
                 sqlQuery = $"SELECT CONCAT(CUST_NAMA,' - ',CUST_ID) as 'id dan nama', CUST_ID as 'nama' FROM CUSTOMER ORDER BY 2 DESC";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
@@ -137,6 +138,8 @@ namespace DatabaseHotelUas
                 DGV_Menu.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 DGV_Menu.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 DGV_Menu.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                // Now that DataGridView has calculated it's Widths; we can now store each column Width values.
                 for (int i = 0; i <= DGV_Menu.Columns.Count - 1; i++)
                 {
                     // Store Auto Sized Widths:
@@ -148,6 +151,7 @@ namespace DatabaseHotelUas
                     // Set Width to calculated AutoSize value:
                     DGV_Menu.Columns[i].Width = colw;
                 }
+
             }
             catch (Exception ex)
             {
@@ -168,8 +172,6 @@ namespace DatabaseHotelUas
             {
                 try
                 {
-                    this.Height = 500;
-                    Pesanan.Clear();
                     Invoice.Clear();
 
                     sqlQuery = $"INSERT INTO ORDER_FOOD VALUES ('{maxORDER_ID()}','{form_main.transID + 1}','{cb_pelanggan.SelectedValue.ToString()}', date_format(now(),'%Y-%m-%d') , null , (SELECT COUNT(ORDER_ID) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxORDER_ID()}') , (select sum(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxORDER_ID()}'),0);";
@@ -188,6 +190,8 @@ namespace DatabaseHotelUas
                     sqlAdapter = new MySqlDataAdapter(sqlCommand);
                     sqlAdapter.Fill(Checkout);
                     form_main.transID++;
+                    btn_cancelPelanggan.Enabled = false;
+                    cb_pelanggan.Enabled = true;
 
                 }
                 catch (Exception ex)
@@ -215,16 +219,32 @@ namespace DatabaseHotelUas
                 sqlQuery = $"DELETE FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxorderID}'";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(Pesanan);
+                sqlCommand.ExecuteNonQuery();
             }
         }
         private void cb_pelanggan_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        private void cb_pelanggan_KeyDown(object sender, KeyEventArgs e)
-        {
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Apakah anda ingin mengganti Pelanggan?", "Ganti", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                
+            }
+            else
+            {
+                cb_pelanggan.Enabled = true;
+                Invoice.Clear();
+                Invoice = new DataTable();
+                sqlQuery = $"DELETE FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxorderID}'";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlCommand.ExecuteNonQuery();
+                lbl_isiiteminCart.Text = "0";
+                lbl_totalHarga.Text = "0";
+            }
         }
     }
 }

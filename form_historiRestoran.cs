@@ -28,7 +28,7 @@ namespace DatabaseHotelUas
             historiPemesanan.Clear();
             try
             {
-                sqlQuery = $"SELECT * FROM DETAIL_ORDER_MENU";
+                sqlQuery = $"SELECT * FROM DETAIL_ORDER_MENU WHERE NOT ORDER_ID = '0' ORDER BY 1";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(historiPemesanan);
@@ -54,7 +54,13 @@ namespace DatabaseHotelUas
                 DGV_historiRestoran.Columns[i].Width = colw;
             }
         }
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
 
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
         private void DGV_historiRestoran_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -67,6 +73,20 @@ namespace DatabaseHotelUas
         private void form_historiRestoran_StyleChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void form_historiRestoran_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 }
