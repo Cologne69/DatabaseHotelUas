@@ -94,7 +94,7 @@ namespace DatabaseHotelUas
         {
             try
             {
-                sqlQuery = $"SELECT MAX(ORDER_ID) FROM DETAIL_ORDER_MENU";
+                sqlQuery = $"select MAX(CAST(ORDER_ID as SIGNED)) as a from ORDER_FOOD";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 return Convert.ToInt32(sqlCommand.ExecuteScalar());
