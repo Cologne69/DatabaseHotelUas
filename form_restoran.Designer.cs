@@ -91,8 +91,6 @@
             this.DGV_Menu.ShowRowErrors = false;
             this.DGV_Menu.Size = new System.Drawing.Size(776, 626);
             this.DGV_Menu.TabIndex = 3;
-            this.DGV_Menu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Menu_CellClick);
-            this.DGV_Menu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Menu_CellContentClick);
             // 
             // lbl_daftar
             // 
@@ -129,7 +127,6 @@
             0,
             0,
             0});
-            this.num_jumlahMakanan.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // lbl_iteminCart
             // 
@@ -191,7 +188,6 @@
             this.cb_pelanggan.Name = "cb_pelanggan";
             this.cb_pelanggan.Size = new System.Drawing.Size(655, 28);
             this.cb_pelanggan.TabIndex = 14;
-            this.cb_pelanggan.SelectedIndexChanged += new System.EventHandler(this.cb_pelanggan_SelectedIndexChanged);
             // 
             // lbl_nama
             // 

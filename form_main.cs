@@ -79,7 +79,6 @@ namespace DatabaseHotelUas
             {
                 sqlConnect.Close();
                 sqlConnect.Open();
-                //MessageBox.Show("Koneksi Berhasil");
             }
             catch (Exception ex)
             {
@@ -124,7 +123,7 @@ namespace DatabaseHotelUas
         {
             try
             {
-                sqlQuery = $"SELECT MAX(TRANS_ID) FROM TRANS_SETTLEMENT";
+                sqlQuery = $"SELECT MAX(CAST(TRANS_ID AS SIGNED)) FROM TRANS_SETTLEMENT";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 return Convert.ToInt32(sqlCommand.ExecuteScalar());
