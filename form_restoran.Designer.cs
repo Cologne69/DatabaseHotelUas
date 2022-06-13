@@ -97,10 +97,10 @@
             // lbl_daftar
             // 
             this.lbl_daftar.AutoSize = true;
-            this.lbl_daftar.Font = new System.Drawing.Font("Nirmala UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_daftar.Location = new System.Drawing.Point(334, 26);
+            this.lbl_daftar.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_daftar.Location = new System.Drawing.Point(321, 29);
             this.lbl_daftar.Name = "lbl_daftar";
-            this.lbl_daftar.Size = new System.Drawing.Size(144, 30);
+            this.lbl_daftar.Size = new System.Drawing.Size(149, 27);
             this.lbl_daftar.TabIndex = 4;
             this.lbl_daftar.Text = "Daftar Menu";
             // 
@@ -196,19 +196,20 @@
             // lbl_nama
             // 
             this.lbl_nama.AutoSize = true;
-            this.lbl_nama.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nama.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nama.Location = new System.Drawing.Point(854, 59);
             this.lbl_nama.Name = "lbl_nama";
-            this.lbl_nama.Size = new System.Drawing.Size(149, 21);
+            this.lbl_nama.Size = new System.Drawing.Size(158, 19);
             this.lbl_nama.TabIndex = 15;
             this.lbl_nama.Text = "Nama Pelanggan: ";
             // 
             // lbl_total
             // 
             this.lbl_total.AutoSize = true;
-            this.lbl_total.Location = new System.Drawing.Point(1154, 270);
+            this.lbl_total.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.Location = new System.Drawing.Point(1138, 270);
             this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(100, 20);
+            this.lbl_total.Size = new System.Drawing.Size(117, 19);
             this.lbl_total.TabIndex = 16;
             this.lbl_total.Text = "Total Harga: ";
             // 
@@ -216,10 +217,10 @@
             // 
             this.lbl_totalHarga.BackColor = System.Drawing.SystemColors.Menu;
             this.lbl_totalHarga.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbl_totalHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalHarga.Location = new System.Drawing.Point(1109, 293);
+            this.lbl_totalHarga.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalHarga.Location = new System.Drawing.Point(1101, 292);
             this.lbl_totalHarga.Name = "lbl_totalHarga";
-            this.lbl_totalHarga.Size = new System.Drawing.Size(187, 32);
+            this.lbl_totalHarga.Size = new System.Drawing.Size(187, 34);
             this.lbl_totalHarga.TabIndex = 19;
             this.lbl_totalHarga.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

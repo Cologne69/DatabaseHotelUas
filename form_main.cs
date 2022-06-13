@@ -195,27 +195,6 @@ namespace DatabaseHotelUas
             }
         }
 
-        private void riwayatPemesananKamarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            form_riwayatKamar form2 = new form_riwayatKamar();
-            form2.Show();
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lihatKamarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
