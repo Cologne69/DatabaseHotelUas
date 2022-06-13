@@ -266,5 +266,13 @@ namespace DatabaseHotelUas
             fr.ShowDialog();
         }
 
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
     }
 }
