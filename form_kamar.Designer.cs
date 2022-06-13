@@ -1228,6 +1228,7 @@
             // 
             // datetime_check_in
             // 
+            this.datetime_check_in.Enabled = false;
             this.datetime_check_in.Location = new System.Drawing.Point(202, 82);
             this.datetime_check_in.Name = "datetime_check_in";
             this.datetime_check_in.Size = new System.Drawing.Size(200, 22);
@@ -1235,6 +1236,7 @@
             // 
             // datetime_check_out
             // 
+            this.datetime_check_out.Enabled = false;
             this.datetime_check_out.Location = new System.Drawing.Point(202, 82);
             this.datetime_check_out.Name = "datetime_check_out";
             this.datetime_check_out.Size = new System.Drawing.Size(200, 22);
@@ -1327,6 +1329,7 @@
             this.btn_checkout.TabIndex = 112;
             this.btn_checkout.Text = "Checkout";
             this.btn_checkout.UseVisualStyleBackColor = true;
+            this.btn_checkout.Click += new System.EventHandler(this.btn_checkout_Click);
             // 
             // btn_remove_all
             // 
@@ -1367,33 +1370,33 @@
             // 
             // lbl_output_book_id
             // 
-            this.lbl_output_book_id.AutoSize = true;
             this.lbl_output_book_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_output_book_id.Location = new System.Drawing.Point(1040, 77);
+            this.lbl_output_book_id.Location = new System.Drawing.Point(1024, 75);
             this.lbl_output_book_id.Name = "lbl_output_book_id";
-            this.lbl_output_book_id.Size = new System.Drawing.Size(41, 29);
+            this.lbl_output_book_id.Size = new System.Drawing.Size(77, 29);
             this.lbl_output_book_id.TabIndex = 117;
             this.lbl_output_book_id.Text = "88";
+            this.lbl_output_book_id.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbl_output_total_item
             // 
-            this.lbl_output_total_item.AutoSize = true;
             this.lbl_output_total_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_output_total_item.Location = new System.Drawing.Point(1138, 77);
+            this.lbl_output_total_item.Location = new System.Drawing.Point(1122, 75);
             this.lbl_output_total_item.Name = "lbl_output_total_item";
-            this.lbl_output_total_item.Size = new System.Drawing.Size(27, 29);
+            this.lbl_output_total_item.Size = new System.Drawing.Size(60, 29);
             this.lbl_output_total_item.TabIndex = 118;
             this.lbl_output_total_item.Text = "0";
+            this.lbl_output_total_item.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbl_output_total_price
             // 
-            this.lbl_output_total_price.AutoSize = true;
             this.lbl_output_total_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_output_total_price.Location = new System.Drawing.Point(1262, 77);
+            this.lbl_output_total_price.Location = new System.Drawing.Point(1237, 75);
             this.lbl_output_total_price.Name = "lbl_output_total_price";
-            this.lbl_output_total_price.Size = new System.Drawing.Size(125, 29);
+            this.lbl_output_total_price.Size = new System.Drawing.Size(180, 36);
             this.lbl_output_total_price.TabIndex = 119;
-            this.lbl_output_total_price.Text = "1.500.000";
+            this.lbl_output_total_price.Text = "0";
+            this.lbl_output_total_price.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // form_kamar
             // 
@@ -1506,6 +1509,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "form_kamar";
             this.Text = "Kamar";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.form_kamar_FormClosing);
             this.Load += new System.EventHandler(this.form_kamar_Load);
             this.gb_lantai.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).EndInit();

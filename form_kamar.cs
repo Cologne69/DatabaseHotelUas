@@ -69,12 +69,13 @@ namespace DatabaseHotelUas
             }
         }
 
-        private void countCart() // @countCart = count how many kamar in cart and update that value to lbl_output_total_item
+        private int countCart() // @countCart = count how many kamar in cart and update that value to lbl_output_total_item
         {
             lbl_output_total_item.Text = cart.Count.ToString();
+            return cart.Count();
         }
 
-        private void countTotalPrice() // @countTotalPrice = count total price of cart and update that value to lbl_output_total_price
+        private int countTotalPrice() // @countTotalPrice = count total price of cart and update that value to lbl_output_total_price
         {
             int total_price = 0;
             // sum third column of cart_dt (price)
@@ -84,6 +85,7 @@ namespace DatabaseHotelUas
             }
             // add thousand separator
             lbl_output_total_price.Text = total_price.ToString("#,##0");
+            return total_price;
         }
 
         private void syncKamarStatus() // @syncKamarStatus = sync color of occupied kamar
@@ -249,6 +251,20 @@ namespace DatabaseHotelUas
             }
         }
 
+        private void allKamarButtonEnabled(bool state) // @allKamarButtonEnabled Enable or disable all kamar button
+        {
+            for (int i = 101; i <= 140; i++)
+            {
+                Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                btn.Enabled = state;
+            }
+            for (int i = 201; i <= 240; i++)
+            {
+                Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
+                btn.Enabled = state;
+            }
+        }
+
         /*
             @pressed_button = reference to the button that was pressed for form_popupKamar
             @btn_child_onClick = dynamic func that return value to pressed_button & do query whether the button is available or not (red / green)
@@ -343,16 +359,7 @@ namespace DatabaseHotelUas
                 countTotalPrice();
 
                 syncKamarStatus();
-                for (int i = 101; i <= 140; i++)
-                {
-                    Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
-                    btn.Enabled = false;
-                }
-                for (int i = 201; i <= 240; i++)
-                {
-                    Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
-                    btn.Enabled = false;
-                }
+                allKamarButtonEnabled(false);
 
                 // so if pelanggan has order kamar, kamar that has been ordered change to blue
                 foreach (string kamar_no in temp_used_kamar_by_pelanggan)
@@ -377,16 +384,7 @@ namespace DatabaseHotelUas
             countTotalPrice();
 
             // enable all button
-            for (int i = 101; i <= 140; i++)
-            {
-                Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
-                btn.Enabled = true;
-            }
-            for (int i = 201; i <= 240; i++)
-            {
-                Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
-                btn.Enabled = true;
-            }
+            allKamarButtonEnabled(true);
             syncKamarStatus();
         }
 
@@ -413,6 +411,55 @@ namespace DatabaseHotelUas
             countCart();
             countTotalPrice();
             syncKamarStatus();
+        }
+
+        private bool validateCheckIn(string total_cart) // @validateCheckIn validate whether user has selected pelanggan and user has selected kamar
+        {
+            if (total_cart == "0" || cb_pelanggan.Enabled == true)
+            {
+                if (total_cart == "0" )
+                {
+                    MessageBox.Show("Cart is empty, please add some room first");
+                }
+                if (cb_pelanggan.Enabled == true)
+                {
+                    MessageBox.Show("Please select a customer");
+                }
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void checkIn() // @checkIn = query from current state of book_id, total_item, total_price
+        {
+            string book_id = getCurrentBookId().ToString();
+            string pelanggan_id = cb_pelanggan.SelectedValue.ToString();
+            string total_cart = countCart().ToString();
+            string total_price = countTotalPrice().ToString();
+            
+            if(validateCheckIn(total_cart))
+            {
+                MessageBox.Show("OK");
+            }
+        }
+
+        private void btn_checkout_Click(object sender, EventArgs e)
+        {
+            checkIn();
+        }
+
+        private void form_kamar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            cart.Clear();
+            cart_dt.Clear();
+            cb_pelanggan.Enabled = true;
+            btn_remove_all.Enabled = true;
+            temp_used_kamar_by_pelanggan.Clear();
+
+            allKamarButtonEnabled(true);
         }
     }
 }
