@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_historiRestoran));
             this.DGV_historiRestoran = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_historiRestoran)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,12 +71,24 @@
             this.label1.Text = "X";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Location = new System.Drawing.Point(328, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(199, 28);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "HISTORI RESTORAN";
+            // 
             // form_historiRestoran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(862, 574);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DGV_historiRestoran);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -97,5 +110,6 @@
 
         private System.Windows.Forms.DataGridView DGV_historiRestoran;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
