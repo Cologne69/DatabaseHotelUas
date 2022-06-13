@@ -1,7 +1,7 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace DatabaseHotelUas
 {
@@ -15,11 +15,8 @@ namespace DatabaseHotelUas
         public MySqlCommand sqlCommand;
         public MySqlDataAdapter sqlAdapter;
         string sqlQuery;
-        new DataTable HargaKamar = new DataTable();
+        DataTable HargaKamar = new DataTable();
         public static int transID;
-        MySqlDataReader myReader;
-
-
 
         //----------------------------------------------------- BMYSQL SERVER -----------------------------------------------------
 
@@ -36,11 +33,10 @@ namespace DatabaseHotelUas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Koneksi Gagal");
+                MessageBox.Show("Koneksi Gagal: " + ex.Message);
             }
         }
         //----------------------------------------------------- MYSQL SERVER -----------------------------------------------------
-
 
         //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
         public static Form_Cek_Transaksi fct = new Form_Cek_Transaksi();
@@ -73,6 +69,7 @@ namespace DatabaseHotelUas
         {
             fcidp.ShowDialog();
         }
+
         public int maxtransID()
         {
             try
@@ -88,13 +85,16 @@ namespace DatabaseHotelUas
                 return 0;
             }
         }
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
+
         public static extern bool ReleaseCapture();
+
         private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -103,12 +103,12 @@ namespace DatabaseHotelUas
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
         private void form_main_Load(object sender, EventArgs e)
         {
             TestKoneksi();
             try
             {
-
                 transID = maxtransID();
                 sqlQuery = $"SELECT CONCAT(TK.TIPE_KAMAR_ID,' - ',TK.TIPE_KAMAR_NAMA, ' ',' | ','Rp.', TK.TIPE_KAMAR_HARGA) as '1' FROM TIPE_KAMAR TK;";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
@@ -130,15 +130,6 @@ namespace DatabaseHotelUas
             ftp.ShowDialog();
         }
 
-        private void tambahPelangganToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ftp.ShowDialog();
-        }
-
-        private void daftarPelangganToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fcidp.ShowDialog();
-        }
         bool statusKlik { get; set; }
         private void pelangganToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -153,9 +144,6 @@ namespace DatabaseHotelUas
                 menuStrip2.Hide();
                 statusKlik = false;
             }
-
-
-
         }
 
         private void cekRiwayatTransaksiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -208,15 +196,6 @@ namespace DatabaseHotelUas
         private void restoranToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fr.ShowDialog();
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-            fcidp.ShowDialog();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            ftp.ShowDialog();
         }
 
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
