@@ -154,8 +154,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -167,6 +167,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -196,6 +201,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Untitled design %287%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.removebg.preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.removebg.preview.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.removebg.000.preview.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.removebg.000.preview.jpg %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\094552600_1614241094-Double_Tree_Jakarta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image9 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\047718300_1584800169-THE_KOFFEE.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
