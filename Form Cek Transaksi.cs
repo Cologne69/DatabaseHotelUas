@@ -43,6 +43,10 @@ namespace DatabaseHotelUas
                 {
                     dgv_cekTransBlmLunas2.Hide();
                     dgv_SemuaTransaksi2.Hide();
+                    lblBookingKamar.Hide();
+                    lblOrderResto.Hide();
+                    lblBookingKamar2.Hide();
+                    lblOrderResto2.Hide();
                     TransaksiBookingKamarBelumLunas();
                     TransaksiBookingKamar();
                 }
@@ -50,6 +54,10 @@ namespace DatabaseHotelUas
                 {
                     dgv_cekTransBlmLunas2.Hide();
                     dgv_SemuaTransaksi2.Hide();
+                    lblBookingKamar.Hide();
+                    lblOrderResto.Hide();
+                    lblBookingKamar2.Hide();
+                    lblOrderResto2.Hide();
                     TransaksiOrderFoodBelumLunas();
                     TransaksiOrderFood();
                 }
@@ -57,6 +65,10 @@ namespace DatabaseHotelUas
                 {
                     dgv_cekTransBlmLunas2.Show();
                     dgv_SemuaTransaksi2.Show();
+                    lblBookingKamar.Show();
+                    lblOrderResto.Show();
+                    lblBookingKamar2.Show();
+                    lblOrderResto2.Show();
                     TransaksiBookingKamarBelumLunas();
                     TransaksiOrderFoodBelumLunas2();
                     TransaksiBookingKamar();
@@ -171,15 +183,14 @@ namespace DatabaseHotelUas
         {
             dgv_cekTransBlmLunas2.Hide();
             dgv_SemuaTransaksi2.Hide();
+            lblBookingKamar.Hide();
+            lblOrderResto.Hide();
+            lblBookingKamar2.Hide();
+            lblOrderResto2.Hide();
             dgv_cekTransBlmLunas.DataSource = null;
             dgv_cekTransBlmLunas2.DataSource = null;
             dgv_SemuaTransaksi.DataSource = null;
             dgv_SemuaTransaksi2.DataSource = null;
-        }
-
-        private void dgv_SemuaTransaksi_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

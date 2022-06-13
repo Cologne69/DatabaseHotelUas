@@ -2,6 +2,13 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Syncfusion.Windows.Forms.Tools;
 
 namespace DatabaseHotelUas
 {
@@ -19,7 +26,47 @@ namespace DatabaseHotelUas
         public static int transID;
         MySqlDataReader myReader;
 
+        //---------------------------------------------------------- UI -----------------------------------------------------------
+        private Button currentButton;
+        int imageNo = 1;
+        private void imageSlideShow()
+        {
+            if(imageNo==5)
+            {
+                imageNo = 1;
+            }
+            pictureBox1.ImageLocation = string.Format(@"C:\Users\Lisandra\OneDrive\Documents\Visual Studio 2019\Database Hotel UAS\bin\Debug\Images\Image{0}.png", imageNo);
+            imageNo++;
+        }
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            imageSlideShow();
+        }
 
+        private void ActivateButton(object btnSender)
+        {
+            if (btnSender != null)
+            {
+                if (currentButton != (Button)btnSender)
+                {
+                    DisableButton();
+                    currentButton = (Button)btnSender;
+                    currentButton.BackColor = Color.FromArgb(214, 173, 96);
+                    currentButton.ForeColor = Color.White;
+                }
+            }
+        }
+        private void DisableButton()
+        {
+            foreach(Control previousBtn in panel1.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(244, 235, 208);
+                    previousBtn.ForeColor = Color.Black;
+                }
+            }
+        }
 
         //----------------------------------------------------- BMYSQL SERVER -----------------------------------------------------
 
@@ -71,7 +118,7 @@ namespace DatabaseHotelUas
 
         private void btn_cekidPelanggan_Click(object sender, EventArgs e)
         {
-            fcidp.ShowDialog();
+
         }
         public int maxtransID()
         {
@@ -139,29 +186,6 @@ namespace DatabaseHotelUas
         {
             fcidp.ShowDialog();
         }
-        bool statusKlik { get; set; }
-        private void pelangganToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            if (statusKlik == false)
-            {
-                menuStrip2.Show();
-                statusKlik = true;
-            }
-            else
-            {
-                menuStrip2.Hide();
-                statusKlik = false;
-            }
-
-
-
-        }
-
-        private void cekRiwayatTransaksiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fct.ShowDialog();
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -195,41 +219,11 @@ namespace DatabaseHotelUas
             }
         }
 
-        private void riwayatPemesananKamarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            form_riwayatKamar form2 = new form_riwayatKamar();
-            form2.Show();
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lihatKamarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void kamarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fk.ShowDialog();
-        }
-
-        private void restoranToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fr.ShowDialog();
-        }
         private void label1_Click(object sender, EventArgs e)
         {
             fcidp.ShowDialog();
@@ -240,19 +234,34 @@ namespace DatabaseHotelUas
             ftp.ShowDialog();
         }
 
-        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
-        {
-            ftp.ShowDialog();
-        }
-
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            fcidp.ShowDialog();
-        }
 
         private void label1_Click_1(object sender, EventArgs e)
         {
 
         }
+        private void btnPelanggan_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            fcidp.ShowDialog();
+        }
+
+        private void btnRiwayatTransaksi_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            fct.ShowDialog();
+        }
+
+        private void btnKamar_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            fk.ShowDialog();
+        }
+
+        private void btnRestoran_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            fr.ShowDialog();
+        }
+
     }
 }
