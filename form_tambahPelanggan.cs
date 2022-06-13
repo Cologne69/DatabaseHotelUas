@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System;
+
+using System.Data;
+using System.Windows.Forms;
 
 namespace DatabaseHotelUas
 {
@@ -22,17 +17,21 @@ namespace DatabaseHotelUas
         {
             InitializeComponent();
         }
-        
+        private void clearAll()
+        {
+            txt_idPelanggan.Text = "";
+            txt_KotaPelanggan.Text = "";
+            txt_namaPelanggan.Text = "";
+            rdb_Laki.Checked = false;
+            rdb_Perempuan.Checked = false;
+        }
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
             this.Hide();
+            clearAll();
         }
 
-        private void txt_idPelanggan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_tambahPelanggan_Click(object sender, EventArgs e)
         {
@@ -63,6 +62,7 @@ namespace DatabaseHotelUas
                 {
                     MessageBox.Show(ex.Message);
                 }
+                clearAll();
             }
         }
 
@@ -73,6 +73,11 @@ namespace DatabaseHotelUas
             {
                 e.Handled = true;
             }
+        }
+
+        private void form_tambahPelanggan_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            clearAll();
         }
     }
 }

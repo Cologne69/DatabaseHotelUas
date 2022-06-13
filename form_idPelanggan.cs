@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace DatabaseHotelUas
 {
@@ -25,6 +19,7 @@ namespace DatabaseHotelUas
         private void btn_exit_Click(object sender, EventArgs e)
         {
             this.Hide();
+            txt_cariNamaPelanggan.Text = "";
         }
         private void form_idPelanggan_Load(object sender, EventArgs e)
         {
@@ -44,10 +39,11 @@ namespace DatabaseHotelUas
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            txt_cariNamaPelanggan.Text = "";
         }
         private void txt_cariNamaPelanggan_TextChanged(object sender, EventArgs e)
         {
-            pelanggan.DefaultView.RowFilter = string.Format("CUST_NAMA LIKE '%{0}%'", txt_cariNamaPelanggan.Text);
+            pelanggan.DefaultView.RowFilter = string.Format("`CUSTOMER NAMA` LIKE '%{0}%'", txt_cariNamaPelanggan.Text);
         }
         private void btn_cariNama_Click(object sender, EventArgs e)
         {
@@ -61,7 +57,7 @@ namespace DatabaseHotelUas
         private void btn_deletePelanggan_Click(object sender, EventArgs e)
         {
             //form_main.fdp.ShowDialog(); 
-            if(MessageBox.Show("Apakah anda yakin mau menghapus pelanggan tersebut?", "Hapus pelanggan", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Apakah anda yakin mau menghapus pelanggan tersebut?", "Hapus pelanggan", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
@@ -80,8 +76,8 @@ namespace DatabaseHotelUas
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-  
+
+
         }
     }
 }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_kamar));
             this.btn_A101 = new System.Windows.Forms.Button();
             this.btn_proses = new System.Windows.Forms.Button();
@@ -125,13 +127,13 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.dgv_cart = new System.Windows.Forms.DataGridView();
             this.btn_checkout = new System.Windows.Forms.Button();
-            this.btn_remove = new System.Windows.Forms.Button();
+            this.btn_remove_all = new System.Windows.Forms.Button();
             this.lbl_book_id = new System.Windows.Forms.Label();
             this.lbl_total_item = new System.Windows.Forms.Label();
-            this.lbl_total = new System.Windows.Forms.Label();
+            this.lbl_total_price = new System.Windows.Forms.Label();
             this.lbl_output_book_id = new System.Windows.Forms.Label();
             this.lbl_output_total_item = new System.Windows.Forms.Label();
-            this.lbl_output_total = new System.Windows.Forms.Label();
+            this.lbl_output_total_price = new System.Windows.Forms.Label();
             this.gb_lantai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cart)).BeginInit();
@@ -1283,10 +1285,36 @@
             // 
             // dgv_cart
             // 
+            this.dgv_cart.AllowUserToAddRows = false;
+            this.dgv_cart.AllowUserToDeleteRows = false;
+            this.dgv_cart.AllowUserToOrderColumns = true;
+            this.dgv_cart.AllowUserToResizeColumns = false;
+            this.dgv_cart.AllowUserToResizeRows = false;
+            this.dgv_cart.BackgroundColor = System.Drawing.Color.White;
             this.dgv_cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_cart.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_cart.Enabled = false;
+            this.dgv_cart.GridColor = System.Drawing.SystemColors.Control;
             this.dgv_cart.Location = new System.Drawing.Point(1011, 145);
             this.dgv_cart.Name = "dgv_cart";
-            this.dgv_cart.RowHeadersWidth = 51;
+            this.dgv_cart.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_cart.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_cart.RowHeadersVisible = false;
+            this.dgv_cart.RowHeadersWidth = 20;
             this.dgv_cart.RowTemplate.Height = 24;
             this.dgv_cart.Size = new System.Drawing.Size(406, 401);
             this.dgv_cart.TabIndex = 111;
@@ -1300,14 +1328,15 @@
             this.btn_checkout.Text = "Checkout";
             this.btn_checkout.UseVisualStyleBackColor = true;
             // 
-            // btn_remove
+            // btn_remove_all
             // 
-            this.btn_remove.Location = new System.Drawing.Point(1127, 566);
-            this.btn_remove.Name = "btn_remove";
-            this.btn_remove.Size = new System.Drawing.Size(89, 33);
-            this.btn_remove.TabIndex = 113;
-            this.btn_remove.Text = "Remove";
-            this.btn_remove.UseVisualStyleBackColor = true;
+            this.btn_remove_all.Location = new System.Drawing.Point(1127, 566);
+            this.btn_remove_all.Name = "btn_remove_all";
+            this.btn_remove_all.Size = new System.Drawing.Size(102, 33);
+            this.btn_remove_all.TabIndex = 113;
+            this.btn_remove_all.Text = "Remove All";
+            this.btn_remove_all.UseVisualStyleBackColor = true;
+            this.btn_remove_all.Click += new System.EventHandler(this.btn_remove_all_Click);
             // 
             // lbl_book_id
             // 
@@ -1327,14 +1356,14 @@
             this.lbl_total_item.TabIndex = 115;
             this.lbl_total_item.Text = "Kamar Di Cart";
             // 
-            // lbl_total
+            // lbl_total_price
             // 
-            this.lbl_total.AutoSize = true;
-            this.lbl_total.Location = new System.Drawing.Point(1279, 52);
-            this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(83, 16);
-            this.lbl_total.TabIndex = 116;
-            this.lbl_total.Text = "Total/Malam";
+            this.lbl_total_price.AutoSize = true;
+            this.lbl_total_price.Location = new System.Drawing.Point(1279, 52);
+            this.lbl_total_price.Name = "lbl_total_price";
+            this.lbl_total_price.Size = new System.Drawing.Size(83, 16);
+            this.lbl_total_price.TabIndex = 116;
+            this.lbl_total_price.Text = "Total/Malam";
             // 
             // lbl_output_book_id
             // 
@@ -1354,30 +1383,30 @@
             this.lbl_output_total_item.Name = "lbl_output_total_item";
             this.lbl_output_total_item.Size = new System.Drawing.Size(27, 29);
             this.lbl_output_total_item.TabIndex = 118;
-            this.lbl_output_total_item.Text = "5";
+            this.lbl_output_total_item.Text = "0";
             // 
-            // lbl_output_total
+            // lbl_output_total_price
             // 
-            this.lbl_output_total.AutoSize = true;
-            this.lbl_output_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_output_total.Location = new System.Drawing.Point(1262, 77);
-            this.lbl_output_total.Name = "lbl_output_total";
-            this.lbl_output_total.Size = new System.Drawing.Size(125, 29);
-            this.lbl_output_total.TabIndex = 119;
-            this.lbl_output_total.Text = "1.500.000";
+            this.lbl_output_total_price.AutoSize = true;
+            this.lbl_output_total_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_output_total_price.Location = new System.Drawing.Point(1262, 77);
+            this.lbl_output_total_price.Name = "lbl_output_total_price";
+            this.lbl_output_total_price.Size = new System.Drawing.Size(125, 29);
+            this.lbl_output_total_price.TabIndex = 119;
+            this.lbl_output_total_price.Text = "1.500.000";
             // 
             // form_kamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1471, 644);
-            this.Controls.Add(this.lbl_output_total);
+            this.Controls.Add(this.lbl_output_total_price);
             this.Controls.Add(this.lbl_output_total_item);
             this.Controls.Add(this.lbl_output_book_id);
-            this.Controls.Add(this.lbl_total);
+            this.Controls.Add(this.lbl_total_price);
             this.Controls.Add(this.lbl_total_item);
             this.Controls.Add(this.lbl_book_id);
-            this.Controls.Add(this.btn_remove);
+            this.Controls.Add(this.btn_remove_all);
             this.Controls.Add(this.btn_checkout);
             this.Controls.Add(this.dgv_cart);
             this.Controls.Add(this.btn_cancel);
@@ -1582,13 +1611,13 @@
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.DataGridView dgv_cart;
         private System.Windows.Forms.Button btn_checkout;
-        private System.Windows.Forms.Button btn_remove;
+        private System.Windows.Forms.Button btn_remove_all;
         private System.Windows.Forms.Label lbl_book_id;
         private System.Windows.Forms.Label lbl_total_item;
-        private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.Label lbl_total_price;
         private System.Windows.Forms.Label lbl_output_book_id;
         private System.Windows.Forms.Label lbl_output_total_item;
-        private System.Windows.Forms.Label lbl_output_total;
+        private System.Windows.Forms.Label lbl_output_total_price;
         public System.Windows.Forms.ComboBox cb_pelanggan;
     }
 }

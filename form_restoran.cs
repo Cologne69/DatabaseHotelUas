@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace DatabaseHotelUas
 {
@@ -39,13 +33,13 @@ namespace DatabaseHotelUas
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(Pesanan);
-                
+
                 lbl_totalHarga.Text = "Rp. " + (totalHargaOrder().ToString());
                 Invoice = new DataTable();
                 sqlQuery = $"SELECT M.MENU_NAMA as`Nama Menu` , D.ORDER_QTY as `Jumlah Menu`, M.MENU_HARGA as `Harga Menu`, D.ORDER_PRICE AS `Sub-Total` FROM DETAIL_ORDER_MENU D, MENU M WHERE M.MENU_ID = D.MENU_ID AND ORDER_ID= '{maxORDER_ID()}';";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
- 
+
                 sqlAdapter.Fill(Invoice);
 
                 DGV_invoice.DataSource = Invoice;
@@ -177,24 +171,24 @@ namespace DatabaseHotelUas
                     this.Height = 500;
                     Pesanan.Clear();
                     Invoice.Clear();
-                    
-                    sqlQuery = $"INSERT INTO ORDER_FOOD VALUES ('{maxORDER_ID()}','R{form_main.transID + 1}','{cb_pelanggan.SelectedValue.ToString()}', date_format(now(),'%Y-%m-%d') , null , (SELECT COUNT(ORDER_ID) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxORDER_ID()}') , (select sum(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxORDER_ID()}'),0);";
+
+                    sqlQuery = $"INSERT INTO ORDER_FOOD VALUES ('{maxORDER_ID()}','{form_main.transID + 1}','{cb_pelanggan.SelectedValue.ToString()}', date_format(now(),'%Y-%m-%d') , null , (SELECT COUNT(ORDER_ID) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxORDER_ID()}') , (select sum(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxORDER_ID()}'),0);";
                     sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                     sqlAdapter = new MySqlDataAdapter(sqlCommand);
                     sqlAdapter.Fill(Checkout);
                     maxorderID++;
-                    
+
                     MessageBox.Show($"Pesanan dengan ID: {maxorderID - 1} berhasil di Checkout");
                     lbl_isiOrderID.Text = maxorderID.ToString();
                     lbl_isiiteminCart.Text = "0";
                     lbl_totalHarga.Text = "0";
 
-                    sqlQuery = $"INSERT INTO TRANS_SETTLEMENT VALUES ('R{form_main.transID + 1}', date_format(now(),'%Y-%m-%d') , (select sum(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxORDER_ID()}') , 'Transaksi Restoran', 0);";
+                    sqlQuery = $"INSERT INTO TRANS_SETTLEMENT VALUES ('{form_main.transID + 1}', date_format(now(),'%Y-%m-%d') , (select sum(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxORDER_ID()}') , 'Transaksi Restoran', 0);";
                     sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                     sqlAdapter = new MySqlDataAdapter(sqlCommand);
                     sqlAdapter.Fill(Checkout);
                     form_main.transID++;
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -226,11 +220,11 @@ namespace DatabaseHotelUas
         }
         private void cb_pelanggan_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
         private void cb_pelanggan_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
         }
     }
 }

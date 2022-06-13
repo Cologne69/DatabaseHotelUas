@@ -139,7 +139,6 @@
             this.txt_idPelanggan.Name = "txt_idPelanggan";
             this.txt_idPelanggan.Size = new System.Drawing.Size(304, 22);
             this.txt_idPelanggan.TabIndex = 10;
-            this.txt_idPelanggan.TextChanged += new System.EventHandler(this.txt_idPelanggan_TextChanged);
             this.txt_idPelanggan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_idPelanggan_KeyPress);
             // 
             // btn_tambahPelanggan
@@ -176,6 +175,7 @@
             this.MinimizeBox = false;
             this.Name = "form_tambahPelanggan";
             this.Text = "Tambah Pelanggan";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.form_tambahPelanggan_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

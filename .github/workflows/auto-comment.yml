@@ -1,0 +1,19 @@
+name: Auto Comment
+on: [issues, pull_request]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wow-actions/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          pullRequestOpenedReactions: 'hooray, +1'
+          
+          pullRequestOpenedComment: |
+            👋 @{{ author }}
+            "Kalau error, ngoding o ulang pake bolpen sama kertas, biasae bug e lgsg ilang" ~ suhu Kyrell
+            Sebelum push ke branch mu, pencet o gambar sapu sg nd bawah, mrigitu pencet "Run code cleanup (profile 1)"         
+            ini bot, keren kan hehehehehe?
+            
+          pullRequestReviewRequestedComment: |
+            sg sabar yo @{{ author }} reviewer mu lagi tidur

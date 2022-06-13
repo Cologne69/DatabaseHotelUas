@@ -35,23 +35,27 @@
             // 
             // DGV_historiRestoran
             // 
+            this.DGV_historiRestoran.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_historiRestoran.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGV_historiRestoran.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_historiRestoran.Location = new System.Drawing.Point(-1, -1);
+            this.DGV_historiRestoran.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DGV_historiRestoran.Name = "DGV_historiRestoran";
             this.DGV_historiRestoran.RowHeadersWidth = 62;
             this.DGV_historiRestoran.RowTemplate.Height = 28;
-            this.DGV_historiRestoran.Size = new System.Drawing.Size(837, 526);
+            this.DGV_historiRestoran.Size = new System.Drawing.Size(744, 421);
             this.DGV_historiRestoran.TabIndex = 0;
             this.DGV_historiRestoran.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_historiRestoran_CellContentClick);
             // 
             // form_historiRestoran
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 519);
+            this.ClientSize = new System.Drawing.Size(743, 415);
             this.Controls.Add(this.DGV_historiRestoran);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "form_historiRestoran";
             this.Text = "Histori Pemesanan Restoran";
             this.Load += new System.EventHandler(this.form_historiRestoran_Load);

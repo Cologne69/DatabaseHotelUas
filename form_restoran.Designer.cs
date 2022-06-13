@@ -46,12 +46,10 @@
             this.lbl_totalHarga = new System.Windows.Forms.TextBox();
             this.pic_status = new System.Windows.Forms.PictureBox();
             this.DGV_invoice = new System.Windows.Forms.DataGridView();
-
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_jumlahMakanan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_invoice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_addtoCart
@@ -72,16 +70,25 @@
             // 
             // DGV_Menu
             // 
+            this.DGV_Menu.AllowUserToAddRows = false;
+            this.DGV_Menu.AllowUserToDeleteRows = false;
+            this.DGV_Menu.AllowUserToResizeColumns = false;
+            this.DGV_Menu.AllowUserToResizeRows = false;
             this.DGV_Menu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_Menu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DGV_Menu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGV_Menu.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DGV_Menu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Menu.Location = new System.Drawing.Point(12, 59);
             this.DGV_Menu.MultiSelect = false;
             this.DGV_Menu.Name = "DGV_Menu";
             this.DGV_Menu.ReadOnly = true;
+            this.DGV_Menu.RowHeadersVisible = false;
             this.DGV_Menu.RowHeadersWidth = 62;
             this.DGV_Menu.RowTemplate.Height = 28;
+            this.DGV_Menu.ShowCellErrors = false;
+            this.DGV_Menu.ShowCellToolTips = false;
+            this.DGV_Menu.ShowEditingIcon = false;
+            this.DGV_Menu.ShowRowErrors = false;
             this.DGV_Menu.Size = new System.Drawing.Size(776, 319);
             this.DGV_Menu.TabIndex = 3;
             this.DGV_Menu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Menu_CellClick);
@@ -234,11 +241,13 @@
             this.DGV_invoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_invoice.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGV_invoice.BackgroundColor = System.Drawing.Color.White;
-            this.DGV_invoice.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.DGV_invoice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV_invoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_invoice.Location = new System.Drawing.Point(12, 731);
+            this.DGV_invoice.MultiSelect = false;
             this.DGV_invoice.Name = "DGV_invoice";
             this.DGV_invoice.ReadOnly = true;
+            this.DGV_invoice.RowHeadersVisible = false;
             this.DGV_invoice.RowHeadersWidth = 62;
             this.DGV_invoice.RowTemplate.Height = 28;
             this.DGV_invoice.ShowCellErrors = false;
@@ -279,7 +288,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_jumlahMakanan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_invoice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_status)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
