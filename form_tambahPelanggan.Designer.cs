@@ -58,7 +58,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(35, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 16);
+            this.label2.Size = new System.Drawing.Size(112, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nama Lengkap: ";
             // 
@@ -77,7 +77,7 @@
             this.rdb_Laki.Location = new System.Drawing.Point(175, 124);
             this.rdb_Laki.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_Laki.Name = "rdb_Laki";
-            this.rdb_Laki.Size = new System.Drawing.Size(78, 20);
+            this.rdb_Laki.Size = new System.Drawing.Size(81, 21);
             this.rdb_Laki.TabIndex = 4;
             this.rdb_Laki.TabStop = true;
             this.rdb_Laki.Text = "Laki-laki";
@@ -89,7 +89,7 @@
             this.rdb_Perempuan.Location = new System.Drawing.Point(326, 124);
             this.rdb_Perempuan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_Perempuan.Name = "rdb_Perempuan";
-            this.rdb_Perempuan.Size = new System.Drawing.Size(98, 20);
+            this.rdb_Perempuan.Size = new System.Drawing.Size(102, 21);
             this.rdb_Perempuan.TabIndex = 5;
             this.rdb_Perempuan.TabStop = true;
             this.rdb_Perempuan.Text = "Perempuan";
@@ -100,7 +100,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(35, 124);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 16);
+            this.label1.Size = new System.Drawing.Size(103, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "Jenis Kelamin: ";
             // 
@@ -109,7 +109,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(35, 171);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 16);
+            this.label3.Size = new System.Drawing.Size(45, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Kota: ";
             // 
@@ -127,7 +127,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(35, 214);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 16);
+            this.label4.Size = new System.Drawing.Size(135, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "ID / NIK Pelanggan: ";
             // 
@@ -156,6 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(810, 320);
             this.Controls.Add(this.btn_tambahPelanggan);
             this.Controls.Add(this.txt_idPelanggan);
