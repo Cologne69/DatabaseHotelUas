@@ -417,7 +417,7 @@ namespace DatabaseHotelUas
         {
             if (total_cart == "0" || cb_pelanggan.Enabled == true)
             {
-                if (total_cart == "0" )
+                if (total_cart == "0")
                 {
                     MessageBox.Show("Cart is empty, please add some room first");
                 }
@@ -447,14 +447,13 @@ namespace DatabaseHotelUas
                     MySqlCommand cmd = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                     cmd.ExecuteNonQuery();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(errorMsg + ": " + ex.Message);
                 }
             }
 
-            
-            if(validateCheckIn(total_cart))
+            if (validateCheckIn(total_cart))
             {
                 if (MessageBox.Show("Are you sure want to proceed?", "Order Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
