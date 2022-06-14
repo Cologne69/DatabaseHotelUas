@@ -28,15 +28,25 @@ namespace DatabaseHotelUas
 
         public static List<String> filled_kamar = new List<string>();
         public static DataTable cart_dt = new DataTable();
+
+        /*
+         * PLEASE BE ADVISED!
+         * for checkin List<string> cart act as a temporary cart helper
+         * but for checkout List<string> temp_used_kamar_by_pelangganact as temp source for cart_dt that will fill dgv_cart
+         * we can do this, because cart.Add / cart.Remove only come from form_popupkamar which we will be disable those popup if 
+         * pelanggan has already rent a kamar 
+         */
+
         public static List<String> cart = new List<string>();
 
         private static DataTable pelanggan = new DataTable();
         private static List<string> temp_pelanggan = new List<string>();
-        private List<string> temp_used_kamar_by_pelanggan = new List<string>();
+        private List<string> temp_used_kamar_by_pelanggan = new List<string>(); // temp source for cart_dt that will fill dgv_cart
 
         private void form_kamar_Load(object sender, EventArgs e)
         {
             lbl_output_book_id.Text = getCurrentBookId().ToString();
+            btn_check_out.Enabled = false;
 
             hideCheckAndDatetime();
             syncKamarStatus();
@@ -55,7 +65,7 @@ namespace DatabaseHotelUas
         {
             try
             {
-                string sqlQuery = "select max(BOOK_ID) as 'max_book_id' from BOOKING_KAMAR";
+                string sqlQuery = "select MAX(CAST(BOOK_ID as SIGNED)) as 'max_book_id' from BOOKING_KAMAR";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 DataTable temp_dt = new DataTable();
@@ -351,6 +361,8 @@ namespace DatabaseHotelUas
                 lbl_check_out.Show();
                 datetime_check_out.Show();
                 btn_remove_all.Enabled = false;
+                btn_check_in.Enabled = false;
+                btn_check_out.Enabled = true;
 
                 // delete all value in cart dan cart_dt
                 cart.Clear();
@@ -374,6 +386,8 @@ namespace DatabaseHotelUas
         {
             cb_pelanggan.Enabled = true;
             btn_remove_all.Enabled = true;
+            btn_check_in.Enabled = true;
+            btn_check_out.Enabled = false;
             btn_proses.Show();
             btn_cancel.Hide();
             hideCheckAndDatetime();
@@ -433,25 +447,24 @@ namespace DatabaseHotelUas
             }
         }
 
+        private void queryWithoutReturningValue(string sqlQuery, string errorMsg)
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(errorMsg + ": " + ex.Message);
+            }
+        }
+
         private void checkIn() // @checkIn = query from current state of book_id, total_item
         {
             string book_id = getCurrentBookId().ToString();
             string pelanggan_id = cb_pelanggan.SelectedValue.ToString();
             string total_cart = countCart().ToString();
-            string total_price = countTotalPrice().ToString();
-
-            void query(string sqlQuery, string errorMsg)
-            {
-                try
-                {
-                    MySqlCommand cmd = new MySqlCommand(sqlQuery, form_main.sqlConnect);
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(errorMsg + ": " + ex.Message);
-                }
-            }
 
             if (validateCheckIn(total_cart))
             {
@@ -461,14 +474,14 @@ namespace DatabaseHotelUas
                     // step 1 booking_kamar
                     sqlQuery = $"INSERT into BOOKING_KAMAR (BOOK_ID, CUST_ID, BOOK_TGL_CIN, BOOK_KAMAR_COUNT, DELETE_BOOKING_KAMAR) " +
                         $"values({book_id}, {pelanggan_id}, curdate(), {total_cart}, false)";
-                    query(sqlQuery, "step 1");
+                    queryWithoutReturningValue(sqlQuery, "step 1");
 
                     // step 2 foreach kamar in cart insert into detail_book_kamar
                     foreach (string kamar_no in cart)
                     {
                         sqlQuery = $"INSERT into DETAIL_BOOK_KAMAR (BOOK_ID, KAMAR_NO) " +
                             $"values({book_id}, {kamar_no})";
-                        query(sqlQuery, "step 2");
+                        queryWithoutReturningValue(sqlQuery, "step 2");
                     }
 
                     // step 3 update kamar status to 1
@@ -477,12 +490,23 @@ namespace DatabaseHotelUas
                             "left join BOOKING_KAMAR bk on dbk.BOOK_ID = bk.BOOK_ID " +
                             "set k.KAMAR_STATUS = 1 " +
                             $"where dbk.BOOK_ID = {book_id}";
-                    query(sqlQuery, "step 3");
+                    queryWithoutReturningValue(sqlQuery, "step 3");
+
+                    cb_pelanggan.Enabled = true;
+                    btn_cancel.Hide();
+                    btn_proses.Show();
+                    lbl_check_in.Hide();
+                    datetime_check_in.Hide();
                 }
             }
         }
 
-        private void btn_checkout_Click(object sender, EventArgs e)
+        private void checkOut()
+        {
+
+        }
+
+        private void btn_check_in_Click(object sender, EventArgs e)
         {
             checkIn();
             cart.Clear();
@@ -499,6 +523,8 @@ namespace DatabaseHotelUas
             cart_dt.Clear();
             cb_pelanggan.Enabled = true;
             btn_remove_all.Enabled = true;
+            btn_check_in.Enabled = true;
+            btn_check_out.Enabled = false;
             temp_used_kamar_by_pelanggan.Clear();
 
             allKamarButtonEnabled(true);

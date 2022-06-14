@@ -126,7 +126,7 @@
             this.btn_tambah_pelanggan = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.dgv_cart = new System.Windows.Forms.DataGridView();
-            this.btn_checkout = new System.Windows.Forms.Button();
+            this.btn_check_in = new System.Windows.Forms.Button();
             this.btn_remove_all = new System.Windows.Forms.Button();
             this.lbl_book_id = new System.Windows.Forms.Label();
             this.lbl_total_item = new System.Windows.Forms.Label();
@@ -134,6 +134,7 @@
             this.lbl_output_book_id = new System.Windows.Forms.Label();
             this.lbl_output_total_item = new System.Windows.Forms.Label();
             this.lbl_output_total_price = new System.Windows.Forms.Label();
+            this.btn_check_out = new System.Windows.Forms.Button();
             this.gb_lantai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cart)).BeginInit();
@@ -1321,15 +1322,15 @@
             this.dgv_cart.Size = new System.Drawing.Size(406, 401);
             this.dgv_cart.TabIndex = 111;
             // 
-            // btn_checkout
+            // btn_check_in
             // 
-            this.btn_checkout.Location = new System.Drawing.Point(1018, 566);
-            this.btn_checkout.Name = "btn_checkout";
-            this.btn_checkout.Size = new System.Drawing.Size(89, 33);
-            this.btn_checkout.TabIndex = 112;
-            this.btn_checkout.Text = "Checkout";
-            this.btn_checkout.UseVisualStyleBackColor = true;
-            this.btn_checkout.Click += new System.EventHandler(this.btn_checkout_Click);
+            this.btn_check_in.Location = new System.Drawing.Point(1018, 566);
+            this.btn_check_in.Name = "btn_check_in";
+            this.btn_check_in.Size = new System.Drawing.Size(89, 33);
+            this.btn_check_in.TabIndex = 112;
+            this.btn_check_in.Text = "Check In";
+            this.btn_check_in.UseVisualStyleBackColor = true;
+            this.btn_check_in.Click += new System.EventHandler(this.btn_check_in_Click);
             // 
             // btn_remove_all
             // 
@@ -1398,11 +1399,21 @@
             this.lbl_output_total_price.Text = "0";
             this.lbl_output_total_price.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btn_check_out
+            // 
+            this.btn_check_out.Location = new System.Drawing.Point(1313, 566);
+            this.btn_check_out.Name = "btn_check_out";
+            this.btn_check_out.Size = new System.Drawing.Size(89, 33);
+            this.btn_check_out.TabIndex = 120;
+            this.btn_check_out.Text = "Check Out";
+            this.btn_check_out.UseVisualStyleBackColor = true;
+            // 
             // form_kamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1471, 644);
+            this.Controls.Add(this.btn_check_out);
             this.Controls.Add(this.lbl_output_total_price);
             this.Controls.Add(this.lbl_output_total_item);
             this.Controls.Add(this.lbl_output_book_id);
@@ -1410,7 +1421,7 @@
             this.Controls.Add(this.lbl_total_item);
             this.Controls.Add(this.lbl_book_id);
             this.Controls.Add(this.btn_remove_all);
-            this.Controls.Add(this.btn_checkout);
+            this.Controls.Add(this.btn_check_in);
             this.Controls.Add(this.dgv_cart);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_tambah_pelanggan);
@@ -1614,7 +1625,7 @@
         private System.Windows.Forms.Button btn_tambah_pelanggan;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.DataGridView dgv_cart;
-        private System.Windows.Forms.Button btn_checkout;
+        private System.Windows.Forms.Button btn_check_in;
         private System.Windows.Forms.Button btn_remove_all;
         private System.Windows.Forms.Label lbl_book_id;
         private System.Windows.Forms.Label lbl_total_item;
@@ -1623,5 +1634,6 @@
         private System.Windows.Forms.Label lbl_output_total_item;
         private System.Windows.Forms.Label lbl_output_total_price;
         public System.Windows.Forms.ComboBox cb_pelanggan;
+        private System.Windows.Forms.Button btn_check_out;
     }
 }
