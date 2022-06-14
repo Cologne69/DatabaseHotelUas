@@ -229,7 +229,6 @@
             this.tb_cariMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_cariMenu.TextChanged += new System.EventHandler(this.tb_cariMenu_TextChanged);
             this.tb_cariMenu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cariMenu_KeyDown);
-            this.tb_cariMenu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_cariMenu_KeyPress);
             // 
             // pic_search
             // 
@@ -386,7 +385,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(887, 519);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // timer3
             // 

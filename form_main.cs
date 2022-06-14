@@ -3,7 +3,6 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-
 namespace DatabaseHotelUas
 {
     public partial class form_main : Form
@@ -171,7 +170,6 @@ namespace DatabaseHotelUas
             ActivateButton(sender);
             fr.ShowDialog();
         }
-
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -186,17 +184,6 @@ namespace DatabaseHotelUas
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb_cariMenu_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           
-        }
-        
         private void tb_cariMenu_KeyDown(object sender, KeyEventArgs e)
         {
             string SAPbeLike;
