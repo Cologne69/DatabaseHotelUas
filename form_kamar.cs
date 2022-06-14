@@ -192,23 +192,33 @@ namespace DatabaseHotelUas
          * @convertKamarToDgv = query no_kamar, tipe_kamar_nama, tipe_kamar_harga
          * based on List<String> cart and push it to DataTable cart_dt 
          * perhaps create new function that will change selected kamar to blue as an indicator?
+         * @param List<string> value = list of kamar_no
+         * for check in it come from cart 
+         * for checkout it come from temp_used_kamar_by_pelanggan
          * 
-         * @syncDgv = sync dgv_cart with cart_dt
+         * @syncDgv_check_in = sync dgv_cart with cart_dt
          */
 
-        private void convertKamarToDgv() // fill cart_dt with selected kamar in List<string> cart
+        private void convertKamarToDgv(List<string> value) // fill cart_dt with selected kamar in List<string> cart
         {
             string sqlQuery = $"SELECT k.KAMAR_NO as 'No Kamar', tk.TIPE_KAMAR_NAMA as 'Tipe', tk.TIPE_KAMAR_HARGA as 'Harga' FROM KAMAR k, TIPE_KAMAR tk " +
-                $"WHERE tk.TIPE_KAMAR_ID = k.TIPE_KAMAR_ID AND k.KAMAR_NO IN ('{String.Join("','", cart)}')";
+                $"WHERE tk.TIPE_KAMAR_ID = k.TIPE_KAMAR_ID AND k.KAMAR_NO IN ('{String.Join("','", value)}')";
             sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(cart_dt);
         }
 
-        private void syncDgv() // always refresh dt and sync dgv_cart with cart_dt
+        private void syncDgv_check_in() // always refresh dt and sync dgv_cart with cart_dt
         {
             cart_dt = new DataTable();
-            convertKamarToDgv();
+            convertKamarToDgv(cart);
+            dgv_cart.DataSource = cart_dt;
+        }
+
+        private void syncDgv_check_out() // always refresh dt and sync dgv_cart with cart_dt
+        {
+            cart_dt = new DataTable();
+            convertKamarToDgv(temp_used_kamar_by_pelanggan);
             dgv_cart.DataSource = cart_dt;
         }
 
@@ -303,7 +313,7 @@ namespace DatabaseHotelUas
             popup.ShowDialog();
             popup.btn_add.Enabled = true;
             syncKamarCart();
-            syncDgv();
+            syncDgv_check_in();
             countTotalPrice();
         }
 
@@ -364,9 +374,8 @@ namespace DatabaseHotelUas
                 btn_check_in.Enabled = false;
                 btn_check_out.Enabled = true;
 
-                // delete all value in cart dan cart_dt
-                cart.Clear();
-                cart_dt.Clear();
+                // we don't need to clear cart and cart_dt because syncDgv_check_out and cancel btn already override it
+                syncDgv_check_out();
                 countCart();
                 countTotalPrice();
 
