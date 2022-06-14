@@ -1,6 +1,13 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Syncfusion.Windows.Forms.Tools;
 using MySql.Data.MySqlClient;
 
 namespace DatabaseHotelUas
@@ -17,6 +24,49 @@ namespace DatabaseHotelUas
         string sqlQuery;
         DataTable HargaKamar = new DataTable();
         public static int transID;
+        MySqlDataReader myReader;
+
+        //---------------------------------------------------------- UI -----------------------------------------------------------
+        private Button currentButton;
+        int imageNo = 1;
+        private void imageSlideShow()
+        {
+            if(imageNo==5)
+            {
+                imageNo = 1;
+            }
+            pictureBox1.ImageLocation = string.Format(@"C:\Users\Lisandra\OneDrive\Documents\Visual Studio 2019\Database Hotel UAS\bin\Debug\Images\Image{0}.png", imageNo);
+            imageNo++;
+        }
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            imageSlideShow();
+        }
+
+        private void ActivateButton(object btnSender)
+        {
+            if (btnSender != null)
+            {
+                if (currentButton != (Button)btnSender)
+                {
+                    DisableButton();
+                    currentButton = (Button)btnSender;
+                    currentButton.BackColor = Color.FromArgb(214, 173, 96);
+                    currentButton.ForeColor = Color.White;
+                }
+            }
+        }
+        private void DisableButton()
+        {
+            foreach(Control previousBtn in panel1.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(244, 235, 208);
+                    previousBtn.ForeColor = Color.Black;
+                }
+            }
+        }
 
         //----------------------------------------------------- BMYSQL SERVER -----------------------------------------------------
 
@@ -29,7 +79,6 @@ namespace DatabaseHotelUas
             {
                 sqlConnect.Close();
                 sqlConnect.Open();
-                //MessageBox.Show("Koneksi Berhasil");
             }
             catch (Exception ex)
             {
@@ -67,14 +116,14 @@ namespace DatabaseHotelUas
 
         private void btn_cekidPelanggan_Click(object sender, EventArgs e)
         {
-            fcidp.ShowDialog();
+
         }
 
         public int maxtransID()
         {
             try
             {
-                sqlQuery = $"SELECT MAX(TRANS_ID) FROM TRANS_SETTLEMENT";
+                sqlQuery = $"SELECT MAX(CAST(TRANS_ID AS SIGNED)) FROM TRANS_SETTLEMENT";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 return Convert.ToInt32(sqlCommand.ExecuteScalar());
@@ -130,25 +179,14 @@ namespace DatabaseHotelUas
             ftp.ShowDialog();
         }
 
-        bool statusKlik { get; set; }
-        private void pelangganToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tambahPelangganToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            if (statusKlik == false)
-            {
-                menuStrip2.Show();
-                statusKlik = true;
-            }
-            else
-            {
-                menuStrip2.Hide();
-                statusKlik = false;
-            }
+            ftp.ShowDialog();
         }
 
-        private void cekRiwayatTransaksiToolStripMenuItem_Click(object sender, EventArgs e)
+        private void daftarPelangganToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fct.ShowDialog();
+            fcidp.ShowDialog();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -188,27 +226,55 @@ namespace DatabaseHotelUas
             this.Close();
         }
 
-        private void kamarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fk.ShowDialog();
-        }
-
-        private void restoranToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fr.ShowDialog();
-        }
-
-        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
-        {
-            ftp.ShowDialog();
-        }
-
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
             fcidp.ShowDialog();
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+            ftp.ShowDialog();
+        }
+
+
         private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        private void btnPelanggan_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            fcidp.ShowDialog();
+        }
+
+        private void btnRiwayatTransaksi_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            fct.ShowDialog();
+        }
+
+        private void btnKamar_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            fk.ShowDialog();
+        }
+
+        private void btnRestoran_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            fr.ShowDialog();
+        }
+
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

@@ -30,110 +30,34 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_main));
-            this.btn_checktrans = new System.Windows.Forms.Button();
-            this.gb_kamar = new System.Windows.Forms.GroupBox();
-            this.btn_lihatkamar = new System.Windows.Forms.Button();
-            this.btn_restoran = new System.Windows.Forms.Button();
-            this.gb_restoran = new System.Windows.Forms.GroupBox();
-            this.btn_historiRestoran = new System.Windows.Forms.Button();
             this.gb_pelanggan = new System.Windows.Forms.GroupBox();
             this.btn_tmbhPelanggan = new System.Windows.Forms.Button();
             this.btn_cekidPelanggan = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.pelangganToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cekRiwayatTransaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kamarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restoranToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lb_hargaKamar = new System.Windows.Forms.ListBox();
             this.lbl_hargaHotel = new System.Windows.Forms.Label();
             this.lbl_waktu = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_jamWIB = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.gb_kamar.SuspendLayout();
-            this.gb_restoran.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRestoran = new System.Windows.Forms.Button();
+            this.btnKamar = new System.Windows.Forms.Button();
+            this.btnRiwayatTransaksi = new System.Windows.Forms.Button();
+            this.btnPelanggan = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.gb_pelanggan.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_checktrans
-            // 
-            this.btn_checktrans.Location = new System.Drawing.Point(689, 443);
-            this.btn_checktrans.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_checktrans.Name = "btn_checktrans";
-            this.btn_checktrans.Size = new System.Drawing.Size(140, 43);
-            this.btn_checktrans.TabIndex = 11;
-            this.btn_checktrans.Text = "Cek Transaksi";
-            this.btn_checktrans.UseVisualStyleBackColor = true;
-            this.btn_checktrans.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // gb_kamar
-            // 
-            this.gb_kamar.BackColor = System.Drawing.Color.Transparent;
-            this.gb_kamar.Controls.Add(this.btn_lihatkamar);
-            this.gb_kamar.ForeColor = System.Drawing.Color.Black;
-            this.gb_kamar.Location = new System.Drawing.Point(73, 220);
-            this.gb_kamar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gb_kamar.Name = "gb_kamar";
-            this.gb_kamar.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gb_kamar.Size = new System.Drawing.Size(409, 80);
-            this.gb_kamar.TabIndex = 12;
-            this.gb_kamar.TabStop = false;
-            this.gb_kamar.Text = "Kamar";
-            // 
-            // btn_lihatkamar
-            // 
-            this.btn_lihatkamar.Location = new System.Drawing.Point(23, 25);
-            this.btn_lihatkamar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_lihatkamar.Name = "btn_lihatkamar";
-            this.btn_lihatkamar.Size = new System.Drawing.Size(140, 43);
-            this.btn_lihatkamar.TabIndex = 13;
-            this.btn_lihatkamar.Text = "Lihat Kamar";
-            this.btn_lihatkamar.UseVisualStyleBackColor = true;
-            this.btn_lihatkamar.Click += new System.EventHandler(this.btn_lihatkamar_Click);
-            // 
-            // btn_restoran
-            // 
-            this.btn_restoran.Location = new System.Drawing.Point(23, 32);
-            this.btn_restoran.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_restoran.Name = "btn_restoran";
-            this.btn_restoran.Size = new System.Drawing.Size(140, 43);
-            this.btn_restoran.TabIndex = 14;
-            this.btn_restoran.Text = "Restoran";
-            this.btn_restoran.UseVisualStyleBackColor = true;
-            this.btn_restoran.Click += new System.EventHandler(this.btn_fasilitasKamar_Click);
-            // 
-            // gb_restoran
-            // 
-            this.gb_restoran.BackColor = System.Drawing.Color.Transparent;
-            this.gb_restoran.Controls.Add(this.btn_historiRestoran);
-            this.gb_restoran.Controls.Add(this.btn_restoran);
-            this.gb_restoran.Location = new System.Drawing.Point(73, 303);
-            this.gb_restoran.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gb_restoran.Name = "gb_restoran";
-            this.gb_restoran.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gb_restoran.Size = new System.Drawing.Size(409, 86);
-            this.gb_restoran.TabIndex = 14;
-            this.gb_restoran.TabStop = false;
-            this.gb_restoran.Text = "Restoran";
-            // 
-            // btn_historiRestoran
-            // 
-            this.btn_historiRestoran.Location = new System.Drawing.Point(244, 32);
-            this.btn_historiRestoran.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_historiRestoran.Name = "btn_historiRestoran";
-            this.btn_historiRestoran.Size = new System.Drawing.Size(140, 43);
-            this.btn_historiRestoran.TabIndex = 15;
-            this.btn_historiRestoran.Text = "Histori Restoran";
-            this.btn_historiRestoran.UseVisualStyleBackColor = true;
-            this.btn_historiRestoran.Click += new System.EventHandler(this.btn_historiRestoran_Click);
             // 
             // gb_pelanggan
             // 
@@ -141,7 +65,7 @@
             this.gb_pelanggan.Controls.Add(this.btn_tmbhPelanggan);
             this.gb_pelanggan.Controls.Add(this.btn_cekidPelanggan);
             this.gb_pelanggan.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.gb_pelanggan.Location = new System.Drawing.Point(73, 400);
+            this.gb_pelanggan.Location = new System.Drawing.Point(299, 381);
             this.gb_pelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gb_pelanggan.Name = "gb_pelanggan";
             this.gb_pelanggan.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -172,65 +96,13 @@
             this.btn_cekidPelanggan.UseVisualStyleBackColor = true;
             this.btn_cekidPelanggan.Click += new System.EventHandler(this.btn_cekidPelanggan_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Black;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pelangganToolStripMenuItem,
-            this.cekRiwayatTransaksiToolStripMenuItem,
-            this.kamarToolStripMenuItem,
-            this.restoranToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(204, 4, 0, 8);
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(929, 41);
-            this.menuStrip1.TabIndex = 18;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseDown);
-            // 
-            // pelangganToolStripMenuItem
-            // 
-            this.pelangganToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pelangganToolStripMenuItem.Name = "pelangganToolStripMenuItem";
-            this.pelangganToolStripMenuItem.Size = new System.Drawing.Size(120, 29);
-            this.pelangganToolStripMenuItem.Text = "Pelanggan";
-            this.pelangganToolStripMenuItem.Click += new System.EventHandler(this.pelangganToolStripMenuItem_Click);
-            // 
-            // cekRiwayatTransaksiToolStripMenuItem
-            // 
-            this.cekRiwayatTransaksiToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.cekRiwayatTransaksiToolStripMenuItem.Name = "cekRiwayatTransaksiToolStripMenuItem";
-            this.cekRiwayatTransaksiToolStripMenuItem.Size = new System.Drawing.Size(182, 29);
-            this.cekRiwayatTransaksiToolStripMenuItem.Text = "Riwayat Transaksi";
-            this.cekRiwayatTransaksiToolStripMenuItem.Click += new System.EventHandler(this.cekRiwayatTransaksiToolStripMenuItem_Click);
-            // 
-            // kamarToolStripMenuItem
-            // 
-            this.kamarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.kamarToolStripMenuItem.Name = "kamarToolStripMenuItem";
-            this.kamarToolStripMenuItem.Size = new System.Drawing.Size(83, 29);
-            this.kamarToolStripMenuItem.Text = "Kamar";
-            this.kamarToolStripMenuItem.Click += new System.EventHandler(this.kamarToolStripMenuItem_Click);
-            // 
-            // restoranToolStripMenuItem
-            // 
-            this.restoranToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.restoranToolStripMenuItem.Name = "restoranToolStripMenuItem";
-            this.restoranToolStripMenuItem.Size = new System.Drawing.Size(105, 29);
-            this.restoranToolStripMenuItem.Text = "Restoran";
-            this.restoranToolStripMenuItem.Click += new System.EventHandler(this.restoranToolStripMenuItem_Click);
-            // 
             // lb_hargaKamar
             // 
             this.lb_hargaKamar.BackColor = System.Drawing.Color.Black;
             this.lb_hargaKamar.ForeColor = System.Drawing.Color.White;
             this.lb_hargaKamar.FormattingEnabled = true;
             this.lb_hargaKamar.ItemHeight = 16;
-            this.lb_hargaKamar.Location = new System.Drawing.Point(625, 323);
+            this.lb_hargaKamar.Location = new System.Drawing.Point(760, 328);
             this.lb_hargaKamar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lb_hargaKamar.Name = "lb_hargaKamar";
             this.lb_hargaKamar.Size = new System.Drawing.Size(262, 84);
@@ -243,7 +115,7 @@
             this.lbl_hargaHotel.BackColor = System.Drawing.Color.Transparent;
             this.lbl_hargaHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_hargaHotel.ForeColor = System.Drawing.Color.Transparent;
-            this.lbl_hargaHotel.Location = new System.Drawing.Point(706, 291);
+            this.lbl_hargaHotel.Location = new System.Drawing.Point(756, 306);
             this.lbl_hargaHotel.Name = "lbl_hargaHotel";
             this.lbl_hargaHotel.Size = new System.Drawing.Size(111, 20);
             this.lbl_hargaHotel.TabIndex = 20;
@@ -255,7 +127,7 @@
             this.lbl_waktu.BackColor = System.Drawing.Color.Transparent;
             this.lbl_waktu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_waktu.ForeColor = System.Drawing.Color.Transparent;
-            this.lbl_waktu.Location = new System.Drawing.Point(658, 184);
+            this.lbl_waktu.Location = new System.Drawing.Point(775, 239);
             this.lbl_waktu.Name = "lbl_waktu";
             this.lbl_waktu.Size = new System.Drawing.Size(53, 20);
             this.lbl_waktu.TabIndex = 21;
@@ -273,25 +145,11 @@
             this.lbl_jamWIB.BackColor = System.Drawing.Color.Transparent;
             this.lbl_jamWIB.Font = new System.Drawing.Font("Myanmar Text", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_jamWIB.ForeColor = System.Drawing.Color.Transparent;
-            this.lbl_jamWIB.Location = new System.Drawing.Point(660, 220);
+            this.lbl_jamWIB.Location = new System.Drawing.Point(830, 255);
             this.lbl_jamWIB.Name = "lbl_jamWIB";
             this.lbl_jamWIB.Size = new System.Drawing.Size(144, 71);
             this.lbl_jamWIB.TabIndex = 22;
             this.lbl_jamWIB.Text = "label1";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(884, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 39);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip2
             // 
@@ -319,7 +177,6 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(194, 29);
             this.toolStripMenuItem1.Text = "Tambah Pelanggan";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
             // toolStripMenuItem3
             // 
@@ -327,38 +184,174 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(158, 29);
             this.toolStripMenuItem3.Text = "Cek Pelanggan";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
-            // dataGridView1
+            // panel1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(73, 136);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(537, 80);
-            this.dataGridView1.TabIndex = 28;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.panel1.Controls.Add(this.btnRestoran);
+            this.panel1.Controls.Add(this.btnKamar);
+            this.panel1.Controls.Add(this.btnRiwayatTransaksi);
+            this.panel1.Controls.Add(this.btnPelanggan);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(0, 121);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(276, 415);
+            this.panel1.TabIndex = 30;
             // 
-            // label1
+            // btnRestoran
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(123, 172);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(399, 17);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "INI NANTI BUAT NAMPILIN KAMAR YANG SEDANG KOSONG";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.btnRestoran.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btnRestoran.FlatAppearance.BorderSize = 2;
+            this.btnRestoran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestoran.Font = new System.Drawing.Font("Lucida Sans Unicode", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestoran.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRestoran.Image = global::DatabaseHotelUas.Properties.Resources.restaurant_jpg;
+            this.btnRestoran.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestoran.Location = new System.Drawing.Point(12, 251);
+            this.btnRestoran.Name = "btnRestoran";
+            this.btnRestoran.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnRestoran.Size = new System.Drawing.Size(252, 70);
+            this.btnRestoran.TabIndex = 32;
+            this.btnRestoran.Text = "     Restoran";
+            this.btnRestoran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestoran.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRestoran.UseVisualStyleBackColor = true;
+            this.btnRestoran.Click += new System.EventHandler(this.btnRestoran_Click);
+            // 
+            // btnKamar
+            // 
+            this.btnKamar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btnKamar.FlatAppearance.BorderSize = 2;
+            this.btnKamar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKamar.Font = new System.Drawing.Font("Lucida Sans Unicode", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKamar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnKamar.Image = global::DatabaseHotelUas.Properties.Resources.hotel_jpg;
+            this.btnKamar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKamar.Location = new System.Drawing.Point(12, 175);
+            this.btnKamar.Name = "btnKamar";
+            this.btnKamar.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnKamar.Size = new System.Drawing.Size(252, 70);
+            this.btnKamar.TabIndex = 31;
+            this.btnKamar.Text = "     Kamar";
+            this.btnKamar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKamar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKamar.UseVisualStyleBackColor = true;
+            this.btnKamar.Click += new System.EventHandler(this.btnKamar_Click);
+            // 
+            // btnRiwayatTransaksi
+            // 
+            this.btnRiwayatTransaksi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btnRiwayatTransaksi.FlatAppearance.BorderSize = 2;
+            this.btnRiwayatTransaksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRiwayatTransaksi.Font = new System.Drawing.Font("Lucida Sans Unicode", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRiwayatTransaksi.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRiwayatTransaksi.Image = global::DatabaseHotelUas.Properties.Resources.clipboard_jpg;
+            this.btnRiwayatTransaksi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRiwayatTransaksi.Location = new System.Drawing.Point(12, 99);
+            this.btnRiwayatTransaksi.Name = "btnRiwayatTransaksi";
+            this.btnRiwayatTransaksi.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnRiwayatTransaksi.Size = new System.Drawing.Size(252, 70);
+            this.btnRiwayatTransaksi.TabIndex = 1;
+            this.btnRiwayatTransaksi.Text = "     Transaksi";
+            this.btnRiwayatTransaksi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRiwayatTransaksi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRiwayatTransaksi.UseVisualStyleBackColor = true;
+            this.btnRiwayatTransaksi.Click += new System.EventHandler(this.btnRiwayatTransaksi_Click);
+            // 
+            // btnPelanggan
+            // 
+            this.btnPelanggan.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btnPelanggan.FlatAppearance.BorderSize = 2;
+            this.btnPelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPelanggan.Font = new System.Drawing.Font("Lucida Sans Unicode", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPelanggan.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPelanggan.Image = global::DatabaseHotelUas.Properties.Resources.user_removebg_000_preview_jpg__1_;
+            this.btnPelanggan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPelanggan.Location = new System.Drawing.Point(12, 23);
+            this.btnPelanggan.Name = "btnPelanggan";
+            this.btnPelanggan.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnPelanggan.Size = new System.Drawing.Size(252, 70);
+            this.btnPelanggan.TabIndex = 0;
+            this.btnPelanggan.Text = "     Pelanggan";
+            this.btnPelanggan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPelanggan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPelanggan.UseVisualStyleBackColor = true;
+            this.btnPelanggan.Click += new System.EventHandler(this.btnPelanggan_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(141)))), ((int)(((byte)(64)))));
+            this.button1.CausesValidation = false;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(1024, -1);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 39);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "x";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1064, 121);
+            this.panel3.TabIndex = 31;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(418, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(364, 40);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "D\'Mario, All Rights Reserved";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.BackgroundImage = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(59, -9);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(151, 147);
+            this.panel2.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(276, 121);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(788, 415);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // timer3
+            // 
+            this.timer3.Enabled = true;
+            this.timer3.Interval = 3000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::DatabaseHotelUas.Properties.Resources.UI;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(929, 553);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1064, 536);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_jamWIB);
             this.Controls.Add(this.lbl_waktu);
@@ -366,57 +359,49 @@
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.lb_hargaKamar);
             this.Controls.Add(this.gb_pelanggan);
-            this.Controls.Add(this.gb_restoran);
-            this.Controls.Add(this.gb_kamar);
-            this.Controls.Add(this.btn_checktrans);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panel3);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "form_main";
             this.Text = "D\'Mario Hotel ";
             this.Load += new System.EventHandler(this.form_main_Load);
-            this.gb_kamar.ResumeLayout(false);
-            this.gb_restoran.ResumeLayout(false);
             this.gb_pelanggan.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btn_checktrans;
-        private System.Windows.Forms.GroupBox gb_kamar;
-        private System.Windows.Forms.Button btn_lihatkamar;
-        private System.Windows.Forms.Button btn_restoran;
-        private System.Windows.Forms.GroupBox gb_restoran;
         private System.Windows.Forms.GroupBox gb_pelanggan;
         private System.Windows.Forms.Button btn_cekidPelanggan;
         private System.Windows.Forms.Button btn_tmbhPelanggan;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem cekRiwayatTransaksiToolStripMenuItem;
         private System.Windows.Forms.ListBox lb_hargaKamar;
         private System.Windows.Forms.Label lbl_hargaHotel;
         private System.Windows.Forms.Label lbl_waktu;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button btn_historiRestoran;
         private System.Windows.Forms.Label lbl_jamWIB;
-        private System.Windows.Forms.ToolStripMenuItem kamarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem restoranToolStripMenuItem;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ToolStripMenuItem pelangganToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnPelanggan;
+        private System.Windows.Forms.Button btnKamar;
+        private System.Windows.Forms.Button btnRiwayatTransaksi;
+        private System.Windows.Forms.Button btnRestoran;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer3;
     }
 }
 
