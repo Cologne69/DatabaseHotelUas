@@ -59,7 +59,6 @@ namespace DatabaseHotelUas
             }
         }
         //----------------------------------------------------- BMYSQL SERVER -----------------------------------------------------
-
         public static string sqlConnString = "server=139.255.11.84;uid=student;pwd=isbmantap;database=DBD_03_HOTEL";
         public static MySqlConnection sqlConnect = new MySqlConnection(sqlConnString);
         public static void TestKoneksi()
@@ -186,6 +185,68 @@ namespace DatabaseHotelUas
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_cariMenu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+        
+        private void tb_cariMenu_KeyDown(object sender, KeyEventArgs e)
+        {
+            string SAPbeLike;
+            if (e.KeyCode == Keys.Enter)
+            {
+                SAPbeLike = tb_cariMenu.Text.ToUpper().ToString();
+                switch (SAPbeLike)
+                {
+                    case "/R":
+                        fr.ShowDialog();
+                        break;
+                    case "/K":
+                        fk.ShowDialog();
+                        break;
+                    case "/P":
+                        fcidp.ShowDialog();
+                        break;
+                    case "/T":
+                        ftp.ShowDialog();
+                        break;
+                    case "/CT":
+                        fct.ShowDialog();
+                        break;
+                    case "/HR":
+                        fhr.ShowDialog();
+                        break;
+                    default:
+                        MessageBox.Show("WOI GA ADA COK ASU");
+                        break;
+                }
+                tb_cariMenu.Text = "";
+            }
+        }
+        private void tb_cariMenu_TextChanged(object sender, EventArgs e)
+        {
+            if(tb_cariMenu.Text.Length > 0)
+            {
+                pic_crossmark.Show();
+                pic_search.Hide();
+            }
+            else if (tb_cariMenu.Text.Length == 0)
+            {
+                pic_crossmark.Hide();
+                pic_search.Show();
+            }
+        }
+
+        private void pic_crossmark_Click(object sender, EventArgs e)
+        {
+            tb_cariMenu.Text = "";
         }
     }
 }
