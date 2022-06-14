@@ -1,14 +1,8 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Windows.Forms;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Syncfusion.Windows.Forms.Tools;
-using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace DatabaseHotelUas
 {
@@ -18,20 +12,18 @@ namespace DatabaseHotelUas
         {
             InitializeComponent();
         }
-
         public MySqlCommand sqlCommand;
         public MySqlDataAdapter sqlAdapter;
         string sqlQuery;
         DataTable HargaKamar = new DataTable();
         public static int transID;
         MySqlDataReader myReader;
-
         //---------------------------------------------------------- UI -----------------------------------------------------------
         private Button currentButton;
         int imageNo = 1;
         private void imageSlideShow()
         {
-            if(imageNo==5)
+            if (imageNo == 5)
             {
                 imageNo = 1;
             }
@@ -42,7 +34,6 @@ namespace DatabaseHotelUas
         {
             imageSlideShow();
         }
-
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -58,7 +49,7 @@ namespace DatabaseHotelUas
         }
         private void DisableButton()
         {
-            foreach(Control previousBtn in panel1.Controls)
+            foreach (Control previousBtn in panel1.Controls)
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
@@ -67,12 +58,10 @@ namespace DatabaseHotelUas
                 }
             }
         }
-
         //----------------------------------------------------- BMYSQL SERVER -----------------------------------------------------
 
         public static string sqlConnString = "server=139.255.11.84;uid=student;pwd=isbmantap;database=DBD_03_HOTEL";
         public static MySqlConnection sqlConnect = new MySqlConnection(sqlConnString);
-
         public static void TestKoneksi()
         {
             try
@@ -86,7 +75,6 @@ namespace DatabaseHotelUas
             }
         }
         //----------------------------------------------------- MYSQL SERVER -----------------------------------------------------
-
         //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
         public static Form_Cek_Transaksi fct = new Form_Cek_Transaksi();
         public static form_kamar fk = new form_kamar();
@@ -95,7 +83,6 @@ namespace DatabaseHotelUas
         public static form_idPelanggan fcidp = new form_idPelanggan();
         public static form_tambahPelanggan ftp = new form_tambahPelanggan();
         public static form_historiRestoran fhr = new form_historiRestoran();
-
         //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
         public int maxtransID()
         {
@@ -185,7 +172,7 @@ namespace DatabaseHotelUas
             ActivateButton(sender);
             fr.ShowDialog();
         }
-        
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
         [System.Runtime.InteropServices.DllImport("user32.dll")]

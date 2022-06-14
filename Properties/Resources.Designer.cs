@@ -133,26 +133,6 @@ namespace DatabaseHotelUas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_close_50 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-close-50", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_search_30 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-search-30", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap image9 {
             get {
                 object obj = ResourceManager.GetObject("image9", resourceCulture);
@@ -166,6 +146,26 @@ namespace DatabaseHotelUas.Properties {
         internal static System.Drawing.Bitmap image9__1_ {
             get {
                 object obj = ResourceManager.GetObject("image9 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pic_crossmark {
+            get {
+                object obj = ResourceManager.GetObject("pic_crossmark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pic_search {
+            get {
+                object obj = ResourceManager.GetObject("pic_search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

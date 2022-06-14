@@ -3,7 +3,6 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-
 namespace DatabaseHotelUas
 {
     public partial class form_resto : Form
@@ -26,18 +25,15 @@ namespace DatabaseHotelUas
                 sqlQuery = $"INSERT INTO DETAIL_ORDER_MENU VALUES('{maxorderID}', '{DGV_Menu.CurrentRow.Cells[0].Value.ToString()}','{num_jumlahMakanan.Value}' , (SELECT SUM({num_jumlahMakanan.Value} * MENU.MENU_HARGA) FROM MENU WHERE MENU.MENU_ID = '{DGV_Menu.CurrentRow.Cells[0].Value.ToString()}'))";
                 commandAndadapter();
                 sqlCommand.ExecuteNonQuery();
-
                 Invoice = new DataTable();
                 sqlQuery = $"SELECT M.MENU_NAMA as`Nama Menu` , D.ORDER_QTY as `Jumlah Menu`, M.MENU_HARGA as `Harga Menu`, D.ORDER_PRICE AS `Sub-Total` FROM DETAIL_ORDER_MENU D, MENU M WHERE M.MENU_ID = D.MENU_ID AND ORDER_ID= '{maxorderID}';";
                 commandAndadapter();
                 sqlAdapter.Fill(Invoice);
                 DGV_invoice.DataSource = Invoice;
-
                 lbl_totalHarga.Text = "Rp. " + totalHargaOrder().ToString();
                 lbl_isiiteminCart.Text = jumlahOrderID().ToString();
                 cb_pelanggan.Enabled = false;
                 btn_cancelPelanggan.BackColor = Color.Red;
-
                 if (jumlahOrderID() > 0)
                 {
                     btn_checkout.Enabled = true;
@@ -113,6 +109,7 @@ namespace DatabaseHotelUas
             Menu.Clear();
             Invoice.Clear();
             Pelanggan.Clear();
+            btn_cancelPelanggan.BackColor = Color.Green;
             try
             {
                 sqlQuery = $"SELECT `MENU_ID` AS 'ID MENU', `MENU_NAMA` AS 'NAMA MENU', CONCAT('Rp. ',`MENU_HARGA`) AS 'HARGA MENU' FROM MENU";
@@ -190,17 +187,24 @@ namespace DatabaseHotelUas
         {
             if (MessageBox.Show("Apakah anda ingin mengganti Pelanggan?", "Ganti", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                cb_pelanggan.Enabled = true;
-                Invoice.Clear();
-                Invoice = new DataTable();
-                sqlQuery = $"DELETE FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxorderID}'";
-                commandAndadapter();
-                sqlCommand.ExecuteNonQuery();
-                lbl_isiiteminCart.Text = "0";
-                lbl_totalHarga.Text = "0";
+                try
+                {
+                    sqlQuery = $"DELETE FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxorderID}'";
+                    commandAndadapter();
+                    sqlCommand.ExecuteNonQuery();
+                    Invoice.Clear();
+                    Invoice = new DataTable();
+                    cb_pelanggan.Enabled = true;
+                    btn_cancelPelanggan.BackColor = Color.Green;
+                    lbl_isiiteminCart.Text = "0";
+                    lbl_totalHarga.Text = "0";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (tb_cariMenu.Text.Length > 0)
