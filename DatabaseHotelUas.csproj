@@ -244,5 +244,11 @@
   <ItemGroup>
     <None Include="Resources\047718300_1584800169-THE_KOFFEE.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-50.png" />
+    <None Include="Resources\cross_icon.png" />
+    <None Include="Resources\icons8-search-30.png" />
+    <Content Include="Resources\search_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
