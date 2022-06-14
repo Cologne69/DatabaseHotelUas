@@ -35,9 +35,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_deletePelanggan = new System.Windows.Forms.Button();
             this.btnTambahPelanggan = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.statusNamaPelanggan = new System.Windows.Forms.PictureBox();
+            this.btnProses = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusNamaPelanggan)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -98,7 +99,7 @@
             // 
             // btn_deletePelanggan
             // 
-            this.btn_deletePelanggan.Location = new System.Drawing.Point(616, 39);
+            this.btn_deletePelanggan.Location = new System.Drawing.Point(613, 38);
             this.btn_deletePelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_deletePelanggan.Name = "btn_deletePelanggan";
             this.btn_deletePelanggan.Size = new System.Drawing.Size(139, 28);
@@ -109,21 +110,34 @@
             // 
             // btnTambahPelanggan
             // 
-            this.btnTambahPelanggan.Location = new System.Drawing.Point(610, 70);
+            this.btnTambahPelanggan.Location = new System.Drawing.Point(611, 38);
             this.btnTambahPelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTambahPelanggan.Name = "btnTambahPelanggan";
             this.btnTambahPelanggan.Size = new System.Drawing.Size(149, 28);
             this.btnTambahPelanggan.TabIndex = 5;
             this.btnTambahPelanggan.Text = "Tambah Pelanggan";
             this.btnTambahPelanggan.UseVisualStyleBackColor = true;
+            this.btnTambahPelanggan.Click += new System.EventHandler(this.btnTambahPelanggan_Click);
             // 
-            // pictureBox1
+            // statusNamaPelanggan
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(577, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.statusNamaPelanggan.BackColor = System.Drawing.Color.White;
+            this.statusNamaPelanggan.Location = new System.Drawing.Point(577, 39);
+            this.statusNamaPelanggan.Name = "statusNamaPelanggan";
+            this.statusNamaPelanggan.Size = new System.Drawing.Size(25, 25);
+            this.statusNamaPelanggan.TabIndex = 6;
+            this.statusNamaPelanggan.TabStop = false;
+            // 
+            // btnProses
+            // 
+            this.btnProses.Location = new System.Drawing.Point(611, 37);
+            this.btnProses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnProses.Name = "btnProses";
+            this.btnProses.Size = new System.Drawing.Size(149, 28);
+            this.btnProses.TabIndex = 7;
+            this.btnProses.Text = "Proses";
+            this.btnProses.UseVisualStyleBackColor = true;
+            this.btnProses.Click += new System.EventHandler(this.btnProses_Click);
             // 
             // form_idPelanggan
             // 
@@ -131,7 +145,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(771, 549);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnProses);
+            this.Controls.Add(this.statusNamaPelanggan);
             this.Controls.Add(this.btnTambahPelanggan);
             this.Controls.Add(this.btn_deletePelanggan);
             this.Controls.Add(this.lbl_cariNama);
@@ -145,7 +160,7 @@
             this.Text = "Cek ID Pelanggan";
             this.Load += new System.EventHandler(this.form_idPelanggan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusNamaPelanggan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +174,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_deletePelanggan;
         private System.Windows.Forms.Button btnTambahPelanggan;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox statusNamaPelanggan;
+        private System.Windows.Forms.Button btnProses;
     }
 }
