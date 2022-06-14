@@ -276,22 +276,22 @@
             // 
             // pic_crossmark
             // 
-            this.pic_crossmark.BackgroundImage = global::DatabaseHotelUas.Properties.Resources.icons8_close_50;
             this.pic_crossmark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_crossmark.Location = new System.Drawing.Point(758, 32);
+            this.pic_crossmark.Image = global::DatabaseHotelUas.Properties.Resources.pic_crossmark;
+            this.pic_crossmark.Location = new System.Drawing.Point(759, 31);
             this.pic_crossmark.Name = "pic_crossmark";
-            this.pic_crossmark.Size = new System.Drawing.Size(29, 29);
+            this.pic_crossmark.Size = new System.Drawing.Size(40, 40);
             this.pic_crossmark.TabIndex = 24;
             this.pic_crossmark.TabStop = false;
             this.pic_crossmark.Click += new System.EventHandler(this.pic_crossmark_Click);
             // 
             // pic_search
             // 
-            this.pic_search.BackgroundImage = global::DatabaseHotelUas.Properties.Resources.icons8_search_30;
             this.pic_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_search.Location = new System.Drawing.Point(759, 32);
+            this.pic_search.Image = ((System.Drawing.Image)(resources.GetObject("pic_search.Image")));
+            this.pic_search.Location = new System.Drawing.Point(759, 31);
             this.pic_search.Name = "pic_search";
-            this.pic_search.Size = new System.Drawing.Size(28, 29);
+            this.pic_search.Size = new System.Drawing.Size(40, 40);
             this.pic_search.TabIndex = 22;
             this.pic_search.TabStop = false;
             // 
