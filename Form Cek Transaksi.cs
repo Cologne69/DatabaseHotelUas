@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace DatabaseHotelUas
 {
@@ -25,12 +19,16 @@ namespace DatabaseHotelUas
             InitializeComponent();
         }
 
-
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            
+
             this.Hide();
-            
+            dgv_cekTransBlmLunas.DataSource = null;
+            dgv_cekTransBlmLunas2.DataSource = null;
+            dgv_SemuaTransaksi.DataSource = null;
+            dgv_SemuaTransaksi2.DataSource = null;
+
+
         }
 
         private void btn_prosesCekTransaksi_Click(object sender, EventArgs e)
@@ -45,6 +43,10 @@ namespace DatabaseHotelUas
                 {
                     dgv_cekTransBlmLunas2.Hide();
                     dgv_SemuaTransaksi2.Hide();
+                    lblBookingKamar.Hide();
+                    lblOrderResto.Hide();
+                    lblBookingKamar2.Hide();
+                    lblOrderResto2.Hide();
                     TransaksiBookingKamarBelumLunas();
                     TransaksiBookingKamar();
                 }
@@ -52,6 +54,10 @@ namespace DatabaseHotelUas
                 {
                     dgv_cekTransBlmLunas2.Hide();
                     dgv_SemuaTransaksi2.Hide();
+                    lblBookingKamar.Hide();
+                    lblOrderResto.Hide();
+                    lblBookingKamar2.Hide();
+                    lblOrderResto2.Hide();
                     TransaksiOrderFoodBelumLunas();
                     TransaksiOrderFood();
                 }
@@ -59,6 +65,10 @@ namespace DatabaseHotelUas
                 {
                     dgv_cekTransBlmLunas2.Show();
                     dgv_SemuaTransaksi2.Show();
+                    lblBookingKamar.Show();
+                    lblOrderResto.Show();
+                    lblBookingKamar2.Show();
+                    lblOrderResto2.Show();
                     TransaksiBookingKamarBelumLunas();
                     TransaksiOrderFoodBelumLunas2();
                     TransaksiBookingKamar();
@@ -71,7 +81,7 @@ namespace DatabaseHotelUas
             try
             {
                 kamarBelumLunas = new DataTable();
-                sqlQuery = $"SELECT BOOK_ID, CUST_ID, BOOK_TGL_CIN, BOOK_TGL_COUT, BOOK_KAMAR_COUNT, BOOK_TOTAL FROM BOOKING_KAMAR WHERE TRANS_ID is null; ";
+                sqlQuery = $"SELECT BOOK_ID AS 'BOOKING ID', CUST_ID AS 'CUSTOMER ID', BOOK_TGL_CIN AS 'TANGGAL CHECK IN', BOOK_TGL_COUT AS 'TANGGAL CHECK OUT', BOOK_KAMAR_COUNT AS 'JUMLAH KAMAR', BOOK_TOTAL AS 'TOTAL BIAYA' FROM BOOKING_KAMAR WHERE TRANS_ID is null; ";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(kamarBelumLunas);
@@ -88,7 +98,7 @@ namespace DatabaseHotelUas
             try
             {
                 restoBelumLunas = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID, CUST_ID, ORDER_TGL, ORDER_KAMAR_NO, ORDER_MENU_COUNT, ORDER_TOTAL FROM ORDER_FOOD WHERE TRANS_ID is null; ";
+                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE TRANS_ID is null AND NOT ORDER_ID = '0'; ";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(restoBelumLunas);
@@ -105,7 +115,7 @@ namespace DatabaseHotelUas
             try
             {
                 semuaTransaksiKamar = new DataTable();
-                sqlQuery = $"SELECT BOOK_ID, CUST_ID, BOOK_TGL_CIN, BOOK_TGL_COUT, BOOK_KAMAR_COUNT, BOOK_TOTAL FROM BOOKING_KAMAR; ";
+                sqlQuery = $"SELECT BOOK_ID AS 'BOOKING ID', CUST_ID AS 'CUSTOMER ID', BOOK_TGL_CIN AS 'TANGGAL CHECK IN', BOOK_TGL_COUT AS 'TANGGAL CHECK OUT', BOOK_KAMAR_COUNT AS 'JUMLAH KAMAR', BOOK_TOTAL AS 'TOTAL BIAYA' FROM BOOKING_KAMAR;";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(semuaTransaksiKamar);
@@ -122,7 +132,7 @@ namespace DatabaseHotelUas
             try
             {
                 semuaTransaksiResto = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID, CUST_ID, ORDER_TGL, ORDER_KAMAR_NO, ORDER_MENU_COUNT, ORDER_TOTAL FROM ORDER_FOOD; ";
+                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE NOT ORDER_ID = '0';";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(semuaTransaksiResto);
@@ -139,7 +149,7 @@ namespace DatabaseHotelUas
             try
             {
                 restoBelumLunas = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID, CUST_ID, ORDER_TGL, ORDER_KAMAR_NO, ORDER_MENU_COUNT, ORDER_TOTAL FROM ORDER_FOOD WHERE TRANS_ID is null; ";
+                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE TRANS_ID is null AND NOT ORDER_ID = '0'; ";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(restoBelumLunas);
@@ -156,7 +166,7 @@ namespace DatabaseHotelUas
             try
             {
                 semuaTransaksiResto = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID, CUST_ID, ORDER_TGL, ORDER_KAMAR_NO, ORDER_MENU_COUNT, ORDER_TOTAL FROM ORDER_FOOD; ";
+                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE NOT ORDER_ID = '0'; ";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(semuaTransaksiResto);
@@ -173,6 +183,14 @@ namespace DatabaseHotelUas
         {
             dgv_cekTransBlmLunas2.Hide();
             dgv_SemuaTransaksi2.Hide();
+            lblBookingKamar.Hide();
+            lblOrderResto.Hide();
+            lblBookingKamar2.Hide();
+            lblOrderResto2.Hide();
+            dgv_cekTransBlmLunas.DataSource = null;
+            dgv_cekTransBlmLunas2.DataSource = null;
+            dgv_SemuaTransaksi.DataSource = null;
+            dgv_SemuaTransaksi2.DataSource = null;
         }
     }
 }

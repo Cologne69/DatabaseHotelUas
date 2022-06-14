@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
+using System.Windows.Forms;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace DatabaseHotelUas
 {
@@ -17,6 +14,7 @@ namespace DatabaseHotelUas
         public MySqlDataAdapter sqlAdapter;
         string sqlQuery;
         new DataTable pelanggan = new DataTable();
+        private static List<string> list_pelanggan = new List<string>();
 
         public form_idPelanggan()
         {
@@ -25,10 +23,19 @@ namespace DatabaseHotelUas
         private void btn_exit_Click(object sender, EventArgs e)
         {
             this.Hide();
+            txt_cariNamaPelanggan.Text = "";
         }
         private void form_idPelanggan_Load(object sender, EventArgs e)
         {
             pelanggan.Clear();
+            syncPelanggan();
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            txt_cariNamaPelanggan.Text = "";
+        }
+        private void syncPelanggan()
+        {
             try
             {
                 sqlQuery = $"SELECT CUST_ID as 'CUSTOMER ID', CUST_NAMA as 'CUSTOMER NAMA', CUST_KOTA as 'CUSTOMER KOTA', DELETE_CUST as 'DELETE CUSTOMER', CUST_KELAMIN as 'CUSTOMER KELAMIN' FROM CUSTOMER";
@@ -36,18 +43,13 @@ namespace DatabaseHotelUas
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(pelanggan);
                 dataGridView1.DataSource = pelanggan;
+
+                list_pelanggan = pelanggan.AsEnumerable().Select(x => x.Field<String>("CUSTOMER NAMA")).ToList();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        }
-        private void txt_cariNamaPelanggan_TextChanged(object sender, EventArgs e)
-        {
-            pelanggan.DefaultView.RowFilter = string.Format("CUST_NAMA LIKE '%{0}%'", txt_cariNamaPelanggan.Text);
         }
         private void btn_cariNama_Click(object sender, EventArgs e)
         {
@@ -61,7 +63,7 @@ namespace DatabaseHotelUas
         private void btn_deletePelanggan_Click(object sender, EventArgs e)
         {
             //form_main.fdp.ShowDialog(); 
-            if(MessageBox.Show("Apakah anda yakin mau menghapus pelanggan tersebut?", "Hapus pelanggan", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Apakah anda yakin mau menghapus pelanggan tersebut?", "Hapus pelanggan", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
@@ -80,8 +82,48 @@ namespace DatabaseHotelUas
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-  
+
+
+        }
+
+        private void btnProses_Click(object sender, EventArgs e)
+        {
+            btnProses.Hide();
+            btnTambahPelanggan.Hide(); 
+            btn_deletePelanggan.Hide();
+            pelanggan.DefaultView.RowFilter = string.Format("`CUSTOMER NAMA` LIKE '%{0}%'", txt_cariNamaPelanggan.Text);
+            for (int i = 0; i < pelanggan.DefaultView.Count; i++)
+            {
+                if (pelanggan.DefaultView.RowFilter.Contains(txt_cariNamaPelanggan.Text))
+                {
+                    statusNamaPelanggan.BackColor = Color.Red;
+                    btn_deletePelanggan.Show();
+                    i = pelanggan.DefaultView.Count;
+                }
+            }
+            if (statusNamaPelanggan.BackColor == Color.White)
+            {
+                statusNamaPelanggan.BackColor = Color.Green;
+                btnTambahPelanggan.Show();
+            }
+        }
+
+        private void txt_cariNamaPelanggan_TextChanged(object sender, EventArgs e)
+        {
+            statusNamaPelanggan.BackColor = Color.White;
+            btnProses.Show();
+
+        }
+
+        private void btnTambahPelanggan_Click(object sender, EventArgs e)
+        {
+            form_main.ftp.StartPosition = FormStartPosition.CenterParent;
+            form_main.ftp.txt_namaPelanggan.Text = txt_cariNamaPelanggan.Text;
+            form_main.ftp.ShowDialog();
+            form_main.ftp.txt_KotaPelanggan.Clear();
+            form_main.ftp.txt_idPelanggan.Clear();
+            form_main.ftp.rdb_Laki.Checked = false;
+            form_main.ftp.rdb_Perempuan.Checked = false;
         }
     }
 }
