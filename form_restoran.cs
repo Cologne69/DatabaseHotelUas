@@ -199,15 +199,11 @@ namespace DatabaseHotelUas
                 lbl_isiiteminCart.Text = "0";
                 lbl_totalHarga.Text = "0";
             }
-            else
-            {
-
-            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if(tb_cariMenu.Text.Length > 0)
+            if (tb_cariMenu.Text.Length > 0)
             {
                 pic_crossmark.Show();
             }
@@ -218,14 +214,12 @@ namespace DatabaseHotelUas
             try
             {
                 Menu.DefaultView.RowFilter = string.Format("`NAMA MENU` LIKE '%{0}%'", tb_cariMenu.Text);
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void pic_crossmark_Click(object sender, EventArgs e)
         {
             tb_cariMenu.Text = "";
