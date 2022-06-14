@@ -149,20 +149,19 @@ namespace DatabaseHotelUas
                     sqlQuery = $"INSERT INTO ORDER_FOOD VALUES ('{maxorderID}','{form_main.transID + 1}','{cb_pelanggan.SelectedValue.ToString()}', date_format(now(),'%Y-%m-%d') , null , (SELECT COUNT(ORDER_ID) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxorderID}') , (select sum(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxorderID}'),0);";
                     commandAndadapter();
                     sqlCommand.ExecuteNonQuery();
-
                     sqlQuery = $"INSERT INTO TRANS_SETTLEMENT VALUES ('{form_main.transID + 1}', date_format(now(),'%Y-%m-%d') , (select sum(ORDER_PRICE) FROM DETAIL_ORDER_MENU WHERE ORDER_ID = '{maxorderID}') , 'Transaksi Restoran', 0);";
                     commandAndadapter();
                     sqlCommand.ExecuteNonQuery();
-
                     MessageBox.Show($"Pesanan dengan ID: {maxorderID} berhasil di Checkout");
+                    maxorderID++;
                     lbl_isiOrderID.Text = maxorderID.ToString();
                     lbl_isiiteminCart.Text = "0";
                     lbl_totalHarga.Text = "0";
                     Invoice.Clear();
-                    maxorderID++;
                     form_main.transID++;
                     btn_cancelPelanggan.Enabled = true;
                     cb_pelanggan.Enabled = true;
+                    btn_checkout.Enabled = false;
                 }
                 catch (Exception ex)
                 {
