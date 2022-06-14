@@ -90,7 +90,7 @@
             this.lblJenisTransaksi.AutoSize = true;
             this.lblJenisTransaksi.Location = new System.Drawing.Point(62, 711);
             this.lblJenisTransaksi.Name = "lblJenisTransaksi";
-            this.lblJenisTransaksi.Size = new System.Drawing.Size(111, 17);
+            this.lblJenisTransaksi.Size = new System.Drawing.Size(105, 16);
             this.lblJenisTransaksi.TabIndex = 9;
             this.lblJenisTransaksi.Text = "Jenis Transaksi:";
             // 
@@ -99,7 +99,7 @@
             this.cBoxBookKamar.AutoSize = true;
             this.cBoxBookKamar.Location = new System.Drawing.Point(190, 710);
             this.cBoxBookKamar.Name = "cBoxBookKamar";
-            this.cBoxBookKamar.Size = new System.Drawing.Size(126, 21);
+            this.cBoxBookKamar.Size = new System.Drawing.Size(121, 20);
             this.cBoxBookKamar.TabIndex = 10;
             this.cBoxBookKamar.Text = "Booking Kamar";
             this.cBoxBookKamar.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             this.cBoxOrderResto.AutoSize = true;
             this.cBoxOrderResto.Location = new System.Drawing.Point(322, 710);
             this.cBoxOrderResto.Name = "cBoxOrderResto";
-            this.cBoxOrderResto.Size = new System.Drawing.Size(108, 21);
+            this.cBoxOrderResto.Size = new System.Drawing.Size(102, 20);
             this.cBoxOrderResto.TabIndex = 11;
             this.cBoxOrderResto.Text = "Order Resto";
             this.cBoxOrderResto.UseVisualStyleBackColor = true;
@@ -179,7 +179,7 @@
             this.lblBookingKamar.AutoSize = true;
             this.lblBookingKamar.Location = new System.Drawing.Point(15, 331);
             this.lblBookingKamar.Name = "lblBookingKamar";
-            this.lblBookingKamar.Size = new System.Drawing.Size(104, 17);
+            this.lblBookingKamar.Size = new System.Drawing.Size(99, 16);
             this.lblBookingKamar.TabIndex = 17;
             this.lblBookingKamar.Text = "Booking Kamar";
             // 
@@ -188,7 +188,7 @@
             this.lblOrderResto.AutoSize = true;
             this.lblOrderResto.Location = new System.Drawing.Point(15, 515);
             this.lblOrderResto.Name = "lblOrderResto";
-            this.lblOrderResto.Size = new System.Drawing.Size(86, 17);
+            this.lblOrderResto.Size = new System.Drawing.Size(80, 16);
             this.lblOrderResto.TabIndex = 18;
             this.lblOrderResto.Text = "Order Resto";
             // 
@@ -197,7 +197,7 @@
             this.lblBookingKamar2.AutoSize = true;
             this.lblBookingKamar2.Location = new System.Drawing.Point(16, 32);
             this.lblBookingKamar2.Name = "lblBookingKamar2";
-            this.lblBookingKamar2.Size = new System.Drawing.Size(104, 17);
+            this.lblBookingKamar2.Size = new System.Drawing.Size(99, 16);
             this.lblBookingKamar2.TabIndex = 19;
             this.lblBookingKamar2.Text = "Booking Kamar";
             // 
@@ -206,7 +206,7 @@
             this.lblOrderResto2.AutoSize = true;
             this.lblOrderResto2.Location = new System.Drawing.Point(16, 164);
             this.lblOrderResto2.Name = "lblOrderResto2";
-            this.lblOrderResto2.Size = new System.Drawing.Size(86, 17);
+            this.lblOrderResto2.Size = new System.Drawing.Size(80, 16);
             this.lblOrderResto2.TabIndex = 20;
             this.lblOrderResto2.Text = "Order Resto";
             // 

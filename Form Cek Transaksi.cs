@@ -81,7 +81,7 @@ namespace DatabaseHotelUas
             try
             {
                 kamarBelumLunas = new DataTable();
-                sqlQuery = $"SELECT BOOK_ID AS 'BOOKING ID', CUST_ID AS 'CUSTOMER ID', BOOK_TGL_CIN AS 'TANGGAL CHECK IN', BOOK_TGL_COUT AS 'TANGGAL CHECK OUT', BOOK_KAMAR_COUNT AS 'JUMLAH KAMAR', BOOK_TOTAL AS 'TOTAL BIAYA' FROM BOOKING_KAMAR WHERE TRANS_ID is null; ";
+                sqlQuery = $"SELECT BOOK_ID AS 'BOOKING ID', CUST_ID AS 'CUSTOMER ID', BOOK_TGL_CIN AS 'TANGGAL CHECK IN', BOOK_TGL_COUT AS 'TANGGAL CHECK OUT', BOOK_KAMAR_COUNT AS 'JUMLAH KAMAR', BOOK_TOTAL AS 'TOTAL BIAYA' FROM BOOKING_KAMAR WHERE TRANS_ID is null order by cast(BOOK_ID as unsigned); ";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(kamarBelumLunas);
@@ -98,7 +98,7 @@ namespace DatabaseHotelUas
             try
             {
                 restoBelumLunas = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE TRANS_ID is null AND NOT ORDER_ID = '0'; ";
+                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE TRANS_ID is null AND NOT ORDER_ID = '0' order by cast(ORDER_ID as unsigned); ";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(restoBelumLunas);
@@ -115,7 +115,7 @@ namespace DatabaseHotelUas
             try
             {
                 semuaTransaksiKamar = new DataTable();
-                sqlQuery = $"SELECT BOOK_ID AS 'BOOKING ID', CUST_ID AS 'CUSTOMER ID', BOOK_TGL_CIN AS 'TANGGAL CHECK IN', BOOK_TGL_COUT AS 'TANGGAL CHECK OUT', BOOK_KAMAR_COUNT AS 'JUMLAH KAMAR', BOOK_TOTAL AS 'TOTAL BIAYA' FROM BOOKING_KAMAR;";
+                sqlQuery = $"SELECT BOOK_ID AS 'BOOKING ID', CUST_ID AS 'CUSTOMER ID', BOOK_TGL_CIN AS 'TANGGAL CHECK IN', BOOK_TGL_COUT AS 'TANGGAL CHECK OUT', BOOK_KAMAR_COUNT AS 'JUMLAH KAMAR', BOOK_TOTAL AS 'TOTAL BIAYA' FROM BOOKING_KAMAR order by cast(BOOK_ID as unsigned);";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(semuaTransaksiKamar);
@@ -132,7 +132,7 @@ namespace DatabaseHotelUas
             try
             {
                 semuaTransaksiResto = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE NOT ORDER_ID = '0';";
+                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE NOT ORDER_ID = '0' order by cast(ORDER_ID as unsigned);";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(semuaTransaksiResto);
@@ -149,7 +149,7 @@ namespace DatabaseHotelUas
             try
             {
                 restoBelumLunas = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE TRANS_ID is null AND NOT ORDER_ID = '0'; ";
+                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE TRANS_ID is null AND NOT ORDER_ID = '0' order by cast(ORDER_ID as unsigned); ";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(restoBelumLunas);
@@ -166,7 +166,7 @@ namespace DatabaseHotelUas
             try
             {
                 semuaTransaksiResto = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE NOT ORDER_ID = '0'; ";
+                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE NOT ORDER_ID = '0' order by cast(ORDER_ID as unsigned); ";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(semuaTransaksiResto);
