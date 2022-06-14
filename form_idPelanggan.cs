@@ -1,10 +1,10 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Data;
-using System.Windows.Forms;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace DatabaseHotelUas
 {
@@ -13,7 +13,7 @@ namespace DatabaseHotelUas
         public MySqlCommand sqlCommand;
         public MySqlDataAdapter sqlAdapter;
         string sqlQuery;
-        new DataTable pelanggan = new DataTable();
+        DataTable pelanggan = new DataTable();
         private static List<string> list_pelanggan = new List<string>();
 
         public form_idPelanggan()
@@ -51,14 +51,6 @@ namespace DatabaseHotelUas
                 MessageBox.Show(ex.Message);
             }
         }
-        private void btn_cariNama_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_deletePelanggan_Click(object sender, EventArgs e)
         {
@@ -89,7 +81,7 @@ namespace DatabaseHotelUas
         private void btnProses_Click(object sender, EventArgs e)
         {
             btnProses.Hide();
-            btnTambahPelanggan.Hide(); 
+            btnTambahPelanggan.Hide();
             btn_deletePelanggan.Hide();
             pelanggan.DefaultView.RowFilter = string.Format("`CUSTOMER NAMA` LIKE '%{0}%'", txt_cariNamaPelanggan.Text);
             for (int i = 0; i < pelanggan.DefaultView.Count; i++)
@@ -112,7 +104,6 @@ namespace DatabaseHotelUas
         {
             statusNamaPelanggan.BackColor = Color.White;
             btnProses.Show();
-
         }
 
         private void btnTambahPelanggan_Click(object sender, EventArgs e)
