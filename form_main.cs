@@ -243,7 +243,6 @@ namespace DatabaseHotelUas
                 pic_search.Show();
             }
         }
-
         private void pic_crossmark_Click(object sender, EventArgs e)
         {
             tb_cariMenu.Text = "";
