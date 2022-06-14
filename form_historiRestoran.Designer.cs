@@ -57,7 +57,6 @@
             this.DGV_historiRestoran.ShowRowErrors = false;
             this.DGV_historiRestoran.Size = new System.Drawing.Size(837, 527);
             this.DGV_historiRestoran.TabIndex = 0;
-            this.DGV_historiRestoran.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_historiRestoran_CellContentClick);
             // 
             // label1
             // 
@@ -98,8 +97,6 @@
             this.Text = "Histori Pemesanan Restoran";
             this.Load += new System.EventHandler(this.form_historiRestoran_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.form_historiRestoran_MouseDown);
-            this.Resize += new System.EventHandler(this.form_historiRestoran_Resize);
-            this.StyleChanged += new System.EventHandler(this.form_historiRestoran_StyleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_historiRestoran)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -278,7 +278,7 @@
             // 
             this.pic_crossmark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pic_crossmark.Image = global::DatabaseHotelUas.Properties.Resources.pic_crossmark;
-            this.pic_crossmark.Location = new System.Drawing.Point(759, 31);
+            this.pic_crossmark.Location = new System.Drawing.Point(810, 21);
             this.pic_crossmark.Name = "pic_crossmark";
             this.pic_crossmark.Size = new System.Drawing.Size(40, 40);
             this.pic_crossmark.TabIndex = 24;
