@@ -99,7 +99,7 @@
             // 
             // btn_deletePelanggan
             // 
-            this.btn_deletePelanggan.Location = new System.Drawing.Point(613, 36);
+            this.btn_deletePelanggan.Location = new System.Drawing.Point(613, 38);
             this.btn_deletePelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_deletePelanggan.Name = "btn_deletePelanggan";
             this.btn_deletePelanggan.Size = new System.Drawing.Size(139, 28);
@@ -110,7 +110,7 @@
             // 
             // btnTambahPelanggan
             // 
-            this.btnTambahPelanggan.Location = new System.Drawing.Point(611, 36);
+            this.btnTambahPelanggan.Location = new System.Drawing.Point(611, 38);
             this.btnTambahPelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTambahPelanggan.Name = "btnTambahPelanggan";
             this.btnTambahPelanggan.Size = new System.Drawing.Size(149, 28);
@@ -130,7 +130,7 @@
             // 
             // btnProses
             // 
-            this.btnProses.Location = new System.Drawing.Point(611, 35);
+            this.btnProses.Location = new System.Drawing.Point(611, 37);
             this.btnProses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProses.Name = "btnProses";
             this.btnProses.Size = new System.Drawing.Size(149, 28);
