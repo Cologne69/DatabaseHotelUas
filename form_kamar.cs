@@ -79,10 +79,18 @@ namespace DatabaseHotelUas
             }
         }
 
-        private int countCart() // @countCart = count how many kamar in cart and update that value to lbl_output_total_item
+        /* 
+         * @countCart = 
+         * count how many kamar in cart if pelanggan is checkin
+         * count how many kamar in temp_used_kamar_by_pelanggan if pelanggan is checkout
+         * then update that value to lbl_output_total_item
+         *
+         * param @value = cart or temp_used_kamar
+         */
+        private int countCart(List<string> value) 
         {
-            lbl_output_total_item.Text = cart.Count.ToString();
-            return cart.Count();
+            lbl_output_total_item.Text = value.Count.ToString();
+            return value.Count();
         }
 
         private int countTotalPrice() // @countTotalPrice = count total price of cart and update that value to lbl_output_total_price
@@ -230,7 +238,7 @@ namespace DatabaseHotelUas
         private void syncKamarCart()
         {
             syncKamarStatus(); // we need to sync kamar status first so red color still persist
-            countCart();
+            countCart(cart);
             countTotalPrice();
             foreach (string kamar_no in cart)
             {
@@ -376,7 +384,7 @@ namespace DatabaseHotelUas
 
                 // we don't need to clear cart and cart_dt because syncDgv_check_out and cancel btn already override it
                 syncDgv_check_out();
-                countCart();
+                countCart(temp_used_kamar_by_pelanggan);
                 countTotalPrice();
 
                 syncKamarStatus();
@@ -403,7 +411,7 @@ namespace DatabaseHotelUas
             // delete all value in cart dan cart_dt
             cart.Clear();
             cart_dt.Clear();
-            countCart();
+            countCart(cart);
             countTotalPrice();
 
             // enable all button
@@ -431,7 +439,7 @@ namespace DatabaseHotelUas
         {
             cart.Clear();
             cart_dt.Clear();
-            countCart();
+            countCart(cart);
             countTotalPrice();
             syncKamarStatus();
         }
@@ -473,7 +481,7 @@ namespace DatabaseHotelUas
         {
             string book_id = getCurrentBookId().ToString();
             string pelanggan_id = cb_pelanggan.SelectedValue.ToString();
-            string total_cart = countCart().ToString();
+            string total_cart = countCart(cart).ToString();
 
             if (validateCheckIn(total_cart))
             {
@@ -521,7 +529,7 @@ namespace DatabaseHotelUas
             cart.Clear();
             cart_dt.Clear();
             syncKamarStatus();
-            countCart();
+            countCart(cart);
             countTotalPrice();
             lbl_output_book_id.Text = getCurrentBookId().ToString();
         }
