@@ -17,12 +17,10 @@ namespace DatabaseHotelUas
         {
             InitializeComponent();
         }
-
         public MySqlCommand sqlCommand;
         public MySqlDataAdapter sqlAdapter;
         string sqlQuery;
         new DataTable historiPemesanan = new DataTable();
-
         private void form_historiRestoran_Load(object sender, EventArgs e)
         {
             historiPemesanan.Clear();
@@ -38,48 +36,26 @@ namespace DatabaseHotelUas
             {
                 MessageBox.Show(ex.Message);
             }
-
             DGV_historiRestoran.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             DGV_historiRestoran.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             DGV_historiRestoran.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             for (int i = 0; i <= DGV_historiRestoran.Columns.Count - 1; i++)
             {
-                // Store Auto Sized Widths:
-                int colw = DGV_historiRestoran.Columns[i].Width;
-
-                // Remove AutoSizing:
+                int lebar = DGV_historiRestoran.Columns[i].Width;
                 DGV_historiRestoran.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-
-                // Set Width to calculated AutoSize value:
-                DGV_historiRestoran.Columns[i].Width = colw;
+                DGV_historiRestoran.Columns[i].Width = lebar;
             }
         }
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
-
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
-        private void DGV_historiRestoran_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void form_historiRestoran_Resize(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void form_historiRestoran_StyleChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void form_historiRestoran_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
