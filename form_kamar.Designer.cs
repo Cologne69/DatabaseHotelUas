@@ -1407,6 +1407,7 @@
             this.btn_check_out.TabIndex = 120;
             this.btn_check_out.Text = "Check Out";
             this.btn_check_out.UseVisualStyleBackColor = true;
+            this.btn_check_out.Click += new System.EventHandler(this.btn_check_out_Click);
             // 
             // form_kamar
             // 

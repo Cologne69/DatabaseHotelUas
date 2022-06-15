@@ -383,7 +383,7 @@ namespace DatabaseHotelUas
             }
         }
 
-        private void preCheckOut()
+        private void preCheckOut() // @preCheckOut = fill datetime checkin, sync dgv, count cart, count total price
         {
             getDateTimeCheckin(); // we don't need to call getBookIdCheckout as it already chained inside
 
@@ -567,9 +567,63 @@ namespace DatabaseHotelUas
             }
         }
 
-        private void checkOut()
+        private void checkOut() // @checkOut, trigger from btn_check_out
         {
+            int diff = (datetime_check_out.Value.Date - datetime_check_in.Value.Date).Days;
 
+            if (diff == 0)
+            {
+                MessageBox.Show("it seems customer check in and check out at same day!");
+                diff = 1;
+            }
+
+            string hargaTotal = (diff * countTotalPrice()).ToString();
+            string trans_id;
+            string book_id = getBookIdCheckout().ToString();
+
+            // get max value of trans id and +1
+            string sqlQuery = "select MAX(CAST(TRANS_ID as SIGNED)) as 'a' from TRANS_SETTLEMENT ts";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                trans_id = (Convert.ToInt32(cmd.ExecuteScalar()) + 1).ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("unable to get trans ID: " + ex);
+                trans_id = "0";
+            }
+
+            // fill trans_id, book_tgl_cout, book_total where book_id
+            sqlQuery = $"update BOOKING_KAMAR SET TRANS_ID = '{trans_id}', BOOK_TGL_COUT = curdate(), BOOK_TOTAL = {hargaTotal} " +
+                $"where BOOK_ID = '{book_id}'";
+            queryWithoutReturningValue(sqlQuery, "insert missing value c. out: ");
+
+            // update kamar_status to 0
+            sqlQuery = "update KAMAR AS k " +
+                    "left join DETAIL_BOOK_KAMAR dbk on k.KAMAR_NO = dbk.KAMAR_NO " +
+                    "left join BOOKING_KAMAR bk on dbk.BOOK_ID = bk.BOOK_ID " +
+                    "set k.KAMAR_STATUS = 0 " +
+                    $"where dbk.BOOK_ID = {book_id}";
+            queryWithoutReturningValue(sqlQuery, "update kamar c. out");
+
+            sqlQuery = $"insert into TRANS_SETTLEMENT (TRANS_ID, TRANS_DATE, TRANS_TOTAL, TRANS_DESCIPTION, DELETE_TRANS) values({trans_id}, curdate(), {hargaTotal}, 'Transaksi Hotel', false)";
+            queryWithoutReturningValue(sqlQuery, "updating trans_settlement: ");
+
+            cart.Clear();
+            cart_dt.Clear();
+            countCart(cart);
+            countTotalPrice();
+            syncKamarStatus();
+            btn_proses.Show();
+            btn_cancel.Hide();
+            cb_pelanggan.Enabled = true;
+            btn_remove_all.Enabled = true;
+            btn_check_in.Enabled = true;
+            btn_check_out.Enabled = false;
+            temp_used_kamar_by_pelanggan.Clear();
+
+            allKamarButtonEnabled(true);
         }
 
         private void btn_check_in_Click(object sender, EventArgs e)
@@ -598,6 +652,11 @@ namespace DatabaseHotelUas
             temp_used_kamar_by_pelanggan.Clear();
 
             allKamarButtonEnabled(true);
+        }
+
+        private void btn_check_out_Click(object sender, EventArgs e)
+        {
+            checkOut();
         }
     }
 }
