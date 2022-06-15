@@ -54,6 +54,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cekTransBlmLunas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SemuaTransaksi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SemuaTransaksi2)).BeginInit();
@@ -98,7 +99,7 @@
             // 
             this.btn_prosesCekTransaksi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
             this.btn_prosesCekTransaksi.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_prosesCekTransaksi.Location = new System.Drawing.Point(464, 842);
+            this.btn_prosesCekTransaksi.Location = new System.Drawing.Point(456, 840);
             this.btn_prosesCekTransaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_prosesCekTransaksi.Name = "btn_prosesCekTransaksi";
             this.btn_prosesCekTransaksi.Size = new System.Drawing.Size(124, 36);
@@ -311,12 +312,25 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "RIWAYAT TRANSAKSI";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(910, 840);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(167, 36);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "History Restaurant";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form_Cek_Transaksi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.ClientSize = new System.Drawing.Size(1108, 909);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblBookingKamar2);
             this.Controls.Add(this.lblOrderResto);
@@ -365,5 +379,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.Button btn_prosesCekTransaksi;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -233,7 +233,10 @@ namespace DatabaseHotelUas
             dgv_SemuaTransaksi2.Columns[2].Width = 140;
             dgv_SemuaTransaksi2.Columns[3].Width = 140;
         }
-        
-       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            form_main.fhr.Show();
+        }
     }
 }

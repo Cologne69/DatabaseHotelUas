@@ -26,7 +26,8 @@ namespace DatabaseHotelUas
             historiPemesanan.Clear();
             try
             {
-                sqlQuery = $"SELECT * FROM DETAIL_ORDER_MENU WHERE NOT ORDER_ID = '0' ORDER BY 1";
+                sqlQuery = $"SELECT * FROM DETAIL_ORDER_MENU WHERE NOT ORDER_ID = '0' ORDER BY cast(ORDER_ID as  unsigned)";
+                //order by cast(BOOK_ID as unsigned);
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(historiPemesanan);
