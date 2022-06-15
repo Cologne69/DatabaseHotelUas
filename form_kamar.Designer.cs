@@ -30,6 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_kamar));
             this.btn_A101 = new System.Windows.Forms.Button();
             this.btn_proses = new System.Windows.Forms.Button();
@@ -135,15 +138,21 @@
             this.lbl_output_total_item = new System.Windows.Forms.Label();
             this.lbl_output_total_price = new System.Windows.Forms.Label();
             this.btn_check_out = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.gb_lantai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cart)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_A101
             // 
             this.btn_A101.BackColor = System.Drawing.Color.Lime;
-            this.btn_A101.Location = new System.Drawing.Point(48, 513);
+            this.btn_A101.Location = new System.Drawing.Point(55, 608);
             this.btn_A101.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A101.Name = "btn_A101";
             this.btn_A101.Size = new System.Drawing.Size(70, 86);
@@ -154,19 +163,21 @@
             // 
             // btn_proses
             // 
-            this.btn_proses.Location = new System.Drawing.Point(675, 32);
+            this.btn_proses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btn_proses.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_proses.Location = new System.Drawing.Point(682, 127);
             this.btn_proses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_proses.Name = "btn_proses";
             this.btn_proses.Size = new System.Drawing.Size(102, 30);
             this.btn_proses.TabIndex = 3;
             this.btn_proses.Text = "Proses";
-            this.btn_proses.UseVisualStyleBackColor = true;
+            this.btn_proses.UseVisualStyleBackColor = false;
             this.btn_proses.Click += new System.EventHandler(this.btn_proses_Click);
             // 
             // btn_A104
             // 
             this.btn_A104.BackColor = System.Drawing.Color.Lime;
-            this.btn_A104.Location = new System.Drawing.Point(51, 145);
+            this.btn_A104.Location = new System.Drawing.Point(58, 240);
             this.btn_A104.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A104.Name = "btn_A104";
             this.btn_A104.Size = new System.Drawing.Size(70, 86);
@@ -178,7 +189,7 @@
             // btn_A102
             // 
             this.btn_A102.BackColor = System.Drawing.Color.Lime;
-            this.btn_A102.Location = new System.Drawing.Point(51, 395);
+            this.btn_A102.Location = new System.Drawing.Point(58, 490);
             this.btn_A102.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A102.Name = "btn_A102";
             this.btn_A102.Size = new System.Drawing.Size(70, 86);
@@ -190,7 +201,7 @@
             // btn_A106
             // 
             this.btn_A106.BackColor = System.Drawing.Color.Lime;
-            this.btn_A106.Location = new System.Drawing.Point(126, 263);
+            this.btn_A106.Location = new System.Drawing.Point(133, 358);
             this.btn_A106.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A106.Name = "btn_A106";
             this.btn_A106.Size = new System.Drawing.Size(70, 86);
@@ -202,7 +213,7 @@
             // btn_A103
             // 
             this.btn_A103.BackColor = System.Drawing.Color.Lime;
-            this.btn_A103.Location = new System.Drawing.Point(51, 263);
+            this.btn_A103.Location = new System.Drawing.Point(58, 358);
             this.btn_A103.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A103.Name = "btn_A103";
             this.btn_A103.Size = new System.Drawing.Size(70, 86);
@@ -214,7 +225,7 @@
             // btn_A105
             // 
             this.btn_A105.BackColor = System.Drawing.Color.Lime;
-            this.btn_A105.Location = new System.Drawing.Point(126, 145);
+            this.btn_A105.Location = new System.Drawing.Point(133, 240);
             this.btn_A105.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A105.Name = "btn_A105";
             this.btn_A105.Size = new System.Drawing.Size(70, 86);
@@ -226,7 +237,7 @@
             // btn_A110
             // 
             this.btn_A110.BackColor = System.Drawing.Color.Lime;
-            this.btn_A110.Location = new System.Drawing.Point(202, 263);
+            this.btn_A110.Location = new System.Drawing.Point(209, 358);
             this.btn_A110.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A110.Name = "btn_A110";
             this.btn_A110.Size = new System.Drawing.Size(70, 86);
@@ -238,7 +249,7 @@
             // btn_A113
             // 
             this.btn_A113.BackColor = System.Drawing.Color.Lime;
-            this.btn_A113.Location = new System.Drawing.Point(277, 145);
+            this.btn_A113.Location = new System.Drawing.Point(284, 240);
             this.btn_A113.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A113.Name = "btn_A113";
             this.btn_A113.Size = new System.Drawing.Size(70, 86);
@@ -250,7 +261,7 @@
             // btn_A109
             // 
             this.btn_A109.BackColor = System.Drawing.Color.Lime;
-            this.btn_A109.Location = new System.Drawing.Point(202, 145);
+            this.btn_A109.Location = new System.Drawing.Point(209, 240);
             this.btn_A109.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A109.Name = "btn_A109";
             this.btn_A109.Size = new System.Drawing.Size(70, 86);
@@ -262,7 +273,7 @@
             // btn_A114
             // 
             this.btn_A114.BackColor = System.Drawing.Color.Lime;
-            this.btn_A114.Location = new System.Drawing.Point(277, 263);
+            this.btn_A114.Location = new System.Drawing.Point(284, 358);
             this.btn_A114.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A114.Name = "btn_A114";
             this.btn_A114.Size = new System.Drawing.Size(70, 86);
@@ -274,7 +285,7 @@
             // btn_A122
             // 
             this.btn_A122.BackColor = System.Drawing.Color.Lime;
-            this.btn_A122.Location = new System.Drawing.Point(504, 263);
+            this.btn_A122.Location = new System.Drawing.Point(511, 358);
             this.btn_A122.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A122.Name = "btn_A122";
             this.btn_A122.Size = new System.Drawing.Size(70, 86);
@@ -286,7 +297,7 @@
             // btn_A118
             // 
             this.btn_A118.BackColor = System.Drawing.Color.Lime;
-            this.btn_A118.Location = new System.Drawing.Point(353, 263);
+            this.btn_A118.Location = new System.Drawing.Point(360, 358);
             this.btn_A118.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A118.Name = "btn_A118";
             this.btn_A118.Size = new System.Drawing.Size(70, 86);
@@ -298,7 +309,7 @@
             // btn_A121
             // 
             this.btn_A121.BackColor = System.Drawing.Color.Lime;
-            this.btn_A121.Location = new System.Drawing.Point(504, 145);
+            this.btn_A121.Location = new System.Drawing.Point(511, 240);
             this.btn_A121.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A121.Name = "btn_A121";
             this.btn_A121.Size = new System.Drawing.Size(70, 86);
@@ -310,7 +321,7 @@
             // btn_A120
             // 
             this.btn_A120.BackColor = System.Drawing.Color.Lime;
-            this.btn_A120.Location = new System.Drawing.Point(428, 263);
+            this.btn_A120.Location = new System.Drawing.Point(435, 358);
             this.btn_A120.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A120.Name = "btn_A120";
             this.btn_A120.Size = new System.Drawing.Size(70, 86);
@@ -322,7 +333,7 @@
             // btn_A119
             // 
             this.btn_A119.BackColor = System.Drawing.Color.Lime;
-            this.btn_A119.Location = new System.Drawing.Point(428, 145);
+            this.btn_A119.Location = new System.Drawing.Point(435, 240);
             this.btn_A119.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A119.Name = "btn_A119";
             this.btn_A119.Size = new System.Drawing.Size(70, 86);
@@ -334,7 +345,7 @@
             // btn_A117
             // 
             this.btn_A117.BackColor = System.Drawing.Color.Lime;
-            this.btn_A117.Location = new System.Drawing.Point(353, 145);
+            this.btn_A117.Location = new System.Drawing.Point(360, 240);
             this.btn_A117.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A117.Name = "btn_A117";
             this.btn_A117.Size = new System.Drawing.Size(70, 86);
@@ -346,7 +357,7 @@
             // btn_A124
             // 
             this.btn_A124.BackColor = System.Drawing.Color.Lime;
-            this.btn_A124.Location = new System.Drawing.Point(579, 263);
+            this.btn_A124.Location = new System.Drawing.Point(586, 358);
             this.btn_A124.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A124.Name = "btn_A124";
             this.btn_A124.Size = new System.Drawing.Size(70, 86);
@@ -358,7 +369,7 @@
             // btn_A125
             // 
             this.btn_A125.BackColor = System.Drawing.Color.Lime;
-            this.btn_A125.Location = new System.Drawing.Point(655, 145);
+            this.btn_A125.Location = new System.Drawing.Point(662, 240);
             this.btn_A125.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A125.Name = "btn_A125";
             this.btn_A125.Size = new System.Drawing.Size(70, 86);
@@ -370,7 +381,7 @@
             // btn_A123
             // 
             this.btn_A123.BackColor = System.Drawing.Color.Lime;
-            this.btn_A123.Location = new System.Drawing.Point(579, 145);
+            this.btn_A123.Location = new System.Drawing.Point(586, 240);
             this.btn_A123.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A123.Name = "btn_A123";
             this.btn_A123.Size = new System.Drawing.Size(70, 86);
@@ -382,7 +393,7 @@
             // btn_A138
             // 
             this.btn_A138.BackColor = System.Drawing.Color.Lime;
-            this.btn_A138.Location = new System.Drawing.Point(882, 263);
+            this.btn_A138.Location = new System.Drawing.Point(889, 358);
             this.btn_A138.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A138.Name = "btn_A138";
             this.btn_A138.Size = new System.Drawing.Size(70, 86);
@@ -394,7 +405,7 @@
             // btn_A137
             // 
             this.btn_A137.BackColor = System.Drawing.Color.Lime;
-            this.btn_A137.Location = new System.Drawing.Point(882, 145);
+            this.btn_A137.Location = new System.Drawing.Point(889, 240);
             this.btn_A137.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A137.Name = "btn_A137";
             this.btn_A137.Size = new System.Drawing.Size(70, 86);
@@ -406,7 +417,7 @@
             // btn_A133
             // 
             this.btn_A133.BackColor = System.Drawing.Color.Lime;
-            this.btn_A133.Location = new System.Drawing.Point(806, 145);
+            this.btn_A133.Location = new System.Drawing.Point(813, 240);
             this.btn_A133.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A133.Name = "btn_A133";
             this.btn_A133.Size = new System.Drawing.Size(70, 86);
@@ -418,7 +429,7 @@
             // btn_A134
             // 
             this.btn_A134.BackColor = System.Drawing.Color.Lime;
-            this.btn_A134.Location = new System.Drawing.Point(806, 263);
+            this.btn_A134.Location = new System.Drawing.Point(813, 358);
             this.btn_A134.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A134.Name = "btn_A134";
             this.btn_A134.Size = new System.Drawing.Size(70, 86);
@@ -430,7 +441,7 @@
             // btn_A130
             // 
             this.btn_A130.BackColor = System.Drawing.Color.Lime;
-            this.btn_A130.Location = new System.Drawing.Point(731, 263);
+            this.btn_A130.Location = new System.Drawing.Point(738, 358);
             this.btn_A130.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A130.Name = "btn_A130";
             this.btn_A130.Size = new System.Drawing.Size(70, 86);
@@ -442,7 +453,7 @@
             // btn_A129
             // 
             this.btn_A129.BackColor = System.Drawing.Color.Lime;
-            this.btn_A129.Location = new System.Drawing.Point(731, 145);
+            this.btn_A129.Location = new System.Drawing.Point(738, 240);
             this.btn_A129.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A129.Name = "btn_A129";
             this.btn_A129.Size = new System.Drawing.Size(70, 86);
@@ -454,7 +465,7 @@
             // btn_A126
             // 
             this.btn_A126.BackColor = System.Drawing.Color.Lime;
-            this.btn_A126.Location = new System.Drawing.Point(655, 263);
+            this.btn_A126.Location = new System.Drawing.Point(662, 358);
             this.btn_A126.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A126.Name = "btn_A126";
             this.btn_A126.Size = new System.Drawing.Size(70, 86);
@@ -466,7 +477,7 @@
             // btn_A127
             // 
             this.btn_A127.BackColor = System.Drawing.Color.Lime;
-            this.btn_A127.Location = new System.Drawing.Point(655, 395);
+            this.btn_A127.Location = new System.Drawing.Point(662, 490);
             this.btn_A127.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A127.Name = "btn_A127";
             this.btn_A127.Size = new System.Drawing.Size(70, 86);
@@ -478,7 +489,7 @@
             // btn_A128
             // 
             this.btn_A128.BackColor = System.Drawing.Color.Lime;
-            this.btn_A128.Location = new System.Drawing.Point(655, 513);
+            this.btn_A128.Location = new System.Drawing.Point(662, 608);
             this.btn_A128.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A128.Name = "btn_A128";
             this.btn_A128.Size = new System.Drawing.Size(70, 86);
@@ -490,7 +501,7 @@
             // btn_A132
             // 
             this.btn_A132.BackColor = System.Drawing.Color.Lime;
-            this.btn_A132.Location = new System.Drawing.Point(731, 513);
+            this.btn_A132.Location = new System.Drawing.Point(738, 608);
             this.btn_A132.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A132.Name = "btn_A132";
             this.btn_A132.Size = new System.Drawing.Size(70, 86);
@@ -502,7 +513,7 @@
             // btn_A131
             // 
             this.btn_A131.BackColor = System.Drawing.Color.Lime;
-            this.btn_A131.Location = new System.Drawing.Point(731, 395);
+            this.btn_A131.Location = new System.Drawing.Point(738, 490);
             this.btn_A131.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A131.Name = "btn_A131";
             this.btn_A131.Size = new System.Drawing.Size(70, 86);
@@ -514,7 +525,7 @@
             // btn_A135
             // 
             this.btn_A135.BackColor = System.Drawing.Color.Lime;
-            this.btn_A135.Location = new System.Drawing.Point(806, 395);
+            this.btn_A135.Location = new System.Drawing.Point(813, 490);
             this.btn_A135.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A135.Name = "btn_A135";
             this.btn_A135.Size = new System.Drawing.Size(70, 86);
@@ -526,7 +537,7 @@
             // btn_A136
             // 
             this.btn_A136.BackColor = System.Drawing.Color.Lime;
-            this.btn_A136.Location = new System.Drawing.Point(806, 513);
+            this.btn_A136.Location = new System.Drawing.Point(813, 608);
             this.btn_A136.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A136.Name = "btn_A136";
             this.btn_A136.Size = new System.Drawing.Size(70, 86);
@@ -538,7 +549,7 @@
             // btn_A115
             // 
             this.btn_A115.BackColor = System.Drawing.Color.Lime;
-            this.btn_A115.Location = new System.Drawing.Point(277, 395);
+            this.btn_A115.Location = new System.Drawing.Point(284, 490);
             this.btn_A115.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A115.Name = "btn_A115";
             this.btn_A115.Size = new System.Drawing.Size(70, 86);
@@ -550,7 +561,7 @@
             // btn_A116
             // 
             this.btn_A116.BackColor = System.Drawing.Color.Lime;
-            this.btn_A116.Location = new System.Drawing.Point(277, 513);
+            this.btn_A116.Location = new System.Drawing.Point(284, 608);
             this.btn_A116.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A116.Name = "btn_A116";
             this.btn_A116.Size = new System.Drawing.Size(70, 86);
@@ -562,7 +573,7 @@
             // btn_A112
             // 
             this.btn_A112.BackColor = System.Drawing.Color.Lime;
-            this.btn_A112.Location = new System.Drawing.Point(202, 513);
+            this.btn_A112.Location = new System.Drawing.Point(209, 608);
             this.btn_A112.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A112.Name = "btn_A112";
             this.btn_A112.Size = new System.Drawing.Size(70, 86);
@@ -574,7 +585,7 @@
             // btn_A107
             // 
             this.btn_A107.BackColor = System.Drawing.Color.Lime;
-            this.btn_A107.Location = new System.Drawing.Point(126, 395);
+            this.btn_A107.Location = new System.Drawing.Point(133, 490);
             this.btn_A107.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A107.Name = "btn_A107";
             this.btn_A107.Size = new System.Drawing.Size(70, 86);
@@ -586,7 +597,7 @@
             // btn_A111
             // 
             this.btn_A111.BackColor = System.Drawing.Color.Lime;
-            this.btn_A111.Location = new System.Drawing.Point(202, 395);
+            this.btn_A111.Location = new System.Drawing.Point(209, 490);
             this.btn_A111.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A111.Name = "btn_A111";
             this.btn_A111.Size = new System.Drawing.Size(70, 86);
@@ -598,7 +609,7 @@
             // btn_A108
             // 
             this.btn_A108.BackColor = System.Drawing.Color.Lime;
-            this.btn_A108.Location = new System.Drawing.Point(126, 513);
+            this.btn_A108.Location = new System.Drawing.Point(133, 608);
             this.btn_A108.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A108.Name = "btn_A108";
             this.btn_A108.Size = new System.Drawing.Size(70, 86);
@@ -610,7 +621,7 @@
             // btn_A139
             // 
             this.btn_A139.BackColor = System.Drawing.Color.Lime;
-            this.btn_A139.Location = new System.Drawing.Point(882, 395);
+            this.btn_A139.Location = new System.Drawing.Point(889, 490);
             this.btn_A139.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A139.Name = "btn_A139";
             this.btn_A139.Size = new System.Drawing.Size(70, 86);
@@ -622,7 +633,7 @@
             // btn_A140
             // 
             this.btn_A140.BackColor = System.Drawing.Color.Lime;
-            this.btn_A140.Location = new System.Drawing.Point(882, 513);
+            this.btn_A140.Location = new System.Drawing.Point(889, 608);
             this.btn_A140.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A140.Name = "btn_A140";
             this.btn_A140.Size = new System.Drawing.Size(70, 86);
@@ -635,7 +646,7 @@
             // 
             this.gb_lantai.Controls.Add(this.btn_lantai2);
             this.gb_lantai.Controls.Add(this.btn_lantai1);
-            this.gb_lantai.Location = new System.Drawing.Point(353, 388);
+            this.gb_lantai.Location = new System.Drawing.Point(360, 483);
             this.gb_lantai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gb_lantai.Name = "gb_lantai";
             this.gb_lantai.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -647,6 +658,7 @@
             // btn_lantai2
             // 
             this.btn_lantai2.BackColor = System.Drawing.Color.White;
+            this.btn_lantai2.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_lantai2.Location = new System.Drawing.Point(13, 89);
             this.btn_lantai2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_lantai2.Name = "btn_lantai2";
@@ -658,7 +670,8 @@
             // 
             // btn_lantai1
             // 
-            this.btn_lantai1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btn_lantai1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(207)))), ((int)(((byte)(160)))));
+            this.btn_lantai1.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_lantai1.Location = new System.Drawing.Point(13, 33);
             this.btn_lantai1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_lantai1.Name = "btn_lantai1";
@@ -671,7 +684,7 @@
             // btn_A239
             // 
             this.btn_A239.BackColor = System.Drawing.Color.Lime;
-            this.btn_A239.Location = new System.Drawing.Point(882, 395);
+            this.btn_A239.Location = new System.Drawing.Point(889, 490);
             this.btn_A239.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A239.Name = "btn_A239";
             this.btn_A239.Size = new System.Drawing.Size(70, 86);
@@ -684,7 +697,7 @@
             // btn_A240
             // 
             this.btn_A240.BackColor = System.Drawing.Color.Lime;
-            this.btn_A240.Location = new System.Drawing.Point(882, 513);
+            this.btn_A240.Location = new System.Drawing.Point(889, 608);
             this.btn_A240.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A240.Name = "btn_A240";
             this.btn_A240.Size = new System.Drawing.Size(70, 86);
@@ -697,7 +710,7 @@
             // btn_A227
             // 
             this.btn_A227.BackColor = System.Drawing.Color.Lime;
-            this.btn_A227.Location = new System.Drawing.Point(655, 395);
+            this.btn_A227.Location = new System.Drawing.Point(662, 490);
             this.btn_A227.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A227.Name = "btn_A227";
             this.btn_A227.Size = new System.Drawing.Size(70, 86);
@@ -710,7 +723,7 @@
             // btn_A228
             // 
             this.btn_A228.BackColor = System.Drawing.Color.Lime;
-            this.btn_A228.Location = new System.Drawing.Point(655, 513);
+            this.btn_A228.Location = new System.Drawing.Point(662, 608);
             this.btn_A228.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A228.Name = "btn_A228";
             this.btn_A228.Size = new System.Drawing.Size(70, 86);
@@ -723,7 +736,7 @@
             // btn_A232
             // 
             this.btn_A232.BackColor = System.Drawing.Color.Lime;
-            this.btn_A232.Location = new System.Drawing.Point(730, 513);
+            this.btn_A232.Location = new System.Drawing.Point(737, 608);
             this.btn_A232.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A232.Name = "btn_A232";
             this.btn_A232.Size = new System.Drawing.Size(70, 86);
@@ -736,7 +749,7 @@
             // btn_A231
             // 
             this.btn_A231.BackColor = System.Drawing.Color.Lime;
-            this.btn_A231.Location = new System.Drawing.Point(732, 395);
+            this.btn_A231.Location = new System.Drawing.Point(739, 490);
             this.btn_A231.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A231.Name = "btn_A231";
             this.btn_A231.Size = new System.Drawing.Size(70, 86);
@@ -749,7 +762,7 @@
             // btn_A235
             // 
             this.btn_A235.BackColor = System.Drawing.Color.Lime;
-            this.btn_A235.Location = new System.Drawing.Point(806, 395);
+            this.btn_A235.Location = new System.Drawing.Point(813, 490);
             this.btn_A235.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A235.Name = "btn_A235";
             this.btn_A235.Size = new System.Drawing.Size(70, 86);
@@ -762,7 +775,7 @@
             // btn_A236
             // 
             this.btn_A236.BackColor = System.Drawing.Color.Lime;
-            this.btn_A236.Location = new System.Drawing.Point(806, 513);
+            this.btn_A236.Location = new System.Drawing.Point(813, 608);
             this.btn_A236.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A236.Name = "btn_A236";
             this.btn_A236.Size = new System.Drawing.Size(70, 86);
@@ -775,7 +788,7 @@
             // btn_A215
             // 
             this.btn_A215.BackColor = System.Drawing.Color.Lime;
-            this.btn_A215.Location = new System.Drawing.Point(277, 395);
+            this.btn_A215.Location = new System.Drawing.Point(284, 490);
             this.btn_A215.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A215.Name = "btn_A215";
             this.btn_A215.Size = new System.Drawing.Size(70, 86);
@@ -788,7 +801,7 @@
             // btn_A216
             // 
             this.btn_A216.BackColor = System.Drawing.Color.Lime;
-            this.btn_A216.Location = new System.Drawing.Point(278, 513);
+            this.btn_A216.Location = new System.Drawing.Point(285, 608);
             this.btn_A216.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A216.Name = "btn_A216";
             this.btn_A216.Size = new System.Drawing.Size(70, 86);
@@ -801,7 +814,7 @@
             // btn_A212
             // 
             this.btn_A212.BackColor = System.Drawing.Color.Lime;
-            this.btn_A212.Location = new System.Drawing.Point(201, 513);
+            this.btn_A212.Location = new System.Drawing.Point(208, 608);
             this.btn_A212.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A212.Name = "btn_A212";
             this.btn_A212.Size = new System.Drawing.Size(70, 86);
@@ -814,7 +827,7 @@
             // btn_A207
             // 
             this.btn_A207.BackColor = System.Drawing.Color.Lime;
-            this.btn_A207.Location = new System.Drawing.Point(126, 395);
+            this.btn_A207.Location = new System.Drawing.Point(133, 490);
             this.btn_A207.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A207.Name = "btn_A207";
             this.btn_A207.Size = new System.Drawing.Size(70, 86);
@@ -827,7 +840,7 @@
             // btn_A211
             // 
             this.btn_A211.BackColor = System.Drawing.Color.Lime;
-            this.btn_A211.Location = new System.Drawing.Point(203, 395);
+            this.btn_A211.Location = new System.Drawing.Point(210, 490);
             this.btn_A211.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A211.Name = "btn_A211";
             this.btn_A211.Size = new System.Drawing.Size(70, 86);
@@ -840,7 +853,7 @@
             // btn_A208
             // 
             this.btn_A208.BackColor = System.Drawing.Color.Lime;
-            this.btn_A208.Location = new System.Drawing.Point(127, 513);
+            this.btn_A208.Location = new System.Drawing.Point(134, 608);
             this.btn_A208.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A208.Name = "btn_A208";
             this.btn_A208.Size = new System.Drawing.Size(70, 86);
@@ -853,7 +866,7 @@
             // btn_A226
             // 
             this.btn_A226.BackColor = System.Drawing.Color.Lime;
-            this.btn_A226.Location = new System.Drawing.Point(655, 263);
+            this.btn_A226.Location = new System.Drawing.Point(662, 358);
             this.btn_A226.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A226.Name = "btn_A226";
             this.btn_A226.Size = new System.Drawing.Size(70, 86);
@@ -866,7 +879,7 @@
             // btn_A229
             // 
             this.btn_A229.BackColor = System.Drawing.Color.Lime;
-            this.btn_A229.Location = new System.Drawing.Point(732, 145);
+            this.btn_A229.Location = new System.Drawing.Point(739, 240);
             this.btn_A229.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A229.Name = "btn_A229";
             this.btn_A229.Size = new System.Drawing.Size(70, 86);
@@ -879,7 +892,7 @@
             // btn_A230
             // 
             this.btn_A230.BackColor = System.Drawing.Color.Lime;
-            this.btn_A230.Location = new System.Drawing.Point(732, 263);
+            this.btn_A230.Location = new System.Drawing.Point(739, 358);
             this.btn_A230.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A230.Name = "btn_A230";
             this.btn_A230.Size = new System.Drawing.Size(70, 86);
@@ -892,7 +905,7 @@
             // btn_A234
             // 
             this.btn_A234.BackColor = System.Drawing.Color.Lime;
-            this.btn_A234.Location = new System.Drawing.Point(806, 263);
+            this.btn_A234.Location = new System.Drawing.Point(813, 358);
             this.btn_A234.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A234.Name = "btn_A234";
             this.btn_A234.Size = new System.Drawing.Size(70, 86);
@@ -905,7 +918,7 @@
             // btn_A233
             // 
             this.btn_A233.BackColor = System.Drawing.Color.Lime;
-            this.btn_A233.Location = new System.Drawing.Point(806, 145);
+            this.btn_A233.Location = new System.Drawing.Point(813, 240);
             this.btn_A233.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A233.Name = "btn_A233";
             this.btn_A233.Size = new System.Drawing.Size(70, 86);
@@ -918,7 +931,7 @@
             // btn_A237
             // 
             this.btn_A237.BackColor = System.Drawing.Color.Lime;
-            this.btn_A237.Location = new System.Drawing.Point(882, 145);
+            this.btn_A237.Location = new System.Drawing.Point(889, 240);
             this.btn_A237.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A237.Name = "btn_A237";
             this.btn_A237.Size = new System.Drawing.Size(70, 86);
@@ -931,7 +944,7 @@
             // btn_A238
             // 
             this.btn_A238.BackColor = System.Drawing.Color.Lime;
-            this.btn_A238.Location = new System.Drawing.Point(882, 263);
+            this.btn_A238.Location = new System.Drawing.Point(889, 358);
             this.btn_A238.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A238.Name = "btn_A238";
             this.btn_A238.Size = new System.Drawing.Size(70, 86);
@@ -944,7 +957,7 @@
             // btn_A223
             // 
             this.btn_A223.BackColor = System.Drawing.Color.Lime;
-            this.btn_A223.Location = new System.Drawing.Point(580, 145);
+            this.btn_A223.Location = new System.Drawing.Point(587, 240);
             this.btn_A223.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A223.Name = "btn_A223";
             this.btn_A223.Size = new System.Drawing.Size(70, 86);
@@ -957,7 +970,7 @@
             // btn_A225
             // 
             this.btn_A225.BackColor = System.Drawing.Color.Lime;
-            this.btn_A225.Location = new System.Drawing.Point(656, 145);
+            this.btn_A225.Location = new System.Drawing.Point(663, 240);
             this.btn_A225.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A225.Name = "btn_A225";
             this.btn_A225.Size = new System.Drawing.Size(70, 86);
@@ -970,7 +983,7 @@
             // btn_A224
             // 
             this.btn_A224.BackColor = System.Drawing.Color.Lime;
-            this.btn_A224.Location = new System.Drawing.Point(580, 263);
+            this.btn_A224.Location = new System.Drawing.Point(587, 358);
             this.btn_A224.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A224.Name = "btn_A224";
             this.btn_A224.Size = new System.Drawing.Size(70, 86);
@@ -983,7 +996,7 @@
             // btn_A217
             // 
             this.btn_A217.BackColor = System.Drawing.Color.Lime;
-            this.btn_A217.Location = new System.Drawing.Point(353, 145);
+            this.btn_A217.Location = new System.Drawing.Point(360, 240);
             this.btn_A217.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A217.Name = "btn_A217";
             this.btn_A217.Size = new System.Drawing.Size(70, 86);
@@ -996,7 +1009,7 @@
             // btn_A219
             // 
             this.btn_A219.BackColor = System.Drawing.Color.Lime;
-            this.btn_A219.Location = new System.Drawing.Point(429, 145);
+            this.btn_A219.Location = new System.Drawing.Point(436, 240);
             this.btn_A219.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A219.Name = "btn_A219";
             this.btn_A219.Size = new System.Drawing.Size(70, 86);
@@ -1009,7 +1022,7 @@
             // btn_A220
             // 
             this.btn_A220.BackColor = System.Drawing.Color.Lime;
-            this.btn_A220.Location = new System.Drawing.Point(429, 263);
+            this.btn_A220.Location = new System.Drawing.Point(436, 358);
             this.btn_A220.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A220.Name = "btn_A220";
             this.btn_A220.Size = new System.Drawing.Size(70, 86);
@@ -1022,7 +1035,7 @@
             // btn_A221
             // 
             this.btn_A221.BackColor = System.Drawing.Color.Lime;
-            this.btn_A221.Location = new System.Drawing.Point(503, 145);
+            this.btn_A221.Location = new System.Drawing.Point(510, 240);
             this.btn_A221.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A221.Name = "btn_A221";
             this.btn_A221.Size = new System.Drawing.Size(70, 86);
@@ -1035,7 +1048,7 @@
             // btn_A218
             // 
             this.btn_A218.BackColor = System.Drawing.Color.Lime;
-            this.btn_A218.Location = new System.Drawing.Point(352, 263);
+            this.btn_A218.Location = new System.Drawing.Point(359, 358);
             this.btn_A218.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A218.Name = "btn_A218";
             this.btn_A218.Size = new System.Drawing.Size(70, 86);
@@ -1048,7 +1061,7 @@
             // btn_A222
             // 
             this.btn_A222.BackColor = System.Drawing.Color.Lime;
-            this.btn_A222.Location = new System.Drawing.Point(503, 263);
+            this.btn_A222.Location = new System.Drawing.Point(510, 358);
             this.btn_A222.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A222.Name = "btn_A222";
             this.btn_A222.Size = new System.Drawing.Size(70, 86);
@@ -1061,7 +1074,7 @@
             // btn_A214
             // 
             this.btn_A214.BackColor = System.Drawing.Color.Lime;
-            this.btn_A214.Location = new System.Drawing.Point(276, 263);
+            this.btn_A214.Location = new System.Drawing.Point(283, 358);
             this.btn_A214.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A214.Name = "btn_A214";
             this.btn_A214.Size = new System.Drawing.Size(70, 86);
@@ -1074,7 +1087,7 @@
             // btn_A209
             // 
             this.btn_A209.BackColor = System.Drawing.Color.Lime;
-            this.btn_A209.Location = new System.Drawing.Point(203, 145);
+            this.btn_A209.Location = new System.Drawing.Point(210, 240);
             this.btn_A209.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A209.Name = "btn_A209";
             this.btn_A209.Size = new System.Drawing.Size(70, 86);
@@ -1087,7 +1100,7 @@
             // btn_A213
             // 
             this.btn_A213.BackColor = System.Drawing.Color.Lime;
-            this.btn_A213.Location = new System.Drawing.Point(276, 145);
+            this.btn_A213.Location = new System.Drawing.Point(283, 240);
             this.btn_A213.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A213.Name = "btn_A213";
             this.btn_A213.Size = new System.Drawing.Size(70, 86);
@@ -1100,7 +1113,7 @@
             // btn_A210
             // 
             this.btn_A210.BackColor = System.Drawing.Color.Lime;
-            this.btn_A210.Location = new System.Drawing.Point(203, 263);
+            this.btn_A210.Location = new System.Drawing.Point(210, 358);
             this.btn_A210.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A210.Name = "btn_A210";
             this.btn_A210.Size = new System.Drawing.Size(70, 86);
@@ -1113,7 +1126,7 @@
             // btn_A205
             // 
             this.btn_A205.BackColor = System.Drawing.Color.Lime;
-            this.btn_A205.Location = new System.Drawing.Point(126, 145);
+            this.btn_A205.Location = new System.Drawing.Point(133, 240);
             this.btn_A205.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A205.Name = "btn_A205";
             this.btn_A205.Size = new System.Drawing.Size(70, 86);
@@ -1126,7 +1139,7 @@
             // btn_A203
             // 
             this.btn_A203.BackColor = System.Drawing.Color.Lime;
-            this.btn_A203.Location = new System.Drawing.Point(51, 263);
+            this.btn_A203.Location = new System.Drawing.Point(58, 358);
             this.btn_A203.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A203.Name = "btn_A203";
             this.btn_A203.Size = new System.Drawing.Size(70, 86);
@@ -1139,7 +1152,7 @@
             // btn_A206
             // 
             this.btn_A206.BackColor = System.Drawing.Color.Lime;
-            this.btn_A206.Location = new System.Drawing.Point(127, 263);
+            this.btn_A206.Location = new System.Drawing.Point(134, 358);
             this.btn_A206.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A206.Name = "btn_A206";
             this.btn_A206.Size = new System.Drawing.Size(70, 86);
@@ -1152,7 +1165,7 @@
             // btn_A202
             // 
             this.btn_A202.BackColor = System.Drawing.Color.Lime;
-            this.btn_A202.Location = new System.Drawing.Point(51, 395);
+            this.btn_A202.Location = new System.Drawing.Point(58, 490);
             this.btn_A202.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A202.Name = "btn_A202";
             this.btn_A202.Size = new System.Drawing.Size(70, 86);
@@ -1165,7 +1178,7 @@
             // btn_A204
             // 
             this.btn_A204.BackColor = System.Drawing.Color.Lime;
-            this.btn_A204.Location = new System.Drawing.Point(51, 145);
+            this.btn_A204.Location = new System.Drawing.Point(58, 240);
             this.btn_A204.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A204.Name = "btn_A204";
             this.btn_A204.Size = new System.Drawing.Size(70, 86);
@@ -1178,7 +1191,7 @@
             // btn_A201
             // 
             this.btn_A201.BackColor = System.Drawing.Color.Lime;
-            this.btn_A201.Location = new System.Drawing.Point(48, 513);
+            this.btn_A201.Location = new System.Drawing.Point(55, 608);
             this.btn_A201.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_A201.Name = "btn_A201";
             this.btn_A201.Size = new System.Drawing.Size(70, 86);
@@ -1191,46 +1204,47 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 37);
+            this.label1.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(51, 131);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 20);
+            this.label1.Size = new System.Drawing.Size(140, 22);
             this.label1.TabIndex = 93;
             this.label1.Text = "Nama Pelanggan: ";
             // 
             // LblKeterangan
             // 
             this.LblKeterangan.AutoSize = true;
-            this.LblKeterangan.Location = new System.Drawing.Point(799, 37);
+            this.LblKeterangan.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblKeterangan.Location = new System.Drawing.Point(806, 132);
             this.LblKeterangan.Name = "LblKeterangan";
-            this.LblKeterangan.Size = new System.Drawing.Size(153, 64);
+            this.LblKeterangan.Size = new System.Drawing.Size(158, 76);
             this.LblKeterangan.TabIndex = 99;
             this.LblKeterangan.Text = "1. Presidential Suite (PS)\r\n2. Suite (S)\r\n3. Junior Suite (JS)\r\n4. Deluxe (D)";
             // 
             // lbl_check_in
             // 
             this.lbl_check_in.AutoSize = true;
-            this.lbl_check_in.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_check_in.Location = new System.Drawing.Point(51, 82);
+            this.lbl_check_in.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_check_in.Location = new System.Drawing.Point(51, 176);
             this.lbl_check_in.Name = "lbl_check_in";
-            this.lbl_check_in.Size = new System.Drawing.Size(125, 20);
+            this.lbl_check_in.Size = new System.Drawing.Size(141, 22);
             this.lbl_check_in.TabIndex = 102;
             this.lbl_check_in.Text = "Tanggal Check In:";
             // 
             // lbl_check_out
             // 
             this.lbl_check_out.AutoSize = true;
-            this.lbl_check_out.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_check_out.Location = new System.Drawing.Point(425, 84);
+            this.lbl_check_out.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_check_out.Location = new System.Drawing.Point(431, 177);
             this.lbl_check_out.Name = "lbl_check_out";
-            this.lbl_check_out.Size = new System.Drawing.Size(137, 20);
+            this.lbl_check_out.Size = new System.Drawing.Size(155, 22);
             this.lbl_check_out.TabIndex = 103;
             this.lbl_check_out.Text = "Tanggal Check Out:";
             // 
             // datetime_check_in
             // 
             this.datetime_check_in.Enabled = false;
-            this.datetime_check_in.Location = new System.Drawing.Point(186, 82);
+            this.datetime_check_in.Location = new System.Drawing.Point(193, 177);
             this.datetime_check_in.Name = "datetime_check_in";
             this.datetime_check_in.Size = new System.Drawing.Size(200, 22);
             this.datetime_check_in.TabIndex = 104;
@@ -1238,7 +1252,7 @@
             // datetime_check_out
             // 
             this.datetime_check_out.Enabled = false;
-            this.datetime_check_out.Location = new System.Drawing.Point(577, 82);
+            this.datetime_check_out.Location = new System.Drawing.Point(584, 177);
             this.datetime_check_out.Name = "datetime_check_out";
             this.datetime_check_out.Size = new System.Drawing.Size(200, 22);
             this.datetime_check_out.TabIndex = 105;
@@ -1248,7 +1262,7 @@
             this.cb_pelanggan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_pelanggan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_pelanggan.FormattingEnabled = true;
-            this.cb_pelanggan.Location = new System.Drawing.Point(186, 35);
+            this.cb_pelanggan.Location = new System.Drawing.Point(193, 130);
             this.cb_pelanggan.Name = "cb_pelanggan";
             this.cb_pelanggan.Size = new System.Drawing.Size(462, 24);
             this.cb_pelanggan.TabIndex = 107;
@@ -1258,7 +1272,7 @@
             // pic_status
             // 
             this.pic_status.BackColor = System.Drawing.Color.Red;
-            this.pic_status.Location = new System.Drawing.Point(654, 39);
+            this.pic_status.Location = new System.Drawing.Point(661, 134);
             this.pic_status.Name = "pic_status";
             this.pic_status.Size = new System.Drawing.Size(16, 16);
             this.pic_status.TabIndex = 108;
@@ -1266,24 +1280,28 @@
             // 
             // btn_tambah_pelanggan
             // 
-            this.btn_tambah_pelanggan.Location = new System.Drawing.Point(675, 32);
+            this.btn_tambah_pelanggan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btn_tambah_pelanggan.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tambah_pelanggan.Location = new System.Drawing.Point(682, 128);
             this.btn_tambah_pelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_tambah_pelanggan.Name = "btn_tambah_pelanggan";
             this.btn_tambah_pelanggan.Size = new System.Drawing.Size(102, 30);
             this.btn_tambah_pelanggan.TabIndex = 109;
             this.btn_tambah_pelanggan.Text = "Tambah";
-            this.btn_tambah_pelanggan.UseVisualStyleBackColor = true;
+            this.btn_tambah_pelanggan.UseVisualStyleBackColor = false;
             this.btn_tambah_pelanggan.Click += new System.EventHandler(this.btn_tambah_pelanggan_Click);
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(675, 32);
+            this.btn_cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btn_cancel.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.Location = new System.Drawing.Point(682, 129);
             this.btn_cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(102, 30);
             this.btn_cancel.TabIndex = 110;
             this.btn_cancel.Text = "Cancel";
-            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.UseVisualStyleBackColor = false;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // dgv_cart
@@ -1293,106 +1311,126 @@
             this.dgv_cart.AllowUserToOrderColumns = true;
             this.dgv_cart.AllowUserToResizeColumns = false;
             this.dgv_cart.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_cart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_cart.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_cart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_cart.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_cart.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_cart.Enabled = false;
+            this.dgv_cart.EnableHeadersVisualStyles = false;
             this.dgv_cart.GridColor = System.Drawing.SystemColors.Control;
-            this.dgv_cart.Location = new System.Drawing.Point(1011, 145);
+            this.dgv_cart.Location = new System.Drawing.Point(1018, 240);
             this.dgv_cart.Name = "dgv_cart";
             this.dgv_cart.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_cart.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_cart.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_cart.RowHeadersVisible = false;
             this.dgv_cart.RowHeadersWidth = 20;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_cart.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_cart.RowTemplate.Height = 24;
             this.dgv_cart.Size = new System.Drawing.Size(406, 401);
             this.dgv_cart.TabIndex = 111;
             // 
             // btn_check_in
             // 
-            this.btn_check_in.Location = new System.Drawing.Point(1018, 566);
+            this.btn_check_in.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btn_check_in.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_check_in.Location = new System.Drawing.Point(1025, 661);
             this.btn_check_in.Name = "btn_check_in";
             this.btn_check_in.Size = new System.Drawing.Size(89, 33);
             this.btn_check_in.TabIndex = 112;
             this.btn_check_in.Text = "Check In";
-            this.btn_check_in.UseVisualStyleBackColor = true;
+            this.btn_check_in.UseVisualStyleBackColor = false;
             this.btn_check_in.Click += new System.EventHandler(this.btn_check_in_Click);
             // 
             // btn_remove_all
             // 
-            this.btn_remove_all.Location = new System.Drawing.Point(1127, 566);
+            this.btn_remove_all.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btn_remove_all.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_remove_all.Location = new System.Drawing.Point(1134, 661);
             this.btn_remove_all.Name = "btn_remove_all";
             this.btn_remove_all.Size = new System.Drawing.Size(102, 33);
             this.btn_remove_all.TabIndex = 113;
             this.btn_remove_all.Text = "Remove All";
-            this.btn_remove_all.UseVisualStyleBackColor = true;
+            this.btn_remove_all.UseVisualStyleBackColor = false;
             this.btn_remove_all.Click += new System.EventHandler(this.btn_remove_all_Click);
             // 
             // lbl_book_id
             // 
             this.lbl_book_id.AutoSize = true;
-            this.lbl_book_id.Location = new System.Drawing.Point(1036, 52);
+            this.lbl_book_id.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_book_id.Location = new System.Drawing.Point(1043, 147);
             this.lbl_book_id.Name = "lbl_book_id";
-            this.lbl_book_id.Size = new System.Drawing.Size(55, 16);
+            this.lbl_book_id.Size = new System.Drawing.Size(68, 22);
             this.lbl_book_id.TabIndex = 114;
             this.lbl_book_id.Text = "Book ID";
             // 
             // lbl_total_item
             // 
             this.lbl_total_item.AutoSize = true;
-            this.lbl_total_item.Location = new System.Drawing.Point(1107, 52);
+            this.lbl_total_item.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total_item.Location = new System.Drawing.Point(1114, 147);
             this.lbl_total_item.Name = "lbl_total_item";
-            this.lbl_total_item.Size = new System.Drawing.Size(89, 16);
+            this.lbl_total_item.Size = new System.Drawing.Size(116, 22);
             this.lbl_total_item.TabIndex = 115;
             this.lbl_total_item.Text = "Kamar Di Cart";
             // 
             // lbl_total_price
             // 
             this.lbl_total_price.AutoSize = true;
-            this.lbl_total_price.Location = new System.Drawing.Point(1279, 52);
+            this.lbl_total_price.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total_price.Location = new System.Drawing.Point(1275, 147);
             this.lbl_total_price.Name = "lbl_total_price";
-            this.lbl_total_price.Size = new System.Drawing.Size(83, 16);
+            this.lbl_total_price.Size = new System.Drawing.Size(105, 22);
             this.lbl_total_price.TabIndex = 116;
             this.lbl_total_price.Text = "Total/Malam";
             // 
             // lbl_output_book_id
             // 
-            this.lbl_output_book_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_output_book_id.Location = new System.Drawing.Point(1024, 75);
+            this.lbl_output_book_id.Font = new System.Drawing.Font("Bodoni MT Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_output_book_id.Location = new System.Drawing.Point(1046, 169);
             this.lbl_output_book_id.Name = "lbl_output_book_id";
-            this.lbl_output_book_id.Size = new System.Drawing.Size(77, 29);
+            this.lbl_output_book_id.Size = new System.Drawing.Size(77, 39);
             this.lbl_output_book_id.TabIndex = 117;
             this.lbl_output_book_id.Text = "88";
             this.lbl_output_book_id.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbl_output_total_item
             // 
-            this.lbl_output_total_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_output_total_item.Location = new System.Drawing.Point(1122, 75);
+            this.lbl_output_total_item.Font = new System.Drawing.Font("Bodoni MT Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_output_total_item.Location = new System.Drawing.Point(1141, 169);
             this.lbl_output_total_item.Name = "lbl_output_total_item";
-            this.lbl_output_total_item.Size = new System.Drawing.Size(60, 29);
+            this.lbl_output_total_item.Size = new System.Drawing.Size(71, 39);
             this.lbl_output_total_item.TabIndex = 118;
             this.lbl_output_total_item.Text = "0";
             this.lbl_output_total_item.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbl_output_total_price
             // 
-            this.lbl_output_total_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_output_total_price.Location = new System.Drawing.Point(1237, 75);
+            this.lbl_output_total_price.Font = new System.Drawing.Font("Bodoni MT Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_output_total_price.Location = new System.Drawing.Point(1236, 169);
             this.lbl_output_total_price.Name = "lbl_output_total_price";
             this.lbl_output_total_price.Size = new System.Drawing.Size(180, 36);
             this.lbl_output_total_price.TabIndex = 119;
@@ -1401,19 +1439,75 @@
             // 
             // btn_check_out
             // 
-            this.btn_check_out.Location = new System.Drawing.Point(1313, 566);
+            this.btn_check_out.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btn_check_out.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_check_out.Location = new System.Drawing.Point(1320, 661);
             this.btn_check_out.Name = "btn_check_out";
             this.btn_check_out.Size = new System.Drawing.Size(89, 33);
             this.btn_check_out.TabIndex = 120;
             this.btn_check_out.Text = "Check Out";
-            this.btn_check_out.UseVisualStyleBackColor = true;
+            this.btn_check_out.UseVisualStyleBackColor = false;
             this.btn_check_out.Click += new System.EventHandler(this.btn_check_out_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1471, 105);
+            this.panel1.TabIndex = 121;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(141)))), ((int)(((byte)(64)))));
+            this.btnExit.CausesValidation = false;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Transparent;
+            this.btnExit.Location = new System.Drawing.Point(1428, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(31, 44);
+            this.btnExit.TabIndex = 25;
+            this.btnExit.Text = "x";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(25, -12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 128);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Bodoni MT Condensed", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(617, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(286, 57);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "BOOKING KAMAR";
             // 
             // form_kamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1471, 644);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.ClientSize = new System.Drawing.Size(1471, 733);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_check_out);
             this.Controls.Add(this.lbl_output_total_price);
             this.Controls.Add(this.lbl_output_total_item);
@@ -1516,7 +1610,7 @@
             this.Controls.Add(this.btn_A104);
             this.Controls.Add(this.btn_proses);
             this.Controls.Add(this.btn_A101);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "form_kamar";
@@ -1526,6 +1620,9 @@
             this.gb_lantai.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cart)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1533,7 +1630,6 @@
 
         #endregion
         private System.Windows.Forms.Button btn_A101;
-        private System.Windows.Forms.Button btn_proses;
         private System.Windows.Forms.Button btn_A104;
         private System.Windows.Forms.Button btn_A102;
         private System.Windows.Forms.Button btn_A106;
@@ -1623,11 +1719,7 @@
         private System.Windows.Forms.DateTimePicker datetime_check_in;
         private System.Windows.Forms.DateTimePicker datetime_check_out;
         private System.Windows.Forms.PictureBox pic_status;
-        private System.Windows.Forms.Button btn_tambah_pelanggan;
-        private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.DataGridView dgv_cart;
-        private System.Windows.Forms.Button btn_check_in;
-        private System.Windows.Forms.Button btn_remove_all;
         private System.Windows.Forms.Label lbl_book_id;
         private System.Windows.Forms.Label lbl_total_item;
         private System.Windows.Forms.Label lbl_total_price;
@@ -1635,6 +1727,15 @@
         private System.Windows.Forms.Label lbl_output_total_item;
         private System.Windows.Forms.Label lbl_output_total_price;
         public System.Windows.Forms.ComboBox cb_pelanggan;
-        private System.Windows.Forms.Button btn_check_out;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Button btn_cancel;
+        public System.Windows.Forms.Button btn_check_in;
+        public System.Windows.Forms.Button btn_remove_all;
+        public System.Windows.Forms.Button btn_check_out;
+        public System.Windows.Forms.Button btn_proses;
+        public System.Windows.Forms.Button btn_tambah_pelanggan;
     }
 }

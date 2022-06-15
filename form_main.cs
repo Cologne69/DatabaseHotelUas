@@ -273,8 +273,46 @@ namespace DatabaseHotelUas
                     form_main.fcidp.BackColor = Color.FromArgb(r1, g1, b1);
                     form_main.ftp.BackColor = Color.FromArgb(r1, g1, b1);
                     form_main.fhr.BackColor = Color.FromArgb(r1, g1, b1);
+
+                    // form restoran
                     form_main.fr.btn_checkout.BackColor = Color.Silver;
                     form_main.fr.btn_addtoCart.BackColor = Color.Silver;
+                    form_main.fr.DGV_Menu.AlternatingRowsDefaultCellStyle.BackColor = Color.Silver;
+                    form_main.fr.DGV_Menu.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(251, 227, 163);
+                    form_main.fr.DGV_Menu.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.Black;
+                    form_main.fr.DGV_Menu.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(251, 227, 163);
+                    form_main.fr.DGV_Menu.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+                    form_main.fr.DGV_invoice.AlternatingRowsDefaultCellStyle.BackColor = Color.Silver;
+                    form_main.fr.DGV_invoice.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(251, 227, 163);
+                    form_main.fr.DGV_invoice.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.Black;
+                    form_main.fr.DGV_invoice.RowsDefaultCellStyle.BackColor = Color.Silver;
+                    form_main.fr.DGV_invoice.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(251, 227, 163);
+                    form_main.fr.DGV_invoice.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+
+                    // form id pelanggan
+                    form_main.fcidp.btnProses.BackColor = Color.Silver;
+                    form_main.fcidp.btnTambahPelanggan.BackColor = Color.Silver;
+                    form_main.fcidp.btn_deletePelanggan.BackColor = Color.Silver;
+                    form_main.fcidp.dgv_Pelanggan.AlternatingRowsDefaultCellStyle.BackColor = Color.Silver;
+                    form_main.fcidp.dgv_Pelanggan.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(251, 227, 163);
+                    form_main.fcidp.dgv_Pelanggan.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.Black;
+                    form_main.fcidp.dgv_Pelanggan.RowsDefaultCellStyle.BackColor = Color.Silver;
+                    form_main.fcidp.dgv_Pelanggan.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(251, 227, 163);
+                    form_main.fcidp.dgv_Pelanggan.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+
+                    // form tambah pelanggan
+                    form_main.ftp.btn_tambahPelanggan.BackColor = Color.Silver;
+
+                    // form kamar
+                    form_main.fk.btn_cancel.BackColor = Color.Silver;
+                    form_main.fk.btn_tambah_pelanggan.BackColor = Color.Silver;
+                    form_main.fk.btn_proses.BackColor = Color.Silver;
+                    form_main.fk.btn_remove_all.BackColor = Color.Silver;
+                    form_main.fk.btn_check_in.BackColor = Color.Silver;
+                    form_main.fk.btn_check_out.BackColor = Color.Silver;
+
+                    // form cek transaksi
+                    form_main.fct.btn_prosesCekTransaksi.BackColor = Color.Silver;
                 }
             }
             else

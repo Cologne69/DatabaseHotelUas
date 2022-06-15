@@ -63,6 +63,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pBoxExitCart = new System.Windows.Forms.PictureBox();
+            this.panelTotalHarga = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_jumlahMakanan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_invoice)).BeginInit();
@@ -310,7 +311,7 @@
             this.DGV_invoice.ShowCellToolTips = false;
             this.DGV_invoice.ShowEditingIcon = false;
             this.DGV_invoice.ShowRowErrors = false;
-            this.DGV_invoice.Size = new System.Drawing.Size(661, 511);
+            this.DGV_invoice.Size = new System.Drawing.Size(661, 467);
             this.DGV_invoice.TabIndex = 18;
             // 
             // btn_cancelPelanggan
@@ -475,6 +476,14 @@
             this.pBoxExitCart.TabStop = false;
             this.pBoxExitCart.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // panelTotalHarga
+            // 
+            this.panelTotalHarga.BackColor = System.Drawing.Color.White;
+            this.panelTotalHarga.Location = new System.Drawing.Point(749, 656);
+            this.panelTotalHarga.Name = "panelTotalHarga";
+            this.panelTotalHarga.Size = new System.Drawing.Size(661, 50);
+            this.panelTotalHarga.TabIndex = 31;
+            // 
             // form_resto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -504,6 +513,7 @@
             this.Controls.Add(this.btn_addtoCart);
             this.Controls.Add(this.lbl_isiiteminCart);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelTotalHarga);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -529,7 +539,6 @@
 
         #endregion
         private System.DirectoryServices.DirectorySearcher directorySearcher1;
-        private System.Windows.Forms.DataGridView DGV_Menu;
         private System.Windows.Forms.Label lbl_daftar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown num_jumlahMakanan;
@@ -540,7 +549,6 @@
         private System.Windows.Forms.Label lbl_nama;
         private System.Windows.Forms.Label lbl_total;
         private System.Windows.Forms.TextBox lbl_totalHarga;
-        private System.Windows.Forms.DataGridView DGV_invoice;
         private System.Windows.Forms.Button btn_cancelPelanggan;
         private System.Windows.Forms.PictureBox pic_search;
         private System.Windows.Forms.TextBox tb_cariMenu;
@@ -555,5 +563,8 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pBoxExitCart;
+        private System.Windows.Forms.Panel panelTotalHarga;
+        public System.Windows.Forms.DataGridView DGV_Menu;
+        public System.Windows.Forms.DataGridView DGV_invoice;
     }
 }

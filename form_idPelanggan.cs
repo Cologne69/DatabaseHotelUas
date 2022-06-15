@@ -24,9 +24,9 @@ namespace DatabaseHotelUas
         {
             pelanggan.Clear();
             syncPelanggan();
-            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgv_Pelanggan.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_Pelanggan.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv_Pelanggan.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             txt_cariNamaPelanggan.Text = "";
         }
         private void syncPelanggan()
@@ -37,7 +37,7 @@ namespace DatabaseHotelUas
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(pelanggan);
-                dataGridView1.DataSource = pelanggan;
+                dgv_Pelanggan.DataSource = pelanggan;
 
                 list_pelanggan = pelanggan.AsEnumerable().Select(x => x.Field<String>("CUSTOMER NAMA")).ToList();
             }
@@ -54,12 +54,12 @@ namespace DatabaseHotelUas
             {
                 try
                 {
-                    sqlQuery = $"DELETE FROM CUSTOMER WHERE CUST_ID = '{dataGridView1.CurrentRow.Cells[0].Value.ToString()}';";
+                    sqlQuery = $"DELETE FROM CUSTOMER WHERE CUST_ID = '{dgv_Pelanggan.CurrentRow.Cells[0].Value.ToString()}';";
                     sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                     sqlAdapter = new MySqlDataAdapter(sqlCommand);
                     sqlAdapter.Fill(pelanggan);
-                    MessageBox.Show($"Pelanggan dengan ID: {dataGridView1.CurrentRow.Cells[0].Value.ToString()} berhasil dihapus");
-                    dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
+                    MessageBox.Show($"Pelanggan dengan ID: {dgv_Pelanggan.CurrentRow.Cells[0].Value.ToString()} berhasil dihapus");
+                    dgv_Pelanggan.Rows.RemoveAt(dgv_Pelanggan.CurrentRow.Index);
                 }
                 catch (Exception ex)
                 {
@@ -77,7 +77,7 @@ namespace DatabaseHotelUas
             btnProses.Hide();
             btnTambahPelanggan.Hide();
             btn_deletePelanggan.Hide();
-            pelanggan.DefaultView.RowFilter = string.Format("`CUSTOMER NAMA` LIKE '%{0}%'", txt_cariNamaPelanggan.Text);
+            pelanggan.DefaultView.RowFilter = string.Format("'CUSTOMER NAMA' LIKE '%{0}%'", txt_cariNamaPelanggan.Text);
             for (int i = 0; i < pelanggan.DefaultView.Count; i++)
             {
                 if (pelanggan.DefaultView.RowFilter.Contains(txt_cariNamaPelanggan.Text))
