@@ -161,7 +161,7 @@
             this.dgv_SemuaTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_SemuaTransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_SemuaTransaksi.EnableHeadersVisualStyles = false;
-            this.dgv_SemuaTransaksi.Location = new System.Drawing.Point(12, 459);
+            this.dgv_SemuaTransaksi.Location = new System.Drawing.Point(12, 666);
             this.dgv_SemuaTransaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_SemuaTransaksi.Name = "dgv_SemuaTransaksi";
             this.dgv_SemuaTransaksi.RowHeadersWidth = 62;
@@ -178,7 +178,7 @@
             // 
             this.lblTransBelumLunas.AutoSize = true;
             this.lblTransBelumLunas.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransBelumLunas.Location = new System.Drawing.Point(14, 140);
+            this.lblTransBelumLunas.Location = new System.Drawing.Point(475, 143);
             this.lblTransBelumLunas.Name = "lblTransBelumLunas";
             this.lblTransBelumLunas.Size = new System.Drawing.Size(105, 22);
             this.lblTransBelumLunas.TabIndex = 13;
@@ -188,11 +188,11 @@
             // 
             this.lblSemuaTransaksi.AutoSize = true;
             this.lblSemuaTransaksi.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSemuaTransaksi.Location = new System.Drawing.Point(14, 404);
+            this.lblSemuaTransaksi.Location = new System.Drawing.Point(475, 417);
             this.lblSemuaTransaksi.Name = "lblSemuaTransaksi";
-            this.lblSemuaTransaksi.Size = new System.Drawing.Size(133, 22);
+            this.lblSemuaTransaksi.Size = new System.Drawing.Size(102, 22);
             this.lblSemuaTransaksi.TabIndex = 14;
-            this.lblSemuaTransaksi.Text = "Semua Transaksi";
+            this.lblSemuaTransaksi.Text = "Sudah Lunas";
             // 
             // dgv_SemuaTransaksi2
             // 
@@ -218,7 +218,7 @@
             this.dgv_SemuaTransaksi2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_SemuaTransaksi2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_SemuaTransaksi2.EnableHeadersVisualStyles = false;
-            this.dgv_SemuaTransaksi2.Location = new System.Drawing.Point(12, 640);
+            this.dgv_SemuaTransaksi2.Location = new System.Drawing.Point(12, 459);
             this.dgv_SemuaTransaksi2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_SemuaTransaksi2.Name = "dgv_SemuaTransaksi2";
             this.dgv_SemuaTransaksi2.RowHeadersWidth = 62;
@@ -234,7 +234,7 @@
             // 
             this.lblBookingKamar.AutoSize = true;
             this.lblBookingKamar.Font = new System.Drawing.Font("Sylfaen", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingKamar.Location = new System.Drawing.Point(15, 439);
+            this.lblBookingKamar.Location = new System.Drawing.Point(15, 637);
             this.lblBookingKamar.Name = "lblBookingKamar";
             this.lblBookingKamar.Size = new System.Drawing.Size(93, 18);
             this.lblBookingKamar.TabIndex = 17;
@@ -244,7 +244,7 @@
             // 
             this.lblOrderResto.AutoSize = true;
             this.lblOrderResto.Font = new System.Drawing.Font("Sylfaen", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderResto.Location = new System.Drawing.Point(15, 620);
+            this.lblOrderResto.Location = new System.Drawing.Point(22, 421);
             this.lblOrderResto.Name = "lblOrderResto";
             this.lblOrderResto.Size = new System.Drawing.Size(73, 18);
             this.lblOrderResto.TabIndex = 18;
