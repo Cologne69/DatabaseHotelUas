@@ -19,17 +19,6 @@ namespace DatabaseHotelUas
             InitializeComponent();
         }
 
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-
-            this.Hide();
-            dgv_cekTransBlmLunas.DataSource = null;
-            dgv_SemuaTransaksi.DataSource = null;
-            dgv_SemuaTransaksi2.DataSource = null;
-
-
-        }
-
         private void btn_prosesCekTransaksi_Click(object sender, EventArgs e)
         {
             if (cBoxBookKamar.Checked == false && cBoxOrderResto.Checked == false)
@@ -48,7 +37,7 @@ namespace DatabaseHotelUas
                     lblTransBelumLunas.Show();
                     TransaksiBookingKamarBelumLunas();
                     TransaksiBookingKamar();
-                    resize();
+                    resizeBookKamar();
                 }
                 else if (cBoxOrderResto.Checked == true && cBoxBookKamar.Checked == false)
                 {
@@ -63,7 +52,6 @@ namespace DatabaseHotelUas
                 }
                 else if (cBoxOrderResto.Checked == true && cBoxBookKamar.Checked == true)
                 {
-                    
                     dgv_cekTransBlmLunas.Show();
                     dgv_SemuaTransaksi2.Show();
                     lblTransBelumLunas.Show();
@@ -72,9 +60,10 @@ namespace DatabaseHotelUas
                     lblBookingKamar2.Show();
                     TransaksiBookingKamarBelumLunas();
                     TransaksiBookingKamar();
-                    TransaksiOrderFood2();
+                    TransaksiOrderFood();
+                    resizeBookKamar();
+                    resize2();
                     resize();
-
                 }
             }
         }
@@ -89,23 +78,6 @@ namespace DatabaseHotelUas
                 sqlAdapter.Fill(kamarBelumLunas);
                 dgv_cekTransBlmLunas.RowHeadersVisible = false;
                 dgv_cekTransBlmLunas.DataSource = kamarBelumLunas;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        public void TransaksiOrderFoodBelumLunas()
-        {
-            try
-            {
-                restoBelumLunas = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE TRANS_ID is null AND NOT ORDER_ID = '0' order by cast(ORDER_ID as unsigned); ";
-                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(restoBelumLunas);
-                dgv_cekTransBlmLunas.RowHeadersVisible = false;
-                dgv_cekTransBlmLunas.DataSource = restoBelumLunas;
             }
             catch (Exception ex)
             {
@@ -147,24 +119,6 @@ namespace DatabaseHotelUas
             }
         }
 
-        public void TransaksiOrderFood2()
-        {
-            try
-            {
-                semuaTransaksiResto = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE NOT ORDER_ID = '0' order by cast(ORDER_ID as unsigned); ";
-                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(semuaTransaksiResto);
-                dgv_SemuaTransaksi2.RowHeadersVisible = false;
-                dgv_SemuaTransaksi2.DataSource = semuaTransaksiResto;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void Form_Cek_Transaksi_Load(object sender, EventArgs e)
         {
 
@@ -195,9 +149,6 @@ namespace DatabaseHotelUas
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-
-
-
         private void Form_Cek_Transaksi_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -223,17 +174,21 @@ namespace DatabaseHotelUas
             dgv_SemuaTransaksi.Columns[2].Width = 140;
             dgv_SemuaTransaksi.Columns[3].Width = 140;
             dgv_SemuaTransaksi.Columns[4].Width = 140;
+        }
+        private void resizeBookKamar()
+        {
             dgv_cekTransBlmLunas.Columns[0].Width = 140;
             dgv_cekTransBlmLunas.Columns[1].Width = 140;
             dgv_cekTransBlmLunas.Columns[2].Width = 140;
             dgv_cekTransBlmLunas.Columns[3].Width = 140;
             dgv_cekTransBlmLunas.Columns[4].Width = 140;
+        }
+        private void resize2()
+        {
             dgv_SemuaTransaksi2.Columns[0].Width = 140;
             dgv_SemuaTransaksi2.Columns[1].Width = 140;
             dgv_SemuaTransaksi2.Columns[2].Width = 140;
             dgv_SemuaTransaksi2.Columns[3].Width = 140;
         }
-        
-       
     }
 }
