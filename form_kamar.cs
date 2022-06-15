@@ -345,13 +345,12 @@ namespace DatabaseHotelUas
             btn_tambah_pelanggan.Hide();
         }
 
-        private int getBookIdCheckout()
+        private int getBookIdCheckout() // get book id of pelanggan who has already rent a kamar and want to checkout
         {
             try
             {
                 DataTable temp = new DataTable();
                 string sqlQuery = $"select bk.BOOK_ID as 'a' from BOOKING_KAMAR bk where bk.CUST_ID = '{cb_pelanggan.SelectedValue}'";
-                MessageBox.Show(sqlQuery);
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(temp);
@@ -365,6 +364,34 @@ namespace DatabaseHotelUas
             }
         }
 
+        private DateTime getDateTimeCheckin() // get checkin date of pelanggan who want to checkout
+        {
+            try
+            {
+                DataTable temp = new DataTable();
+                string sqlQuery = $"select bk.BOOK_TGL_CIN as 'a' from BOOKING_KAMAR bk where bk.BOOK_ID = '{getBookIdCheckout()}'";
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(temp);
+                datetime_check_in.Value = Convert.ToDateTime(temp.Rows[0]["a"]);
+                return Convert.ToDateTime(temp.Rows[0]["a"]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error occurred: " + ex.Message);
+                return DateTime.Now;
+            }
+        }
+
+        private void preCheckOut()
+        {
+            getDateTimeCheckin(); // we don't need to call getBookIdCheckout as it already chained inside
+
+            syncDgv_check_out();
+            countCart(temp_used_kamar_by_pelanggan);
+            countTotalPrice();
+        }
+
         private void btn_proses_Click(object sender, EventArgs e)
         {
             cb_pelanggan.Enabled = false;
@@ -376,6 +403,7 @@ namespace DatabaseHotelUas
             {
                 lbl_check_in.Show();
                 datetime_check_in.Show();
+                datetime_check_in.Value = DateTime.Now;
                 // disable btn_A101 - btn_A140 and btn_A201 - btn_A240 if backcolor is red
                 for (int i = 101; i <= 140; i++)
                 {
@@ -405,13 +433,10 @@ namespace DatabaseHotelUas
                 btn_check_out.Enabled = true;
 
                 // we don't need to clear cart and cart_dt because syncDgv_check_out and cancel btn already override it
-                syncDgv_check_out();
-                countCart(temp_used_kamar_by_pelanggan);
-                countTotalPrice();
+                preCheckOut();
 
                 syncKamarStatus();
                 allKamarButtonEnabled(false);
-                getBookIdCheckout();
 
                 // so if pelanggan has order kamar, kamar that has been ordered change to blue
                 foreach (string kamar_no in temp_used_kamar_by_pelanggan)
@@ -562,6 +587,10 @@ namespace DatabaseHotelUas
         {
             cart.Clear();
             cart_dt.Clear();
+            countCart(cart);
+            countTotalPrice();
+            syncKamarStatus();
+            btn_proses.Show();
             cb_pelanggan.Enabled = true;
             btn_remove_all.Enabled = true;
             btn_check_in.Enabled = true;
