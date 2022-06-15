@@ -659,7 +659,10 @@ namespace DatabaseHotelUas
 
         private void btn_check_out_Click(object sender, EventArgs e)
         {
-            checkOut();
+            if (MessageBox.Show("Are you sure want to proceed?", "Order Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                checkOut();
+            }
         }
     }
 }
