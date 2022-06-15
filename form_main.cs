@@ -209,7 +209,7 @@ namespace DatabaseHotelUas
                         fhr.ShowDialog();
                         break;
                     default:
-                        MessageBox.Show("WOI GA ADA COK ASU");
+                        MessageBox.Show("Tidak ada perintah!");
                         break;
                 }
                 tb_cariMenu.Text = "";
