@@ -234,5 +234,84 @@ namespace DatabaseHotelUas
         {
             tb_cariMenu.Text = "";
         }
+        int r1 = 32, g1 = 40, b1 = 66;
+        bool slide = true;
+        private void timermode_Tick(object sender, EventArgs e)
+        {
+            if(r1<=32)
+            {
+                timermode.Stop();
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(r1, g1, b1);
+            }
+        }
+
+        private void timermode1_Tick(object sender, EventArgs e)
+        {
+            if (r1 <= 40)
+            {
+                timermode1.Stop();
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(r1, g1, b1);
+            }
+
+        }
+
+        private void timermode2_Tick(object sender, EventArgs e)
+        {
+            if (r1 <= 66)
+            {
+                timermode2.Stop();
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(r1, g1, b1);
+            }
+        }
+
+        private void timermode3_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timermode4_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_MouseDown(object sender, MouseEventArgs e)
+        {
+            timermode5.Start();
+        }
+        private void timermode5_Tick(object sender, EventArgs e)
+        {
+            if (slide == true)
+            {
+                panel4.Left += 5;
+                if (panel4.Left >= 600)
+                {
+                    timermode5.Stop();
+                    slide = false;
+                }
+            }
+            else
+            {
+                panel4.Left -= 5;
+                if (panel4.Left <= 585)
+                {
+                    timermode5.Stop();
+                    slide = true;
+                }
+            }
+        }
+        private void timermode6_Tick(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

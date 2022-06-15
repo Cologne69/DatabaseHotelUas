@@ -80,6 +80,8 @@ namespace DatabaseHotelUas
         private void btnProses_Click(object sender, EventArgs e)
         {
             btnProses.Hide();
+            btnTambahPelanggan.Hide();
+            btn_deletePelanggan.Hide();
             pelanggan.DefaultView.RowFilter = string.Format("`CUSTOMER NAMA` LIKE '%{0}%'", txt_cariNamaPelanggan.Text);
             for (int i = 0; i < pelanggan.DefaultView.Count; i++)
             {

@@ -59,6 +59,7 @@
             this.txt_cariNamaPelanggan.Name = "txt_cariNamaPelanggan";
             this.txt_cariNamaPelanggan.Size = new System.Drawing.Size(474, 22);
             this.txt_cariNamaPelanggan.TabIndex = 2;
+            this.txt_cariNamaPelanggan.TextChanged += new System.EventHandler(this.txt_cariNamaPelanggan_TextChanged);
             // 
             // lbl_cariNama
             // 

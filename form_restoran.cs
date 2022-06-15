@@ -227,5 +227,50 @@ namespace DatabaseHotelUas
         {
             tb_cariMenu.Text = "";
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_nama_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_pelanggan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_isiOrderID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_orderID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_isiiteminCart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_iteminCart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void num_jumlahMakanan_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
