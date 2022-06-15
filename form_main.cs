@@ -26,7 +26,7 @@ namespace DatabaseHotelUas
             {
                 imageNo = 1;
             }
-            pictureBox1.ImageLocation = string.Format(@"C:\Users\Lisandra\OneDrive\Documents\Visual Studio 2019\Database Hotel UAS\bin\Debug\Images\Image{0}.png", imageNo);
+            pictureBox1.ImageLocation = string.Format(@"C:\Users\kyrel\Pictures\Gambat\Image{0}.png", imageNo);
             imageNo++;
         }
         private void timer3_Tick(object sender, EventArgs e)
@@ -235,6 +235,11 @@ namespace DatabaseHotelUas
         }
         int r1 = 140 , g1 = 140, b1 = 140;
         int r2 = 244, g2 = 235, b2 = 208;
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         int r3 = 214, g3 = 173, b3 = 96;
         bool slide = true;
 
