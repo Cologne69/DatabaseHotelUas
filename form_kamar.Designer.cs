@@ -126,7 +126,7 @@
             this.btn_tambah_pelanggan = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.dgv_cart = new System.Windows.Forms.DataGridView();
-            this.btn_checkout = new System.Windows.Forms.Button();
+            this.btn_check_in = new System.Windows.Forms.Button();
             this.btn_remove_all = new System.Windows.Forms.Button();
             this.lbl_book_id = new System.Windows.Forms.Label();
             this.lbl_total_item = new System.Windows.Forms.Label();
@@ -134,6 +134,7 @@
             this.lbl_output_book_id = new System.Windows.Forms.Label();
             this.lbl_output_total_item = new System.Windows.Forms.Label();
             this.lbl_output_total_price = new System.Windows.Forms.Label();
+            this.btn_check_out = new System.Windows.Forms.Button();
             this.gb_lantai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cart)).BeginInit();
@@ -153,7 +154,7 @@
             // 
             // btn_proses
             // 
-            this.btn_proses.Location = new System.Drawing.Point(640, 33);
+            this.btn_proses.Location = new System.Drawing.Point(675, 32);
             this.btn_proses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_proses.Name = "btn_proses";
             this.btn_proses.Size = new System.Drawing.Size(102, 30);
@@ -1220,7 +1221,7 @@
             // 
             this.lbl_check_out.AutoSize = true;
             this.lbl_check_out.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_check_out.Location = new System.Drawing.Point(51, 82);
+            this.lbl_check_out.Location = new System.Drawing.Point(425, 84);
             this.lbl_check_out.Name = "lbl_check_out";
             this.lbl_check_out.Size = new System.Drawing.Size(137, 20);
             this.lbl_check_out.TabIndex = 103;
@@ -1229,7 +1230,7 @@
             // datetime_check_in
             // 
             this.datetime_check_in.Enabled = false;
-            this.datetime_check_in.Location = new System.Drawing.Point(202, 82);
+            this.datetime_check_in.Location = new System.Drawing.Point(186, 82);
             this.datetime_check_in.Name = "datetime_check_in";
             this.datetime_check_in.Size = new System.Drawing.Size(200, 22);
             this.datetime_check_in.TabIndex = 104;
@@ -1237,7 +1238,7 @@
             // datetime_check_out
             // 
             this.datetime_check_out.Enabled = false;
-            this.datetime_check_out.Location = new System.Drawing.Point(202, 82);
+            this.datetime_check_out.Location = new System.Drawing.Point(577, 82);
             this.datetime_check_out.Name = "datetime_check_out";
             this.datetime_check_out.Size = new System.Drawing.Size(200, 22);
             this.datetime_check_out.TabIndex = 105;
@@ -1247,9 +1248,9 @@
             this.cb_pelanggan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_pelanggan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_pelanggan.FormattingEnabled = true;
-            this.cb_pelanggan.Location = new System.Drawing.Point(202, 35);
+            this.cb_pelanggan.Location = new System.Drawing.Point(186, 35);
             this.cb_pelanggan.Name = "cb_pelanggan";
-            this.cb_pelanggan.Size = new System.Drawing.Size(409, 24);
+            this.cb_pelanggan.Size = new System.Drawing.Size(462, 24);
             this.cb_pelanggan.TabIndex = 107;
             this.cb_pelanggan.SelectedValueChanged += new System.EventHandler(this.cb_pelanggan_SelectedValueChanged);
             this.cb_pelanggan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_pelanggan_KeyDown);
@@ -1257,7 +1258,7 @@
             // pic_status
             // 
             this.pic_status.BackColor = System.Drawing.Color.Red;
-            this.pic_status.Location = new System.Drawing.Point(618, 39);
+            this.pic_status.Location = new System.Drawing.Point(654, 39);
             this.pic_status.Name = "pic_status";
             this.pic_status.Size = new System.Drawing.Size(16, 16);
             this.pic_status.TabIndex = 108;
@@ -1265,7 +1266,7 @@
             // 
             // btn_tambah_pelanggan
             // 
-            this.btn_tambah_pelanggan.Location = new System.Drawing.Point(640, 33);
+            this.btn_tambah_pelanggan.Location = new System.Drawing.Point(675, 32);
             this.btn_tambah_pelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_tambah_pelanggan.Name = "btn_tambah_pelanggan";
             this.btn_tambah_pelanggan.Size = new System.Drawing.Size(102, 30);
@@ -1276,7 +1277,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(640, 33);
+            this.btn_cancel.Location = new System.Drawing.Point(675, 32);
             this.btn_cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(102, 30);
@@ -1321,15 +1322,15 @@
             this.dgv_cart.Size = new System.Drawing.Size(406, 401);
             this.dgv_cart.TabIndex = 111;
             // 
-            // btn_checkout
+            // btn_check_in
             // 
-            this.btn_checkout.Location = new System.Drawing.Point(1018, 566);
-            this.btn_checkout.Name = "btn_checkout";
-            this.btn_checkout.Size = new System.Drawing.Size(89, 33);
-            this.btn_checkout.TabIndex = 112;
-            this.btn_checkout.Text = "Checkout";
-            this.btn_checkout.UseVisualStyleBackColor = true;
-            this.btn_checkout.Click += new System.EventHandler(this.btn_checkout_Click);
+            this.btn_check_in.Location = new System.Drawing.Point(1018, 566);
+            this.btn_check_in.Name = "btn_check_in";
+            this.btn_check_in.Size = new System.Drawing.Size(89, 33);
+            this.btn_check_in.TabIndex = 112;
+            this.btn_check_in.Text = "Check In";
+            this.btn_check_in.UseVisualStyleBackColor = true;
+            this.btn_check_in.Click += new System.EventHandler(this.btn_check_in_Click);
             // 
             // btn_remove_all
             // 
@@ -1398,11 +1399,22 @@
             this.lbl_output_total_price.Text = "0";
             this.lbl_output_total_price.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btn_check_out
+            // 
+            this.btn_check_out.Location = new System.Drawing.Point(1313, 566);
+            this.btn_check_out.Name = "btn_check_out";
+            this.btn_check_out.Size = new System.Drawing.Size(89, 33);
+            this.btn_check_out.TabIndex = 120;
+            this.btn_check_out.Text = "Check Out";
+            this.btn_check_out.UseVisualStyleBackColor = true;
+            this.btn_check_out.Click += new System.EventHandler(this.btn_check_out_Click);
+            // 
             // form_kamar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1471, 644);
+            this.Controls.Add(this.btn_check_out);
             this.Controls.Add(this.lbl_output_total_price);
             this.Controls.Add(this.lbl_output_total_item);
             this.Controls.Add(this.lbl_output_book_id);
@@ -1410,7 +1422,7 @@
             this.Controls.Add(this.lbl_total_item);
             this.Controls.Add(this.lbl_book_id);
             this.Controls.Add(this.btn_remove_all);
-            this.Controls.Add(this.btn_checkout);
+            this.Controls.Add(this.btn_check_in);
             this.Controls.Add(this.dgv_cart);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_tambah_pelanggan);
@@ -1614,7 +1626,7 @@
         private System.Windows.Forms.Button btn_tambah_pelanggan;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.DataGridView dgv_cart;
-        private System.Windows.Forms.Button btn_checkout;
+        private System.Windows.Forms.Button btn_check_in;
         private System.Windows.Forms.Button btn_remove_all;
         private System.Windows.Forms.Label lbl_book_id;
         private System.Windows.Forms.Label lbl_total_item;
@@ -1623,5 +1635,6 @@
         private System.Windows.Forms.Label lbl_output_total_item;
         private System.Windows.Forms.Label lbl_output_total_price;
         public System.Windows.Forms.ComboBox cb_pelanggan;
+        private System.Windows.Forms.Button btn_check_out;
     }
 }
