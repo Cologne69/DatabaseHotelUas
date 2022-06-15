@@ -64,5 +64,10 @@ namespace DatabaseHotelUas
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

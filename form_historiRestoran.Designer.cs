@@ -86,6 +86,7 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "x";
             this.label1.UseVisualStyleBackColor = false;
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // pictureBox1
             // 
