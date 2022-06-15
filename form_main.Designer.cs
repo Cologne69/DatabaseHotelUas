@@ -42,6 +42,9 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pic_crossmark = new System.Windows.Forms.PictureBox();
+            this.tb_cariMenu = new System.Windows.Forms.TextBox();
+            this.pic_search = new System.Windows.Forms.PictureBox();
             this.btnRestoran = new System.Windows.Forms.Button();
             this.btnKamar = new System.Windows.Forms.Button();
             this.btnRiwayatTransaksi = new System.Windows.Forms.Button();
@@ -55,6 +58,8 @@
             this.gb_pelanggan.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_crossmark)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_search)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -188,6 +193,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.panel1.Controls.Add(this.pic_crossmark);
+            this.panel1.Controls.Add(this.tb_cariMenu);
+            this.panel1.Controls.Add(this.pic_search);
             this.panel1.Controls.Add(this.btnRestoran);
             this.panel1.Controls.Add(this.btnKamar);
             this.panel1.Controls.Add(this.btnRiwayatTransaksi);
@@ -199,6 +207,38 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(310, 519);
             this.panel1.TabIndex = 30;
+            // 
+            // pic_crossmark
+            // 
+            this.pic_crossmark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pic_crossmark.Image = global::DatabaseHotelUas.Properties.Resources.pic_crossmark;
+            this.pic_crossmark.Location = new System.Drawing.Point(258, 467);
+            this.pic_crossmark.Name = "pic_crossmark";
+            this.pic_crossmark.Size = new System.Drawing.Size(40, 40);
+            this.pic_crossmark.TabIndex = 35;
+            this.pic_crossmark.TabStop = false;
+            this.pic_crossmark.Click += new System.EventHandler(this.pic_crossmark_Click);
+            // 
+            // tb_cariMenu
+            // 
+            this.tb_cariMenu.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_cariMenu.Location = new System.Drawing.Point(25, 467);
+            this.tb_cariMenu.Name = "tb_cariMenu";
+            this.tb_cariMenu.Size = new System.Drawing.Size(227, 27);
+            this.tb_cariMenu.TabIndex = 34;
+            this.tb_cariMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tb_cariMenu.TextChanged += new System.EventHandler(this.tb_cariMenu_TextChanged);
+            this.tb_cariMenu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cariMenu_KeyDown);
+            // 
+            // pic_search
+            // 
+            this.pic_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pic_search.Image = ((System.Drawing.Image)(resources.GetObject("pic_search.Image")));
+            this.pic_search.Location = new System.Drawing.Point(258, 467);
+            this.pic_search.Name = "pic_search";
+            this.pic_search.Size = new System.Drawing.Size(40, 40);
+            this.pic_search.TabIndex = 33;
+            this.pic_search.TabStop = false;
             // 
             // btnRestoran
             // 
@@ -379,6 +419,9 @@
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_crossmark)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_search)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -410,6 +453,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.PictureBox pic_crossmark;
+        private System.Windows.Forms.TextBox tb_cariMenu;
+        private System.Windows.Forms.PictureBox pic_search;
     }
 }
 
