@@ -52,6 +52,10 @@
             // 
             // dgv_cekTransBlmLunas
             // 
+            this.dgv_cekTransBlmLunas.AllowUserToAddRows = false;
+            this.dgv_cekTransBlmLunas.AllowUserToDeleteRows = false;
+            this.dgv_cekTransBlmLunas.AllowUserToResizeColumns = false;
+            this.dgv_cekTransBlmLunas.AllowUserToResizeRows = false;
             this.dgv_cekTransBlmLunas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_cekTransBlmLunas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_cekTransBlmLunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -116,6 +120,10 @@
             // 
             // dgv_SemuaTransaksi
             // 
+            this.dgv_SemuaTransaksi.AllowUserToAddRows = false;
+            this.dgv_SemuaTransaksi.AllowUserToDeleteRows = false;
+            this.dgv_SemuaTransaksi.AllowUserToResizeColumns = false;
+            this.dgv_SemuaTransaksi.AllowUserToResizeRows = false;
             this.dgv_SemuaTransaksi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_SemuaTransaksi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_SemuaTransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -150,6 +158,10 @@
             // 
             // dgv_SemuaTransaksi2
             // 
+            this.dgv_SemuaTransaksi2.AllowUserToAddRows = false;
+            this.dgv_SemuaTransaksi2.AllowUserToDeleteRows = false;
+            this.dgv_SemuaTransaksi2.AllowUserToResizeColumns = false;
+            this.dgv_SemuaTransaksi2.AllowUserToResizeRows = false;
             this.dgv_SemuaTransaksi2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_SemuaTransaksi2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_SemuaTransaksi2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -163,6 +175,10 @@
             // 
             // dgv_cekTransBlmLunas2
             // 
+            this.dgv_cekTransBlmLunas2.AllowUserToAddRows = false;
+            this.dgv_cekTransBlmLunas2.AllowUserToDeleteRows = false;
+            this.dgv_cekTransBlmLunas2.AllowUserToResizeColumns = false;
+            this.dgv_cekTransBlmLunas2.AllowUserToResizeRows = false;
             this.dgv_cekTransBlmLunas2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_cekTransBlmLunas2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_cekTransBlmLunas2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
