@@ -87,7 +87,7 @@ namespace DatabaseHotelUas
          *
          * param @value = cart or temp_used_kamar
          */
-        private int countCart(List<string> value) 
+        private int countCart(List<string> value)
         {
             lbl_output_total_item.Text = value.Count.ToString();
             return value.Count();
@@ -357,7 +357,7 @@ namespace DatabaseHotelUas
                 lbl_output_book_id.Text = temp.Rows[0]["a"].ToString();
                 return Convert.ToInt32(temp.Rows[0]["a"]);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("error occurred: " + ex.Message);
                 return 0;
@@ -588,7 +588,7 @@ namespace DatabaseHotelUas
                 MySqlCommand cmd = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 trans_id = (Convert.ToInt32(cmd.ExecuteScalar()) + 1).ToString();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("unable to get trans ID: " + ex);
                 trans_id = "0";
