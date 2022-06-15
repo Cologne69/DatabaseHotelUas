@@ -350,7 +350,7 @@ namespace DatabaseHotelUas
             try
             {
                 DataTable temp = new DataTable();
-                string sqlQuery = $"select bk.BOOK_ID as 'a' from BOOKING_KAMAR bk where bk.CUST_ID = '{cb_pelanggan.SelectedValue}'";
+                string sqlQuery = $"select bk.BOOK_ID as 'a' from BOOKING_KAMAR bk where bk.CUST_ID = '{cb_pelanggan.SelectedValue}' and bk.TRANS_ID IS NULL";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(temp);
