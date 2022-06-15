@@ -221,6 +221,7 @@
     <None Include="Resources\047718300_1584800169-THE_KOFFEE.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\tentrem-hotel-yogyakarta-rooms-presidential-sutie-image01.jpg" />
     <None Include="Resources\shopping-cart.png" />
     <None Include="Resources\x-mark.png" />
     <None Include="Resources\icons8-close-50.png" />
