@@ -317,7 +317,12 @@ namespace DatabaseHotelUas
             {
                 popup.btn_add.Enabled = false;
             }
-
+            if(this.BackColor == Color.FromArgb(140, 140, 140))
+            {
+                popup.BackColor = Color.FromArgb(140, 140, 140);
+                popup.btn_cancel.BackColor = Color.Silver;
+                popup.btn_add.BackColor = Color.Silver;
+            }
             popup.ShowDialog();
             popup.btn_add.Enabled = true;
             syncKamarCart();
