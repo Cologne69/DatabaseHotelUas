@@ -124,19 +124,19 @@ namespace DatabaseHotelUas
                 for (int i = 101; i <= 140; i++)
                 {
                     Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
-                    btn.BackColor = Color.LimeGreen;
+                    btn.BackColor = Color.FromArgb(204, 226, 203);
                 }
                 for (int i = 201; i <= 240; i++)
                 {
                     Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
-                    btn.BackColor = Color.LimeGreen;
+                    btn.BackColor = Color.FromArgb(204, 226, 203);
                 }
 
                 // append "btn_A" to every child in filled_kamar and change it as button backColor to red
                 foreach (string kamar_no in filled_kamar)
                 {
                     Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
-                    btn.BackColor = Color.Red;
+                    btn.BackColor = Color.FromArgb(234, 182, 171);
                 }
             }
             catch (Exception ex)
@@ -243,13 +243,13 @@ namespace DatabaseHotelUas
             foreach (string kamar_no in cart)
             {
                 Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
-                btn.BackColor = Color.LightSkyBlue;
+                btn.BackColor = Color.FromArgb(239, 207, 160);
             }
         }
 
         private void btn_lantai2_Click(object sender, EventArgs e)
         {
-            btn_lantai2.BackColor = Color.LightSkyBlue;
+            btn_lantai2.BackColor = Color.FromArgb(239, 207, 160);
             btn_lantai1.BackColor = Color.White;
             for (int i = 101; i <= 140; i++)
             {
@@ -266,7 +266,7 @@ namespace DatabaseHotelUas
         private void btn_lantai1_Click(object sender, EventArgs e)
         {
             btn_lantai2.BackColor = Color.White;
-            btn_lantai1.BackColor = Color.LightSkyBlue;
+            btn_lantai1.BackColor = Color.FromArgb(239, 207, 160);
             for (int i = 101; i <= 140; i++)
             {
                 Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
@@ -408,7 +408,7 @@ namespace DatabaseHotelUas
                 for (int i = 101; i <= 140; i++)
                 {
                     Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
-                    if (btn.BackColor == Color.Red)
+                    if (btn.BackColor == Color.FromArgb(234, 182, 171))
                     {
                         btn.Enabled = false;
                     }
@@ -416,7 +416,7 @@ namespace DatabaseHotelUas
                 for (int i = 201; i <= 240; i++)
                 {
                     Button btn = this.Controls.Find("btn_A" + i, true).FirstOrDefault() as Button;
-                    if (btn.BackColor == Color.Red)
+                    if (btn.BackColor == Color.FromArgb(234, 182, 171))
                     {
                         btn.Enabled = false;
                     }
@@ -442,7 +442,7 @@ namespace DatabaseHotelUas
                 foreach (string kamar_no in temp_used_kamar_by_pelanggan)
                 {
                     Button btn = this.Controls.Find("btn_A" + kamar_no, true).FirstOrDefault() as Button;
-                    btn.BackColor = Color.LightSkyBlue;
+                    btn.BackColor = Color.FromArgb(239, 207, 160);
                 }
             }
         }
@@ -663,6 +663,11 @@ namespace DatabaseHotelUas
             {
                 checkOut();
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

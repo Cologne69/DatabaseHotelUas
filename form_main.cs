@@ -35,14 +35,13 @@ namespace DatabaseHotelUas
         }
         private void ActivateButton(object btnSender)
         {
-            if (btnSender != null)
+            if (btnSender != null && slide == true)
             {
                 if (currentButton != (Button)btnSender)
                 {
                     DisableButton();
                     currentButton = (Button)btnSender;
                     currentButton.BackColor = Color.FromArgb(214, 173, 96);
-                    currentButton.ForeColor = Color.White;
                 }
             }
         }
@@ -53,7 +52,6 @@ namespace DatabaseHotelUas
                 if (previousBtn.GetType() == typeof(Button))
                 {
                     previousBtn.BackColor = Color.FromArgb(244, 235, 208);
-                    previousBtn.ForeColor = Color.Black;
                 }
             }
         }
@@ -234,5 +232,124 @@ namespace DatabaseHotelUas
         {
             tb_cariMenu.Text = "";
         }
+        int r1 = 140 , g1 = 140, b1 = 140;
+        int r2 = 244, g2 = 235, b2 = 208;
+        int r3 = 214, g3 = 173, b3 = 96;
+        bool slide = true;
+
+        private void panel4_MouseDown(object sender, MouseEventArgs e)
+        {
+            timermode6.Start();
+        }
+        private void timermode6_Tick(object sender, EventArgs e)
+        {
+            if (slide == true)
+            {
+                panelTombolDarkMode.Left += 5;
+                if (panelTombolDarkMode.Left >= 761)
+                {
+                    timermode6.Stop();
+                    slide = false;
+                    panelDarkMode.BackColor = Color.White;
+                    panelTombolDarkMode.BackColor = Color.Black;
+                    panel1.BackColor = Color.FromArgb(r1, g1, b1);
+                    btnPelanggan.BackColor = Color.FromArgb(r1, g1, b1);
+                    btnPelanggan.FlatAppearance.BorderColor= Color.Silver;
+                    btnPelanggan.ForeColor = Color.White;
+                    btnRiwayatTransaksi.BackColor = Color.FromArgb(r1, g1, b1);
+                    btnRiwayatTransaksi.FlatAppearance.BorderColor = Color.Silver;
+                    btnRiwayatTransaksi.ForeColor = Color.White;
+                    btnKamar.BackColor = Color.FromArgb(r1, g1, b1);
+                    btnKamar.FlatAppearance.BorderColor = Color.Silver;
+                    btnKamar.ForeColor = Color.White;
+                    btnRestoran.BackColor = Color.FromArgb(r1, g1, b1);
+                    btnRestoran.FlatAppearance.BorderColor = Color.Silver;
+                    btnRestoran.ForeColor = Color.White;
+                    tb_cariMenu.BackColor = Color.Silver;
+                    form_main.fct.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.fk.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.fr.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.fm.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.fcidp.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.ftp.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.fhr.BackColor = Color.FromArgb(r1, g1, b1);
+
+                    // form restoran
+                    form_main.fr.btn_checkout.BackColor = Color.Silver;
+                    form_main.fr.btn_addtoCart.BackColor = Color.Silver;
+                    form_main.fr.DGV_Menu.AlternatingRowsDefaultCellStyle.BackColor = Color.Silver;
+                    form_main.fr.DGV_Menu.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(251, 227, 163);
+                    form_main.fr.DGV_Menu.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.Black;
+                    form_main.fr.DGV_Menu.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(251, 227, 163);
+                    form_main.fr.DGV_Menu.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+                    form_main.fr.DGV_invoice.AlternatingRowsDefaultCellStyle.BackColor = Color.Silver;
+                    form_main.fr.DGV_invoice.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(251, 227, 163);
+                    form_main.fr.DGV_invoice.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.Black;
+                    form_main.fr.DGV_invoice.RowsDefaultCellStyle.BackColor = Color.Silver;
+                    form_main.fr.DGV_invoice.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(251, 227, 163);
+                    form_main.fr.DGV_invoice.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+
+                    // form id pelanggan
+                    form_main.fcidp.btnProses.BackColor = Color.Silver;
+                    form_main.fcidp.btnTambahPelanggan.BackColor = Color.Silver;
+                    form_main.fcidp.btn_deletePelanggan.BackColor = Color.Silver;
+                    form_main.fcidp.dgv_Pelanggan.AlternatingRowsDefaultCellStyle.BackColor = Color.Silver;
+                    form_main.fcidp.dgv_Pelanggan.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(251, 227, 163);
+                    form_main.fcidp.dgv_Pelanggan.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.Black;
+                    form_main.fcidp.dgv_Pelanggan.RowsDefaultCellStyle.BackColor = Color.Silver;
+                    form_main.fcidp.dgv_Pelanggan.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(251, 227, 163);
+                    form_main.fcidp.dgv_Pelanggan.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+
+                    // form tambah pelanggan
+                    form_main.ftp.btn_tambahPelanggan.BackColor = Color.Silver;
+
+                    // form kamar
+                    form_main.fk.btn_cancel.BackColor = Color.Silver;
+                    form_main.fk.btn_tambah_pelanggan.BackColor = Color.Silver;
+                    form_main.fk.btn_proses.BackColor = Color.Silver;
+                    form_main.fk.btn_remove_all.BackColor = Color.Silver;
+                    form_main.fk.btn_check_in.BackColor = Color.Silver;
+                    form_main.fk.btn_check_out.BackColor = Color.Silver;
+
+                    // form cek transaksi
+                    form_main.fct.btn_prosesCekTransaksi.BackColor = Color.Silver;
+                }
+            }
+            else
+            {
+                panelTombolDarkMode.Left -= 5;
+                if (panelTombolDarkMode.Left <= 746)
+                {
+                    timermode6.Stop();
+                    panel1.BackColor = Color.FromArgb(r2, g2, b2);
+                    btnPelanggan.BackColor = Color.FromArgb(r2, g2, b2);
+                    btnPelanggan.FlatAppearance.BorderColor = Color.FromArgb(r3, g3, b3);
+                    btnPelanggan.ForeColor = Color.Black;
+                    btnRiwayatTransaksi.BackColor = Color.FromArgb(r2, g2, b2);
+                    btnRiwayatTransaksi.FlatAppearance.BorderColor = Color.FromArgb(r3, g3, b3);
+                    btnRiwayatTransaksi.ForeColor = Color.Black;
+                    btnKamar.BackColor = Color.FromArgb(r2, g2, b2);
+                    btnKamar.FlatAppearance.BorderColor = Color.FromArgb(r3, g3, b3);
+                    btnKamar.ForeColor = Color.Black;
+                    btnRestoran.BackColor = Color.FromArgb(r2, g2, b2);
+                    btnRestoran.FlatAppearance.BorderColor = Color.FromArgb(r3, g3, b3);
+                    btnRestoran.ForeColor = Color.Black;
+                    tb_cariMenu.BackColor = Color.Linen;
+                    form_main.fct.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.fk.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.fr.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.fm.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.fcidp.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.ftp.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.fhr.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.fr.btn_checkout.BackColor = Color.FromArgb(r3, g3, b3);
+                    form_main.fr.btn_addtoCart.BackColor = Color.FromArgb(r3, g3, b3);
+                    slide = true;
+                    panelDarkMode.BackColor = Color.Black;
+                    panelTombolDarkMode.BackColor = Color.White;
+                }
+            }
+        }
+
     }
 }

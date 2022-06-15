@@ -192,5 +192,16 @@ namespace DatabaseHotelUas
             dgv_SemuaTransaksi.DataSource = null;
             dgv_SemuaTransaksi2.DataSource = null;
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            cBoxBookKamar.Checked = false;
+            cBoxOrderResto.Checked = false;
+            this.Hide();
+            dgv_cekTransBlmLunas.DataSource = null;
+            dgv_cekTransBlmLunas2.DataSource = null;
+            dgv_SemuaTransaksi.DataSource = null;
+            dgv_SemuaTransaksi2.DataSource = null;
+        }
     }
 }

@@ -97,6 +97,7 @@ namespace DatabaseHotelUas
         }
         private void form_resto_Load(object sender, EventArgs e)
         {
+            this.Width = 540;
             pic_crossmark.Hide();
             DGV_Menu.RowTemplate.MinimumHeight = 35;
             cb_pelanggan.Enabled = true;
@@ -226,6 +227,66 @@ namespace DatabaseHotelUas
         private void pic_crossmark_Click(object sender, EventArgs e)
         {
             tb_cariMenu.Text = "";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_nama_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_pelanggan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_isiOrderID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_orderID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_isiiteminCart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_iteminCart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void num_jumlahMakanan_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pBoxCart_Click(object sender, EventArgs e)
+        {
+            this.Width = 1085;
+
+        }
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Width = 540;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

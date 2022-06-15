@@ -26,12 +26,6 @@ namespace DatabaseHotelUas
             rdb_Perempuan.Checked = false;
         }
 
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            clearAll();
-        }
-
 
         private void btn_tambahPelanggan_Click(object sender, EventArgs e)
         {
@@ -77,6 +71,12 @@ namespace DatabaseHotelUas
 
         private void form_tambahPelanggan_FormClosing(object sender, FormClosingEventArgs e)
         {
+            clearAll();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
             clearAll();
         }
     }
