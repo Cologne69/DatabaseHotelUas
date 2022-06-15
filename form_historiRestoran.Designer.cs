@@ -44,7 +44,7 @@
             this.DGV_historiRestoran.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_historiRestoran.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGV_historiRestoran.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_historiRestoran.Location = new System.Drawing.Point(12, 36);
+            this.DGV_historiRestoran.Location = new System.Drawing.Point(11, 29);
             this.DGV_historiRestoran.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DGV_historiRestoran.MultiSelect = false;
             this.DGV_historiRestoran.Name = "DGV_historiRestoran";
@@ -55,7 +55,7 @@
             this.DGV_historiRestoran.ShowCellToolTips = false;
             this.DGV_historiRestoran.ShowEditingIcon = false;
             this.DGV_historiRestoran.ShowRowErrors = false;
-            this.DGV_historiRestoran.Size = new System.Drawing.Size(837, 527);
+            this.DGV_historiRestoran.Size = new System.Drawing.Size(744, 422);
             this.DGV_historiRestoran.TabIndex = 0;
             // 
             // label1
@@ -63,11 +63,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(825, -4);
+            this.label1.Location = new System.Drawing.Point(733, -3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 38);
+            this.label1.Size = new System.Drawing.Size(28, 32);
             this.label1.TabIndex = 1;
-            this.label1.Text = "X";
+            this.label1.Text = "x";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -75,18 +75,18 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(328, 4);
+            this.label2.Location = new System.Drawing.Point(292, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 28);
+            this.label2.Size = new System.Drawing.Size(169, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "HISTORI RESTORAN";
             // 
             // form_historiRestoran
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(862, 574);
+            this.ClientSize = new System.Drawing.Size(766, 459);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DGV_historiRestoran);

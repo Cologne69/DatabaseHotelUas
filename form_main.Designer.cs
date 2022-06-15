@@ -39,39 +39,33 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pic_crossmark = new System.Windows.Forms.PictureBox();
+            this.pic_search = new System.Windows.Forms.PictureBox();
+            this.btnRestoran = new System.Windows.Forms.Button();
+            this.btnKamar = new System.Windows.Forms.Button();
             this.tb_cariMenu = new System.Windows.Forms.TextBox();
+            this.btnRiwayatTransaksi = new System.Windows.Forms.Button();
+            this.btnPelanggan = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.btn_cekidPelanggan = new System.Windows.Forms.Button();
             this.btn_tmbhPelanggan = new System.Windows.Forms.Button();
             this.gb_pelanggan = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pic_crossmark = new System.Windows.Forms.PictureBox();
-            this.pic_search = new System.Windows.Forms.PictureBox();
-            this.btnRestoran = new System.Windows.Forms.Button();
-            this.btnKamar = new System.Windows.Forms.Button();
-            this.btnRiwayatTransaksi = new System.Windows.Forms.Button();
-            this.btnPelanggan = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panelDarkMode = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.timermode = new System.Windows.Forms.Timer(this.components);
-            this.timermode1 = new System.Windows.Forms.Timer(this.components);
-            this.timermode2 = new System.Windows.Forms.Timer(this.components);
-            this.timermode3 = new System.Windows.Forms.Timer(this.components);
-            this.timermode4 = new System.Windows.Forms.Timer(this.components);
-            this.timermode5 = new System.Windows.Forms.Timer(this.components);
+            this.panelTombolDarkMode = new System.Windows.Forms.Panel();
             this.timermode6 = new System.Windows.Forms.Timer(this.components);
             this.timermode7 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_crossmark)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_search)).BeginInit();
             this.panel3.SuspendLayout();
             this.gb_pelanggan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_crossmark)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_search)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_hargaKamar
@@ -180,18 +174,124 @@
             this.panel1.Size = new System.Drawing.Size(276, 415);
             this.panel1.TabIndex = 30;
             // 
+            // pic_crossmark
+            // 
+            this.pic_crossmark.BackColor = System.Drawing.Color.Transparent;
+            this.pic_crossmark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pic_crossmark.Image = global::DatabaseHotelUas.Properties.Resources.x_mark;
+            this.pic_crossmark.Location = new System.Drawing.Point(21, 367);
+            this.pic_crossmark.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_crossmark.Name = "pic_crossmark";
+            this.pic_crossmark.Size = new System.Drawing.Size(23, 21);
+            this.pic_crossmark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_crossmark.TabIndex = 35;
+            this.pic_crossmark.TabStop = false;
+            this.pic_crossmark.Click += new System.EventHandler(this.pic_crossmark_Click);
+            // 
+            // pic_search
+            // 
+            this.pic_search.BackColor = System.Drawing.Color.Transparent;
+            this.pic_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pic_search.Image = ((System.Drawing.Image)(resources.GetObject("pic_search.Image")));
+            this.pic_search.Location = new System.Drawing.Point(19, 367);
+            this.pic_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_search.Name = "pic_search";
+            this.pic_search.Size = new System.Drawing.Size(25, 21);
+            this.pic_search.TabIndex = 33;
+            this.pic_search.TabStop = false;
+            // 
+            // btnRestoran
+            // 
+            this.btnRestoran.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btnRestoran.FlatAppearance.BorderSize = 2;
+            this.btnRestoran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestoran.Font = new System.Drawing.Font("Lucida Sans Unicode", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestoran.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRestoran.Image = global::DatabaseHotelUas.Properties.Resources.restaurant_jpg;
+            this.btnRestoran.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestoran.Location = new System.Drawing.Point(12, 249);
+            this.btnRestoran.Name = "btnRestoran";
+            this.btnRestoran.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnRestoran.Size = new System.Drawing.Size(252, 70);
+            this.btnRestoran.TabIndex = 32;
+            this.btnRestoran.Text = "     Restoran";
+            this.btnRestoran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestoran.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRestoran.UseVisualStyleBackColor = true;
+            this.btnRestoran.Click += new System.EventHandler(this.btnRestoran_Click);
+            // 
+            // btnKamar
+            // 
+            this.btnKamar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btnKamar.FlatAppearance.BorderSize = 2;
+            this.btnKamar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKamar.Font = new System.Drawing.Font("Lucida Sans Unicode", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKamar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnKamar.Image = global::DatabaseHotelUas.Properties.Resources.hotel_jpg;
+            this.btnKamar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKamar.Location = new System.Drawing.Point(12, 173);
+            this.btnKamar.Name = "btnKamar";
+            this.btnKamar.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnKamar.Size = new System.Drawing.Size(252, 70);
+            this.btnKamar.TabIndex = 31;
+            this.btnKamar.Text = "     Kamar";
+            this.btnKamar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKamar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKamar.UseVisualStyleBackColor = true;
+            this.btnKamar.Click += new System.EventHandler(this.btnKamar_Click);
+            // 
             // tb_cariMenu
             // 
             this.tb_cariMenu.BackColor = System.Drawing.SystemColors.Info;
             this.tb_cariMenu.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_cariMenu.Location = new System.Drawing.Point(19, 366);
+            this.tb_cariMenu.Location = new System.Drawing.Point(50, 366);
             this.tb_cariMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_cariMenu.Name = "tb_cariMenu";
-            this.tb_cariMenu.Size = new System.Drawing.Size(234, 24);
+            this.tb_cariMenu.Size = new System.Drawing.Size(203, 24);
             this.tb_cariMenu.TabIndex = 34;
             this.tb_cariMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_cariMenu.TextChanged += new System.EventHandler(this.tb_cariMenu_TextChanged);
             this.tb_cariMenu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_cariMenu_KeyDown);
+            // 
+            // btnRiwayatTransaksi
+            // 
+            this.btnRiwayatTransaksi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btnRiwayatTransaksi.FlatAppearance.BorderSize = 2;
+            this.btnRiwayatTransaksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRiwayatTransaksi.Font = new System.Drawing.Font("Lucida Sans Unicode", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRiwayatTransaksi.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRiwayatTransaksi.Image = global::DatabaseHotelUas.Properties.Resources.clipboard_jpg;
+            this.btnRiwayatTransaksi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRiwayatTransaksi.Location = new System.Drawing.Point(12, 97);
+            this.btnRiwayatTransaksi.Name = "btnRiwayatTransaksi";
+            this.btnRiwayatTransaksi.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnRiwayatTransaksi.Size = new System.Drawing.Size(252, 70);
+            this.btnRiwayatTransaksi.TabIndex = 1;
+            this.btnRiwayatTransaksi.Text = "     Transaksi";
+            this.btnRiwayatTransaksi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRiwayatTransaksi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRiwayatTransaksi.UseVisualStyleBackColor = true;
+            this.btnRiwayatTransaksi.Click += new System.EventHandler(this.btnRiwayatTransaksi_Click);
+            // 
+            // btnPelanggan
+            // 
+            this.btnPelanggan.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
+            this.btnPelanggan.FlatAppearance.BorderSize = 2;
+            this.btnPelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPelanggan.Font = new System.Drawing.Font("Lucida Sans Unicode", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPelanggan.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPelanggan.Image = global::DatabaseHotelUas.Properties.Resources.user_removebg_000_preview_jpg__1_;
+            this.btnPelanggan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPelanggan.Location = new System.Drawing.Point(12, 21);
+            this.btnPelanggan.Name = "btnPelanggan";
+            this.btnPelanggan.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnPelanggan.Size = new System.Drawing.Size(252, 70);
+            this.btnPelanggan.TabIndex = 0;
+            this.btnPelanggan.Text = "     Pelanggan";
+            this.btnPelanggan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPelanggan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPelanggan.UseVisualStyleBackColor = true;
+            this.btnPelanggan.Click += new System.EventHandler(this.btnPelanggan_Click);
             // 
             // button1
             // 
@@ -229,9 +329,19 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(425, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(373, 41);
+            this.label2.Size = new System.Drawing.Size(364, 40);
             this.label2.TabIndex = 1;
             this.label2.Text = "D\'Mario, All Rights Reserved";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.BackgroundImage = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(59, -9);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(151, 147);
+            this.panel2.TabIndex = 0;
             // 
             // timer3
             // 
@@ -284,172 +394,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pic_crossmark
-            // 
-            this.pic_crossmark.BackColor = System.Drawing.SystemColors.Info;
-            this.pic_crossmark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_crossmark.Image = global::DatabaseHotelUas.Properties.Resources.x_mark;
-            this.pic_crossmark.Location = new System.Drawing.Point(24, 366);
-            this.pic_crossmark.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_crossmark.Name = "pic_crossmark";
-            this.pic_crossmark.Size = new System.Drawing.Size(23, 21);
-            this.pic_crossmark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_crossmark.TabIndex = 35;
-            this.pic_crossmark.TabStop = false;
-            this.pic_crossmark.Click += new System.EventHandler(this.pic_crossmark_Click);
-            // 
-            // pic_search
-            // 
-            this.pic_search.BackColor = System.Drawing.SystemColors.Info;
-            this.pic_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_search.Image = ((System.Drawing.Image)(resources.GetObject("pic_search.Image")));
-            this.pic_search.Location = new System.Drawing.Point(21, 366);
-            this.pic_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_search.Name = "pic_search";
-            this.pic_search.Size = new System.Drawing.Size(25, 21);
-            this.pic_search.TabIndex = 33;
-            this.pic_search.TabStop = false;
-            // 
-            // btnRestoran
-            // 
-            this.btnRestoran.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
-            this.btnRestoran.FlatAppearance.BorderSize = 2;
-            this.btnRestoran.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRestoran.Font = new System.Drawing.Font("Lucida Sans Unicode", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestoran.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRestoran.Image = global::DatabaseHotelUas.Properties.Resources.restaurant_jpg;
-            this.btnRestoran.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRestoran.Location = new System.Drawing.Point(12, 249);
-            this.btnRestoran.Name = "btnRestoran";
-            this.btnRestoran.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnRestoran.Size = new System.Drawing.Size(252, 70);
-            this.btnRestoran.TabIndex = 32;
-            this.btnRestoran.Text = "     Restoran";
-            this.btnRestoran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRestoran.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRestoran.UseVisualStyleBackColor = true;
-            this.btnRestoran.Click += new System.EventHandler(this.btnRestoran_Click);
-            // 
-            // btnKamar
-            // 
-            this.btnKamar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
-            this.btnKamar.FlatAppearance.BorderSize = 2;
-            this.btnKamar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKamar.Font = new System.Drawing.Font("Lucida Sans Unicode", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKamar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnKamar.Image = global::DatabaseHotelUas.Properties.Resources.hotel_jpg;
-            this.btnKamar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKamar.Location = new System.Drawing.Point(12, 173);
-            this.btnKamar.Name = "btnKamar";
-            this.btnKamar.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnKamar.Size = new System.Drawing.Size(252, 70);
-            this.btnKamar.TabIndex = 31;
-            this.btnKamar.Text = "     Kamar";
-            this.btnKamar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKamar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnKamar.UseVisualStyleBackColor = true;
-            this.btnKamar.Click += new System.EventHandler(this.btnKamar_Click);
-            // 
-            // btnRiwayatTransaksi
-            // 
-            this.btnRiwayatTransaksi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
-            this.btnRiwayatTransaksi.FlatAppearance.BorderSize = 2;
-            this.btnRiwayatTransaksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRiwayatTransaksi.Font = new System.Drawing.Font("Lucida Sans Unicode", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRiwayatTransaksi.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRiwayatTransaksi.Image = global::DatabaseHotelUas.Properties.Resources.clipboard_jpg;
-            this.btnRiwayatTransaksi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRiwayatTransaksi.Location = new System.Drawing.Point(12, 97);
-            this.btnRiwayatTransaksi.Name = "btnRiwayatTransaksi";
-            this.btnRiwayatTransaksi.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnRiwayatTransaksi.Size = new System.Drawing.Size(252, 70);
-            this.btnRiwayatTransaksi.TabIndex = 1;
-            this.btnRiwayatTransaksi.Text = "     Transaksi";
-            this.btnRiwayatTransaksi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRiwayatTransaksi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRiwayatTransaksi.UseVisualStyleBackColor = true;
-            this.btnRiwayatTransaksi.Click += new System.EventHandler(this.btnRiwayatTransaksi_Click);
-            // 
-            // btnPelanggan
-            // 
-            this.btnPelanggan.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
-            this.btnPelanggan.FlatAppearance.BorderSize = 2;
-            this.btnPelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPelanggan.Font = new System.Drawing.Font("Lucida Sans Unicode", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPelanggan.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPelanggan.Image = global::DatabaseHotelUas.Properties.Resources.user_removebg_000_preview_jpg__1_;
-            this.btnPelanggan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPelanggan.Location = new System.Drawing.Point(12, 21);
-            this.btnPelanggan.Name = "btnPelanggan";
-            this.btnPelanggan.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnPelanggan.Size = new System.Drawing.Size(252, 70);
-            this.btnPelanggan.TabIndex = 0;
-            this.btnPelanggan.Text = "     Pelanggan";
-            this.btnPelanggan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPelanggan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPelanggan.UseVisualStyleBackColor = true;
-            this.btnPelanggan.Click += new System.EventHandler(this.btnPelanggan_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.BackgroundImage = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(59, -9);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(151, 147);
-            this.panel2.TabIndex = 0;
-            // 
             // panelDarkMode
             // 
             this.panelDarkMode.BackColor = System.Drawing.Color.Black;
-            this.panelDarkMode.Location = new System.Drawing.Point(985, 497);
+            this.panelDarkMode.Location = new System.Drawing.Point(981, 497);
             this.panelDarkMode.Name = "panelDarkMode";
-            this.panelDarkMode.Size = new System.Drawing.Size(60, 27);
+            this.panelDarkMode.Size = new System.Drawing.Size(64, 27);
             this.panelDarkMode.TabIndex = 2;
             // 
-            // panel4
+            // panelTombolDarkMode
             // 
-            this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel4.Location = new System.Drawing.Point(990, 502);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(23, 17);
-            this.panel4.TabIndex = 32;
-            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown);
-            // 
-            // timermode
-            // 
-            this.timermode.Interval = 10;
-            this.timermode.Tick += new System.EventHandler(this.timermode_Tick);
-            // 
-            // timermode1
-            // 
-            this.timermode1.Interval = 10;
-            this.timermode1.Tick += new System.EventHandler(this.timermode1_Tick);
-            // 
-            // timermode2
-            // 
-            this.timermode2.Interval = 10;
-            this.timermode2.Tick += new System.EventHandler(this.timermode2_Tick);
-            // 
-            // timermode3
-            // 
-            this.timermode3.Interval = 10;
-            this.timermode3.Tick += new System.EventHandler(this.timermode3_Tick);
-            // 
-            // timermode4
-            // 
-            this.timermode4.Interval = 10;
-            this.timermode4.Tick += new System.EventHandler(this.timermode4_Tick);
-            // 
-            // timermode5
-            // 
-            this.timermode5.Interval = 10;
-            this.timermode5.Tick += new System.EventHandler(this.timermode5_Tick);
+            this.panelTombolDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelTombolDarkMode.Location = new System.Drawing.Point(990, 502);
+            this.panelTombolDarkMode.Name = "panelTombolDarkMode";
+            this.panelTombolDarkMode.Size = new System.Drawing.Size(23, 17);
+            this.panelTombolDarkMode.TabIndex = 32;
+            this.panelTombolDarkMode.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown);
             // 
             // timermode6
             // 
-            this.timermode6.Interval = 10;
+            this.timermode6.Interval = 25;
             this.timermode6.Tick += new System.EventHandler(this.timermode6_Tick);
             // 
             // timermode7
@@ -462,7 +426,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1064, 536);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panelTombolDarkMode);
             this.Controls.Add(this.panelDarkMode);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
@@ -485,12 +449,12 @@
             this.menuStrip2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_crossmark)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_search)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.gb_pelanggan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_crossmark)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_search)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,13 +487,7 @@
         private System.Windows.Forms.Button btn_tmbhPelanggan;
         private System.Windows.Forms.GroupBox gb_pelanggan;
         private System.Windows.Forms.Panel panelDarkMode;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Timer timermode;
-        private System.Windows.Forms.Timer timermode1;
-        private System.Windows.Forms.Timer timermode2;
-        private System.Windows.Forms.Timer timermode3;
-        private System.Windows.Forms.Timer timermode4;
-        private System.Windows.Forms.Timer timermode5;
+        private System.Windows.Forms.Panel panelTombolDarkMode;
         private System.Windows.Forms.Timer timermode6;
         private System.Windows.Forms.Timer timermode7;
     }

@@ -97,6 +97,7 @@ namespace DatabaseHotelUas
         }
         private void form_resto_Load(object sender, EventArgs e)
         {
+            this.Width = 540;
             pic_crossmark.Hide();
             DGV_Menu.RowTemplate.MinimumHeight = 35;
             cb_pelanggan.Enabled = true;
@@ -271,6 +272,21 @@ namespace DatabaseHotelUas
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pBoxCart_Click(object sender, EventArgs e)
+        {
+            this.Width = 1085;
+
+        }
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Width = 540;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

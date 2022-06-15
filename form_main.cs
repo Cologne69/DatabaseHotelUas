@@ -35,14 +35,13 @@ namespace DatabaseHotelUas
         }
         private void ActivateButton(object btnSender)
         {
-            if (btnSender != null)
+            if (btnSender != null && slide == true)
             {
                 if (currentButton != (Button)btnSender)
                 {
                     DisableButton();
                     currentButton = (Button)btnSender;
                     currentButton.BackColor = Color.FromArgb(214, 173, 96);
-                    currentButton.ForeColor = Color.White;
                 }
             }
         }
@@ -53,7 +52,6 @@ namespace DatabaseHotelUas
                 if (previousBtn.GetType() == typeof(Button))
                 {
                     previousBtn.BackColor = Color.FromArgb(244, 235, 208);
-                    previousBtn.ForeColor = Color.Black;
                 }
             }
         }
@@ -234,83 +232,85 @@ namespace DatabaseHotelUas
         {
             tb_cariMenu.Text = "";
         }
-        int r1 = 32, g1 = 40, b1 = 66;
+        int r1 = 140 , g1 = 140, b1 = 140;
+        int r2 = 244, g2 = 235, b2 = 208;
+        int r3 = 214, g3 = 173, b3 = 96;
         bool slide = true;
-        private void timermode_Tick(object sender, EventArgs e)
-        {
-            if(r1<=32)
-            {
-                timermode.Stop();
-            }
-            else
-            {
-                this.BackColor = Color.FromArgb(r1, g1, b1);
-            }
-        }
-
-        private void timermode1_Tick(object sender, EventArgs e)
-        {
-            if (r1 <= 40)
-            {
-                timermode1.Stop();
-            }
-            else
-            {
-                this.BackColor = Color.FromArgb(r1, g1, b1);
-            }
-
-        }
-
-        private void timermode2_Tick(object sender, EventArgs e)
-        {
-            if (r1 <= 66)
-            {
-                timermode2.Stop();
-            }
-            else
-            {
-                this.BackColor = Color.FromArgb(r1, g1, b1);
-            }
-        }
-
-        private void timermode3_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timermode4_Tick(object sender, EventArgs e)
-        {
-
-        }
 
         private void panel4_MouseDown(object sender, MouseEventArgs e)
         {
-            timermode5.Start();
+            timermode6.Start();
         }
-        private void timermode5_Tick(object sender, EventArgs e)
+        private void timermode6_Tick(object sender, EventArgs e)
         {
             if (slide == true)
             {
-                panel4.Left += 5;
-                if (panel4.Left >= 600)
+                panelTombolDarkMode.Left += 5;
+                if (panelTombolDarkMode.Left >= 761)
                 {
-                    timermode5.Stop();
+                    timermode6.Stop();
                     slide = false;
+                    panelDarkMode.BackColor = Color.White;
+                    panelTombolDarkMode.BackColor = Color.Black;
+                    panel1.BackColor = Color.FromArgb(r1, g1, b1);
+                    btnPelanggan.BackColor = Color.FromArgb(r1, g1, b1);
+                    btnPelanggan.FlatAppearance.BorderColor= Color.Silver;
+                    btnPelanggan.ForeColor = Color.White;
+                    btnRiwayatTransaksi.BackColor = Color.FromArgb(r1, g1, b1);
+                    btnRiwayatTransaksi.FlatAppearance.BorderColor = Color.Silver;
+                    btnRiwayatTransaksi.ForeColor = Color.White;
+                    btnKamar.BackColor = Color.FromArgb(r1, g1, b1);
+                    btnKamar.FlatAppearance.BorderColor = Color.Silver;
+                    btnKamar.ForeColor = Color.White;
+                    btnRestoran.BackColor = Color.FromArgb(r1, g1, b1);
+                    btnRestoran.FlatAppearance.BorderColor = Color.Silver;
+                    btnRestoran.ForeColor = Color.White;
+                    tb_cariMenu.BackColor = Color.Silver;
+                    form_main.fct.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.fk.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.fr.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.fm.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.fcidp.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.ftp.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.fhr.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.fr.btn_checkout.BackColor = Color.Silver;
+                    form_main.fr.btn_addtoCart.BackColor = Color.Silver;
                 }
             }
             else
             {
-                panel4.Left -= 5;
-                if (panel4.Left <= 585)
+                panelTombolDarkMode.Left -= 5;
+                if (panelTombolDarkMode.Left <= 746)
                 {
-                    timermode5.Stop();
+                    timermode6.Stop();
+                    panel1.BackColor = Color.FromArgb(r2, g2, b2);
+                    btnPelanggan.BackColor = Color.FromArgb(r2, g2, b2);
+                    btnPelanggan.FlatAppearance.BorderColor = Color.FromArgb(r3, g3, b3);
+                    btnPelanggan.ForeColor = Color.Black;
+                    btnRiwayatTransaksi.BackColor = Color.FromArgb(r2, g2, b2);
+                    btnRiwayatTransaksi.FlatAppearance.BorderColor = Color.FromArgb(r3, g3, b3);
+                    btnRiwayatTransaksi.ForeColor = Color.Black;
+                    btnKamar.BackColor = Color.FromArgb(r2, g2, b2);
+                    btnKamar.FlatAppearance.BorderColor = Color.FromArgb(r3, g3, b3);
+                    btnKamar.ForeColor = Color.Black;
+                    btnRestoran.BackColor = Color.FromArgb(r2, g2, b2);
+                    btnRestoran.FlatAppearance.BorderColor = Color.FromArgb(r3, g3, b3);
+                    btnRestoran.ForeColor = Color.Black;
+                    tb_cariMenu.BackColor = Color.Linen;
+                    form_main.fct.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.fk.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.fr.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.fm.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.fcidp.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.ftp.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.fhr.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.fr.btn_checkout.BackColor = Color.FromArgb(r3, g3, b3);
+                    form_main.fr.btn_addtoCart.BackColor = Color.FromArgb(r3, g3, b3);
                     slide = true;
+                    panelDarkMode.BackColor = Color.Black;
+                    panelTombolDarkMode.BackColor = Color.White;
                 }
             }
-        }
-        private void timermode6_Tick(object sender, EventArgs e)
-        {
-
         }
 
     }
