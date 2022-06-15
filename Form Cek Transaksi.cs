@@ -118,7 +118,6 @@ namespace DatabaseHotelUas
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void Form_Cek_Transaksi_Load(object sender, EventArgs e)
         {
 
@@ -131,7 +130,6 @@ namespace DatabaseHotelUas
             dgv_SemuaTransaksi2.DataSource = null;
           
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             cBoxBookKamar.Checked = false;
@@ -148,7 +146,6 @@ namespace DatabaseHotelUas
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
-
         private void Form_Cek_Transaksi_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -157,7 +154,6 @@ namespace DatabaseHotelUas
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -166,7 +162,6 @@ namespace DatabaseHotelUas
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
         private void resize()
         {
             dgv_SemuaTransaksi.Columns[0].Width = 140;

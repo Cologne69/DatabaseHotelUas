@@ -84,13 +84,14 @@
             this.dgv_cekTransBlmLunas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_cekTransBlmLunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_cekTransBlmLunas.EnableHeadersVisualStyles = false;
-            this.dgv_cekTransBlmLunas.Location = new System.Drawing.Point(12, 183);
+            this.dgv_cekTransBlmLunas.Location = new System.Drawing.Point(14, 229);
             this.dgv_cekTransBlmLunas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_cekTransBlmLunas.Name = "dgv_cekTransBlmLunas";
             this.dgv_cekTransBlmLunas.RowHeadersWidth = 62;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
             this.dgv_cekTransBlmLunas.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_cekTransBlmLunas.RowTemplate.Height = 28;
+
             this.dgv_cekTransBlmLunas.Size = new System.Drawing.Size(1086, 219);
             this.dgv_cekTransBlmLunas.TabIndex = 0;
             // 
@@ -98,10 +99,10 @@
             // 
             this.btn_prosesCekTransaksi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
             this.btn_prosesCekTransaksi.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_prosesCekTransaksi.Location = new System.Drawing.Point(464, 842);
+            this.btn_prosesCekTransaksi.Location = new System.Drawing.Point(522, 1052);
             this.btn_prosesCekTransaksi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_prosesCekTransaksi.Name = "btn_prosesCekTransaksi";
-            this.btn_prosesCekTransaksi.Size = new System.Drawing.Size(124, 36);
+            this.btn_prosesCekTransaksi.Size = new System.Drawing.Size(140, 45);
             this.btn_prosesCekTransaksi.TabIndex = 7;
             this.btn_prosesCekTransaksi.Text = "Proses";
             this.btn_prosesCekTransaksi.UseVisualStyleBackColor = false;
@@ -110,7 +111,7 @@
             // lblJenisTransaksi
             // 
             this.lblJenisTransaksi.AutoSize = true;
-            this.lblJenisTransaksi.Location = new System.Drawing.Point(64, 851);
+            this.lblJenisTransaksi.Location = new System.Drawing.Point(72, 1064);
             this.lblJenisTransaksi.Name = "lblJenisTransaksi";
             this.lblJenisTransaksi.Size = new System.Drawing.Size(105, 16);
             this.lblJenisTransaksi.TabIndex = 9;
@@ -119,7 +120,8 @@
             // cBoxBookKamar
             // 
             this.cBoxBookKamar.AutoSize = true;
-            this.cBoxBookKamar.Location = new System.Drawing.Point(192, 850);
+            this.cBoxBookKamar.Location = new System.Drawing.Point(216, 1062);
+            this.cBoxBookKamar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cBoxBookKamar.Name = "cBoxBookKamar";
             this.cBoxBookKamar.Size = new System.Drawing.Size(121, 20);
             this.cBoxBookKamar.TabIndex = 10;
@@ -129,7 +131,8 @@
             // cBoxOrderResto
             // 
             this.cBoxOrderResto.AutoSize = true;
-            this.cBoxOrderResto.Location = new System.Drawing.Point(324, 850);
+            this.cBoxOrderResto.Location = new System.Drawing.Point(364, 1062);
+            this.cBoxOrderResto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cBoxOrderResto.Name = "cBoxOrderResto";
             this.cBoxOrderResto.Size = new System.Drawing.Size(102, 20);
             this.cBoxOrderResto.TabIndex = 11;
@@ -170,16 +173,16 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_SemuaTransaksi.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_SemuaTransaksi.RowTemplate.Height = 28;
-            this.dgv_SemuaTransaksi.Size = new System.Drawing.Size(1086, 159);
+            this.dgv_SemuaTransaksi.Size = new System.Drawing.Size(1222, 199);
             this.dgv_SemuaTransaksi.TabIndex = 12;
             // 
             // lblTransBelumLunas
             // 
             this.lblTransBelumLunas.AutoSize = true;
             this.lblTransBelumLunas.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransBelumLunas.Location = new System.Drawing.Point(14, 140);
+            this.lblTransBelumLunas.Location = new System.Drawing.Point(16, 175);
             this.lblTransBelumLunas.Name = "lblTransBelumLunas";
-            this.lblTransBelumLunas.Size = new System.Drawing.Size(105, 22);
+            this.lblTransBelumLunas.Size = new System.Drawing.Size(130, 27);
             this.lblTransBelumLunas.TabIndex = 13;
             this.lblTransBelumLunas.Text = "Belum Lunas";
             // 
@@ -189,7 +192,7 @@
             this.lblSemuaTransaksi.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSemuaTransaksi.Location = new System.Drawing.Point(14, 404);
             this.lblSemuaTransaksi.Name = "lblSemuaTransaksi";
-            this.lblSemuaTransaksi.Size = new System.Drawing.Size(133, 22);
+            this.lblSemuaTransaksi.Size = new System.Drawing.Size(164, 27);
             this.lblSemuaTransaksi.TabIndex = 14;
             this.lblSemuaTransaksi.Text = "Semua Transaksi";
             // 
@@ -226,7 +229,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_SemuaTransaksi2.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_SemuaTransaksi2.RowTemplate.Height = 28;
-            this.dgv_SemuaTransaksi2.Size = new System.Drawing.Size(1086, 165);
+            this.dgv_SemuaTransaksi2.Size = new System.Drawing.Size(1222, 206);
             this.dgv_SemuaTransaksi2.TabIndex = 15;
             // 
             // lblBookingKamar
@@ -258,7 +261,7 @@
             this.lblBookingKamar2.Size = new System.Drawing.Size(93, 18);
             this.lblBookingKamar2.TabIndex = 19;
             this.lblBookingKamar2.Text = "Booking Kamar";
-            // 
+            //
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
@@ -267,8 +270,9 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1108, 128);
+            this.panel1.Size = new System.Drawing.Size(1246, 160);
             this.panel1.TabIndex = 21;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -280,10 +284,10 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Transparent;
-            this.btnExit.Location = new System.Drawing.Point(1071, 0);
+            this.btnExit.Location = new System.Drawing.Point(1205, 0);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(27, 37);
+            this.btnExit.Size = new System.Drawing.Size(30, 46);
             this.btnExit.TabIndex = 25;
             this.btnExit.Text = "x";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -294,9 +298,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(25, -12);
+            this.pictureBox1.Location = new System.Drawing.Point(28, -15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(169, 188);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -305,7 +310,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bodoni MT Condensed", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(361, 40);
+            this.label5.Location = new System.Drawing.Point(406, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(355, 56);
             this.label5.TabIndex = 0;
@@ -313,10 +318,10 @@
             // 
             // Form_Cek_Transaksi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.ClientSize = new System.Drawing.Size(1108, 909);
+            this.ClientSize = new System.Drawing.Size(1246, 1136);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblBookingKamar2);
             this.Controls.Add(this.lblOrderResto);
