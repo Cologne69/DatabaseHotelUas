@@ -154,7 +154,7 @@
             // 
             // btn_proses
             // 
-            this.btn_proses.Location = new System.Drawing.Point(640, 33);
+            this.btn_proses.Location = new System.Drawing.Point(675, 32);
             this.btn_proses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_proses.Name = "btn_proses";
             this.btn_proses.Size = new System.Drawing.Size(102, 30);
@@ -1221,7 +1221,7 @@
             // 
             this.lbl_check_out.AutoSize = true;
             this.lbl_check_out.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_check_out.Location = new System.Drawing.Point(51, 82);
+            this.lbl_check_out.Location = new System.Drawing.Point(425, 84);
             this.lbl_check_out.Name = "lbl_check_out";
             this.lbl_check_out.Size = new System.Drawing.Size(137, 20);
             this.lbl_check_out.TabIndex = 103;
@@ -1230,7 +1230,7 @@
             // datetime_check_in
             // 
             this.datetime_check_in.Enabled = false;
-            this.datetime_check_in.Location = new System.Drawing.Point(202, 82);
+            this.datetime_check_in.Location = new System.Drawing.Point(186, 82);
             this.datetime_check_in.Name = "datetime_check_in";
             this.datetime_check_in.Size = new System.Drawing.Size(200, 22);
             this.datetime_check_in.TabIndex = 104;
@@ -1238,7 +1238,7 @@
             // datetime_check_out
             // 
             this.datetime_check_out.Enabled = false;
-            this.datetime_check_out.Location = new System.Drawing.Point(202, 82);
+            this.datetime_check_out.Location = new System.Drawing.Point(577, 82);
             this.datetime_check_out.Name = "datetime_check_out";
             this.datetime_check_out.Size = new System.Drawing.Size(200, 22);
             this.datetime_check_out.TabIndex = 105;
@@ -1248,9 +1248,9 @@
             this.cb_pelanggan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_pelanggan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_pelanggan.FormattingEnabled = true;
-            this.cb_pelanggan.Location = new System.Drawing.Point(202, 35);
+            this.cb_pelanggan.Location = new System.Drawing.Point(186, 35);
             this.cb_pelanggan.Name = "cb_pelanggan";
-            this.cb_pelanggan.Size = new System.Drawing.Size(409, 24);
+            this.cb_pelanggan.Size = new System.Drawing.Size(462, 24);
             this.cb_pelanggan.TabIndex = 107;
             this.cb_pelanggan.SelectedValueChanged += new System.EventHandler(this.cb_pelanggan_SelectedValueChanged);
             this.cb_pelanggan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_pelanggan_KeyDown);
@@ -1258,7 +1258,7 @@
             // pic_status
             // 
             this.pic_status.BackColor = System.Drawing.Color.Red;
-            this.pic_status.Location = new System.Drawing.Point(618, 39);
+            this.pic_status.Location = new System.Drawing.Point(654, 39);
             this.pic_status.Name = "pic_status";
             this.pic_status.Size = new System.Drawing.Size(16, 16);
             this.pic_status.TabIndex = 108;
@@ -1266,7 +1266,7 @@
             // 
             // btn_tambah_pelanggan
             // 
-            this.btn_tambah_pelanggan.Location = new System.Drawing.Point(640, 33);
+            this.btn_tambah_pelanggan.Location = new System.Drawing.Point(675, 32);
             this.btn_tambah_pelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_tambah_pelanggan.Name = "btn_tambah_pelanggan";
             this.btn_tambah_pelanggan.Size = new System.Drawing.Size(102, 30);
@@ -1277,7 +1277,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(640, 33);
+            this.btn_cancel.Location = new System.Drawing.Point(675, 32);
             this.btn_cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(102, 30);

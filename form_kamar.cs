@@ -345,6 +345,26 @@ namespace DatabaseHotelUas
             btn_tambah_pelanggan.Hide();
         }
 
+        private int getBookIdCheckout()
+        {
+            try
+            {
+                DataTable temp = new DataTable();
+                string sqlQuery = $"select bk.BOOK_ID as 'a' from BOOKING_KAMAR bk where bk.CUST_ID = '{cb_pelanggan.SelectedValue}'";
+                MessageBox.Show(sqlQuery);
+                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(temp);
+                lbl_output_book_id.Text = temp.Rows[0]["a"].ToString();
+                return Convert.ToInt32(temp.Rows[0]["a"]);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("error occurred: " + ex.Message);
+                return 0;
+            }
+        }
+
         private void btn_proses_Click(object sender, EventArgs e)
         {
             cb_pelanggan.Enabled = false;
@@ -376,6 +396,8 @@ namespace DatabaseHotelUas
             }
             else // pelanggan already order kamar, show where they live
             {
+                lbl_check_in.Show();
+                datetime_check_in.Show();
                 lbl_check_out.Show();
                 datetime_check_out.Show();
                 btn_remove_all.Enabled = false;
@@ -389,6 +411,7 @@ namespace DatabaseHotelUas
 
                 syncKamarStatus();
                 allKamarButtonEnabled(false);
+                getBookIdCheckout();
 
                 // so if pelanggan has order kamar, kamar that has been ordered change to blue
                 foreach (string kamar_no in temp_used_kamar_by_pelanggan)
@@ -408,6 +431,7 @@ namespace DatabaseHotelUas
             btn_proses.Show();
             btn_cancel.Hide();
             hideCheckAndDatetime();
+            lbl_output_book_id.Text = getCurrentBookId().ToString();
             // delete all value in cart dan cart_dt
             cart.Clear();
             cart_dt.Clear();
