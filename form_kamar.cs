@@ -615,6 +615,7 @@ namespace DatabaseHotelUas
             countCart(cart);
             countTotalPrice();
             syncKamarStatus();
+            lbl_output_book_id.Text = getCurrentBookId().ToString();
             btn_proses.Show();
             btn_cancel.Hide();
             cb_pelanggan.Enabled = true;
@@ -622,6 +623,8 @@ namespace DatabaseHotelUas
             btn_check_in.Enabled = true;
             btn_check_out.Enabled = false;
             temp_used_kamar_by_pelanggan.Clear();
+
+            hideCheckAndDatetime();
 
             allKamarButtonEnabled(true);
         }
