@@ -193,6 +193,16 @@ namespace DatabaseHotelUas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tentrem_hotel_yogyakarta_rooms_presidential_sutie_image01 {
+            get {
+                object obj = ResourceManager.GetObject("tentrem-hotel-yogyakarta-rooms-presidential-sutie-image01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap UI {
             get {
                 object obj = ResourceManager.GetObject("UI", resourceCulture);

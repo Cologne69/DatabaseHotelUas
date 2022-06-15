@@ -26,7 +26,7 @@ namespace DatabaseHotelUas
             {
                 imageNo = 1;
             }
-            pictureBox1.ImageLocation = string.Format(@"C:\Users\Lisandra\OneDrive\Documents\Visual Studio 2019\Database Hotel UAS\bin\Debug\Images\Image{0}.png", imageNo);
+            pictureBox1.ImageLocation = string.Format(@"C:\Users\kyrel\Pictures\Gambat\Image{0}.png", imageNo);
             imageNo++;
         }
         private void timer3_Tick(object sender, EventArgs e)
@@ -74,6 +74,7 @@ namespace DatabaseHotelUas
         //----------------------------------------------------- BAGIAN FORMS -----------------------------------------------------
         public static Form_Cek_Transaksi fct = new Form_Cek_Transaksi();
         public static form_kamar fk = new form_kamar();
+        public static form_popupKamar fpk = new form_popupKamar();
         public static form_resto fr = new form_resto();
         public static form_main fm = new form_main();
         public static form_idPelanggan fcidp = new form_idPelanggan();
@@ -234,6 +235,11 @@ namespace DatabaseHotelUas
         }
         int r1 = 140 , g1 = 140, b1 = 140;
         int r2 = 244, g2 = 235, b2 = 208;
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         int r3 = 214, g3 = 173, b3 = 96;
         bool slide = true;
 
@@ -268,6 +274,7 @@ namespace DatabaseHotelUas
                     tb_cariMenu.BackColor = Color.Silver;
                     form_main.fct.BackColor = Color.FromArgb(r1, g1, b1);
                     form_main.fk.BackColor = Color.FromArgb(r1, g1, b1);
+                    form_main.fpk.BackColor = Color.FromArgb(r1, g1, b1);
                     form_main.fr.BackColor = Color.FromArgb(r1, g1, b1);
                     form_main.fm.BackColor = Color.FromArgb(r1, g1, b1);
                     form_main.fcidp.BackColor = Color.FromArgb(r1, g1, b1);
@@ -311,6 +318,10 @@ namespace DatabaseHotelUas
                     form_main.fk.btn_check_in.BackColor = Color.Silver;
                     form_main.fk.btn_check_out.BackColor = Color.Silver;
 
+                    // form popup kamar
+                    form_main.fpk.btn_add.BackColor = Color.Silver;
+                    form_main.fpk.btn_cancel.BackColor = Color.Silver;
+
                     // form cek transaksi
                     form_main.fct.btn_prosesCekTransaksi.BackColor = Color.Silver;
                 }
@@ -337,6 +348,7 @@ namespace DatabaseHotelUas
                     tb_cariMenu.BackColor = Color.Linen;
                     form_main.fct.BackColor = Color.FromArgb(r2, g2, b2);
                     form_main.fk.BackColor = Color.FromArgb(r2, g2, b2);
+                    form_main.fpk.BackColor = Color.FromArgb(r2, g2, b2);
                     form_main.fr.BackColor = Color.FromArgb(r2, g2, b2);
                     form_main.fm.BackColor = Color.FromArgb(r2, g2, b2);
                     form_main.fcidp.BackColor = Color.FromArgb(r2, g2, b2);
