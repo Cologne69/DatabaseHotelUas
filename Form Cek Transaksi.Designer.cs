@@ -69,11 +69,16 @@
             // 
             // dgv_cekTransBlmLunas
             // 
+
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Sylfaen", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
             this.dgv_cekTransBlmLunas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_cekTransBlmLunas.AllowUserToAddRows = false;
+            this.dgv_cekTransBlmLunas.AllowUserToDeleteRows = false;
+            this.dgv_cekTransBlmLunas.AllowUserToResizeColumns = false;
+            this.dgv_cekTransBlmLunas.AllowUserToResizeRows = false;
             this.dgv_cekTransBlmLunas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_cekTransBlmLunas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -146,6 +151,10 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_SemuaTransaksi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_SemuaTransaksi.AllowUserToAddRows = false;
+            this.dgv_SemuaTransaksi.AllowUserToDeleteRows = false;
+            this.dgv_SemuaTransaksi.AllowUserToResizeColumns = false;
+            this.dgv_SemuaTransaksi.AllowUserToResizeRows = false;
             this.dgv_SemuaTransaksi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_SemuaTransaksi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -193,12 +202,18 @@
             // 
             // dgv_SemuaTransaksi2
             // 
+
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Sylfaen", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_SemuaTransaksi2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgv_SemuaTransaksi2.AllowUserToAddRows = false;
+            this.dgv_SemuaTransaksi2.AllowUserToDeleteRows = false;
+            this.dgv_SemuaTransaksi2.AllowUserToResizeColumns = false;
+            this.dgv_SemuaTransaksi2.AllowUserToResizeRows = false;
+
             this.dgv_SemuaTransaksi2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_SemuaTransaksi2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -225,12 +240,17 @@
             // 
             // dgv_cekTransBlmLunas2
             // 
+
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Sylfaen", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_cekTransBlmLunas2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgv_cekTransBlmLunas2.AllowUserToAddRows = false;
+            this.dgv_cekTransBlmLunas2.AllowUserToDeleteRows = false;
+            this.dgv_cekTransBlmLunas2.AllowUserToResizeColumns = false;
+            this.dgv_cekTransBlmLunas2.AllowUserToResizeRows = false;
             this.dgv_cekTransBlmLunas2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_cekTransBlmLunas2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
