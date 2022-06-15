@@ -24,7 +24,6 @@ namespace DatabaseHotelUas
 
             this.Hide();
             dgv_cekTransBlmLunas.DataSource = null;
-            dgv_cekTransBlmLunas2.DataSource = null;
             dgv_SemuaTransaksi.DataSource = null;
             dgv_SemuaTransaksi2.DataSource = null;
 
@@ -41,38 +40,41 @@ namespace DatabaseHotelUas
             {
                 if (cBoxBookKamar.Checked == true && cBoxOrderResto.Checked == false)
                 {
-                    dgv_cekTransBlmLunas2.Hide();
+                    dgv_cekTransBlmLunas.Show();
                     dgv_SemuaTransaksi2.Hide();
                     lblBookingKamar.Hide();
                     lblOrderResto.Hide();
                     lblBookingKamar2.Hide();
-                    lblOrderResto2.Hide();
+                    lblTransBelumLunas.Show();
                     TransaksiBookingKamarBelumLunas();
                     TransaksiBookingKamar();
+                    resize();
                 }
                 else if (cBoxOrderResto.Checked == true && cBoxBookKamar.Checked == false)
                 {
-                    dgv_cekTransBlmLunas2.Hide();
+                    lblTransBelumLunas.Hide();
                     dgv_SemuaTransaksi2.Hide();
                     lblBookingKamar.Hide();
                     lblOrderResto.Hide();
                     lblBookingKamar2.Hide();
-                    lblOrderResto2.Hide();
-                    TransaksiOrderFoodBelumLunas();
+                    dgv_cekTransBlmLunas.Hide();
                     TransaksiOrderFood();
+                    resize();
                 }
                 else if (cBoxOrderResto.Checked == true && cBoxBookKamar.Checked == true)
                 {
-                    dgv_cekTransBlmLunas2.Show();
+                    
+                    dgv_cekTransBlmLunas.Show();
                     dgv_SemuaTransaksi2.Show();
+                    lblTransBelumLunas.Show();
                     lblBookingKamar.Show();
                     lblOrderResto.Show();
                     lblBookingKamar2.Show();
-                    lblOrderResto2.Show();
                     TransaksiBookingKamarBelumLunas();
-                    TransaksiOrderFoodBelumLunas2();
                     TransaksiBookingKamar();
                     TransaksiOrderFood2();
+                    resize();
+
                 }
             }
         }
@@ -144,23 +146,7 @@ namespace DatabaseHotelUas
                 MessageBox.Show(ex.Message);
             }
         }
-        public void TransaksiOrderFoodBelumLunas2()
-        {
-            try
-            {
-                restoBelumLunas = new DataTable();
-                sqlQuery = $"SELECT ORDER_ID AS 'ORDER ID', CUST_ID AS 'CUSTOMER ID', ORDER_TGL AS 'TANGGAL ORDER', ORDER_MENU_COUNT AS 'JUMLAH JENIS MENU', ORDER_TOTAL 'TOTAL HARGA' FROM ORDER_FOOD WHERE TRANS_ID is null AND NOT ORDER_ID = '0' order by cast(ORDER_ID as unsigned); ";
-                sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(restoBelumLunas);
-                dgv_cekTransBlmLunas2.RowHeadersVisible = false;
-                dgv_cekTransBlmLunas2.DataSource = restoBelumLunas;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+
         public void TransaksiOrderFood2()
         {
             try
@@ -181,16 +167,15 @@ namespace DatabaseHotelUas
 
         private void Form_Cek_Transaksi_Load(object sender, EventArgs e)
         {
-            dgv_cekTransBlmLunas2.Hide();
+
             dgv_SemuaTransaksi2.Hide();
             lblBookingKamar.Hide();
             lblOrderResto.Hide();
             lblBookingKamar2.Hide();
-            lblOrderResto2.Hide();
             dgv_cekTransBlmLunas.DataSource = null;
-            dgv_cekTransBlmLunas2.DataSource = null;
             dgv_SemuaTransaksi.DataSource = null;
             dgv_SemuaTransaksi2.DataSource = null;
+          
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -199,9 +184,56 @@ namespace DatabaseHotelUas
             cBoxOrderResto.Checked = false;
             this.Hide();
             dgv_cekTransBlmLunas.DataSource = null;
-            dgv_cekTransBlmLunas2.DataSource = null;
+
             dgv_SemuaTransaksi.DataSource = null;
             dgv_SemuaTransaksi2.DataSource = null;
         }
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+
+
+
+        private void Form_Cek_Transaksi_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void resize()
+        {
+            dgv_SemuaTransaksi.Columns[0].Width = 140;
+            dgv_SemuaTransaksi.Columns[1].Width = 140;
+            dgv_SemuaTransaksi.Columns[2].Width = 140;
+            dgv_SemuaTransaksi.Columns[3].Width = 140;
+            dgv_SemuaTransaksi.Columns[4].Width = 140;
+            dgv_cekTransBlmLunas.Columns[0].Width = 140;
+            dgv_cekTransBlmLunas.Columns[1].Width = 140;
+            dgv_cekTransBlmLunas.Columns[2].Width = 140;
+            dgv_cekTransBlmLunas.Columns[3].Width = 140;
+            dgv_cekTransBlmLunas.Columns[4].Width = 140;
+            dgv_SemuaTransaksi2.Columns[0].Width = 140;
+            dgv_SemuaTransaksi2.Columns[1].Width = 140;
+            dgv_SemuaTransaksi2.Columns[2].Width = 140;
+            dgv_SemuaTransaksi2.Columns[3].Width = 140;
+        }
+        
+       
     }
 }
