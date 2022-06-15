@@ -15,7 +15,6 @@ namespace DatabaseHotelUas
         string sqlQuery;
         DataTable pelanggan = new DataTable();
         private static List<string> list_pelanggan = new List<string>();
-
         public form_idPelanggan()
         {
             InitializeComponent();
@@ -33,7 +32,7 @@ namespace DatabaseHotelUas
         {
             try
             {
-                sqlQuery = $"SELECT CUST_ID as 'CUSTOMER ID', CUST_NAMA as 'CUSTOMER NAMA', CUST_KOTA as 'CUSTOMER KOTA', DELETE_CUST as 'DELETE CUSTOMER', CUST_KELAMIN as 'CUSTOMER KELAMIN' FROM CUSTOMER";
+                sqlQuery = $"SELECT CUST_ID as 'CUSTOMER ID', CUST_NAMA as 'CUSTOMER NAMA', CUST_KOTA as 'CUSTOMER KOTA', if(CUST_KELAMIN ='L', 'Laki-laki', 'Perempuan') as 'CUSTOMER KELAMIN' FROM CUSTOMER ORDER BY 2";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(pelanggan);
@@ -46,7 +45,6 @@ namespace DatabaseHotelUas
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void btn_deletePelanggan_Click(object sender, EventArgs e)
         {
             //form_main.fdp.ShowDialog(); 
@@ -67,11 +65,6 @@ namespace DatabaseHotelUas
                 }
             }
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnProses_Click(object sender, EventArgs e)
         {
             btnProses.Hide();
