@@ -45,7 +45,7 @@ namespace DatabaseHotelUas
             {
                 DataTable temp_txt_dt = new DataTable();
                 string sqlQuery = $"select c.CUST_NAMA as 'nama', date_format(bk.BOOK_TGL_CIN, '%d-%m-%Y') as 'tanggal' from BOOKING_KAMAR bk, CUSTOMER c, DETAIL_BOOK_KAMAR dbk " +
-                    $"where c.CUST_ID = bk.CUST_ID and dbk.BOOK_ID = bk.BOOK_ID and dbk.KAMAR_NO = {form_kamar.pressed_button}";
+                    $"where c.CUST_ID = bk.CUST_ID and dbk.BOOK_ID = bk.BOOK_ID and dbk.KAMAR_NO = {form_kamar.pressed_button} and bk.TRANS_ID IS NULL";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(temp_txt_dt);
