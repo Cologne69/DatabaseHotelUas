@@ -178,7 +178,6 @@ namespace DatabaseHotelUas
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void Form_Cek_Transaksi_Load(object sender, EventArgs e)
         {
             dgv_cekTransBlmLunas2.Hide();
@@ -192,7 +191,6 @@ namespace DatabaseHotelUas
             dgv_SemuaTransaksi.DataSource = null;
             dgv_SemuaTransaksi2.DataSource = null;
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             cBoxBookKamar.Checked = false;
@@ -202,6 +200,21 @@ namespace DatabaseHotelUas
             dgv_cekTransBlmLunas2.DataSource = null;
             dgv_SemuaTransaksi.DataSource = null;
             dgv_SemuaTransaksi2.DataSource = null;
+        }
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 }
