@@ -15,9 +15,15 @@ namespace DatabaseHotelUas
         string sqlQuery;
         DataTable pelanggan = new DataTable();
         private static List<string> list_pelanggan = new List<string>();
+
         public form_idPelanggan()
         {
             InitializeComponent();
+        }
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            txt_cariNamaPelanggan.Text = "";
         }
         private void form_idPelanggan_Load(object sender, EventArgs e)
         {
@@ -32,7 +38,7 @@ namespace DatabaseHotelUas
         {
             try
             {
-                sqlQuery = $"SELECT CUST_ID as 'CUSTOMER ID', CUST_NAMA as 'CUSTOMER NAMA', CUST_KOTA as 'CUSTOMER KOTA', if(CUST_KELAMIN ='L', 'Laki-laki', 'Perempuan') as 'CUSTOMER KELAMIN' FROM CUSTOMER ORDER BY 2";
+                sqlQuery = $"SELECT CUST_ID as 'CUSTOMER ID', CUST_NAMA as 'CUSTOMER NAMA', CUST_KOTA as 'CUSTOMER KOTA', DELETE_CUST as 'DELETE CUSTOMER', CUST_KELAMIN as 'CUSTOMER KELAMIN' FROM CUSTOMER";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(pelanggan);
@@ -45,6 +51,7 @@ namespace DatabaseHotelUas
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void btn_deletePelanggan_Click(object sender, EventArgs e)
         {
             //form_main.fdp.ShowDialog(); 
@@ -65,12 +72,13 @@ namespace DatabaseHotelUas
                 }
             }
         }
+
         private void btnProses_Click(object sender, EventArgs e)
         {
             btnProses.Hide();
             btnTambahPelanggan.Hide();
             btn_deletePelanggan.Hide();
-            pelanggan.DefaultView.RowFilter = string.Format("'CUSTOMER NAMA' LIKE '%{0}%'", txt_cariNamaPelanggan.Text);
+            pelanggan.DefaultView.RowFilter = string.Format("`CUSTOMER NAMA` LIKE '%{0}%'", txt_cariNamaPelanggan.Text);
             for (int i = 0; i < pelanggan.DefaultView.Count; i++)
             {
                 if (pelanggan.DefaultView.RowFilter.Contains(txt_cariNamaPelanggan.Text))
@@ -104,11 +112,6 @@ namespace DatabaseHotelUas
             form_main.ftp.rdb_Perempuan.Checked = false;
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            txt_cariNamaPelanggan.Text = "";
-        }
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -117,11 +120,16 @@ namespace DatabaseHotelUas
         public static extern bool ReleaseCapture();
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if(e.Button == MouseButtons.Left)
             {
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

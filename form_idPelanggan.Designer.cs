@@ -51,10 +51,10 @@
             // 
             // txt_cariNamaPelanggan
             // 
-            this.txt_cariNamaPelanggan.Location = new System.Drawing.Point(128, 159);
+            this.txt_cariNamaPelanggan.Location = new System.Drawing.Point(114, 127);
             this.txt_cariNamaPelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_cariNamaPelanggan.Name = "txt_cariNamaPelanggan";
-            this.txt_cariNamaPelanggan.Size = new System.Drawing.Size(486, 26);
+            this.txt_cariNamaPelanggan.Size = new System.Drawing.Size(432, 22);
             this.txt_cariNamaPelanggan.TabIndex = 2;
             this.txt_cariNamaPelanggan.TextChanged += new System.EventHandler(this.txt_cariNamaPelanggan_TextChanged);
             // 
@@ -62,9 +62,9 @@
             // 
             this.lbl_cariNama.AutoSize = true;
             this.lbl_cariNama.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cariNama.Location = new System.Drawing.Point(14, 160);
+            this.lbl_cariNama.Location = new System.Drawing.Point(12, 128);
             this.lbl_cariNama.Name = "lbl_cariNama";
-            this.lbl_cariNama.Size = new System.Drawing.Size(118, 27);
+            this.lbl_cariNama.Size = new System.Drawing.Size(96, 22);
             this.lbl_cariNama.TabIndex = 3;
             this.lbl_cariNama.Text = "Cari Nama: ";
             // 
@@ -93,7 +93,7 @@
             this.dgv_Pelanggan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Pelanggan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Pelanggan.EnableHeadersVisualStyles = false;
-            this.dgv_Pelanggan.Location = new System.Drawing.Point(12, 214);
+            this.dgv_Pelanggan.Location = new System.Drawing.Point(11, 171);
             this.dgv_Pelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_Pelanggan.MultiSelect = false;
             this.dgv_Pelanggan.Name = "dgv_Pelanggan";
@@ -108,17 +108,17 @@
             this.dgv_Pelanggan.ShowCellToolTips = false;
             this.dgv_Pelanggan.ShowEditingIcon = false;
             this.dgv_Pelanggan.ShowRowErrors = false;
-            this.dgv_Pelanggan.Size = new System.Drawing.Size(845, 490);
+            this.dgv_Pelanggan.Size = new System.Drawing.Size(751, 392);
             this.dgv_Pelanggan.TabIndex = 1;
             // 
             // btn_deletePelanggan
             // 
             this.btn_deletePelanggan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
             this.btn_deletePelanggan.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_deletePelanggan.Location = new System.Drawing.Point(678, 151);
+            this.btn_deletePelanggan.Location = new System.Drawing.Point(603, 121);
             this.btn_deletePelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_deletePelanggan.Name = "btn_deletePelanggan";
-            this.btn_deletePelanggan.Size = new System.Drawing.Size(156, 40);
+            this.btn_deletePelanggan.Size = new System.Drawing.Size(139, 32);
             this.btn_deletePelanggan.TabIndex = 4;
             this.btn_deletePelanggan.Text = "Hapus Pelanggan";
             this.btn_deletePelanggan.UseVisualStyleBackColor = false;
@@ -128,10 +128,10 @@
             // 
             this.btnTambahPelanggan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
             this.btnTambahPelanggan.Font = new System.Drawing.Font("Sylfaen", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTambahPelanggan.Location = new System.Drawing.Point(678, 151);
+            this.btnTambahPelanggan.Location = new System.Drawing.Point(603, 121);
             this.btnTambahPelanggan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTambahPelanggan.Name = "btnTambahPelanggan";
-            this.btnTambahPelanggan.Size = new System.Drawing.Size(168, 39);
+            this.btnTambahPelanggan.Size = new System.Drawing.Size(149, 31);
             this.btnTambahPelanggan.TabIndex = 5;
             this.btnTambahPelanggan.Text = "Tambah Pelanggan";
             this.btnTambahPelanggan.UseVisualStyleBackColor = false;
@@ -141,10 +141,9 @@
             // 
             this.statusNamaPelanggan.BackColor = System.Drawing.Color.White;
             this.statusNamaPelanggan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.statusNamaPelanggan.Location = new System.Drawing.Point(621, 156);
-            this.statusNamaPelanggan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.statusNamaPelanggan.Location = new System.Drawing.Point(552, 125);
             this.statusNamaPelanggan.Name = "statusNamaPelanggan";
-            this.statusNamaPelanggan.Size = new System.Drawing.Size(28, 30);
+            this.statusNamaPelanggan.Size = new System.Drawing.Size(25, 25);
             this.statusNamaPelanggan.TabIndex = 6;
             this.statusNamaPelanggan.TabStop = false;
             // 
@@ -152,10 +151,10 @@
             // 
             this.btnProses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(173)))), ((int)(((byte)(96)))));
             this.btnProses.Font = new System.Drawing.Font("Sylfaen", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProses.Location = new System.Drawing.Point(678, 148);
+            this.btnProses.Location = new System.Drawing.Point(603, 118);
             this.btnProses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProses.Name = "btnProses";
-            this.btnProses.Size = new System.Drawing.Size(168, 45);
+            this.btnProses.Size = new System.Drawing.Size(149, 36);
             this.btnProses.TabIndex = 7;
             this.btnProses.Text = "Proses";
             this.btnProses.UseVisualStyleBackColor = false;
@@ -169,9 +168,8 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(867, 120);
+            this.panel1.Size = new System.Drawing.Size(771, 96);
             this.panel1.TabIndex = 8;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -183,10 +181,10 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Transparent;
-            this.btnExit.Location = new System.Drawing.Point(816, 0);
+            this.btnExit.Location = new System.Drawing.Point(725, 0);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(30, 46);
+            this.btnExit.Size = new System.Drawing.Size(27, 37);
             this.btnExit.TabIndex = 25;
             this.btnExit.Text = "x";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -197,10 +195,9 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::DatabaseHotelUas.Properties.Resources.D_Mario_hotel;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(28, -15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(25, -12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -209,18 +206,18 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bodoni MT Condensed", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(325, 30);
+            this.label1.Location = new System.Drawing.Point(289, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 67);
+            this.label1.Size = new System.Drawing.Size(203, 56);
             this.label1.TabIndex = 0;
             this.label1.Text = "PELANGGAN";
             // 
             // form_idPelanggan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.ClientSize = new System.Drawing.Size(867, 764);
+            this.ClientSize = new System.Drawing.Size(771, 611);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnProses);
             this.Controls.Add(this.statusNamaPelanggan);
