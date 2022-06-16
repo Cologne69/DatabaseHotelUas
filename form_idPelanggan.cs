@@ -38,7 +38,7 @@ namespace DatabaseHotelUas
         {
             try
             {
-                sqlQuery = $"SELECT CUST_ID as 'CUSTOMER ID', CUST_NAMA as 'CUSTOMER NAMA', CUST_KOTA as 'CUSTOMER KOTA', IF(CUST_KELAMIN = 'L', 'Laki-Laki', 'Perempuan') as 'CUSTOMER KELAMIN' FROM CUSTOMER";
+                sqlQuery = $"SELECT CUST_ID as 'CUSTOMER ID', CUST_NAMA as 'CUSTOMER NAMA', CUST_KOTA as 'CUSTOMER KOTA', IF(CUST_KELAMIN = 'L', 'Laki-Laki', 'Perempuan') as 'CUSTOMER KELAMIN' FROM CUSTOMER where DELETE_CUST = false";
                 sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(pelanggan);
@@ -59,7 +59,7 @@ namespace DatabaseHotelUas
             {
                 try
                 {
-                    sqlQuery = $"DELETE FROM CUSTOMER WHERE CUST_ID = '{dgv_Pelanggan.CurrentRow.Cells[0].Value.ToString()}';";
+                    sqlQuery = $"UPDATE CUSTOMER SET DELETE_CUST = true WHERE CUST_ID = '{dgv_Pelanggan.CurrentRow.Cells[0].Value.ToString()}';";
                     sqlCommand = new MySqlCommand(sqlQuery, form_main.sqlConnect);
                     sqlAdapter = new MySqlDataAdapter(sqlCommand);
                     sqlAdapter.Fill(pelanggan);
