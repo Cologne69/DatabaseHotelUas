@@ -637,6 +637,7 @@ namespace DatabaseHotelUas
         private void btn_check_in_Click(object sender, EventArgs e)
         {
             checkIn();
+            allKamarButtonEnabled(true);
             cart.Clear();
             cart_dt.Clear();
             syncKamarStatus();
